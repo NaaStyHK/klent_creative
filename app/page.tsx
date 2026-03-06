@@ -1,65 +1,86 @@
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main className="relative min-h-screen overflow-hidden bg-[#253439] text-[#ede5de]">
+
+      {/* Background logo */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.05] translate-y-24">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src="/logo_klent.svg"
+          alt="Background logo"
+          width={900}
+          height={400}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </div>
+
+      {/* Content */}
+      <section className="relative z-10 flex min-h-screen items-start justify-center px-6 pt-15 pb-15">
+
+        <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+
+          {/* LOGO */}
+          <div className="mb-6">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/logo_klent.svg"
+              alt="Klent Creative Logo"
+              width={380}
+              height={120}
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          {/* Brand */}
+          <h1 className="mb-6 text-2xl font-semibold tracking-wide text-white md:text-3xl">
+            KLENT CREATIVE BY KEVIN HAFSI
+          </h1>
+
+          <div className="mb-8 h-[3px] w-24 rounded-full bg-[#c1ff72]" />
+
+          {/* Main copy */}
+          <p className="max-w-3xl text-lg leading-relaxed text-[#ede5de] md:text-2xl">
+            Création de sites web et apps modernes, rapides et performants.
+          </p>
+
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#d6d2cc] md:text-lg">
+            Le site est actuellement en cours de développement.
+            <br className="hidden md:block" />
+            En attendant sa mise en ligne, je reste disponible pour échanger sur
+            vos projets web, apps, SEO et performance.
+          </p>
+
+          {/* Actions */}
+          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+
+            <a
+              href="mailto:contact@klentcreative.com"
+              className="rounded-full bg-[#c1ff72] px-6 py-3 text-sm font-semibold text-[#253439] transition hover:scale-[1.02] hover:bg-[#b4f05f]"
+            >
+              contact@klentcreative.com
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/kevin-hafsi-8b5577265/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:border-[#c1ff72] hover:text-[#c1ff72]"
+            >
+              Voir LinkedIn
+            </a>
+
+          </div>
+
+          {/* Footer */}
+          <div className="mt-14 flex flex-col items-center gap-3 text-sm text-[#aeb7b8] md:flex-row md:gap-6">
+            <span>La Rochelle, France</span>
+            <span className="hidden md:inline">•</span>
+            <span>Next.js • Flutter • SEO • Performance</span>
+          </div>
+
         </div>
-      </main>
-    </div>
+
+      </section>
+
+    </main>
   );
 }
