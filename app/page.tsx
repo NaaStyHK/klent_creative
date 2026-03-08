@@ -74,7 +74,7 @@ export default function HomePage() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/kevin-hafsi-8b5577265/"
+              href="https://www.linkedin.com/in/kevin-hafsi/"
               target="_blank"
               rel="noreferrer"
               className="rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:border-[#c1ff72] hover:text-[#c1ff72]"
