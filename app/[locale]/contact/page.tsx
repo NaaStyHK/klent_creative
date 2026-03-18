@@ -1,8 +1,19 @@
+import Navbar from "@/components/Navbar";
+import { getDictionary } from "@/lib/getDictionary";
 
-export default function ContactPage() {
+type PageProps = {
+  params: {
+    locale: string;
+  };
+};
+
+export default async function ContactPage({ params }: PageProps) {
+  const dict = await getDictionary(params.locale);
+
   return (
     <>
-      
+      <Navbar locale={params.locale} dict={dict.navbar} />
+
       <main className="inner-page">
         <div className="container narrow">
           <span className="section-kicker">Contact</span>
@@ -28,7 +39,6 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
-      
     </>
   );
 }
