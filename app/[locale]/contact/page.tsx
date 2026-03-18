@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { getDictionary } from "@/lib/getDictionary";
+import { getDictionary } from "@/lib/dictionaries";
 
 type PageProps = {
   params: {
@@ -8,7 +8,7 @@ type PageProps = {
 };
 
 export default async function ContactPage({ params }: PageProps) {
-  const dict = await getDictionary(params.locale);
+  const dict = await getDictionary(params.locale        );
 
   return (
     <>

@@ -11,7 +11,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-export type NavbarDict = {
+type NavbarDict = {
   projects: string;
   services: string;
   about: string;
@@ -24,7 +24,7 @@ type NavbarProps = {
   dict: NavbarDict;
 };
 
-const SECTIONS = ["projects", "services", "why", "process", "about", "contact"] as const;
+const SECTIONS = ["projects", "services", "why", "process", "about", "contact"];
 
 export default function Navbar({ locale, dict }: NavbarProps) {
   const switchLocale = locale === "fr" ? "es" : "fr";
@@ -34,12 +34,11 @@ export default function Navbar({ locale, dict }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
+    // Scroll → navbar compacte
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
 
+    // Intersection Observer sur chaque section
     const observers: IntersectionObserver[] = [];
 
     SECTIONS.forEach((id) => {
@@ -53,6 +52,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
           }
         },
         {
+          // La section est "active" quand elle occupe le centre de l'écran
           rootMargin: "-40% 0px -40% 0px",
           threshold: 0,
         }
@@ -64,21 +64,22 @@ export default function Navbar({ locale, dict }: NavbarProps) {
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      observers.forEach((observer) => observer.disconnect());
+      observers.forEach((o) => o.disconnect());
     };
   }, []);
 
   const navLinks = [
     { href: "#projects", label: dict.projects, id: "projects" },
     { href: "#services", label: dict.services, id: "services" },
-    { href: "#about", label: dict.about, id: "about" },
-    { href: "#contact", label: dict.contact, id: "contact" },
+    { href: "#about",    label: dict.about,    id: "about"    },
+    { href: "#contact",  label: dict.contact,  id: "contact"  },
   ];
 
   return (
     <header className={`topbar${scrolled ? " is-scrolled" : ""}`}>
       <div className="site-container">
         <nav className="nav-shell">
+
           <Link href={`/${locale}`} className="nav-brand" aria-label="Klent Creative">
             <Image
               src="/logo.svg"
@@ -88,15 +89,17 @@ export default function Navbar({ locale, dict }: NavbarProps) {
               className="nav-brand-logo-img"
               priority
             />
-            <span className={`nav-brand-text ${spaceGrotesk.className}`}>
+            <span
+              className={`nav-brand-text ${spaceGrotesk.className}`}
+            >
               BY KEVIN HAFSI
             </span>
           </Link>
 
           <div className="nav-center">
             {navLinks.map((link) => {
-              const isActive =
-                activeSection === link.id ||
+              const isActive = activeSection === link.id ||
+                /* fallback : "about" couvre aussi why/process */
                 (link.id === "about" && ["why", "process"].includes(activeSection));
 
               return (
@@ -115,11 +118,11 @@ export default function Navbar({ locale, dict }: NavbarProps) {
             <Link href={`/${switchLocale}`} className="locale-switch">
               {switchLabel}
             </Link>
-
             <a href="#contact" className="nav-button">
               {dict.audit}
             </a>
           </div>
+
         </nav>
       </div>
     </header>
