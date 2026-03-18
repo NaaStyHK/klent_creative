@@ -1,0 +1,406 @@
+{
+  "navbar": {
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "audit": "Auditoría gratis"
+  },
+  "hero": {
+    "capsule": "Estudio freelance premium",
+    "availability": "Disponibilidad limitada este mes",
+    "titleLine1": "Diseño",
+    "titleHighlight": "experiencias web",
+    "titleLine3": "que convierten.",
+    "description": "Desarrollador web freelance especializado en creación de páginas web a medida, aplicaciones móviles e interfaces premium — pensadas para atraer, convencer y convertir desde el primer scroll.",
+    "ctaPrimary": "Hablar de mi proyecto",
+    "ctaSecondary": "Ver mis proyectos",
+    "badge": "DISEÑO WEB & APPS A MEDIDA",
+    "cardTitle": "Diseño, desarrollo web y visión de producto.",
+    "style": "Estilo",
+    "styleValue": "Adaptado a cada proyecto",
+    "approach": "Enfoque",
+    "approachValue": "100% a medida",
+    "stack": "Tecnologías",
+    "impact": "Impacto visual",
+    "signature": "FIRMA",
+    "signatureValue": "Moderna, Profesional, Memorable"
+  },
+  "projects": {
+    "eyebrow": "Proyectos",
+    "titleLine1": "Proyectos web pensados para",
+    "titleHighlight": "el impacto y los resultados",
+    "description": "Una selección de páginas web y aplicaciones diseñadas para potenciar una marca, estructurar la experiencia de usuario y ofrecer un resultado digital de alto nivel.",
+    "featured": {
+      "slug": "explore-lr",
+      "name": "Explore LR",
+      "category": "Aplicación móvil cultural",
+      "description": "Aplicación móvil desarrollada para poner en valor el descubrimiento cultural de La Rochelle — una experiencia fluida, intuitiva y visualmente inmersiva, pensada para el usuario.",
+      "image": "/projects/test.png",
+      "hrefLabel": "Ver el proyecto",
+      "quote": "Un enfoque centrado en la experiencia de usuario, con especial atención a la claridad visual y la fluidez de navegación.",
+      "authorName": "Kevin Hafsi",
+      "authorRole": "Fundador, Klent Creative",
+      "initials": "KH"
+    },
+    "items": [
+      {
+        "slug": "klent-creative",
+        "name": "Klent Creative",
+        "category": "Portfolio freelance bilingüe",
+        "description": "Sitio web portfolio profesional diseñado para proyectar una imagen moderna, clara y coherente — optimizado para convertir visitas en clientes.",
+        "image": "/projects/test.png",
+        "hrefLabel": "Ver el proyecto",
+        "quote": "Una web pensada como tarjeta de presentación premium: dirección visual sobria, limpia y estructurada para generar confianza.",
+        "authorName": "Kevin Hafsi",
+        "authorRole": "Klent Creative",
+        "initials": "KH"
+      },
+      {
+        "slug": "concept-street-food",
+        "name": "Concept street food",
+        "category": "Identidad de marca & sitio web",
+        "description": "Creación de identidad visual y página web para un concepto de restauración — una experiencia digital fuerte, memorable y diferenciadora.",
+        "image": "/projects/test.png",
+        "hrefLabel": "Ver el proyecto",
+        "quote": "Una identidad de marca pensada para ser reconocible de inmediato, con una coherencia real entre el diseño y el posicionamiento del producto.",
+        "authorName": "Kevin Hafsi",
+        "authorRole": "Klent Creative",
+        "initials": "KH"
+      },
+      {
+        "slug": "portfolio-premium",
+        "name": "Portfolio premium",
+        "category": "Página web profesional",
+        "description": "Diseño de una página web profesional de alto nivel para un creativo — tipografía cuidada, ritmo visual sólido y credibilidad inmediata.",
+        "image": "/projects/test.png",
+        "hrefLabel": "Ver el proyecto",
+        "quote": "El trabajo se centró en la jerarquía visual, el posicionamiento y la calidad percibida desde la primera pantalla.",
+        "authorName": "Kevin Hafsi",
+        "authorRole": "Klent Creative",
+        "initials": "KH"
+      },
+      {
+        "slug": "portfolio-medio",
+        "name": "Portfolio medio",
+        "category": "Página web profesional",
+        "description": "Diseño de una página web profesional con foco en la legibilidad, la estructura y la experiencia de usuario.",
+        "image": "/projects/test.png",
+        "hrefLabel": "Ver el proyecto",
+        "quote": "Un equilibrio entre sobriedad e impacto: jerarquía visual clara, contenido bien estructurado y percepción de calidad inmediata.",
+        "authorName": "Kevin Hafsi",
+        "authorRole": "Klent Creative",
+        "initials": "KH"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Servicios web",
+    "titleLine1": "Elige el formato adecuado,",
+    "titleHighlight": "yo me encargo del resto.",
+    "description": "Precios claros, transparentes y ajustables — desde, con opciones según tus necesidades, tu sector y tu nivel de exigencia.",
+    "tabs": {
+      "web": "Páginas web",
+      "app": "Aplicaciones"
+    },
+    "web": [
+      {
+        "icon": "⚡",
+        "title": "Landing page",
+        "priceLabel": "Desde 900€",
+        "description": "Creación de una landing page a medida, optimizada para convertir: lanzar una oferta, probar un mercado, presentar un servicio o captar leads con impacto inmediato.",
+        "testimonial": "La solución ideal para avanzar rápido: una página clara, creíble, optimizada para la conversión y lista para generar resultados.",
+        "author": "Formato corto, eficaz y orientado a resultados",
+        "cta": "Hablar de mi proyecto",
+        "includedTitle": "Qué incluye",
+        "included": [
+          "Diseño personalizado y a medida",
+          "Integración responsive mobile-first",
+          "Estructura SEO optimizada",
+          "Formulario de contacto integrado",
+          "Desarrollo limpio y entrega rápida"
+        ],
+        "optionalTitle": "Opciones disponibles",
+        "optional": [
+          "Copywriting SEO",
+          "Seguimiento y analítica (Google Analytics, GTM)",
+          "Versión multilingüe"
+        ]
+      },
+      {
+        "badge": "El más solicitado",
+        "icon": "🌐",
+        "title": "Página web profesional premium",
+        "priceLabel": "Desde 1 800€",
+        "description": "Creación completa de una página web profesional para presentar tu actividad, reforzar tu imagen de marca y convertir visitantes en clientes.",
+        "testimonial": "La mejor relación entre imagen de marca, estructura SEO, claridad y nivel de acabado — el formato recomendado para autónomos y pymes.",
+        "author": "Ideal para marcas, freelances y pequeñas empresas",
+        "cta": "Hablar de mi proyecto",
+        "includedTitle": "Qué incluye",
+        "included": [
+          "Hasta 5 páginas diseñadas a medida",
+          "Arquitectura pensada para el SEO y la conversión",
+          "Diseño premium coherente con tu imagen de marca",
+          "Optimización SEO técnica básica",
+          "Rendimiento y velocidad de carga optimizados",
+          "Formularios y secciones editables si es necesario"
+        ],
+        "optionalTitle": "Opciones disponibles",
+        "optional": [
+          "Blog / Noticias",
+          "Sistema de reservas online",
+          "Panel de administración",
+          "Mantenimiento mensual"
+        ],
+        "featured": true
+      },
+      {
+        "icon": "🛠",
+        "title": "Desarrollo web a medida",
+        "priceLabel": "Desde 2 800€",
+        "description": "Desarrollo web personalizado para proyectos ambiciosos: lógica de negocio específica, contenido extenso, integraciones con terceros o arquitectura avanzada.",
+        "testimonial": "Para los proyectos que van más allá de una web corporativa estándar — una solución técnica completa, escalable y pensada para durar.",
+        "author": "Formato escalable para proyectos complejos",
+        "cta": "Hablar de mi proyecto",
+        "includedTitle": "Qué incluye",
+        "included": [
+          "Arquitectura de aplicación personalizada",
+          "Componentes y funcionalidades a medida",
+          "Gestión de varios tipos de contenido",
+          "Integraciones con herramientas y servicios externos",
+          "Experiencia de usuario avanzada y cuidada"
+        ],
+        "optionalTitle": "Opciones disponibles",
+        "optional": [
+          "Integración CRM",
+          "Automatización de procesos",
+          "Dashboard de gestión",
+          "Soporte y mantenimiento continuos"
+        ]
+      }
+    ],
+    "app": [
+      {
+        "icon": "📱",
+        "title": "MVP de aplicación móvil",
+        "priceLabel": "Desde 2 500€",
+        "description": "Desarrollo de un MVP móvil para validar tu idea, lanzar tu producto y testar tu concepto con los primeros usuarios reales.",
+        "testimonial": "Una base técnica sólida para empezar rápido — sin sobredimensionar el producto desde el principio, con una UX limpia y funcional.",
+        "author": "Ideal para validar un concepto antes de invertir más",
+        "cta": "Hablar de mi proyecto",
+        "includedTitle": "Qué incluye",
+        "included": [
+          "Flujo principal del usuario definido y estructurado",
+          "Interfaz móvil clara e intuitiva",
+          "Desarrollo en Flutter (iOS y Android)",
+          "Arquitectura técnica escalable",
+          "Versión testeable entregada llave en mano"
+        ],
+        "optionalTitle": "Opciones disponibles",
+        "optional": [
+          "Autenticación de usuarios",
+          "Panel de administración",
+          "Notificaciones push"
+        ]
+      },
+      {
+        "badge": "El más solicitado",
+        "icon": "🚀",
+        "title": "Aplicación móvil completa",
+        "priceLabel": "Desde 4 500€",
+        "description": "Desarrollo de una aplicación móvil completa: múltiples pantallas, lógica de negocio integrada, base de datos y experiencia de producto cuidada de principio a fin.",
+        "testimonial": "El formato adecuado para un proyecto móvil serio — estructurado, de alto rendimiento, escalable y listo para tus usuarios.",
+        "author": "Para aplicaciones concebidas como un producto digital real",
+        "cta": "Hablar de mi proyecto",
+        "includedTitle": "Qué incluye",
+        "included": [
+          "UX móvil estructurada y pensada para el engagement",
+          "Desarrollo Flutter completo (iOS y Android)",
+          "Conexión y gestión de base de datos",
+          "Arquitectura escalable y mantenible",
+          "Pantallas y componentes completamente a medida"
+        ],
+        "optionalTitle": "Opciones disponibles",
+        "optional": [
+          "Pago integrado (Stripe…)",
+          "Mensajería / Chat en tiempo real",
+          "Panel de administración",
+          "Analítica avanzada"
+        ],
+        "featured": true
+      },
+      {
+        "icon": "🧩",
+        "title": "Producto móvil a medida",
+        "priceLabel": "Desde 6 500€",
+        "description": "Desarrollo de aplicaciones móviles complejas: funcionalidades avanzadas, sincronización en tiempo real, gestión de cuentas de usuario y ecosistema digital completo.",
+        "testimonial": "Pensado para productos móviles ambiciosos que necesitan mucho más que una base funcional — una solución robusta, escalable y preparada para crecer.",
+        "author": "Formato premium para productos móviles con alto potencial",
+        "cta": "Hablar de mi proyecto",
+        "includedTitle": "Qué incluye",
+        "included": [
+          "Arquitectura de producto completa y documentada",
+          "Componentes y funcionalidades avanzadas",
+          "Experiencia de usuario fluida y coherente",
+          "Base técnica sólida, segura y mantenible",
+          "Aplicación preparada para escalar"
+        ],
+        "optionalTitle": "Opciones disponibles",
+        "optional": [
+          "API REST a medida",
+          "Automatizaciones de negocio",
+          "Gestión de roles y permisos",
+          "Mantenimiento y evoluciones continuas"
+        ]
+      }
+    ],
+    "addonsTitle": "Opciones y complementos disponibles en todos los proyectos",
+    "addons": [
+      "SEO avanzado",
+      "Copywriting SEO",
+      "Versión multilingüe",
+      "Blog / Noticias",
+      "Reservas online",
+      "Panel de administración",
+      "Automatización",
+      "Mantenimiento mensual"
+    ]
+  },
+  "why": {
+    "eyebrow": "Por qué elegirme",
+    "titleLine1": "No una agencia.",
+    "titleHighlight": "Un desarrollador creativo comprometido.",
+    "description": "Trabajar conmigo es tener un único interlocutor del briefing a la publicación — desarrollador, diseñador y gestor de proyecto, todo en uno.",
+    "items": [],
+    "closingLabel": "En resumen",
+    "closingValue": "Diseño pensado, código limpio, resultado que convierte y que se recuerda.",
+    "colKlentLabel": "Klent Creative",
+    "colKlentItems": [
+      "Diseño 100% a medida, sin plantillas",
+      "Un único interlocutor de principio a fin",
+      "Entrega rápida, plazos cumplidos",
+      "Precios claros, transparentes, sin sorpresas",
+      "Sitios web rápidos, optimizados y de alto rendimiento",
+      "Visión de producto y UX integradas desde el inicio"
+    ],
+    "colOtherLabel": "Agencia\ncompetidora",
+    "colOtherItems": [
+      "Plantillas o diseños genéricos reutilizados",
+      "Múltiples interlocutores, seguimiento inconsistente",
+      "Plazos a menudo incumplidos o excesivos",
+      "Presupuestos opacos y sobrecostes frecuentes",
+      "Rendimiento técnico habitualmente descuidado",
+      "Enfoque puramente técnico, sin visión de producto"
+    ]
+  },
+  "process": {
+    "eyebrow": "Mi proceso",
+    "titleLine1": "Un proceso claro,",
+    "titleHighlight": "sin sorpresas.",
+    "description": "Desde el primer contacto hasta la publicación, cada etapa está estructurada para avanzar con eficacia y tranquilidad — sin idas y venidas innecesarias.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Descubrimiento & briefing",
+        "tag": "Día 1",
+        "description": "Hablamos de tu proyecto, tus objetivos de negocio, tu público objetivo y tus referencias. Hago las preguntas adecuadas para entender exactamente lo que necesitas — y evitar malentendidos."
+      },
+      {
+        "number": "02",
+        "title": "Diseño & concepto",
+        "tag": "Semana 1",
+        "description": "Diseño la arquitectura, los wireframes y la dirección visual. Tú validas cada decisión de diseño antes de que se escriba una sola línea de código."
+      },
+      {
+        "number": "03",
+        "title": "Desarrollo",
+        "tag": "Semana 2–3",
+        "description": "Desarrollo tu proyecto con atención al detalle: rendimiento, diseño responsive, animaciones cuidadas y calidad técnica impecable."
+      },
+      {
+        "number": "04",
+        "title": "Entrega & publicación",
+        "tag": "Semana 3–4",
+        "description": "Pruebas finales, ajustes y despliegue. Te entrego un sitio web o aplicación llave en mano, optimizado y listo para dar resultados."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Sobre mí",
+    "titleLine1": "Kevin Hafsi,",
+    "titleHighlight": "desarrollador web freelance.",
+    "bio1": "Desarrollador web freelance especializado en creación de páginas web a medida, interfaces premium y aplicaciones móviles. Mi enfoque combina rigor técnico, sensibilidad visual y visión de producto.",
+    "bio2": "Afincado en Francia, colaboro con autónomos, startups y pymes que quieren una presencia digital seria, de alto rendimiento y a la altura de sus ambiciones.",
+    "stackLabel": "Mi stack técnico",
+    "ctaLabel": "Hablar de mi proyecto",
+    "stats": [
+      {
+        "value": "20+",
+        "label": "Proyectos entregados"
+      },
+      {
+        "value": "3+",
+        "label": "Años de experiencia"
+      },
+      {
+        "value": "100%",
+        "label": "A medida"
+      }
+    ],
+    "availabilityLabel": "Disponibilidad",
+    "availabilityValue": "Limitada este mes"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "titleLine1": "Hablemos de tu",
+    "titleHighlight": "próximo proyecto web.",
+    "description": "¿Una idea, un briefing o una pregunta? Describe tu proyecto en pocas líneas o escríbeme directamente. Te respondo en menos de 24 horas.",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "Tu dirección de email",
+    "projectLabel": "Tipo de proyecto",
+    "projectOptions": [
+      "Landing page",
+      "Página web profesional premium",
+      "Desarrollo web a medida",
+      "MVP de aplicación móvil",
+      "Aplicación móvil completa",
+      "Otro"
+    ],
+    "messagePlaceholder": "Describe tu proyecto, tus objetivos y tus plazos…",
+    "submitLabel": "Enviar mi consulta",
+    "successMessage": "¡Mensaje recibido! Te respondo en menos de 24 horas.",
+    "infoEmail": "hello@klentcreative.com",
+    "infoResponseLabel": "Tiempo de respuesta",
+    "infoResponseValue": "< 24h",
+    "infoAvailLabel": "Disponibilidad",
+    "infoAvailValue": "Limitada este mes"
+  },
+  "footer": {
+    "tagline": "Creación de páginas web premium, aplicaciones móviles y experiencias digitales a medida.",
+    "navLabel": "Navegación",
+    "navLinks": [
+      {
+        "label": "Proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Servicios",
+        "href": "#services"
+      },
+      {
+        "label": "Sobre mí",
+        "href": "#about"
+      },
+      {
+        "label": "Contacto",
+        "href": "#contact"
+      }
+    ],
+    "contactLabel": "Contacto",
+    "contactEmail": "hello@klentcreative.com",
+    "contactLocation": "Francia",
+    "legal": "© 2025 Klent Creative — Kevin Hafsi. Todos los derechos reservados.",
+    "mentionsLabel": "Aviso legal",
+    "mentionsHref": "/legale"
+  }
+}
