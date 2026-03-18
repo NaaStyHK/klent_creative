@@ -1,10 +1,8 @@
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer";
 
 export default function LegalPage() {
   return (
     <>
-      <Navbar />
+      
       <main className="inner-page">
         <div className="container narrow">
           <span className="section-kicker">Mentions légales</span>
@@ -30,7 +28,7 @@ export default function LegalPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      
     </>
   );
 }
