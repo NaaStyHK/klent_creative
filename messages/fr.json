@@ -33,64 +33,30 @@
     "description": "Une sélection de sites web et applications conçus pour valoriser une marque, structurer une expérience utilisateur et produire un rendu digital haut de gamme.",
     "featured": {
       "slug": "explore-lr",
-      "name": "Explore LR",
+      "name": "ExploreLR",
       "category": "Application mobile culturelle",
       "description": "Application mobile développée pour valoriser la découverte culturelle de La Rochelle — une expérience fluide, intuitive et visuellement immersive, pensée pour l'utilisateur.",
-      "image": "/projects/test.png",
+      "image": "/projects/exploreLR.png",
       "hrefLabel": "Voir le projet",
       "quote": "Une approche centrée sur l'expérience utilisateur, avec une attention particulière portée à la clarté visuelle et à la fluidité de navigation.",
       "authorName": "Kevin Hafsi",
       "authorRole": "Fondateur, Klent Creative",
-      "initials": "KH"
+      "initials": "KH",
+      "comingSoon": true
     },
     "items": [
       {
-        "slug": "klent-creative",
-        "name": "Klent Creative",
-        "category": "Portfolio freelance bilingue",
-        "description": "Site portfolio freelance premium conçu pour présenter une image professionnelle, moderne et cohérente — optimisé pour convertir les visiteurs en clients.",
-        "image": "/projects/1.jpg",
-        "hrefLabel": "Voir le projet",
-        "quote": "Un site vitrine pensé comme une carte de visite premium : direction visuelle sobre, nette et structurée pour inspirer confiance.",
-        "authorName": "Kevin Hafsi",
-        "authorRole": "Klent Creative",
-        "initials": "KH"
-      },
-      {
-        "slug": "concept-street-food",
-        "name": "Concept street food",
+        "slug": "GEN-ELEC",
+        "name": "GEN ELEC",
         "category": "Identité de marque & site web",
-        "description": "Création d'identité visuelle et de site web pour un concept de restauration — une expérience digitale forte, mémorable et différenciante.",
-        "image": "/projects/2.jpg",
+        "description": "Création d'identité visuelle et de site web pour une entreprise d'electricite base sur La Rochelle — une expérience digitale forte, mémorable et qui convertie.",
+        "image": "/projects/gen-elec.png",
         "hrefLabel": "Voir le projet",
-        "quote": "Une identité de marque pensée pour être reconnue instantanément, avec une vraie cohérence entre le design et le positionnement produit.",
+        "quote": "Une identité de marque pensée pour être reconnue instantanément, avec une vraie cohérence entre le design et le positionnement du secteur.",
         "authorName": "Kevin Hafsi",
         "authorRole": "Klent Creative",
-        "initials": "KH"
-      },
-      {
-        "slug": "portfolio-premium",
-        "name": "Portfolio premium",
-        "category": "Site vitrine professionnel",
-        "description": "Conception d'un site vitrine haut de gamme pour un professionnel créatif — typographie soignée, rythme visuel maîtrisé et crédibilité immédiate.",
-        "image": "/projects/test.png",
-        "hrefLabel": "Voir le projet",
-        "quote": "Le travail a porté sur la hiérarchie visuelle, le positionnement et la qualité de perception dès le premier écran.",
-        "authorName": "Kevin Hafsi",
-        "authorRole": "Klent Creative",
-        "initials": "KH"
-      },
-      {
-        "slug": "portfolio-medio",
-        "name": "Portfolio medio",
-        "category": "Site vitrine professionnel",
-        "description": "Conception d'un site vitrine professionnel avec une attention portée à la lisibilité, à la structure et à l'expérience utilisateur.",
-        "image": "/projects/1.jpg",
-        "hrefLabel": "Voir le projet",
-        "quote": "Un équilibre entre sobriété et impact : hiérarchie visuelle claire, contenu bien structuré et perception qualitative immédiate.",
-        "authorName": "Kevin Hafsi",
-        "authorRole": "Klent Creative",
-        "initials": "KH"
+        "initials": "KH",
+        "comingSoon": true
       }
     ]
   },

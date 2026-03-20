@@ -33,15 +33,16 @@
     "description": "Una selección de páginas web y aplicaciones diseñadas para potenciar una marca, estructurar la experiencia de usuario y ofrecer un resultado digital de alto nivel.",
     "featured": {
       "slug": "explore-lr",
-      "name": "Explore LR",
+      "name": "ExploreLR",
       "category": "Aplicación móvil cultural",
       "description": "Aplicación móvil desarrollada para poner en valor el descubrimiento cultural de La Rochelle — una experiencia fluida, intuitiva y visualmente inmersiva, pensada para el usuario.",
-      "image": "/projects/test.png",
+      "image": "/projects/exploreLR.png",
       "hrefLabel": "Ver el proyecto",
       "quote": "Un enfoque centrado en la experiencia de usuario, con especial atención a la claridad visual y la fluidez de navegación.",
       "authorName": "Kevin Hafsi",
       "authorRole": "Fundador, Klent Creative",
-      "initials": "KH"
+      "initials": "KH",
+      "comingSoon": true
     },
     "items": [
       {
@@ -54,19 +55,21 @@
         "quote": "Una web pensada como tarjeta de presentación premium: dirección visual sobria, limpia y estructurada para generar confianza.",
         "authorName": "Kevin Hafsi",
         "authorRole": "Klent Creative",
-        "initials": "KH"
+        "initials": "KH",
+        "comingSoon": true
       },
       {
-        "slug": "concept-street-food",
-        "name": "Concept street food",
-        "category": "Identidad de marca & sitio web",
+        "slug": "GEN-ELEC",
+        "name": "GEN ELEC électricité générale",
+        "category": "Empr",
         "description": "Creación de identidad visual y página web para un concepto de restauración — una experiencia digital fuerte, memorable y diferenciadora.",
-        "image": "/projects/test.png",
+        "image": "/projects/gen-elec.png",
         "hrefLabel": "Ver el proyecto",
         "quote": "Una identidad de marca pensada para ser reconocible de inmediato, con una coherencia real entre el diseño y el posicionamiento del producto.",
         "authorName": "Kevin Hafsi",
         "authorRole": "Klent Creative",
-        "initials": "KH"
+        "initials": "KH",
+        "comingSoon": true
       },
       {
         "slug": "portfolio-premium",
@@ -78,7 +81,8 @@
         "quote": "El trabajo se centró en la jerarquía visual, el posicionamiento y la calidad percibida desde la primera pantalla.",
         "authorName": "Kevin Hafsi",
         "authorRole": "Klent Creative",
-        "initials": "KH"
+        "initials": "KH",
+        "comingSoon": true
       },
       {
         "slug": "portfolio-medio",
@@ -90,7 +94,8 @@
         "quote": "Un equilibrio entre sobriedad e impacto: jerarquía visual clara, contenido bien estructurado y percepción de calidad inmediata.",
         "authorName": "Kevin Hafsi",
         "authorRole": "Klent Creative",
-        "initials": "KH"
+        "initials": "KH",
+        "comingSoon": true
       }
     ]
   },

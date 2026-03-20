@@ -117,20 +117,12 @@ export default function Contact({ dict }: { dict: ContactDict }) {
 
               <div className="contact-socials">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/kevin-hafsi/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-social-pill"
                 >
                   LinkedIn ↗
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-social-pill"
-                >
-                  GitHub ↗
                 </a>
               </div>
             </div>

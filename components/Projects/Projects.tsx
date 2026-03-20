@@ -10,6 +10,7 @@ type ProjectItem = {
   slug: string; name: string; category: string; description: string;
   image: string; hrefLabel: string; quote?: string;
   authorName?: string; authorRole?: string; initials?: string;
+  comingSoon?: boolean;
 };
 type ProjectsDict = {
   eyebrow: string; titleLine1: string; titleHighlight: string;
@@ -31,11 +32,6 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
   const real = useMemo(() => [dict.featured, ...dict.items], [dict.featured, dict.items]);
   const N    = real.length;
 
-  /*
-   * On garde 700 côté SSR pour éviter le mismatch hydration.
-   * suppresHydrationWarning est mis sur le div du track pour
-   * ignorer la différence de style au premier render mobile.
-   */
   const [cardW,   setCardW]  = useState(700);
   const [mounted, setMounted]= useState(false);
 
@@ -139,28 +135,7 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
 
   const cw   = mounted ? cardW : 700;
   const step = cw + GAP;
-
-  /*
-   * ─── LA VRAIE FIX ─────────────────────────────────────────
-   *
-   * Le .sl-track a `left: 50%` en CSS.
-   * Son bord GAUCHE commence donc au CENTRE du .sl-window.
-   *
-   * La carte à l'index `pos` a son bord gauche à :
-   *   left_edge = pos * step  (depuis le bord gauche du track)
-   *
-   * Le centre de cette carte est à :
-   *   center_card = pos * step + cw / 2  (depuis le bord gauche du track)
-   *
-   * On veut que ce centre soit à 0px du centre du window.
-   * Donc translateX doit décaler le track de :
-   *   tx = -(pos * step + cw / 2)
-   *
-   * Ce calcul est INDÉPENDANT de la largeur du window/viewport.
-   * Il ne dépend que de cardW et de pos. ✓
-   * ──────────────────────────────────────────────────────────
-   */
-  const tx = `${-(pos * step + cw / 2)}px`;
+  const tx   = `${-(pos * step + cw / 2)}px`;
 
   return (
     <section id="projects" className="projects-section">
@@ -184,11 +159,6 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
           style={{ "--sl-dur": `${DURATION}ms` } as React.CSSProperties}
         >
           <div className="sl-window">
-            {/*
-             * suppressHydrationWarning : seul le style change entre SSR (cw=700)
-             * et le premier render mobile (cw=318). React signale un warning
-             * sans ça. Le flash visuel est invisible (<16ms).
-             */}
             <div
               className="sl-track"
               suppressHydrationWarning
@@ -199,8 +169,10 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
               onTransitionEnd={handleTransitionEnd}
             >
               {items.map((project, i) => {
-                const isActive = i === pos;
-                const dist     = Math.abs(i - pos);
+                const isActive    = i === pos;
+                const dist        = Math.abs(i - pos);
+                const isComingSoon = project.comingSoon === true;
+
                 return (
                   <div
                     key={`${i}-${project.slug}`}
@@ -228,6 +200,16 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
                     />
                     {!isActive && <div className="sl-veil" />}
 
+                    {/* ── Coming Soon overlay ── */}
+                    {isComingSoon && (
+                      <div className="sl-coming-soon" aria-hidden="true">
+                        <div className="sl-coming-soon-inner">
+                          <span className="sl-coming-soon-icon">🚧</span>
+                          <span className="sl-coming-soon-label">En construction</span>
+                        </div>
+                      </div>
+                    )}
+
                     {isActive && (
                       <div className="sl-overlay">
                         <div className="sl-overlay-top">
@@ -238,13 +220,16 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
                               <span className="sl-counter-sep"> / </span>
                               {String(N).padStart(2, "0")}
                             </span>
-                            <a href="#contact" className="sl-cta" aria-label="Voir le projet">
-                              <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 13L13 3M13 3H6M13 3V10"
-                                      stroke="currentColor" strokeWidth="2.2"
-                                      strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                            </a>
+                            {/* Masquer le bouton lien si coming soon */}
+                            {!isComingSoon && (
+                              <a href="#contact" className="sl-cta" aria-label="Voir le projet">
+                                <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+                                  <path d="M3 13L13 3M13 3H6M13 3V10"
+                                        stroke="currentColor" strokeWidth="2.2"
+                                        strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              </a>
+                            )}
                           </div>
                         </div>
                         <div className="sl-overlay-bottom" key={infoKey}>

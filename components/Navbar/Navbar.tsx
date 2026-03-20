@@ -89,11 +89,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
               className="nav-brand-logo-img"
               priority
             />
-            <span
-              className={`nav-brand-text ${spaceGrotesk.className}`}
-            >
-              BY KEVIN HAFSI
-            </span>
+            
           </Link>
 
           <div className="nav-center">
