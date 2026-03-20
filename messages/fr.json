@@ -369,11 +369,13 @@
     "messagePlaceholder": "Décrivez votre projet, vos objectifs et vos contraintes…",
     "submitLabel": "Envoyer ma demande",
     "successMessage": "Message bien reçu ! Je vous réponds dans les 24 heures.",
-    "infoEmail": "hello@klentcreative.com",
+    "infoEmail": "contact@klentcreative.com",
     "infoResponseLabel": "Délai de réponse",
     "infoResponseValue": "< 24h",
     "infoAvailLabel": "Disponibilités",
-    "infoAvailValue": "Limitées ce mois"
+    "infoAvailValue": "Limitées ce mois",
+    "submitErrMessage": "Une erreur est survenue. Réessaie ou écris-moi directement à",
+    "sentTitle": "Message envoyé !"
   },
   "footer": {
     "tagline": "Création de sites web premium, applications mobiles et expériences digitales sur mesure.",
@@ -397,7 +399,7 @@
       }
     ],
     "contactLabel": "Contact",
-    "contactEmail": "hello@klentcreative.com",
+    "contactEmail": "contact@klentcreative.com",
     "contactLocation": "France",
     "legal": "© 2025 Klent Creative — Kevin Hafsi. Tous droits réservés.",
     "mentionsLabel": "Mentions légales",

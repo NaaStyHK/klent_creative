@@ -15,6 +15,8 @@ type ContactDict = {
   messagePlaceholder: string;
   submitLabel: string;
   successMessage: string;
+  sentTitle: string;
+  submitErrMessage: string;
   infoEmail: string;
   infoResponseLabel: string;
   infoResponseValue: string;
@@ -28,6 +30,7 @@ export default function Contact({ dict }: { dict: ContactDict }) {
   const [sent, setSent]           = useState(false);
   const [loading, setLoading]     = useState(false);
   const [emailErr, setEmailErr]   = useState(false);
+  const [submitErr, setSubmitErr] = useState(false);
   const [charCount, setCharCount] = useState(0);
 
   const { ref: leftRef,  inView: leftVisible  } = useInView({ threshold: 0.12 });
@@ -37,23 +40,42 @@ export default function Contact({ dict }: { dict: ContactDict }) {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd    = new FormData(e.currentTarget);
-    const email = fd.get("email") as string;
+    setSubmitErr(false);
+
+    const fd      = new FormData(e.currentTarget);
+    const name    = fd.get("name") as string;
+    const email   = fd.get("email") as string;
+    const project = fd.get("project") as string;
+    const message = fd.get("message") as string;
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setEmailErr(true);
       return;
     }
+
     setEmailErr(false);
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSent(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, project, message }),
+      });
+
+      if (!res.ok) throw new Error("Erreur serveur");
+
+      setSent(true);
+    } catch {
+      setSubmitErr(true);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
     <section id="contact" className="contact-section">
 
-      {/* Dot grid overlay */}
       <div className="contact-bg-dots" aria-hidden="true" />
 
       <div className="site-container">
@@ -62,7 +84,6 @@ export default function Contact({ dict }: { dict: ContactDict }) {
           {/* ── Gauche ── */}
           <div className="contact-info" ref={leftRef as React.RefObject<HTMLDivElement>}>
 
-            {/* Decorative vertical accent line */}
             <div className={lv("contact-deco-line fade-left")} aria-hidden="true" />
 
             <p className={lv("contact-eyebrow fade-up")}>{dict.eyebrow}</p>
@@ -78,13 +99,11 @@ export default function Contact({ dict }: { dict: ContactDict }) {
 
             <div className={lv("contact-details fade-up stagger-3")}>
 
-              {/* Email with animated arrow */}
               <a href={`mailto:${dict.infoEmail}`} className="contact-email-link">
                 <span className="contact-email-icon" aria-hidden="true">↗</span>
                 {dict.infoEmail}
               </a>
 
-              {/* Meta cards */}
               <div className="contact-meta-row">
                 <div className="contact-meta-item">
                   <span>{dict.infoResponseLabel}</span>
@@ -96,7 +115,6 @@ export default function Contact({ dict }: { dict: ContactDict }) {
                 </div>
               </div>
 
-              {/* Social pills */}
               <div className="contact-socials">
                 <a
                   href="https://linkedin.com"
@@ -123,7 +141,6 @@ export default function Contact({ dict }: { dict: ContactDict }) {
             className={`contact-form-shell fade-up stagger-2${rightVisible ? " is-visible" : ""}`}
             ref={rightRef as React.RefObject<HTMLDivElement>}
           >
-            {/* macOS-style header dots */}
             <div className="contact-form-header" aria-hidden="true">
               <span className="contact-form-dot" />
               <span className="contact-form-dot" />
@@ -147,16 +164,13 @@ export default function Contact({ dict }: { dict: ContactDict }) {
                     />
                   </svg>
                 </div>
-                <strong>Message envoyé !</strong>
+                <strong>{dict.sentTitle}</strong>
                 <p>{dict.successMessage}</p>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit} noValidate>
 
-                {/* Row — name + email */}
                 <div className="contact-form-row">
-
-                  {/* Name — floating label */}
                   <div className="contact-field">
                     <input
                       type="text"
@@ -171,7 +185,6 @@ export default function Contact({ dict }: { dict: ContactDict }) {
                     </label>
                   </div>
 
-                  {/* Email — floating label */}
                   <div className="contact-field">
                     <input
                       type="email"
@@ -191,7 +204,6 @@ export default function Contact({ dict }: { dict: ContactDict }) {
                   </div>
                 </div>
 
-                {/* Select — fixed eyebrow label */}
                 <div className="contact-select-wrap">
                   <label htmlFor="contact-project" className="contact-select-label">
                     {dict.projectLabel}
@@ -210,7 +222,6 @@ export default function Contact({ dict }: { dict: ContactDict }) {
                   </select>
                 </div>
 
-                {/* Textarea */}
                 <div className="contact-textarea-wrap">
                   <textarea
                     name="message"
@@ -226,7 +237,13 @@ export default function Contact({ dict }: { dict: ContactDict }) {
                   </span>
                 </div>
 
-                {/* Submit */}
+                {submitErr && (
+                  <p className="contact-submit-err">
+                    {dict.submitErrMessage}{" "}
+                    <a href={`mailto:${dict.infoEmail}`}>{dict.infoEmail}</a>.
+                  </p>
+                )}
+
                 <button
                   type="submit"
                   className="btn btn-primary contact-submit"
