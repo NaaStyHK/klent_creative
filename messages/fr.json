@@ -60,6 +60,19 @@
         "authorRole": "Klent Creative",
         "initials": "KH",
         "comingSoon": true
+      },
+      {
+        "slug": "DN-ESTUDIO",
+        "name": "DN Estudio",
+        "category": "Identité de marque & site web",
+        "description": "Création d'identité visuelle et de site web pour une artiste spécialisée en cils, sourcils et maquillage — une présence digitale élégante, féminine et pensée pour convertir.",
+        "image": "/projects/dn-estudio.png",
+        "hrefLabel": "Voir le projet",
+        "quote": "Une identité de marque pensée pour être reconnue instantanément, avec une vraie cohérence entre le design et le positionnement de l'artiste.",
+        "authorName": "Kevin Hafsi",
+        "authorRole": "Klent Creative",
+        "initials": "KH",
+        "comingSoon": true
       }
     ]
   },
