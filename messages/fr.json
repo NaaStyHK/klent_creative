@@ -387,5 +387,65 @@
     "legal": "© 2025 Klent Creative — Kevin Hafsi. Tous droits réservés.",
     "mentionsLabel": "Mentions légales",
     "mentionsHref": "/legale"
+  },
+  "legal": {
+    "eyebrow": "Informations légales",
+    "title": "Mentions légales",
+    "subtitle": "Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique.",
+    "sections": [
+      {
+        "title": "1. Éditeur du site",
+        "rows": [
+          { "label": "Nom commercial", "value": "Klent Creative" },
+          { "label": "Responsable de publication", "value": "Kevin Hafsi" },
+          { "label": "Statut", "value": "Micro-entrepreneur" },
+          { "label": "SIRET", "value": "101 813 863 00012" },
+          { "label": "Adresse", "value": "La Rochelle, France" },
+          { "label": "Email", "value": "contact@klentcreative.com", "isEmail": true },
+          { "label": "Site web", "value": "www.klentcreative.com" }
+        ]
+      },
+      {
+        "title": "2. Hébergement",
+        "rows": [
+          { "label": "Hébergeur", "value": "Vercel Inc." },
+          { "label": "Adresse", "value": "340 Pine Street, Suite 701, San Francisco, CA 94104, États-Unis" },
+          { "label": "Site", "value": "vercel.com" }
+        ]
+      },
+      {
+        "title": "3. Propriété intellectuelle",
+        "paragraphs": [
+          "L'ensemble du contenu de ce site — textes, visuels, logo, code source, animations et structure — est la propriété exclusive de Kevin Hafsi / Klent Creative, sauf mention contraire.",
+          "Toute reproduction, distribution, modification ou exploitation, même partielle, sans autorisation écrite préalable est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle."
+        ]
+      },
+      {
+        "title": "4. Données personnelles (RGPD)",
+        "paragraphs": [
+          "Les données collectées via le formulaire de contact (nom, email, message) sont utilisées uniquement pour répondre à vos demandes. Elles ne sont jamais revendues, partagées ou exploitées à des fins commerciales.",
+          "Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à contact@klentcreative.com."
+        ]
+      },
+      {
+        "title": "5. Cookies",
+        "paragraphs": [
+          "Ce site n'utilise pas de cookies de traçage ou publicitaires. Des cookies techniques strictement nécessaires au bon fonctionnement du site peuvent être déposés. Aucun cookie tiers à des fins marketing n'est utilisé."
+        ]
+      },
+      {
+        "title": "6. Limitation de responsabilité",
+        "paragraphs": [
+          "Klent Creative s'efforce de maintenir les informations publiées sur ce site à jour et exactes, mais ne peut garantir l'exhaustivité ou l'exactitude de ces informations. La responsabilité de Klent Creative ne saurait être engagée pour tout dommage direct ou indirect résultant de l'utilisation de ce site."
+        ]
+      },
+      {
+        "title": "7. Droit applicable",
+        "paragraphs": [
+          "Le présent site et ses mentions légales sont soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents."
+        ],
+        "note": "Dernière mise à jour : mars 2025"
+      }
+    ]
   }
 }

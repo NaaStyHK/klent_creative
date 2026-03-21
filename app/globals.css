@@ -1220,3 +1220,54 @@ main { padding-top: 102px; }
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
 }
+/* ── Mentions légales ── */
+.legal-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 32px;
+}
+
+.legal-block-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-block-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legal-row {
+  display: flex;
+  gap: 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.legal-label {
+  color: var(--text-muted);
+  min-width: 200px;
+  flex-shrink: 0;
+  font-size: 0.87rem;
+}
+
+.legal-text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+  .legal-block { padding: 20px; }
+  .legal-row { flex-direction: column; gap: 2px; }
+  .legal-label { min-width: unset; font-weight: 600; }
+}

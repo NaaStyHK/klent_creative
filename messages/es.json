@@ -387,5 +387,65 @@
     "legal": "© 2025 Klent Creative — Kevin Hafsi. Todos los derechos reservados.",
     "mentionsLabel": "Aviso legal",
     "mentionsHref": "/legale"
+  },
+  "legal": {
+    "eyebrow": "Información legal",
+    "title": "Aviso legal",
+    "subtitle": "De conformidad con la Ley n° 2004-575 de 21 de junio de 2004 para la confianza en la economía digital (legislación francesa).",
+    "sections": [
+      {
+        "title": "1. Editor del sitio",
+        "rows": [
+          { "label": "Nombre comercial", "value": "Klent Creative" },
+          { "label": "Responsable de publicación", "value": "Kevin Hafsi" },
+          { "label": "Estatuto", "value": "Autónomo (micro-empresa)" },
+          { "label": "SIRET", "value": "101 813 863 00012" },
+          { "label": "Dirección", "value": "La Rochelle, Francia" },
+          { "label": "Email", "value": "contact@klentcreative.com", "isEmail": true },
+          { "label": "Sitio web", "value": "www.klentcreative.com" }
+        ]
+      },
+      {
+        "title": "2. Alojamiento",
+        "rows": [
+          { "label": "Proveedor", "value": "Vercel Inc." },
+          { "label": "Dirección", "value": "340 Pine Street, Suite 701, San Francisco, CA 94104, Estados Unidos" },
+          { "label": "Sitio", "value": "vercel.com" }
+        ]
+      },
+      {
+        "title": "3. Propiedad intelectual",
+        "paragraphs": [
+          "Todo el contenido de este sitio — textos, visuales, logotipo, código fuente, animaciones y estructura — es propiedad exclusiva de Kevin Hafsi / Klent Creative, salvo indicación contraria.",
+          "Cualquier reproducción, distribución, modificación o explotación, incluso parcial, sin autorización escrita previa está estrictamente prohibida y constituye una infracción sancionada por el Código de Propiedad Intelectual francés."
+        ]
+      },
+      {
+        "title": "4. Datos personales (RGPD)",
+        "paragraphs": [
+          "Los datos recopilados a través del formulario de contacto (nombre, correo, mensaje) se utilizan únicamente para responder a sus solicitudes. Nunca se venden, comparten ni explotan con fines comerciales.",
+          "De conformidad con el RGPD, tiene derecho de acceso, rectificación y supresión de sus datos. Para ejercer este derecho, contáctenos en contact@klentcreative.com."
+        ]
+      },
+      {
+        "title": "5. Cookies",
+        "paragraphs": [
+          "Este sitio no utiliza cookies de seguimiento ni publicitarias. Pueden depositarse cookies técnicas estrictamente necesarias para el correcto funcionamiento del sitio. No se utilizan cookies de terceros con fines de marketing."
+        ]
+      },
+      {
+        "title": "6. Limitación de responsabilidad",
+        "paragraphs": [
+          "Klent Creative se esfuerza por mantener la información publicada en este sitio actualizada y exacta, pero no puede garantizar su exhaustividad. La responsabilidad de Klent Creative no podrá ser comprometida por ningún daño directo o indirecto resultante del uso de este sitio."
+        ]
+      },
+      {
+        "title": "7. Derecho aplicable",
+        "paragraphs": [
+          "El presente sitio y su aviso legal están sujetos al derecho francés. En caso de litigio, los tribunales franceses serán los únicos competentes."
+        ],
+        "note": "Última actualización: marzo 2025"
+      }
+    ]
   }
 }
