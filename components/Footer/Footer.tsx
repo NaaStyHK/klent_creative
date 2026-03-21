@@ -93,7 +93,7 @@ export default function Footer({ locale, dict }: FooterProps) {
         <div className="footer-divider" />
 
         <div className="footer-bottom">
-          <p>{dict.legal}</p>
+          <p>{dict.legal.replace("2025", new Date().getFullYear().toString())}</p>
           <Link href={`/${locale}${dict.mentionsHref}`} className="footer-mentions">
             {dict.mentionsLabel}
           </Link>
