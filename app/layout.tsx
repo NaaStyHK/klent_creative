@@ -24,13 +24,14 @@ export const metadata: Metadata = {
     description:
       "Sites web et apps sur mesure à La Rochelle. Design premium, code propre, livraison rapide. Indépendants, startups et PME — discutons de votre projet.",
     siteName: "Klent Creative",
-    images: [{ url: "https://www.klentcreative.com/og-image.png" }],
+    images: [{ url: "https://www.klentcreative.com/og-image.png", width: 1200, height: 630, alt: "Klent Creative — Développeur web freelance La Rochelle" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Développeur web freelance La Rochelle — Klent Creative",
     description:
       "Sites web et apps sur mesure à La Rochelle. Design premium, code propre, livraison rapide.",
+    images: ["https://www.klentcreative.com/og-image.png"],
   },
   alternates: {
     canonical: "https://www.klentcreative.com/fr",
