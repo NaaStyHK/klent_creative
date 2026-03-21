@@ -16,12 +16,11 @@ type ServicesDict = {
   addonsTitle: string; addons: string[];
 };
 
-export default function Services({ dict }: { dict?: ServicesDict }) {
+export default function Services({ dict }: { dict: ServicesDict }) {
   const [activeTab, setActiveTab] = useState<"web" | "app">("web");
   const { ref: headRef, inView: headVisible } = useInView({ threshold: 0.15 });
   const { ref: gridRef, inView: gridVisible } = useInView({ threshold: 0.1 });
 
-  if (!dict) return null;
   const cards = activeTab === "web" ? dict.web ?? [] : dict.app ?? [];
   const hv = (cls: string) => `${cls}${headVisible ? " is-visible" : ""}`;
 
@@ -76,9 +75,9 @@ export default function Services({ dict }: { dict?: ServicesDict }) {
                 <p>{card.testimonial}</p>
                 <span>{card.author}</span>
               </div>
-              <button type="button" className="service-card-cta">
+              <a href="#contact" className="service-card-cta">
                 {card.cta} <span>→</span>
-              </button>
+              </a>
               <div className="service-card-divider" />
               <div className="service-card-list-block">
                 <p className="service-card-list-title">{card.includedTitle}</p>

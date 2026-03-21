@@ -12,7 +12,7 @@
     "titleLine1": "Je conçois des",
     "titleHighlight": "expériences web",
     "titleLine3": "qui convertissent.",
-    "description": "Développeur web freelance spécialisé dans la création de sites sur mesure, d'applications mobiles et d'interfaces premium — pensés pour attirer, convaincre et convertir dès le premier scroll.",
+    "description": "Développeur web freelance basé à La Rochelle, spécialisé dans la création de sites sur mesure, d'applications mobiles et d'interfaces premium — pensés pour attirer, convaincre et convertir dès le premier scroll.",
     "ctaPrimary": "Discuter du projet",
     "ctaSecondary": "Voir mes réalisations",
     "badge": "CRÉATION DE SITES WEB & APPS SUR MESURE",
@@ -23,6 +23,7 @@
     "approachValue": "100% sur mesure",
     "stack": "Technologies",
     "impact": "Impact visuel",
+    "premiumLabel": "+ premium",
     "signature": "SIGNATURE",
     "signatureValue": "Moderne, Pro, Mémorable"
   },
@@ -31,11 +32,13 @@
     "titleLine1": "Des projets web pensés pour",
     "titleHighlight": "l'impact et la performance",
     "description": "Une sélection de sites web et applications conçus pour valoriser une marque, structurer une expérience utilisateur et produire un rendu digital haut de gamme.",
+    "comingSoonLabel": "En construction",
+    "viewProjectLabel": "Voir le projet",
     "featured": {
       "slug": "explore-lr",
       "name": "ExploreLR",
       "category": "Application mobile culturelle",
-      "description": "Application mobile développée pour valoriser la découverte culturelle de La Rochelle — une expérience fluide, intuitive et visuellement immersive, pensée pour l'utilisateur.",
+      "description": "Application mobile Flutter développée pour valoriser la découverte culturelle de La Rochelle — une expérience fluide, intuitive et visuellement immersive. Cartographie interactive, points d'intérêt locaux, interface pensée pour l'utilisateur.",
       "image": "/projects/exploreLR.png",
       "hrefLabel": "Voir le projet",
       "quote": "Une approche centrée sur l'expérience utilisateur, avec une attention particulière portée à la clarté visuelle et à la fluidité de navigation.",
@@ -295,8 +298,8 @@
     "eyebrow": "À propos",
     "titleLine1": "Kevin Hafsi,",
     "titleHighlight": "développeur web freelance.",
-    "bio1": "Développeur web freelance spécialisé dans la création de sites sur mesure, d'interfaces premium et d'applications mobiles. Mon approche combine rigueur technique, sensibilité design et vision produit.",
-    "bio2": "Basé en France, je collabore avec des indépendants, des startups et des PME qui veulent une présence digitale sérieuse, performante et à la hauteur de leurs ambitions.",
+    "bio1": "Développeur web freelance basé à La Rochelle, spécialisé dans la création de sites sur mesure, d'interfaces premium et d'applications mobiles. Mon approche combine rigueur technique, sensibilité design et vision produit.",
+    "bio2": "Basé à La Rochelle (Charente-Maritime), j'interviens pour des indépendants, des startups et des PME en Nouvelle-Aquitaine et partout en France — pour une présence digitale sérieuse, performante et à la hauteur de leurs ambitions.",
     "stackLabel": "Ma stack technique",
     "ctaLabel": "Discuter du projet",
     "stats": [
@@ -320,7 +323,7 @@
     "eyebrow": "Contact",
     "titleLine1": "Parlons de votre",
     "titleHighlight": "prochain projet web.",
-    "description": "Une idée, un brief ou une question ? Décrivez votre projet en quelques lignes ou écrivez-moi directement. Je reviens vers vous sous 24h.",
+    "description": "Une idée, un brief ou une question ? Que vous soyez basé à La Rochelle ou ailleurs en France, décrivez votre projet en quelques lignes ou écrivez-moi directement. Je reviens vers vous sous 24h.",
     "namePlaceholder": "Votre nom",
     "emailPlaceholder": "Votre adresse email",
     "projectLabel": "Type de projet",
@@ -341,7 +344,8 @@
     "infoAvailLabel": "Disponibilités",
     "infoAvailValue": "Limitées ce mois",
     "submitErrMessage": "Une erreur est survenue. Réessaie ou écris-moi directement à",
-    "sentTitle": "Message envoyé !"
+    "sentTitle": "Message envoyé !",
+    "emailInvalidMessage": "Email invalide"
   },
   "footer": {
     "tagline": "Création de sites web premium, applications mobiles et expériences digitales sur mesure.",
@@ -366,7 +370,7 @@
     ],
     "contactLabel": "Contact",
     "contactEmail": "contact@klentcreative.com",
-    "contactLocation": "France",
+    "contactLocation": "La Rochelle, France",
     "legal": "© 2025 Klent Creative — Kevin Hafsi. Tous droits réservés.",
     "mentionsLabel": "Mentions légales",
     "mentionsHref": "/legale"

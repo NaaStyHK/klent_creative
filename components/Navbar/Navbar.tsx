@@ -2,14 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Space_Grotesk } from "next/font/google";
 import { useEffect, useState } from "react";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: "300",
-  display: "swap",
-});
 
 type NavbarDict = {
   projects: string;
@@ -32,13 +25,12 @@ export default function Navbar({ locale, dict }: NavbarProps) {
 
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Scroll → navbar compacte
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Intersection Observer sur chaque section
     const observers: IntersectionObserver[] = [];
 
     SECTIONS.forEach((id) => {
@@ -52,7 +44,6 @@ export default function Navbar({ locale, dict }: NavbarProps) {
           }
         },
         {
-          // La section est "active" quand elle occupe le centre de l'écran
           rootMargin: "-40% 0px -40% 0px",
           threshold: 0,
         }
@@ -68,6 +59,16 @@ export default function Navbar({ locale, dict }: NavbarProps) {
     };
   }, []);
 
+  // Ferme le menu si on scroll
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   const navLinks = [
     { href: "#projects", label: dict.projects, id: "projects" },
     { href: "#services", label: dict.services, id: "services" },
@@ -76,51 +77,97 @@ export default function Navbar({ locale, dict }: NavbarProps) {
   ];
 
   return (
-    <header className={`topbar${scrolled ? " is-scrolled" : ""}`}>
-      <div className="site-container">
-        <nav className="nav-shell">
+    <>
+      <header className={`topbar${scrolled ? " is-scrolled" : ""}`}>
+        <div className="site-container">
+          <nav className="nav-shell">
 
-          <Link href={`/${locale}`} className="nav-brand" aria-label="Klent Creative">
-            <Image
-              src="/logo.svg"
-              alt="Klent Creative"
-              width={120}
-              height={45}
-              className="nav-brand-logo-img"
-              priority
-            />
-            
-          </Link>
+            <Link href={`/${locale}`} className="nav-brand" aria-label="Klent Creative">
+              <Image
+                src="/logo.svg"
+                alt="Klent Creative"
+                width={120}
+                height={45}
+                className="nav-brand-logo-img"
+                priority
+              />
+            </Link>
 
-          <div className="nav-center">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.id ||
-                /* fallback : "about" couvre aussi why/process */
-                (link.id === "about" && ["why", "process"].includes(activeSection));
+            <div className="nav-center">
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id ||
+                  (link.id === "about" && ["why", "process"].includes(activeSection));
 
-              return (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  className={`nav-link${isActive ? " is-active" : ""}`}
-                >
-                  {link.label}
-                </a>
-              );
-            })}
-          </div>
+                return (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    className={`nav-link${isActive ? " is-active" : ""}`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
+            </div>
 
-          <div className="nav-right">
-            <Link href={`/${switchLocale}`} className="locale-switch">
+            <div className="nav-right">
+              <Link href={`/${switchLocale}`} className="locale-switch">
+                {switchLabel}
+              </Link>
+              <a href="#contact" className="nav-button nav-button--desktop">
+                {dict.audit}
+              </a>
+              <button
+                type="button"
+                className="nav-hamburger"
+                aria-label="Menu"
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((o) => !o)}
+              >
+                <span className={`nav-hamburger-bar${menuOpen ? " is-open" : ""}`} />
+                <span className={`nav-hamburger-bar${menuOpen ? " is-open" : ""}`} />
+                <span className={`nav-hamburger-bar${menuOpen ? " is-open" : ""}`} />
+              </button>
+            </div>
+
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile menu overlay */}
+      <div
+        className={`nav-mobile-overlay${menuOpen ? " is-open" : ""}`}
+        aria-hidden={!menuOpen}
+      >
+        <div className="nav-mobile-content">
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={link.href}
+              className="nav-mobile-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="nav-mobile-bottom">
+            <Link
+              href={`/${switchLocale}`}
+              className="locale-switch"
+              onClick={() => setMenuOpen(false)}
+            >
               {switchLabel}
             </Link>
-            <a href="#contact" className="nav-button">
+            <a
+              href="#contact"
+              className="btn btn-primary"
+              onClick={() => setMenuOpen(false)}
+            >
               {dict.audit}
             </a>
           </div>
-
-        </nav>
+        </div>
       </div>
-    </header>
+    </>
   );
 }

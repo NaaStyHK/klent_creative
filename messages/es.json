@@ -23,6 +23,7 @@
     "approachValue": "100% a medida",
     "stack": "Tecnologías",
     "impact": "Impacto visual",
+    "premiumLabel": "+ premium",
     "signature": "FIRMA",
     "signatureValue": "Moderna, Profesional, Memorable"
   },
@@ -31,11 +32,13 @@
     "titleLine1": "Proyectos web pensados para",
     "titleHighlight": "el impacto y los resultados",
     "description": "Una selección de páginas web y aplicaciones diseñadas para potenciar una marca, estructurar la experiencia de usuario y ofrecer un resultado digital de alto nivel.",
+    "comingSoonLabel": "En construcción",
+    "viewProjectLabel": "Ver el proyecto",
     "featured": {
       "slug": "explore-lr",
       "name": "ExploreLR",
       "category": "Aplicación móvil cultural",
-      "description": "Aplicación móvil desarrollada para poner en valor el descubrimiento cultural de La Rochelle — una experiencia fluida, intuitiva y visualmente inmersiva, pensada para el usuario.",
+      "description": "Aplicación móvil Flutter desarrollada para poner en valor el descubrimiento cultural de La Rochelle — una experiencia fluida, intuitiva y visualmente inmersiva. Cartografía interactiva, puntos de interés locales, interfaz pensada para el usuario.",
       "image": "/projects/exploreLR.png",
       "hrefLabel": "Ver el proyecto",
       "quote": "Un enfoque centrado en la experiencia de usuario, con especial atención a la claridad visual y la fluidez de navegación.",
@@ -334,8 +337,8 @@
     "eyebrow": "Sobre mí",
     "titleLine1": "Kevin Hafsi,",
     "titleHighlight": "desarrollador web freelance.",
-    "bio1": "Desarrollador web freelance especializado en creación de páginas web a medida, interfaces premium y aplicaciones móviles. Mi enfoque combina rigor técnico, sensibilidad visual y visión de producto.",
-    "bio2": "Afincado en Francia, colaboro con autónomos, startups y pymes que quieren una presencia digital seria, de alto rendimiento y a la altura de sus ambiciones.",
+    "bio1": "Desarrollador web freelance con base en La Rochelle (Francia), especializado en creación de páginas web a medida, interfaces premium y aplicaciones móviles. Mi enfoque combina rigor técnico, sensibilidad visual y visión de producto.",
+    "bio2": "Afincado en La Rochelle (Charente-Maritime), colaboro con autónomos, startups y pymes en Nouvelle-Aquitaine y en toda Francia — para una presencia digital seria, de alto rendimiento y a la altura de sus ambiciones.",
     "stackLabel": "Mi stack técnico",
     "ctaLabel": "Hablar de mi proyecto",
     "stats": [
@@ -380,7 +383,8 @@
     "infoAvailLabel": "Disponibilidad",
     "infoAvailValue": "Limitada este mes",
     "submitErrMessage": "Ha ocurrido un error. Inténtalo de nuevo o escríbeme directamente a",
-    "sentTitle": "¡Mensaje enviado!"
+    "sentTitle": "¡Mensaje enviado!",
+    "emailInvalidMessage": "Email inválido"
   },
   "footer": {
     "tagline": "Creación de páginas web premium, aplicaciones móviles y experiencias digitales a medida.",

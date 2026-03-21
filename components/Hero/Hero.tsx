@@ -3,6 +3,24 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useInView } from "@/hooks/useInView";
 
+function useParallax(strength = 18) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const onMove = (e: MouseEvent) => {
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      const dx = (e.clientX - cx) / cx;
+      const dy = (e.clientY - cy) / cy;
+      el.style.transform = `translate(${dx * strength}px, ${dy * strength}px)`;
+    };
+    window.addEventListener("mousemove", onMove, { passive: true });
+    return () => window.removeEventListener("mousemove", onMove);
+  }, [strength]);
+  return ref;
+}
+
 type HeroDict = {
   availability: string;
   titleLine1: string;
@@ -19,6 +37,7 @@ type HeroDict = {
   approachValue: string;
   stack: string;
   impact: string;
+  premiumLabel: string;
   signature: string;
   signatureValue: string;
   capsule: string;
@@ -112,12 +131,13 @@ export default function Hero({ dict }: { dict: HeroDict }) {
 
   const v = (cls: string) => `${cls}${inView ? " is-visible" : ""}`;
   const lines = [dict.titleLine1, dict.titleHighlight, dict.titleLine3];
+  const parallaxRef = useParallax(14);
 
   return (
     <section className="hero-section">
 
       {/* Fond : lignes de code */}
-      <div className="hero-code-bg" aria-hidden="true">
+      <div className="hero-code-bg" ref={parallaxRef} aria-hidden="true">
         {CODE_LINES.map((line, i) => (
           <span
             key={i}
@@ -143,26 +163,41 @@ export default function Hero({ dict }: { dict: HeroDict }) {
             {dict.availability}
           </div>
 
-          <h1 className="hero-title">
-            {lines.map((line, i) => {
-              const isTyping = currentLine === i;
-              const isDone = displayed[i].length >= line.length;
-              const showCursor = isTyping && !isDone;
-
-              return (
+          <h1 className="hero-title" style={{ position: "relative" }}>
+            {/* Texte invisible — réserve l'espace dès le départ, évite le layout shift */}
+            <span aria-hidden="true" style={{ visibility: "hidden", display: "block" }}>
+              {lines.map((line, i) => (
                 <span key={i} className="hero-title-row">
                   <span className="hero-title-typed" style={{ color: LINE_COLORS[i] }}>
-                    {displayed[i]}
+                    {line}
                   </span>
-                  {showCursor && (
-                    <span className="typewriter-cursor-inline" style={{ color: LINE_COLORS[i] }}>
-                      |
-                    </span>
-                  )}
                   {i < lines.length - 1 && <br />}
                 </span>
-              );
-            })}
+              ))}
+            </span>
+
+            {/* Texte animé — positionné par-dessus le placeholder */}
+            <span aria-live="polite" style={{ position: "absolute", inset: 0 }}>
+              {lines.map((line, i) => {
+                const isTyping = currentLine === i;
+                const isDone = displayed[i].length >= line.length;
+                const showCursor = isTyping && !isDone;
+
+                return (
+                  <span key={i} className="hero-title-row">
+                    <span className="hero-title-typed" style={{ color: LINE_COLORS[i] }}>
+                      {displayed[i]}
+                    </span>
+                    {showCursor && (
+                      <span className="typewriter-cursor-inline" style={{ color: LINE_COLORS[i] }}>
+                        |
+                      </span>
+                    )}
+                    {i < lines.length - 1 && <br />}
+                  </span>
+                );
+              })}
+            </span>
           </h1>
 
           <p className={v("hero-description fade-up stagger-4")}>
@@ -222,7 +257,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
             <div className="mockup-card">
               <div className="mockup-impact-row">
                 <span className="mockup-muted">{dict.impact}</span>
-                <strong>+ premium</strong>
+                <strong>{dict.premiumLabel}</strong>
               </div>
               {/* Barre avec shimmer infini */}
               <div className="impact-bar">

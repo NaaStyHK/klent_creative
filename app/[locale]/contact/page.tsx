@@ -1,39 +1,23 @@
+import Navbar from "@/components/Navbar/Navbar";
+import ContactSection from "@/components/ContactSection/ContactSection";
+import Footer from "@/components/Footer/Footer";
 import { getDictionary, Locale } from "@/lib/dictionaries";
 
 type PageProps = {
-  params: {
-    locale: Locale;
-  };
+  params: Promise<{ locale: Locale }>;
 };
 
 export default async function ContactPage({ params }: PageProps) {
-  const dict = await getDictionary(params.locale);
+  const { locale } = await params;
+  const dict = await getDictionary(locale);
 
   return (
-    <main className="inner-page">
-      <div className="container narrow">
-        <span className="section-kicker">Contact</span>
-        <h1>Parlons de ton projet</h1>
-        <p className="page-intro">
-          Tu peux me contacter pour un site vitrine premium, une refonte, une
-          interface web ou une application sur mesure.
-        </p>
-
-        <div className="card form-card">
-          <form className="contact-form">
-            <input type="text" placeholder="Ton nom" />
-            <input type="email" placeholder="Ton email" />
-            <input type="text" placeholder="Sujet" />
-            <textarea
-              rows={6}
-              placeholder="Parle-moi de ton projet..."
-            />
-            <button type="submit" className="btn btn-primary">
-              Envoyer
-            </button>
-          </form>
-        </div>
-      </div>
-    </main>
+    <>
+      <Navbar locale={locale} dict={dict.navbar} />
+      <main>
+        <ContactSection dict={dict.contact} />
+      </main>
+      <Footer locale={locale} dict={dict.footer} />
+    </>
   );
 }

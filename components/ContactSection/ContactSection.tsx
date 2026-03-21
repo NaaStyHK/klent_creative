@@ -16,6 +16,7 @@ type ContactDict = {
   submitLabel: string;
   successMessage: string;
   sentTitle: string;
+  emailInvalidMessage: string;
   submitErrMessage: string;
   infoEmail: string;
   infoResponseLabel: string;
@@ -191,7 +192,7 @@ export default function Contact({ dict }: { dict: ContactDict }) {
                       {dict.emailPlaceholder}
                     </label>
                     {emailErr && (
-                      <span className="contact-email-err">Email invalide</span>
+                      <span className="contact-email-err">{dict.emailInvalidMessage}</span>
                     )}
                   </div>
                 </div>

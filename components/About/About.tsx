@@ -18,14 +18,10 @@ type AboutDict = {
   availabilityValue: string;
 };
 
-// Stack avec niveau de maîtrise (0-100) pour les barres animées
 const STACK_ITEMS = [
-  { name: "Next.js",     level: 95 },
-  { name: "TypeScript",  level: 92 },
-  { name: "Flutter",     level: 85 },
-  { name: "Figma",       level: 88 },
-  { name: "Tailwind",    level: 93 },
-  { name: "WordPress",   level: 80 },
+  "Next.js", "TypeScript", "React", "Flutter",
+  "Figma", "Tailwind CSS", "WordPress", "Node.js",
+  "Supabase", "Vercel",
 ];
 
 function parseStat(value: string): { num: number; suffix: string } {
@@ -55,32 +51,6 @@ function AnimatedStat({
   );
 }
 
-function SkillBar({
-  name, level, inView, delay,
-}: {
-  name: string; level: number; inView: boolean; delay: number;
-}) {
-  return (
-    <div
-      className={`about-skill-item fade-up${inView ? " is-visible" : ""}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div className="about-skill-head">
-        <span className="about-skill-name">{name}</span>
-        <span className="about-skill-pct">{level}%</span>
-      </div>
-      <div className="about-skill-track">
-        <div
-          className={`about-skill-fill${inView ? " is-animated" : ""}`}
-          style={{
-            width: inView ? `${level}%` : "0%",
-            transitionDelay: `${delay + 200}ms`,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
 
 export default function About({ dict }: { dict: AboutDict }) {
   if (!dict) return null;
@@ -115,18 +85,12 @@ export default function About({ dict }: { dict: AboutDict }) {
               <p className="about-bio">{dict.bio2}</p>
             </div>
 
-            {/* Stack — barres de niveau */}
+            {/* Stack — badges */}
             <div className={lv("about-stack fade-up stagger-3")}>
               <p className="about-stack-label">{dict.stackLabel}</p>
-              <div className="about-skills-list">
-                {STACK_ITEMS.map((item, i) => (
-                  <SkillBar
-                    key={item.name}
-                    name={item.name}
-                    level={item.level}
-                    inView={leftVisible}
-                    delay={i * 80}
-                  />
+              <div className="about-tech-badges">
+                {STACK_ITEMS.map((tech) => (
+                  <span key={tech} className="about-tech-badge">{tech}</span>
                 ))}
               </div>
             </div>
@@ -171,7 +135,7 @@ export default function About({ dict }: { dict: AboutDict }) {
                   <circle cx="6" cy="5" r="2.2" stroke="currentColor" strokeWidth="1.4"/>
                   <path d="M6 1C3.79 1 2 2.79 2 5c0 3 4 7 4 7s4-4 4-7c0-2.21-1.79-4-4-4z" stroke="currentColor" strokeWidth="1.4" fill="none"/>
                 </svg>
-                <span>France — UTC+1</span>
+                <span>La Rochelle, France — UTC+1</span>
               </div>
 
               {/* Séparateur */}

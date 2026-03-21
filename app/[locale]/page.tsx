@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
+import Marquee from "@/components/Marquee/Marquee";
 import Projects from "@/components/Projects/Projects";
 import Services from "@/components/services/Services";
 import Why from "@/components/Why/Why";
@@ -7,6 +8,7 @@ import Process from "@/components/Process/Process";
 import About from "@/components/About/About";
 import ContactSection from "@/components/ContactSection/ContactSection";
 import Footer from "@/components/Footer/Footer";
+import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 import { getDictionary, Locale } from "@/lib/dictionaries";
 
 type Props = {
@@ -22,6 +24,7 @@ export default async function LocaleHomePage({ params }: Props) {
       <Navbar locale={locale} dict={dict.navbar} />
       <main>
         <Hero dict={dict.hero} />
+        <Marquee />
         <Projects dict={dict.projects} />
         <Services dict={dict.services} />
         <Why dict={dict.why} />
@@ -30,6 +33,7 @@ export default async function LocaleHomePage({ params }: Props) {
         <ContactSection dict={dict.contact} />
       </main>
       <Footer locale={locale} dict={dict.footer} />
+      <ScrollToTop />
     </>
   );
 }
