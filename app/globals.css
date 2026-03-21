@@ -516,7 +516,7 @@ main { padding-top: 102px; }
 }
 
 /* ── Image ── */
-.sl-img { object-fit: cover; object-position: center top; }
+.sl-img { object-fit: contain; object-position: center center; background: #0e1a10; }
 
 /* ── Voile cartes non-actives ── */
 .sl-veil {
@@ -1194,11 +1194,12 @@ main { padding-top: 102px; }
 .sl-coming-soon {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.18);
+  backdrop-filter: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 14px 16px;
   z-index: 10;
   border-radius: inherit;
 }

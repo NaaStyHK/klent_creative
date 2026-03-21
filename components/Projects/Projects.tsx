@@ -205,8 +205,7 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
                     {isComingSoon && (
                       <div className="sl-coming-soon" aria-hidden="true">
                         <div className="sl-coming-soon-inner">
-                          <span className="sl-coming-soon-icon">🚧</span>
-                          <span className="sl-coming-soon-label">{dict.comingSoonLabel}</span>
+                              <span className="sl-coming-soon-label">{dict.comingSoonLabel}</span>
                         </div>
                       </div>
                     )}
