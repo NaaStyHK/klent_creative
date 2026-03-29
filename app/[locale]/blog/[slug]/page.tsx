@@ -6,6 +6,7 @@ import Footer from "@/components/Footer/Footer";
 import { getDictionary, Locale } from "@/lib/dictionaries";
 import { getPost, getAllPosts, formatDate } from "@/lib/blog";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import type { Metadata } from "next";
 
 type PageProps = {
@@ -108,7 +109,10 @@ export default async function ArticlePage({ params }: PageProps) {
         <div className="article-body-wrap">
           <div className="article-container">
             <article className="article-body">
-              <MDXRemote source={post.content} />
+              <MDXRemote
+                source={post.content}
+                options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+              />
             </article>
 
             {/* Author card */}
