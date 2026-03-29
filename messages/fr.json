@@ -379,6 +379,10 @@
       {
         "label": "Contact",
         "href": "#contact"
+      },
+      {
+        "label": "Blog",
+        "href": "/fr/blog"
       }
     ],
     "contactLabel": "Contact",

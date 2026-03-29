@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 type NavbarDict = {
   projects: string;
@@ -15,13 +16,16 @@ type NavbarDict = {
 type NavbarProps = {
   locale: string;
   dict: NavbarDict;
+  switchHref?: string;
 };
 
 const SECTIONS = ["projects", "services", "why", "process", "about", "contact"];
 
-export default function Navbar({ locale, dict }: NavbarProps) {
+export default function Navbar({ locale, dict, switchHref: switchHrefProp }: NavbarProps) {
   const switchLocale = locale === "fr" ? "es" : "fr";
   const switchLabel = locale === "fr" ? "ES" : "FR";
+  const pathname = usePathname();
+  const switchHref = switchHrefProp ?? pathname.replace(/^\/(fr|es)/, `/${switchLocale}`);
 
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -111,7 +115,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
             </div>
 
             <div className="nav-right">
-              <Link href={`/${switchLocale}`} className="locale-switch">
+              <Link href={switchHref} className="locale-switch">
                 {switchLabel}
               </Link>
               <a href="#contact" className="nav-button nav-button--desktop">
@@ -152,7 +156,7 @@ export default function Navbar({ locale, dict }: NavbarProps) {
           ))}
           <div className="nav-mobile-bottom">
             <Link
-              href={`/${switchLocale}`}
+              href={switchHref}
               className="locale-switch"
               onClick={() => setMenuOpen(false)}
             >
