@@ -25,6 +25,8 @@ export async function generateStaticParams() {
   return params;
 }
 
+const BASE_URL = "https://www.klentcreative.com";
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = getPost(locale, slug);
@@ -32,6 +34,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${post.title} — Klent Creative`,
     description: post.description,
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/blog/${slug}`,
+      languages: {
+        "fr": `${BASE_URL}/fr/blog/${slug}`,
+        "es": `${BASE_URL}/es/blog/${slug}`,
+        "x-default": `${BASE_URL}/fr/blog/${slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -55,8 +65,42 @@ export default async function ArticlePage({ params }: PageProps) {
     ? `/${switchLocale}/blog/${slug}`
     : `/${switchLocale}/blog`;
 
+  const articleUrl = `${BASE_URL}/${locale}/blog/${slug}`;
+
+  const blogPostingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "datePublished": post.date,
+    "url": articleUrl,
+    "author": {
+      "@type": "Person",
+      "name": "Kevin Hafsi",
+      "url": "https://www.linkedin.com/in/kevin-hafsi/",
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Klent Creative",
+      "url": BASE_URL,
+    },
+    ...(post.image ? { "image": post.image } : {}),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": isEs ? "Inicio" : "Accueil", "item": `${BASE_URL}/${locale}` },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${BASE_URL}/${locale}/blog` },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": articleUrl },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <Navbar locale={locale} dict={dict.navbar} switchHref={switchHref} />
       <main className="article-main">
 

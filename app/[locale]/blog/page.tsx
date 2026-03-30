@@ -10,14 +10,24 @@ type PageProps = {
   params: Promise<{ locale: Locale }>;
 };
 
+const BASE_URL = "https://www.klentcreative.com";
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { locale } = await params;
   const isEs = locale === "es";
   return {
     title: isEs ? "Blog — Klent Creative" : "Blog — Klent Creative",
     description: isEs
-      ? "Artículos sobre diseño web, desarrollo premium y estrategia digital."
-      : "Articles sur le design web, le développement premium et la stratégie digitale.",
+      ? "Artículos sobre diseño web, desarrollo premium y estrategia digital por Klent Creative — freelance en La Rochelle."
+      : "Conseils design web, développement premium et stratégie digitale par Klent Creative — freelance développeur web à La Rochelle.",
+    alternates: {
+      canonical: `${BASE_URL}/${locale}/blog`,
+      languages: {
+        "fr": `${BASE_URL}/fr/blog`,
+        "es": `${BASE_URL}/es/blog`,
+        "x-default": `${BASE_URL}/fr/blog`,
+      },
+    },
   };
 }
 
