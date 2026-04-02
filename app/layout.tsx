@@ -4,9 +4,9 @@ import Loader from "@/components/Loader/Loader";
 import Cursor from "@/components/Cursor/Cursor";
 
 export const metadata: Metadata = {
-  title: "Développeur web freelance La Rochelle | Sites & Apps sur mesure — Klent Creative",
+  title: "Création de site internet à La Rochelle | Klent Creative",
   description:
-    "Kevin Hafsi, développeur web freelance basé à La Rochelle. Création de sites web sur mesure, applications mobiles et interfaces premium avec Next.js. Devis gratuit sous 24h.",
+    "Développeur web à La Rochelle, j'accompagne les entreprises dans la création de sites internet modernes pour améliorer leur visibilité sur Google et attirer plus de clients.",
   keywords: [
     "développeur web freelance La Rochelle",
     "création site web La Rochelle",
