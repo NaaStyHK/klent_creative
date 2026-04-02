@@ -80,7 +80,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="fr">
+    <html lang="fr" data-scroll-behavior="smooth">
       <head>
         <script
           type="application/ld+json"

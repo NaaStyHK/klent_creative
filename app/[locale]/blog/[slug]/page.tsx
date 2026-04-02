@@ -142,6 +142,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 fill
                 className="article-hero-img"
                 priority
+                loading="eager"
                 sizes="(max-width: 760px) 100vw, 760px"
               />
               <div className="article-hero-img-overlay" />

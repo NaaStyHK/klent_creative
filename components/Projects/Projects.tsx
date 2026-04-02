@@ -196,6 +196,7 @@ export default function Projects({ dict }: { dict: ProjectsDict }) {
                       src={project.image}
                       alt={project.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, 60vw"
                       className="sl-img"
                       priority={isActive}
                     />

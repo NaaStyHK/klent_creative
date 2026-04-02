@@ -85,6 +85,8 @@ export default async function BlogPage({ params }: PageProps) {
                           fill
                           className="blog-card-img"
                           sizes="(max-width: 680px) 100vw, (max-width: 980px) 50vw, 33vw"
+                          loading={i < 2 ? "eager" : "lazy"}
+                          priority={i < 2}
                         />
                         <div className="blog-card-img-overlay" />
                       </div>
