@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Loader from "@/components/Loader/Loader";
 import Cursor from "@/components/Cursor/Cursor";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Création de site internet à La Rochelle | Klent Creative",
@@ -90,6 +91,7 @@ export default function RootLayout({
         <Cursor />
         <Loader />
         {children}
+        <Analytics />
       </body>
     </html>
   );
