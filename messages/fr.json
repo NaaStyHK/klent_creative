@@ -35,17 +35,18 @@
     "comingSoonLabel": "En développement",
     "viewProjectLabel": "Voir le projet",
     "featured": {
-      "slug": "explore-lr",
-      "name": "ExploreLR",
-      "category": "Application mobile culturelle",
-      "description": "Application mobile Flutter développée pour valoriser la découverte culturelle de La Rochelle — une expérience fluide, intuitive et visuellement immersive. Cartographie interactive, points d'intérêt locaux, interface pensée pour l'utilisateur.",
-      "image": "/projects/exploreLR.png",
+      "slug": "Oxploria-website",
+      "name": "Oxploria Web",
+      "category": "Identité de marque & site web",
+      "description": "Landing page complète développée pour présenter l'application mobile Oxploria — design immersif, blog intégré, animations soignées et expérience pensée pour convertir les visiteurs en utilisateurs.",
+      "image": "/projects/oxploria-website.png",
       "hrefLabel": "Voir le projet",
       "quote": "Une approche centrée sur l'expérience utilisateur, avec une attention particulière portée à la clarté visuelle et à la fluidité de navigation.",
       "authorName": "Kevin Hafsi",
       "authorRole": "Fondateur, Klent Creative",
       "initials": "KH",
-      "comingSoon": true
+      "href": "https://oxploria.com/fr",
+      "comingSoon": false
     },
     "items": [
       {
