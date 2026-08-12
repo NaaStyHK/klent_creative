@@ -1,0 +1,202 @@
+import type { Dictionary } from "@/lib/i18n/dictionary";
+
+export const en: Dictionary = {
+  meta: {
+    home: {
+      title: "KLENT — Creative Studio | Branding, Web Design & Development",
+      description:
+        "Independent creative studio. We build brands, websites and mobile apps for ambitious companies in France, Spain and Argentina.",
+    },
+  },
+  nav: {
+    work: "Work",
+    services: "Services",
+    studio: "Studio",
+    cta: "Start a project ↗︎",
+  },
+  hero: {
+    kickerLeft: ["Independent creative studio", "Barcelona / Worldwide"],
+    kickerRight: ["Strategy / Identity / Digital", "Development / Growth"],
+    titleLines: ["Ideas", "con forma.", "Marcas", "con identidad."],
+    copy: "Identidad, diseño y desarrollo para marcas que quieren hacer las cosas distinto.",
+    status: "DISPONIBLES PARA PROYECTOS SELECCIONADOS",
+    scroll: "Scroll ↓",
+  },
+  ticker: "Identidad ✦ Digital ✦ Desarrollo ✦ Estrategia ✦ Contenido ✦ Crecimiento ✦",
+  agencyIntro: {
+    left: "SOCIO CREATIVO PARA MARCAS CON ",
+    leftStrong: "ALGO QUE DECIR.",
+    right: "BRANDING / DIGITAL / DESARROLLO / CRECIMIENTO — ",
+    rightStrong: "LA ROCHELLE / BARCELONA / INTERNACIONAL.",
+  },
+  work: {
+    eyebrow: "(01) PROYECTOS CON IDENTIDAD.",
+    headline: ["Se ve bien.", "Porque está bien pensado."],
+    description: "Una selección de proyectos, marcas y experiencias digitales que llevamos de la idea a la pantalla.",
+    cases: [
+      {
+        slug: "sin-amor-no",
+        cursor: "View project",
+        index: "01 / Hospitality",
+        name: ["Sin Amor", "No"],
+        desc: "A bold digital identity and conversion-focused website for a hospitality concept with a strong cultural point of view.",
+        tags: ["Branding", "Web Design", "Development"],
+        link: "View case study",
+        image:
+          "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85",
+        alt: "Restaurant branding concept",
+      },
+      {
+        slug: "manna",
+        cursor: "View project",
+        index: "02 / Hospitality",
+        name: ["Mannà", ""],
+        desc: "An editorial identity, a living menu and a digital experience designed to turn visits into direct bookings.",
+        tags: ["Art direction", "UX/UI", "Development"],
+        link: "View case study",
+        image: "/projects/manna/hero.jpeg",
+        alt: "Mannà, a neighbourhood restaurant in Poblenou",
+      },
+      {
+        slug: "north-club",
+        cursor: "Explore",
+        index: "03 / Culture",
+        name: ["North", "Club"],
+        desc: "An expressive visual system for a nightlife and culture brand built to live across social, campaigns and events.",
+        tags: ["Identity", "Campaign", "Social"],
+        link: "View case study",
+        image:
+          "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1800&q=85",
+        alt: "Culture and events brand concept",
+      },
+    ],
+  },
+  statement: {
+    kicker: "Not another digital agency.",
+    lines: [["No hacemos"], ["lo de ", { outline: "siempre." }], ["Y se nota."]],
+    copy: "Antes de diseñar, pensamos. Antes de construir, encontramos la idea. Porque una marca no se define por seguir lo que está de moda, sino por tener una identidad propia. Creamos sistemas visuales, sitios web y experiencias digitales donde cada decisión tiene un propósito y cada detalle suma a una misma historia.",
+    spinmark: "KLENT • CREATIVE • STUDIO •",
+  },
+  kineticBand: {
+    text: "Strategy before decoration",
+    emphasis: "Ideas before trends",
+    tail: "Design with purpose",
+  },
+  services: {
+    eyebrow: "(02) Capabilities",
+    headline: "Ideas que toman forma.",
+    items: [
+      {
+        num: "01",
+        title: "Brand Strategy",
+        desc: "Encontramos qué hace única a tu marca y lo convertimos en una identidad con dirección, personalidad y un lenguaje propio.",
+        href: "/branding",
+        cta: "Ver especialidad",
+      },
+      {
+        num: "02",
+        title: "Digital Design & Websites",
+        desc: "Diseñamos sitios donde la identidad cobra vida: estructura, narrativa, interacción y experiencia pensadas desde el primer scroll.",
+        href: "/web-design-development",
+        cta: "Ver especialidad",
+      },
+      {
+        num: "03",
+        title: "Mobile Apps & Engineering",
+        desc: "Construimos productos digitales a medida, desde aplicaciones móviles hasta plataformas y herramientas pensadas para crecer.",
+        href: "/mobile-app-development",
+        cta: "Ver especialidad",
+      },
+      {
+        num: "04",
+        title: "Growth & Content",
+        desc: "Extendemos la identidad al mundo digital con contenido, SEO y campañas que conectan la marca con nuevas audiencias.",
+        href: "/growth-content-marketing",
+        cta: "Ver especialidad",
+      },
+    ],
+  },
+  manifesto: {
+    kicker: "Our rule",
+    word: ["No", "safe", "ideas."],
+    tagline: "Memorable beats acceptable.",
+    note: "Para marcas que no buscan encajar, sino encontrar su propia forma de existir.",
+  },
+  metrics: [
+    { value: "0", count: 3, label: ["IDEAS", "Exploradas hasta encontrar la dirección."] },
+    { value: "0", count: 4, label: ["DISCIPLINAS", "Branding / Digital / Dev / Crecimiento"] },
+    { value: "0", count: 1, label: ["DIRECCIÓN", "De la idea al lanzamiento."] },
+    { value: "∞", label: ["EVOLUCIÓN", "Una marca nunca deja de moverse."] },
+  ],
+  process: {
+    eyebrow: "(03) Process",
+    headline: "De la idea\na algo real",
+    steps: [
+      {
+        num: "01 / DESCUBRIR",
+        title: "Entender antes de crear.",
+        desc: "Nos metemos en el contexto de tu proyecto: qué hacés, para quién, dónde estás y hacia dónde querés ir. Buscamos lo que hace diferente a tu marca y encontramos la idea que vale la pena desarrollar.",
+      },
+      {
+        num: "02 / DEFINIR",
+        title: "Encontrar una dirección.",
+        desc: "Convertimos lo que descubrimos en una dirección clara. Definimos estrategia, identidad, lenguaje visual y experiencia para que todo tenga un mismo sentido.",
+      },
+      {
+        num: "03 / CONSTRUIR",
+        title: "Hacer que suceda.",
+        desc: "Pasamos de la idea a la ejecución. Diseñamos y desarrollamos cada pieza con atención al detalle, desde la identidad hasta la última interacción digital.",
+      },
+      {
+        num: "04 / EVOLUCIONAR",
+        title: "Seguir avanzando.",
+        desc: "Una marca no termina cuando se lanza. Observamos cómo funciona, aprendemos de lo que pasa y ajustamos lo necesario para que siga creciendo y evolucionando.",
+      },
+    ],
+  },
+  cta: {
+    kicker: "¿TENÉS UN PROYECTO EN MENTE?",
+    headlineLines: ["HAGAMOS QUE", "LA IDEA", "SUCEDA."],
+    button: "Start a project ↗︎",
+  },
+  footer: {
+    tagline: "KLENT CREATIVE — LA ROCHELLE / BARCELONA / INTERNATIONAL\nDESIGN STUDIO FOR BRANDS WITH SOMETHING TO SAY.",
+    legal: "Legal notice",
+    copyright: "© 2026",
+  },
+  loader: { brand: "KLENT CREATIVE" },
+  workPage: {
+    metaTitle: "Work — KLENT Creative Studio",
+    metaDescription: "A selection of creative concepts by KLENT: branding, websites and brand identity.",
+    eyebrow: "PROYECTOS",
+    h1: "IDEAS QUE TOMARON FORMA.",
+    intro: "Una selección de proyectos, identidades y experiencias digitales creadas por Klent.",
+    conceptTag: "Concept",
+    backToWork: "← Back to work",
+    viewProject: "View project",
+  },
+  blog: {
+    metaTitle: "Blog — KLENT Creative Studio",
+    metaDescription: "Insights on branding, web design and mobile apps from the KLENT team.",
+    eyebrow: "Blog",
+    h1: "Notes from the studio.",
+    intro: "Thoughts on branding, web design, mobile apps and growing an ambitious business.",
+    empty: "English articles are coming soon. In the meantime, check out our French blog.",
+    readArticle: "Read article",
+    backToBlog: "← Back to blog",
+    relatedServiceIntro: "Related service",
+    minRead: "min read",
+  },
+  contact: {
+    metaTitle: "Contact — KLENT Creative Studio",
+    metaDescription: "Get in touch with KLENT. Tell us about your branding, website or mobile app project.",
+    eyebrow: "Contact",
+    h1: "Let's talk about your project.",
+    intro:
+      "Whether you already have a clear brief or just a rough idea, tell us what you're trying to build — we'll get back to you within two business days.",
+    emailLabel: "Email us",
+    locationLabel: "Based in",
+    location: "Barcelona / Worldwide",
+    socialLabel: "Follow along",
+  },
+};
