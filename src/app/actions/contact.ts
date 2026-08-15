@@ -3,6 +3,12 @@
 import { Resend } from "resend";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import {
+  normalise,
+  normaliseMessage,
+  validateContact,
+  type ContactErrors,
+} from "@/lib/contact-validation";
 
 /**
  * Where enquiries land. Kept separate from the "from" address: Resend will
@@ -15,7 +21,7 @@ const FROM = "Klent Creative <contact@klentcreative.com>";
 export type ContactState = {
   status: "idle" | "success" | "error";
   /** Field-level messages, keyed by input name. */
-  errors?: Partial<Record<"name" | "email" | "message", string>>;
+  errors?: ContactErrors;
   /** Echoed back so the form can repopulate after a failed submit. */
   values?: Record<string, string>;
 };
@@ -80,21 +86,26 @@ export async function sendContact(
   // state rather than an error means the bot has no signal to adapt to.
   if (get("website")) return { status: "success" };
 
-  const errors: ContactState["errors"] = {};
-  if (!values.name) errors.name = t.required.name;
-  if (!values.email) errors.email = t.required.email;
-  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(values.email)) errors.email = t.required.emailInvalid;
-  if (!values.message) errors.message = t.required.message;
-  else if (values.message.length < 20) errors.message = t.required.messageShort;
-
+  // Same rules the browser ran, re-run here because those can be bypassed.
+  const errors = validateContact(values, t);
   if (Object.keys(errors).length) return { status: "error", errors, values };
+
+  // Only the sanitised forms go any further: control characters are stripped
+  // so nothing can smuggle a newline into the subject line, and whitespace is
+  // collapsed so the email reads cleanly.
+  values.name = normalise(values.name);
+  values.email = normalise(values.email);
+  values.company = normalise(values.company);
+  values.message = normaliseMessage(values.message);
 
   // Trusting the client here would let anyone post arbitrary strings straight
   // into the notification email.
   const { headers } = await import("next/headers");
   const head = await headers();
   const ip = head.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
-  if (rateLimited(ip)) return { status: "error", values };
+  if (rateLimited(ip)) {
+    return { status: "error", errors: { message: t.required.tooMany }, values };
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {

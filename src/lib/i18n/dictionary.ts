@@ -171,9 +171,17 @@ export type ContactForm = {
   privacy: string;
   required: {
     name: string;
+    nameShort: string;
+    nameDigits: string;
+    nameInvalid: string;
+    nameLong: string;
     email: string;
     emailInvalid: string;
+    companyLong: string;
     message: string;
     messageShort: string;
+    messageLong: string;
+    /** Shown when the per-IP submission limit is hit. */
+    tooMany: string;
   };
 };

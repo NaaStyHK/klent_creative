@@ -4,6 +4,7 @@ import { useActionState, useEffect, useRef, useState } from "react";
 import type { Locale } from "@/lib/i18n/config";
 import type { ContactForm as Strings } from "@/lib/i18n/dictionary";
 import { sendContact, type ContactState } from "@/app/actions/contact";
+import { LIMITS, validateContact, type ContactErrors } from "@/lib/contact-validation";
 
 const INITIAL: ContactState = { status: "idle" };
 
@@ -11,6 +12,48 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
   const [state, action, pending] = useActionState(sendContact, INITIAL);
   const [isProject, setIsProject] = useState(true);
   const statusRef = useRef<HTMLParagraphElement>(null);
+
+  /**
+   * Client-side copy of the same rules the server runs. It exists purely so a
+   * mistyped address is flagged on the spot rather than after a round trip;
+   * the server still re-validates everything and remains the authority.
+   */
+  const [clientErrors, setClientErrors] = useState<ContactErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const readValues = (form: HTMLFormElement) => {
+    const data = new FormData(form);
+    const str = (key: string) => String(data.get(key) ?? "");
+    return {
+      name: str("name"),
+      email: str("email"),
+      company: str("company"),
+      message: str("message"),
+    };
+  };
+
+  /** Re-checks one field on blur, and only surfaces errors for fields already left. */
+  const handleBlur = (field: keyof ContactErrors) => (event: React.FocusEvent<HTMLElement>) => {
+    const form = event.currentTarget.closest("form");
+    if (!form) return;
+    const next = validateContact(readValues(form), t);
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    setClientErrors((prev) => ({ ...prev, [field]: next[field] }));
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const found = validateContact(readValues(event.currentTarget), t);
+    if (Object.keys(found).length) {
+      // Blocks the action so an invalid submission never reaches the network.
+      event.preventDefault();
+      setClientErrors(found);
+      setTouched({ name: true, email: true, company: true, message: true });
+      const first = event.currentTarget.querySelector<HTMLElement>("[aria-invalid='true']");
+      first?.focus();
+      return;
+    }
+    setClientErrors({});
+  };
 
   // Move focus to the outcome once the server answers. Without this a screen
   // reader user submits and hears nothing: the button stays where it is and
@@ -31,10 +74,12 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
   }
 
   const v = state.values ?? {};
+  const shown = (field: keyof ContactErrors) =>
+    (touched[field] ? clientErrors[field] : undefined) ?? state.errors?.[field];
   const failedWithoutFieldErrors = state.status === "error" && !state.errors;
 
   return (
-    <form className="contact-form" action={action} noValidate>
+    <form className="contact-form" action={action} onSubmit={handleSubmit} noValidate>
       <input type="hidden" name="locale" value={locale} />
 
       {/* Honeypot. Hidden from sight and from assistive tech, and skipped by
@@ -123,12 +168,14 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
             type="text"
             autoComplete="name"
             defaultValue={v.name ?? ""}
-            aria-describedby={state.errors?.name ? "name-error" : undefined}
-            aria-invalid={state.errors?.name ? true : undefined}
+            maxLength={LIMITS.name.max}
+            onBlur={handleBlur("name")}
+            aria-describedby={shown("name") ? "name-error" : undefined}
+            aria-invalid={shown("name") ? true : undefined}
           />
-          {state.errors?.name && (
-            <p className="contact-error" id="name-error">
-              {state.errors.name}
+          {shown("name") && (
+            <p className="contact-error" id="name-error" role="alert">
+              {shown("name")}
             </p>
           )}
         </div>
@@ -142,12 +189,14 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
             type="email"
             autoComplete="email"
             defaultValue={v.email ?? ""}
-            aria-describedby={state.errors?.email ? "email-error" : undefined}
-            aria-invalid={state.errors?.email ? true : undefined}
+            maxLength={LIMITS.email.max}
+            onBlur={handleBlur("email")}
+            aria-describedby={shown("email") ? "email-error" : undefined}
+            aria-invalid={shown("email") ? true : undefined}
           />
-          {state.errors?.email && (
-            <p className="contact-error" id="email-error">
-              {state.errors.email}
+          {shown("email") && (
+            <p className="contact-error" id="email-error" role="alert">
+              {shown("email")}
             </p>
           )}
         </div>
@@ -163,7 +212,16 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
           type="text"
           autoComplete="organization"
           defaultValue={v.company ?? ""}
+          maxLength={LIMITS.company.max}
+          onBlur={handleBlur("company")}
+          aria-describedby={shown("company") ? "company-error" : undefined}
+          aria-invalid={shown("company") ? true : undefined}
         />
+        {shown("company") && (
+          <p className="contact-error" id="company-error" role="alert">
+            {shown("company")}
+          </p>
+        )}
       </div>
 
       <div className="contact-field">
@@ -175,13 +233,15 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
           name="message"
           rows={6}
           defaultValue={v.message ?? ""}
+          maxLength={LIMITS.message.max}
+          onBlur={handleBlur("message")}
           placeholder={isProject ? t.messagePlaceholderProject : t.messagePlaceholderQuestion}
-          aria-describedby={state.errors?.message ? "message-error" : undefined}
-          aria-invalid={state.errors?.message ? true : undefined}
+          aria-describedby={shown("message") ? "message-error" : undefined}
+          aria-invalid={shown("message") ? true : undefined}
         />
-        {state.errors?.message && (
-          <p className="contact-error" id="message-error">
-            {state.errors.message}
+        {shown("message") && (
+          <p className="contact-error" id="message-error" role="alert">
+            {shown("message")}
           </p>
         )}
       </div>
