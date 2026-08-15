@@ -89,6 +89,8 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      <p className="contact-required-note mono">{t.requiredNote}</p>
+
       <fieldset className="contact-field contact-field--choice">
         <legend className="contact-label mono">{t.intentLabel}</legend>
         <div className="contact-radios">
@@ -160,12 +162,13 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
       <div className="contact-row">
         <div className="contact-field">
           <label className="contact-label mono" htmlFor="name">
-            {t.nameLabel}
+            {t.nameLabel} <span className="contact-required" aria-hidden="true">*</span>
           </label>
           <input
             id="name"
             name="name"
             type="text"
+            required
             autoComplete="name"
             defaultValue={v.name ?? ""}
             maxLength={LIMITS.name.max}
@@ -181,12 +184,13 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
         </div>
         <div className="contact-field">
           <label className="contact-label mono" htmlFor="email">
-            {t.emailLabel}
+            {t.emailLabel} <span className="contact-required" aria-hidden="true">*</span>
           </label>
           <input
             id="email"
             name="email"
             type="email"
+            required
             autoComplete="email"
             defaultValue={v.email ?? ""}
             maxLength={LIMITS.email.max}
@@ -226,12 +230,13 @@ export default function ContactForm({ locale, t }: { locale: Locale; t: Strings 
 
       <div className="contact-field">
         <label className="contact-label mono" htmlFor="message">
-          {t.messageLabel}
+          {t.messageLabel} <span className="contact-required" aria-hidden="true">*</span>
         </label>
         <textarea
           id="message"
           name="message"
           rows={6}
+          required
           defaultValue={v.message ?? ""}
           maxLength={LIMITS.message.max}
           onBlur={handleBlur("message")}

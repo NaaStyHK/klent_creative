@@ -159,6 +159,8 @@ export type ContactForm = {
   emailLabel: string;
   companyLabel: string;
   optional: string;
+  /** Legend explaining the asterisk, e.g. "* Champs obligatoires". */
+  requiredNote: string;
   messageLabel: string;
   messagePlaceholderProject: string;
   messagePlaceholderQuestion: string;

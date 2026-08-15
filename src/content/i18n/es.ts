@@ -224,6 +224,7 @@ export const es: Dictionary = {
       emailLabel: "Email",
       companyLabel: "Empresa",
       optional: "opcional",
+      requiredNote: "* Campos obligatorios",
       messageLabel: "Vuestro mensaje",
       messagePlaceholderProject:
         "Contadnos el proyecto: a qué os dedicáis, a quién os dirigís y qué esperáis del resultado.",

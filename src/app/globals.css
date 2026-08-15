@@ -2225,3 +2225,12 @@ html{
 @media (max-width:850px){
   .case-study-cover--banner{height:24vw;min-height:105px}
 }
+
+/* NEW: required-field marker. The asterisk is decorative — the `required`
+   attribute is what assistive tech announces — so it is aria-hidden and given
+   the acid accent purely as a visual cue. */
+.contact-required{color:#a3261c;margin-left:1px}
+.contact-required-note{
+  margin:0 0 2px;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);opacity:.85;
+}
