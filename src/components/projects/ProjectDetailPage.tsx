@@ -29,20 +29,40 @@ export default function ProjectDetailPage({
       ? {
           year: "Année", location: "Localisation", scope: "Périmètre", status: "Statut",
           symbol: "Symbole compact / Avatar / Sceau", allProjects: "Voir tous les projets ↗",
+          typeDisplayNote: "Typographie display — caractère & émotion",
+          typeFunctionalNote: "Typographie fonctionnelle — précision & lisibilité",
         }
       : locale === "en"
         ? {
             year: "Year", location: "Location", scope: "Scope", status: "Status",
             symbol: "Compact symbol / Avatar / Stamp", allProjects: "View all projects ↗",
+            typeDisplayNote: "Display typeface — character & emotion",
+            typeFunctionalNote: "Functional typeface — precision & legibility",
           }
         : {
             year: "Año", location: "Ubicación", scope: "Alcance", status: "Estado",
             symbol: "Símbolo compacto / Avatar / Sello", allProjects: "Ver todos los proyectos ↗",
+            typeDisplayNote: "Tipografía display — carácter y emoción",
+            typeFunctionalNote: "Tipografía funcional — precisión y legibilidad",
+          };
+    const oxploriaLogoLabels = locale === "fr"
+      ? {
+          primary: "Version principale / Blanc et jaune sur noir",
+          secondary: "Version secondaire / Noir et jaune sur blanc",
+        }
+      : locale === "en"
+        ? {
+            primary: "Primary version / White and yellow on black",
+            secondary: "Secondary version / Black and yellow on white",
+          }
+        : {
+            primary: "Versión principal / Blanco y amarillo sobre negro",
+            secondary: "Versión secundaria / Negro y amarillo sobre blanco",
           };
 
     return (
       <article
-        className={`case-study${study.abstractCover ? " case-study--abstract" : ""}`}
+        className={`case-study${study.abstractCover ? " case-study--abstract" : ""}${study.variant ? ` case-study--${study.variant}` : ""}`}
         style={{
           "--case-red": study.theme.primary,
           "--case-cream": study.theme.secondary,
@@ -97,9 +117,11 @@ export default function ProjectDetailPage({
           ) : (
             <Image src={content.image} alt={content.alt} fill sizes="100vw" priority />
           )}
-          <div className="case-study-cover-mark" aria-hidden="true">
-            {study.logoLines.map((line) => <span key={line}>{line}</span>)}
-          </div>
+          {study.variant !== "oxploria" && (
+            <div className="case-study-cover-mark" aria-hidden="true">
+              {study.logoLines.map((line) => <span key={line}>{line}</span>)}
+            </div>
+          )}
           <figcaption className="mono">{study.coverCaption}</figcaption>
         </figure>
 
@@ -124,19 +146,29 @@ export default function ProjectDetailPage({
             <div className={`brand-logo-board${study.logo ? " brand-logo-board--asset" : ""}`}>
               {study.logo ? (
                 <div className="brand-logo-asset">
-                  <Image src={study.logo} alt={`Logo ${content.name.join(" ")}`} fill sizes="(max-width: 850px) 80vw, 50vw" />
+                  <Image
+                    src={study.variant === "oxploria" ? "/projects/oxploria/logo-oxploria-white-yellow-v3.svg" : study.logo}
+                    alt={`Logo ${content.name.join(" ")}`}
+                    fill
+                    sizes="(max-width: 850px) 80vw, 50vw"
+                  />
                 </div>
               ) : (
                 <div className="brand-logo-lockup" aria-label={content.name.join(" ")}>
                   {study.logoLines.map((line) => <span key={line}>{line}</span>)}
                 </div>
               )}
-              <p className="mono">{study.logoNote}</p>
+              <p className="mono">{study.variant === "oxploria" ? oxploriaLogoLabels.primary : study.logoNote}</p>
             </div>
             <div className={`brand-symbol-board${study.logo && !study.symbolLetters ? " brand-symbol-board--logo" : ""}`} aria-label={study.symbolLetters ? `Símbolo ${study.symbolLetters.join("")}` : `Versión negra del logo ${content.name.join(" ")}`}>
               {study.logo && !study.symbolLetters ? (
                 <div className="brand-logo-asset brand-logo-asset--black">
-                  <Image src={study.logo} alt={`Logo negro ${content.name.join(" ")}`} fill sizes="(max-width: 850px) 80vw, 30vw" />
+                  <Image
+                    src={study.variant === "oxploria" ? "/projects/oxploria/logo-oxploria-dark-yellow.svg" : study.logo}
+                    alt={`Logo negro ${content.name.join(" ")}`}
+                    fill
+                    sizes="(max-width: 850px) 80vw, 30vw"
+                  />
                 </div>
               ) : study.symbolLetters ? (
                 <div className="brand-symbol">
@@ -145,7 +177,17 @@ export default function ProjectDetailPage({
               ) : (
                 <div className="brand-symbol-phrase">{study.voiceLines[0]}</div>
               )}
-              <p className="mono">{study.logo && !study.symbolLetters ? (locale === "fr" ? "Version monochrome / Noir sur blanc" : locale === "en" ? "Monochrome version / Black on white" : "Versión monocroma / Negro sobre blanco") : caseLabels.symbol}</p>
+              <p className="mono">
+                {study.logo && !study.symbolLetters
+                  ? study.variant === "oxploria"
+                    ? oxploriaLogoLabels.secondary
+                    : locale === "fr"
+                      ? "Version monochrome / Noir sur blanc"
+                      : locale === "en"
+                        ? "Monochrome version / Black on white"
+                        : "Versión monocroma / Negro sobre blanco"
+                  : caseLabels.symbol}
+              </p>
             </div>
           </div>
 
@@ -167,7 +209,7 @@ export default function ProjectDetailPage({
               <div className="type-specimen type-specimen--fraunces">
                 <div className="type-specimen-heading">
                   <span className="mono">{study.typePrimaryLabel}</span>
-                  <p>Typographie display — caractère &amp; émotion</p>
+                  <p>{caseLabels.typeDisplayNote}</p>
                 </div>
                 <div className="type-specimen-layout">
                   <div className="type-specimen-glyph">Aa<small>Aa</small></div>
@@ -196,7 +238,7 @@ export default function ProjectDetailPage({
               <div className="type-specimen type-specimen--inter">
                 <div className="type-specimen-heading">
                   <span className="mono">{study.typeSecondaryLabel}</span>
-                  <p>Typographie fonctionnelle — précision &amp; lisibilité</p>
+                  <p>{caseLabels.typeFunctionalNote}</p>
                 </div>
                 <div className="type-specimen-layout">
                   <div className="type-specimen-glyph">Aa<small>Aa</small></div>
@@ -299,7 +341,7 @@ export default function ProjectDetailPage({
               <span className="application-caption mono">{study.applicationTwo.caption}</span>
             </div>
             <figure className="application-photo">
-              <Image src={content.image} alt="Aplicación de la identidad Sin Amor No" fill sizes="(max-width: 850px) 100vw, 66vw" />
+              <Image src={content.image} alt={content.alt} fill sizes="(max-width: 850px) 100vw, 66vw" />
               <div className="application-photo-copy">
                 {study.applicationPhoto.lines.map((line) => <span key={line}>{line}</span>)}
               </div>
@@ -310,15 +352,16 @@ export default function ProjectDetailPage({
         </section>
 
         <section className="case-study-digital">
-          <div className="case-study-section-head reveal-up">
-            <p className="case-study-eyebrow mono">{study.digitalEyebrow}</p>
-            <div>
-              <h2>{study.digitalTitle}</h2>
-              <p>{study.digitalBody}</p>
+          <div className="case-study-digital-layout">
+            <div className="case-study-section-head reveal-up">
+              <p className="case-study-eyebrow mono">{study.digitalEyebrow}</p>
+              <div>
+                <h2>{study.digitalTitle}</h2>
+                <p>{study.digitalBody}</p>
+              </div>
             </div>
-          </div>
 
-          <div className={`digital-browser${study.digitalScreenshot ? " digital-browser--screenshot" : ""}`}>
+            <div className={`digital-browser${study.digitalScreenshot ? " digital-browser--screenshot" : ""}`}>
             {!study.digitalScreenshot && (
               <div className="digital-browser-bar mono"><span>{study.digitalMockup.url}</span><span>{study.digitalMockup.nav}</span></div>
             )}
@@ -351,10 +394,11 @@ export default function ProjectDetailPage({
                   )}
                 </div>
                 <div className="digital-browser-image">
-                  <Image src={content.image} alt="Dirección digital Sin Amor No" fill sizes="50vw" />
+                  <Image src={content.image} alt={content.alt} fill sizes="50vw" />
                 </div>
               </div>
             )}
+            </div>
           </div>
         </section>
 

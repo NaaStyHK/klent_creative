@@ -1,14 +1,7 @@
 import { locales, defaultLocale, hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
 
-/**
- * The first three case studies are illustrative concepts, not real client work.
- * Mannà is a real client project and is labelled as such in its content.
- * (the mockup's own metrics section says "3 featured concepts in this
- * prototype"). Every project page carries a visible disclaimer — see
- * ProjectContent.conceptNote. Do not remove that note; it's what keeps this
- * honest rather than presenting fake work as real client references.
- */
-export const projectSlugs = ["manna", "sin-amor-no", "casa-brava", "north-club"] as const;
+/** Oxploria and Mannà are the studio's two published client projects. */
+export const projectSlugs = ["oxploria", "manna"] as const;
 export type ProjectSlug = (typeof projectSlugs)[number];
 
 /** URL slug for the listing page ("Work"), per locale. Brand names in the

@@ -36,6 +36,8 @@ export type Dictionary = {
   };
   nav: {
     work: string;
+    menuOpen: string;
+    menuClose: string;
     services: string;
     studio: string;
     cta: string;
@@ -46,7 +48,6 @@ export type Dictionary = {
     titleLines: string[];
     copy: string;
     status: string;
-    scroll: string;
   };
   ticker: string;
   agencyIntro: { left: string; leftStrong: string; right: string; rightStrong: string };
@@ -115,6 +116,9 @@ export type Dictionary = {
     backToBlog: string;
     relatedServiceIntro: string;
     minRead: string;
+    allArticles: string;
+    backToBlogIndex: string;
+    categoryMetaSuffix: string;
   };
   contact: {
     metaTitle: string;
@@ -123,6 +127,9 @@ export type Dictionary = {
     h1: string;
     intro: string;
     emailLabel: string;
+    phoneLabel: string;
+    phoneFrance: string;
+    phoneSpain: string;
     locationLabel: string;
     location: string;
     socialLabel: string;

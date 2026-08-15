@@ -25,6 +25,7 @@ export type ProjectContent = {
     symbolLetters?: string[];
     logo?: string;
     abstractCover?: boolean;
+    variant?: "oxploria";
     coverCaption: string;
     conceptEyebrow: string;
     conceptTitle: string;

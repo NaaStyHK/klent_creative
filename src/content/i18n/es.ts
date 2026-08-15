@@ -10,17 +10,18 @@ export const es: Dictionary = {
   },
   nav: {
     work: "Proyectos",
+    menuOpen: "Abrir el menú",
+    menuClose: "Cerrar el menú",
     services: "Servicios",
     studio: "Estudio",
     cta: "Empezar un proyecto ↗︎",
   },
   hero: {
-    kickerLeft: ["Estudio creativo independiente", "Barcelona / Internacional"],
+    kickerLeft: ["Estudio creativo independiente", "La Rochelle / Barcelona / Internacional"],
     kickerRight: ["Estrategia / Identidad / Digital", "Desarrollo / Crecimiento"],
     titleLines: ["Ideas", "con forma.", "Marcas", "con identidad."],
     copy: "Identidad, diseño y desarrollo para marcas que quieren hacer las cosas distinto.",
     status: "DISPONIBLES PARA PROYECTOS SELECCIONADOS",
-    scroll: "Desplazad ↓",
   },
   ticker: "Identidad ✦ Digital ✦ Desarrollo ✦ Estrategia ✦ Contenido ✦ Crecimiento ✦",
   agencyIntro: {
@@ -35,39 +36,26 @@ export const es: Dictionary = {
     description: "Una selección de proyectos, marcas y experiencias digitales que llevamos de la idea a la pantalla.",
     cases: [
       {
-        slug: "sin-amor-no",
+        slug: "oxploria",
         cursor: "Ver proyecto",
-        index: "01 / Hostelería",
-        name: ["Sin Amor", "No"],
-        desc: "Una identidad digital atrevida y un sitio web orientado a conversión para un concepto de hostelería con una fuerte mirada cultural.",
-        tags: ["Branding", "Diseño web", "Desarrollo"],
+        index: "01 / Cultura / Aplicación",
+        name: ["Oxploria", ""],
+        desc: "Una aplicación Flutter y un sitio Next.js para descubrir la historia, los monumentos y los lugares cercanos.",
+        tags: ["Flutter", "Next.js", "UX/UI", "Desarrollo de la A a la Z"],
         link: "Ver caso de estudio",
-        image:
-          "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85",
-        alt: "Concepto de branding para restaurante",
+        image: "/projects/oxploria/app-hero.webp",
+        alt: "Aplicación cultural Oxploria",
       },
       {
         slug: "manna",
         cursor: "Ver proyecto",
         index: "02 / Restauración",
         name: ["Mannà", ""],
-        desc: "Una identidad editorial, una carta viva y una experiencia digital pensada para convertir las visitas en reservas directas.",
-        tags: ["Dirección artística", "UX/UI", "Desarrollo"],
+        desc: "Un sitio web con carta interactiva y reserva directa. Identidad, fotografías y dirección estética proporcionadas por el cliente.",
+        tags: ["UX/UI", "Desarrollo", "SEO"],
         link: "Ver caso de estudio",
         image: "/projects/manna/hero.jpeg",
         alt: "Mannà, restaurante de barrio en Poblenou",
-      },
-      {
-        slug: "north-club",
-        cursor: "Explorar",
-        index: "03 / Cultura",
-        name: ["North", "Club"],
-        desc: "Un sistema visual expresivo para una marca de ocio nocturno y cultura, pensado para vivir en redes, campañas y eventos.",
-        tags: ["Identidad", "Campaña", "Social"],
-        link: "Ver caso de estudio",
-        image:
-          "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1800&q=85",
-        alt: "Concepto de marca cultural y de eventos",
       },
     ],
   },
@@ -89,7 +77,7 @@ export const es: Dictionary = {
       {
         num: "01",
         title: "Estrategia de marca y Branding",
-        desc: "Encontramos qué hace única a tu marca y lo convertimos en una identidad con dirección, personalidad y un lenguaje propio.",
+        desc: "Encontramos qué hace única a vuestra marca y lo convertimos en una identidad con dirección, personalidad y un lenguaje propio.",
         href: "/branding",
         cta: "Ver especialidad",
       },
@@ -135,7 +123,7 @@ export const es: Dictionary = {
       {
         num: "01 / DESCUBRIR",
         title: "Entender antes de crear.",
-        desc: "Nos metemos en el contexto de tu proyecto: qué hacés, para quién, dónde estás y hacia dónde querés ir. Buscamos lo que hace diferente a tu marca y encontramos la idea que vale la pena desarrollar.",
+        desc: "Nos metemos en el contexto de vuestro proyecto: qué hacéis, para quién, dónde estáis y hacia dónde queréis ir. Buscamos lo que hace diferente a vuestra marca y encontramos la idea que vale la pena desarrollar.",
       },
       {
         num: "02 / DEFINIR",
@@ -155,7 +143,7 @@ export const es: Dictionary = {
     ],
   },
   cta: {
-    kicker: "¿TENÉS UN PROYECTO EN MENTE?",
+    kicker: "¿TENÉIS UN PROYECTO EN MENTE?",
     headlineLines: ["HAGAMOS QUE", "LA IDEA", "SUCEDA."],
     button: "Empezar un proyecto ↗︎",
   },
@@ -177,7 +165,7 @@ export const es: Dictionary = {
   },
   blog: {
     metaTitle: "Blog — KLENT Estudio creativo",
-    metaDescription: "Reflexiones sobre branding, diseño web y aplicaciones móviles.",
+    metaDescription: "Precios, plazos y criterios de decisión sobre creación web, aplicaciones móviles y branding, explicados sin jerga por el estudio Klent.",
     eyebrow: "Blog",
     h1: "Notas del estudio.",
     intro: "Reflexiones sobre branding, diseño web, aplicaciones móviles y cómo hacer crecer un negocio ambicioso.",
@@ -186,6 +174,9 @@ export const es: Dictionary = {
     backToBlog: "← Volver al blog",
     relatedServiceIntro: "Servicio relacionado",
     minRead: "min de lectura",
+    allArticles: "Todos los artículos +",
+    backToBlogIndex: "← Todos los artículos",
+    categoryMetaSuffix: "Artículos y consejos",
   },
   contact: {
     metaTitle: "Contacto — KLENT Estudio creativo",
@@ -195,8 +186,11 @@ export const es: Dictionary = {
     intro:
       "Ya tengáis un brief claro o solo una idea por explorar, contadnos qué queréis construir — os respondemos en menos de dos días laborables.",
     emailLabel: "Escribidnos",
+    phoneLabel: "Teléfono",
+    phoneFrance: "Francia",
+    phoneSpain: "España",
     locationLabel: "Con base en",
-    location: "Barcelona / Internacional",
+    location: "La Rochelle / Barcelona / Internacional",
     socialLabel: "Seguidnos",
   },
 };

@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
+import { locales, isLocale, siteUrl, type Locale } from "@/lib/i18n/config";
+import { buildSocial } from "@/lib/seo";
 import { serviceKeys, serviceSlugs, resolveService, buildServiceAlternates } from "@/lib/services";
 import { workListingSlug, isWorkListingSlug, buildWorkListingAlternates } from "@/lib/projects";
+import { legalSlug, isLegalSlug, buildLegalAlternates } from "@/lib/legal";
+import { studioSlug, isStudioSlug, buildStudioAlternates } from "@/lib/studio";
 import { getServiceContent } from "@/content/services";
+import { getLegalContent } from "@/content/legal";
+import { getStudioContent } from "@/content/studio";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import ServicePage from "@/components/services/ServicePage";
 import ServiceJsonLd from "@/components/seo/ServiceJsonLd";
 import WorkListPage from "@/components/projects/WorkListPage";
+import LegalPage from "@/components/legal/LegalPage";
+import StudioPage from "@/components/studio/StudioPage";
+import StudioJsonLd from "@/components/seo/StudioJsonLd";
+import PageJsonLd from "@/components/seo/PageJsonLd";
 
 export function generateStaticParams() {
   const serviceParams = locales.flatMap((locale) =>
     serviceKeys.map((key) => ({ locale, service: serviceSlugs[key][locale] })),
   );
   const workParams = locales.map((locale) => ({ locale, service: workListingSlug[locale] }));
-  return [...serviceParams, ...workParams];
+  const legalParams = locales.map((locale) => ({ locale, service: legalSlug[locale] }));
+  const studioParams = locales.map((locale) => ({ locale, service: studioSlug[locale] }));
+  return [...serviceParams, ...workParams, ...legalParams, ...studioParams];
 }
 
 function getContent(localeParam: string, serviceParam: string) {
@@ -42,14 +53,50 @@ export async function generateMetadata({
         canonical: `${siteUrl}/${locale}${path}`,
         languages: buildWorkListingAlternates(),
       },
-      openGraph: {
+      ...buildSocial({
+        locale,
         title: dict.workPage.metaTitle,
         description: dict.workPage.metaDescription,
         url: `${siteUrl}/${locale}${path}`,
-        siteName: "KLENT",
-        locale: hreflangByLocale[locale].replace("-", "_"),
-        type: "website",
+      }),
+    };
+  }
+
+  if (isLegalSlug(locale, service)) {
+    const legalContent = getLegalContent(locale);
+    const path = `/${service}`;
+    return {
+      title: legalContent.metaTitle,
+      description: legalContent.metaDescription,
+      alternates: {
+        canonical: `${siteUrl}/${locale}${path}`,
+        languages: buildLegalAlternates(),
       },
+      ...buildSocial({
+        locale,
+        title: legalContent.metaTitle,
+        description: legalContent.metaDescription,
+        url: `${siteUrl}/${locale}${path}`,
+      }),
+    };
+  }
+
+  if (isStudioSlug(locale, service)) {
+    const studioContent = getStudioContent(locale);
+    const path = `/${service}`;
+    return {
+      title: studioContent.metaTitle,
+      description: studioContent.metaDescription,
+      alternates: {
+        canonical: `${siteUrl}/${locale}${path}`,
+        languages: buildStudioAlternates(),
+      },
+      ...buildSocial({
+        locale,
+        title: studioContent.metaTitle,
+        description: studioContent.metaDescription,
+        url: `${siteUrl}/${locale}${path}`,
+      }),
     };
   }
 
@@ -65,14 +112,12 @@ export async function generateMetadata({
       canonical: `${siteUrl}/${locale}${path}`,
       languages: buildServiceAlternates(key),
     },
-    openGraph: {
+    ...buildSocial({
+      locale,
       title: content.metaTitle,
       description: content.metaDescription,
       url: `${siteUrl}/${locale}${path}`,
-      siteName: "KLENT",
-      locale: hreflangByLocale[locale as keyof typeof hreflangByLocale].replace("-", "_"),
-      type: "website",
-    },
+    }),
   };
 }
 
@@ -86,7 +131,49 @@ export default async function ServiceRoutePage({
 
   if (isWorkListingSlug(locale, service)) {
     const dict = getDictionary(locale as Locale);
-    return <WorkListPage locale={locale as Locale} dict={dict} />;
+    return (
+      <>
+        <PageJsonLd
+          locale={locale as Locale}
+          url={`${siteUrl}/${locale}/${service}`}
+          name={dict.workPage.h1}
+          description={dict.workPage.metaDescription}
+        />
+        <WorkListPage locale={locale as Locale} dict={dict} />
+      </>
+    );
+  }
+
+  if (isLegalSlug(locale, service)) {
+    const legalContent = getLegalContent(locale);
+    return (
+      <>
+        <PageJsonLd
+          locale={locale as Locale}
+          url={`${siteUrl}/${locale}/${service}`}
+          name={legalContent.h1}
+          description={legalContent.metaDescription}
+        />
+        <LegalPage content={legalContent} />
+      </>
+    );
+  }
+
+  if (isStudioSlug(locale, service)) {
+    const localeTyped = locale as Locale;
+    const content = getStudioContent(localeTyped);
+    return (
+      <>
+        <StudioJsonLd locale={localeTyped} content={content} url={`${siteUrl}/${locale}/${service}`} />
+        <PageJsonLd
+          locale={localeTyped}
+          url={`${siteUrl}/${locale}/${service}`}
+          name={content.h1}
+          description={content.metaDescription}
+        />
+        <StudioPage content={content} locale={localeTyped} />
+      </>
+    );
   }
 
   const resolved = getContent(locale, service);
@@ -99,8 +186,9 @@ export default async function ServiceRoutePage({
         name={resolved.content.h1}
         description={resolved.content.metaDescription}
         url={`${siteUrl}/${resolved.locale}/${service}`}
+        content={resolved.content}
       />
-      <ServicePage content={resolved.content} />
+      <ServicePage content={resolved.content} locale={resolved.locale} />
     </>
   );
 }

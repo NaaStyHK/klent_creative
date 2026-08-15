@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { isLocale, buildAlternates, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
+import { isLocale, buildAlternates, siteUrl, type Locale } from "@/lib/i18n/config";
+import { buildSocial } from "@/lib/seo";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts, getCategorizedPosts } from "@/lib/blog";
+import { blogCategoryLabels, blogCategorySlugs } from "@/lib/blog-categories";
+import BlogFeatured from "@/components/blog/BlogFeatured";
+import BlogListItem from "@/components/blog/BlogListItem";
+import PageJsonLd from "@/components/seo/PageJsonLd";
 
 export async function generateMetadata({
   params,
@@ -22,59 +26,77 @@ export async function generateMetadata({
       canonical: `${siteUrl}/${locale}/blog`,
       languages: buildAlternates("/blog"),
     },
-    openGraph: {
+    ...buildSocial({
+      locale,
       title: dict.blog.metaTitle,
       description: dict.blog.metaDescription,
       url: `${siteUrl}/${locale}/blog`,
-      siteName: "KLENT",
-      locale: hreflangByLocale[locale].replace("-", "_"),
-      type: "website",
-    },
+    }),
   };
 }
 
-export default async function BlogListPage({
+export default async function BlogIndexPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const dict = getDictionary(locale);
-  const posts = getAllPosts(locale as Locale);
+  const typedLocale = locale as Locale;
+  const dict = getDictionary(typedLocale);
+
+  const allPosts = getAllPosts(typedLocale);
+  // Most recent article overall gets the featured slot, and is then removed
+  // from its category list so it never appears twice on the same page.
+  const featured = allPosts[0];
+  const groups = getCategorizedPosts(typedLocale)
+    .map((group) => ({ ...group, posts: group.posts.filter((p) => p.slug !== featured?.slug) }))
+    .filter((group) => group.posts.length > 0);
 
   return (
     <>
-      <section className="service-page-hero">
+      <PageJsonLd
+        locale={typedLocale}
+        url={`${siteUrl}/${typedLocale}/blog`}
+        name={dict.blog.h1}
+        description={dict.blog.metaDescription}
+      />
+      <section className="service-page-hero service-page-hero--narrow">
         <div className="eyebrow mono">{dict.blog.eyebrow}</div>
         <h1 className="headline">{dict.blog.h1}</h1>
         <p className="service-page-intro reveal-up">{dict.blog.intro}</p>
       </section>
 
-      <section className="blog-list reveal-up">
-        {posts.length === 0 ? (
+      {!featured ? (
+        <section className="blog-list">
           <p className="blog-empty">{dict.blog.empty}</p>
-        ) : (
-          posts.map((post) => (
-            <Link className="blog-card hoverable" href={`/${locale}/blog/${post.slug}`} key={post.slug}>
-              {post.image && (
-                <div className="blog-card-image">
-                  <Image src={post.image} alt="" fill sizes="220px" />
-                </div>
-              )}
-              <div className="blog-card-body">
-                <span className="mono blog-date">
-                  {post.date}
-                  {post.category ? ` · ${post.category}` : ""}
-                  {post.readTime ? ` · ${post.readTime} ${dict.blog.minRead}` : ""}
-                </span>
-                <h2>{post.title}</h2>
-                <p>{post.description}</p>
+        </section>
+      ) : (
+        <>
+          <section className="blog-featured-block reveal-up">
+            <BlogFeatured post={featured} locale={typedLocale} />
+          </section>
+
+          {groups.map((group) => (
+            <section className="blog-category-block" key={group.key}>
+              <header className="blog-category-head reveal-up">
+                <h2 className="blog-category-title">{blogCategoryLabels[group.key][typedLocale]}</h2>
+                <Link
+                  className="blog-category-all mono hoverable"
+                  href={`/${locale}/blog/${blogCategorySlugs[group.key][typedLocale]}`}
+                >
+                  {dict.blog.allArticles}
+                </Link>
+              </header>
+              <div className="blog-rows reveal-up">
+                {group.posts.map((post) => (
+                  <BlogListItem post={post} locale={typedLocale} key={post.slug} />
+                ))}
               </div>
-            </Link>
-          ))
-        )}
-      </section>
+            </section>
+          ))}
+        </>
+      )}
     </>
   );
 }

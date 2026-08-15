@@ -3,7 +3,7 @@ import type { ServiceContent } from "@/lib/i18n/service-content";
 
 export const mobileApp: Record<Locale, ServiceContent> = {
   fr: {
-    metaTitle: "Développement d'application mobile Flutter sur mesure | KLENT",
+    metaTitle: "Développement d'application mobile Flutter | KLENT",
     metaDescription:
       "Agence de développement d'applications mobiles avec Flutter. De la stratégie produit au lancement sur l'App Store et Google Play.",
     eyebrow: "Application mobile",

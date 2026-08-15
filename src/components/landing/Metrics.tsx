@@ -15,7 +15,7 @@ export default function Metrics({ dict }: { dict: Dictionary }) {
             )}
             <div className="metric-label">
               {m.label[0]}
-              <br />
+              {" "}<br />
               {m.label[1]}
             </div>
           </div>

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope, DM_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import IntroLoader from "@/components/motion/IntroLoader";
 import MotionFX from "@/components/motion/MotionFX";
 import "./globals.css";
@@ -37,6 +39,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <IntroLoader brand="KLENT CREATIVE" />
         <MotionFX />
         {children}
+        {/* Vercel Analytics (traffic) and Speed Insights (real-user Core Web
+            Vitals). Speed Insights is the one that matters most here: it
+            reports the field LCP of visitors on real devices, which is the
+            only way to know what the intro loader actually costs. Both are
+            inert outside Vercel, so local dev is unaffected. */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

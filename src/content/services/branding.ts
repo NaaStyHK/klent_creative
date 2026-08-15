@@ -3,7 +3,7 @@ import type { ServiceContent } from "@/lib/i18n/service-content";
 
 export const branding: Record<Locale, ServiceContent> = {
   fr: {
-    metaTitle: "Agence de branding — Stratégie de marque & identité visuelle | KLENT",
+    metaTitle: "Agence de branding & identité de marque | KLENT",
     metaDescription:
       "Positionnement, naming, identité visuelle et charte graphique. KLENT est un studio de branding pour marques ambitieuses en France, Espagne et Argentine.",
     eyebrow: "Branding",
@@ -115,7 +115,7 @@ export const branding: Record<Locale, ServiceContent> = {
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
-    metaTitle: "Agencia de branding — Estrategia de marca e identidad visual | KLENT",
+    metaTitle: "Agencia de branding e identidad de marca | KLENT",
     metaDescription:
       "Posicionamiento, naming, identidad visual y manual de marca. KLENT es un estudio de branding para marcas ambiciosas en España, Francia y Argentina.",
     eyebrow: "Branding",
@@ -177,7 +177,7 @@ export const branding: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
-    metaTitle: "Agencia de branding — Estrategia de marca e identidad visual | KLENT",
+    metaTitle: "Agencia de branding e identidad de marca | KLENT",
     metaDescription:
       "Posicionamiento, naming, identidad visual y manual de marca. KLENT es un estudio de branding para marcas ambiciosas en Argentina, España y Francia.",
     eyebrow: "Branding",

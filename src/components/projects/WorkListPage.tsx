@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionary";
 import { workListingSlug } from "@/lib/projects";
 import { getAllProjects } from "@/content/projects";
+import ProjectPreviewMedia from "@/components/projects/ProjectPreviewMedia";
 
 export default function WorkListPage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const projects = getAllProjects(locale);
@@ -17,29 +17,37 @@ export default function WorkListPage({ locale, dict }: { locale: Locale; dict: D
         <p className="service-page-intro reveal-up">{dict.workPage.intro}</p>
       </section>
 
-      <section className="work-list reveal-up">
-        {projects.map((project) => (
-          <Link
-            className="work-card hoverable"
-            href={`/${locale}/${listingSlug}/${project.slug}`}
-            key={project.slug}
-          >
-            <div className="work-card-image">
-              <Image src={project.image} alt={project.alt} fill sizes="280px" />
-            </div>
-            <div>
-              <span className="concept-tag">{project.badge ?? dict.workPage.conceptTag}</span>
-              <h2>
-                {project.name[0]} {project.name[1]}
-              </h2>
-              <p>{project.intro}</p>
-              <div className="work-card-tags">
-                {project.tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
+      <section className="work-list work-list--editorial reveal-up">
+        {projects.map((project, index) => (
+          <article className={`work-project-card case-card case-card--${project.slug}`} key={project.slug}>
+            <Link
+              className="case-media hoverable"
+              href={`/${locale}/${listingSlug}/${project.slug}`}
+              aria-label={`${dict.workPage.viewProject}: ${project.name.join(" ")}`}
+            >
+              <ProjectPreviewMedia slug={project.slug} image={project.image} alt={project.alt} />
+            </Link>
+
+            <div className="case-info">
+              <div className="case-index mono">
+                {String(index + 1).padStart(2, "0")} / {project.category}
+              </div>
+              <div className="case-info-main">
+                <span className="concept-tag">{project.badge ?? dict.workPage.conceptTag}</span>
+                <h2 className="case-name">
+                  {project.name[0]}
+                  {project.name[1] && <>{" "}<br />{project.name[1]}</>}
+                </h2>
+                <p className="case-desc">{project.intro}</p>
+                <div className="case-tags">
+                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
+                <Link className="case-link magnetic" href={`/${locale}/${listingSlug}/${project.slug}`}>
+                  {dict.workPage.viewProject}
+                </Link>
               </div>
             </div>
-          </Link>
+          </article>
         ))}
       </section>
     </>

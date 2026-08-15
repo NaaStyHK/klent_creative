@@ -1,6 +1,8 @@
+import Link from "next/link";
+import type { Locale } from "@/lib/i18n/config";
 import type { ServiceContent } from "@/lib/i18n/service-content";
 
-export default function ServicePage({ content }: { content: ServiceContent }) {
+export default function ServicePage({ content, locale }: { content: ServiceContent; locale: Locale }) {
   return (
     <>
       <section className="service-page-hero">
@@ -12,7 +14,11 @@ export default function ServicePage({ content }: { content: ServiceContent }) {
       <section className="service-features">
         {content.features.map((f) => (
           <div className="service-feature reveal-up" key={f.title}>
-            <h3>{f.title}</h3>
+            {/* h2, not h3: this block sits directly under the page h1 with no
+                intermediate heading, so h3 skipped a level. Heading depth is
+                how retrieval systems chunk a document, so a clean ladder
+                matters beyond accessibility. */}
+            <h2>{f.title}</h2>
             <p>{f.body}</p>
           </div>
         ))}
@@ -79,12 +85,12 @@ export default function ServicePage({ content }: { content: ServiceContent }) {
         </div>
         <h2 className="reveal-up">
           {content.closingHeadline[0]}
-          <br />
+          {" "}<br />
           {content.closingHeadline[1]}
         </h2>
-        <a className="mono hoverable magnetic" href="mailto:hello@klent.studio">
+        <Link className="mono hoverable magnetic" href={`/${locale}/contact`}>
           {content.ctaButton}
-        </a>
+        </Link>
       </section>
     </>
   );

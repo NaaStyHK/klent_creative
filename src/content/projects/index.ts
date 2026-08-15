@@ -1,15 +1,11 @@
 import type { Locale } from "@/lib/i18n/config";
 import type { ProjectSlug } from "@/lib/projects";
 import type { ProjectContent } from "@/lib/i18n/project-content";
-import { sinAmorNo } from "@/content/projects/sin-amor-no";
-import { casaBrava } from "@/content/projects/casa-brava";
-import { northClub } from "@/content/projects/north-club";
+import { oxploria } from "@/content/projects/oxploria";
 import { manna } from "@/content/projects/manna";
 
 const registry: Record<ProjectSlug, Record<Locale, ProjectContent>> = {
-  "sin-amor-no": sinAmorNo,
-  "casa-brava": casaBrava,
-  "north-club": northClub,
+  oxploria,
   manna,
 };
 

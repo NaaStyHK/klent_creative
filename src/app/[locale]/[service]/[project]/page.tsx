@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
+import { locales, isLocale, siteUrl, type Locale } from "@/lib/i18n/config";
+import { buildSocial } from "@/lib/seo";
 import { workListingSlug, isWorkListingSlug, projectSlugs, resolveProjectSlug, buildProjectAlternates } from "@/lib/projects";
 import { getProjectContent } from "@/content/projects";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -29,7 +30,7 @@ export async function generateMetadata({
   const { locale, service, project } = await params;
   const resolved = resolve(locale, service, project);
   if (!resolved) return {};
-  const { content, slug } = resolved;
+  const { content, slug, locale: typedLocale } = resolved;
   const path = `/${service}/${project}`;
 
   return {
@@ -39,15 +40,13 @@ export async function generateMetadata({
       canonical: `${siteUrl}/${locale}${path}`,
       languages: buildProjectAlternates(slug),
     },
-    openGraph: {
+    ...buildSocial({
+      locale: typedLocale,
       title: content.metaTitle,
       description: content.metaDescription,
       url: `${siteUrl}/${locale}${path}`,
-      siteName: "KLENT",
-      locale: hreflangByLocale[locale as keyof typeof hreflangByLocale].replace("-", "_"),
-      type: "website",
-      images: [content.image],
-    },
+      image: content.image,
+    }),
   };
 }
 

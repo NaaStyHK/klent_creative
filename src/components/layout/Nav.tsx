@@ -2,7 +2,9 @@ import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionary";
 import { workListingSlug } from "@/lib/projects";
+import { studioSlug } from "@/lib/studio";
 import LocaleSwitcher from "@/components/layout/LocaleSwitcher";
+import MobileMenu from "@/components/layout/MobileMenu";
 
 export default function Nav({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
@@ -19,15 +21,16 @@ export default function Nav({ locale, dict }: { locale: Locale; dict: Dictionary
         <Link className="hoverable" href={`/${locale}#services`}>
           {dict.nav.services}
         </Link>
-        <Link className="hoverable" href={`/${locale}#studio`}>
+        <Link className="hoverable" href={`/${locale}/${studioSlug[locale]}`}>
           {dict.nav.studio}
         </Link>
       </div>
       <div className="nav-right">
         <LocaleSwitcher locale={locale} />
-        <Link className="nav-cta mono hoverable magnetic" href={`/${locale}#contact`}>
+        <Link className="nav-cta mono hoverable magnetic" href={`/${locale}/contact`}>
           {dict.nav.cta}
         </Link>
+        <MobileMenu locale={locale} dict={dict} />
       </div>
     </nav>
   );

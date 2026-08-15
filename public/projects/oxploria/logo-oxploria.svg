@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" role="img" aria-labelledby="oxploria-title">
+  <title id="oxploria-title">Oxploria</title>
+  <g fill="#17120f">
+    <text x="20" y="330" font-family="Arial, Helvetica, sans-serif" font-size="350" font-weight="700" letter-spacing="-25">Oxpl</text>
+    <text x="1045" y="330" font-family="Arial, Helvetica, sans-serif" font-size="350" font-weight="700" letter-spacing="-25">ria</text>
+  </g>
+  <g transform="translate(815 10)">
+    <path d="M190 0C85 0 0 84 0 189c0 140 190 220 190 220s190-80 190-220C380 84 295 0 190 0z" fill="#fff"/>
+    <circle cx="190" cy="188" r="130" fill="none" stroke="#ffd200" stroke-width="13"/>
+    <path d="M190 58l31 130-31 130-31-130z" fill="#ffd200"/>
+    <circle cx="190" cy="188" r="12" fill="#fff"/>
+  </g>
+</svg>

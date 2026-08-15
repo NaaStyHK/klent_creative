@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { isLocale, buildAlternates, siteUrl, hreflangByLocale } from "@/lib/i18n/config";
+import { isLocale, buildAlternates, siteUrl } from "@/lib/i18n/config";
+import { buildSocial } from "@/lib/seo";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import ContactPage from "@/components/contact/ContactPage";
+import PageJsonLd from "@/components/seo/PageJsonLd";
 
 export async function generateMetadata({
   params,
@@ -20,14 +22,12 @@ export async function generateMetadata({
       canonical: `${siteUrl}/${locale}/contact`,
       languages: buildAlternates("/contact"),
     },
-    openGraph: {
+    ...buildSocial({
+      locale,
       title: dict.contact.metaTitle,
       description: dict.contact.metaDescription,
       url: `${siteUrl}/${locale}/contact`,
-      siteName: "KLENT",
-      locale: hreflangByLocale[locale].replace("-", "_"),
-      type: "website",
-    },
+    }),
   };
 }
 
@@ -40,5 +40,15 @@ export default async function ContactRoutePage({
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
 
-  return <ContactPage dict={dict} />;
+  return (
+    <>
+      <PageJsonLd
+        locale={locale}
+        url={`${siteUrl}/${locale}/contact`}
+        name={dict.contact.h1}
+        description={dict.contact.metaDescription}
+      />
+      <ContactPage dict={dict} />
+    </>
+  );
 }

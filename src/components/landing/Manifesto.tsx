@@ -10,7 +10,7 @@ export default function Manifesto({ dict }: { dict: Dictionary }) {
           <div className="manifesto-word">
             {manifesto.word.map((w, i) => (
               <span key={i}>
-                {i > 0 && <br />}
+                {i > 0 && <>{" "}<br /></>}
                 {w}
               </span>
             ))}

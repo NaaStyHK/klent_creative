@@ -34,7 +34,7 @@ export default async function LocaleHomePage({
       <Manifesto dict={dict} />
       <Metrics dict={dict} />
       <Process dict={dict} />
-      <CTA dict={dict} />
+      <CTA dict={dict} locale={locale} />
     </>
   );
 }

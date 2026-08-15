@@ -4,15 +4,37 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
+import { buildSocial } from "@/lib/seo";
+import { ORG_ID, breadcrumbNode, graph, webPageNode } from "@/lib/schema";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { getPostBySlug, getPostSlugs, buildPostAlternates } from "@/lib/blog";
+import { getPostBySlug, getPostSlugs, buildPostAlternates, getPostsInCategory } from "@/lib/blog";
+import { getPostCategory } from "@/lib/blog-categories";
+import {
+  blogCategoryKeys,
+  blogCategorySlugs,
+  blogCategoryLabels,
+  blogCategoryIntros,
+  resolveCategorySlug,
+  buildCategoryAlternates,
+} from "@/lib/blog-categories";
 import { serviceSlugs } from "@/lib/services";
 import { getServiceContent } from "@/content/services";
+import BlogCategoryPage from "@/components/blog/BlogCategoryPage";
+import PageJsonLd from "@/components/seo/PageJsonLd";
+import ReadingProgress from "@/components/blog/ReadingProgress";
+import KeyTakeaways from "@/components/blog/KeyTakeaways";
 
 export function generateStaticParams() {
-  return locales.flatMap((locale) =>
+  // Category listings live at the same depth as articles (/blog/<slug>), so
+  // they are generated from this route too. Category slugs are checked before
+  // article slugs below; none of them collide with an existing article.
+  const articleParams = locales.flatMap((locale) =>
     getPostSlugs(locale).map((slug) => ({ locale, slug })),
   );
+  const categoryParams = locales.flatMap((locale) =>
+    blogCategoryKeys.map((key) => ({ locale, slug: blogCategorySlugs[key][locale] })),
+  );
+  return [...articleParams, ...categoryParams];
 }
 
 export async function generateMetadata({
@@ -22,11 +44,34 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale, slug } = await params;
   if (!isLocale(locale)) return {};
+
+  const categoryKey = resolveCategorySlug(locale, slug);
+  if (categoryKey) {
+    const dict = getDictionary(locale);
+    const label = blogCategoryLabels[categoryKey][locale];
+    return {
+      title: `${label} — ${dict.blog.categoryMetaSuffix} | KLENT`,
+      description: blogCategoryIntros[categoryKey][locale],
+      alternates: {
+        canonical: `${siteUrl}/${locale}/blog/${slug}`,
+        languages: buildCategoryAlternates(categoryKey),
+      },
+      ...buildSocial({
+        locale,
+        title: `${label} — ${dict.blog.categoryMetaSuffix}`,
+        description: blogCategoryIntros[categoryKey][locale],
+        url: `${siteUrl}/${locale}/blog/${slug}`,
+      }),
+    };
+  }
+
   const post = getPostBySlug(locale, slug);
   if (!post) return {};
 
   return {
-    title: `${post.title} — KLENT`,
+    // No "— KLENT" suffix: it costs 8 characters of an already tight budget,
+    // and Google derives the site name itself from the WebSite schema.
+    title: post.metaTitle ?? post.title,
     description: post.description,
     alternates: {
       canonical: `${siteUrl}/${locale}/blog/${slug}`,
@@ -35,16 +80,15 @@ export async function generateMetadata({
       // point search engines at a 404.
       languages: buildPostAlternates(slug),
     },
-    openGraph: {
+    ...buildSocial({
+      locale,
       title: post.title,
       description: post.description,
       url: `${siteUrl}/${locale}/blog/${slug}`,
-      siteName: "KLENT",
-      locale: hreflangByLocale[locale].replace("-", "_"),
-      type: "article",
+      image: post.image,
       publishedTime: post.date,
-      images: post.image ? [post.image] : undefined,
-    },
+      modifiedTime: post.updated || post.date,
+    }),
   };
 }
 
@@ -55,26 +99,82 @@ export default async function BlogArticlePage({
 }) {
   const { locale, slug } = await params;
   if (!isLocale(locale)) notFound();
+
+  const categoryKey = resolveCategorySlug(locale, slug);
+  if (categoryKey) {
+    const categoryDict = getDictionary(locale);
+    return (
+      <>
+        <PageJsonLd
+          locale={locale}
+          url={`${siteUrl}/${locale}/blog/${slug}`}
+          name={blogCategoryLabels[categoryKey][locale]}
+          description={blogCategoryIntros[categoryKey][locale]}
+          trail={[{ name: categoryDict.blog.eyebrow, url: `${siteUrl}/${locale}/blog` }]}
+        />
+        <BlogCategoryPage
+          locale={locale}
+          dict={categoryDict}
+          categoryKey={categoryKey}
+          posts={getPostsInCategory(locale, categoryKey)}
+        />
+      </>
+    );
+  }
+
   const post = getPostBySlug(locale, slug);
   if (!post) notFound();
   const dict = getDictionary(locale);
   const related = post.relatedService ? getServiceContent(post.relatedService, locale) : null;
   const relatedHref = post.relatedService ? `/${locale}/${serviceSlugs[post.relatedService][locale]}` : null;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    dateModified: post.updated || post.date,
-    author: { "@type": "Organization", name: "KLENT" },
-    image: post.image,
-    inLanguage: hreflangByLocale[locale as Locale],
-  };
+  const articleCategory = getPostCategory(post.slug);
+  const articleUrl = `${siteUrl}/${locale}/blog/${slug}`;
+  const jsonLd = graph([
+    webPageNode({
+      locale: locale as Locale,
+      url: articleUrl,
+      name: post.title,
+      description: post.description,
+    }),
+    breadcrumbNode(articleUrl, [
+      { name: dict.loader.brand, url: `${siteUrl}/${locale}` },
+      { name: dict.blog.eyebrow, url: `${siteUrl}/${locale}/blog` },
+      { name: post.title, url: articleUrl },
+    ]),
+    {
+      "@type": "Article",
+      "@id": `${articleUrl}#article`,
+      // Google truncates headline at 110 characters and warns beyond it.
+      headline: post.title.slice(0, 110),
+      description: post.description,
+      datePublished: post.date,
+      dateModified: post.updated || post.date,
+      // Signed by the studio, not by an individual: the founder's name is
+      // deliberately confined to the legal notice. Google accepts an
+      // Organization as author, and the expertise signal lives on that node
+      // via knowsAbout rather than on a personal one.
+      author: { "@id": ORG_ID },
+      publisher: { "@id": ORG_ID },
+      mainEntityOfPage: { "@id": `${articleUrl}#webpage` },
+      ...(post.image ? { image: post.image } : {}),
+      // `about` names the subject as an entity instead of leaving a retrieval
+      // system to infer it from prose; `articleSection` and `wordCount` help
+      // it judge scope and depth before deciding whether to quote the page.
+      ...(articleCategory
+        ? { articleSection: blogCategoryLabels[articleCategory][locale] }
+        : {}),
+      ...(post.about?.length ? { about: post.about.map((name) => ({ "@type": "Thing", name })) } : {}),
+      ...(post.keywords?.length ? { keywords: post.keywords.join(", ") } : {}),
+      wordCount: post.content.trim().split(/\s+/).length,
+      isAccessibleForFree: true,
+      inLanguage: hreflangByLocale[locale as Locale],
+    },
+  ]);
 
   return (
     <article className="blog-article">
+      <ReadingProgress locale={locale} targetId="article-reading-content" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Link className="blog-back mono hoverable" href={`/${locale}/blog`}>
         {dict.blog.backToBlog}
@@ -90,7 +190,10 @@ export default async function BlogArticlePage({
           <Image src={post.image} alt="" fill sizes="(max-width: 850px) 100vw, 820px" priority />
         </div>
       )}
-      <div className="blog-body">
+      {post.takeaways?.length ? (
+        <KeyTakeaways items={post.takeaways} locale={locale} />
+      ) : null}
+      <div className="blog-body" id="article-reading-content">
         <MDXRemote source={post.content} />
       </div>
       {related && relatedHref && (
@@ -104,4 +207,3 @@ export default async function BlogArticlePage({
     </article>
   );
 }
-

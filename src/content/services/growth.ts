@@ -115,7 +115,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
-    metaTitle: "SEO y crecimiento de contenido — Agencia de marketing | KLENT",
+    metaTitle: "Agencia de SEO y marketing de contenidos | KLENT",
     metaDescription:
       "Posicionamiento, estrategia de contenido y campañas para convertir vuestro tráfico en clientes. KLENT acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",
@@ -177,7 +177,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
-    metaTitle: "SEO y crecimiento de contenido — Agencia de marketing | KLENT",
+    metaTitle: "Agencia de SEO y marketing de contenidos | KLENT",
     metaDescription:
       "Posicionamiento, estrategia de contenido y campañas para convertir tu tráfico en clientes. KLENT acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",

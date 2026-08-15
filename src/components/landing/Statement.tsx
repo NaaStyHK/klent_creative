@@ -1,4 +1,5 @@
 import type { Dictionary } from "@/lib/i18n/dictionary";
+import SpinMark from "@/components/landing/SpinMark";
 
 export default function Statement({ dict }: { dict: Dictionary }) {
   const { statement } = dict;
@@ -8,7 +9,7 @@ export default function Statement({ dict }: { dict: Dictionary }) {
       <h2 className="big reveal-up">
         {statement.lines.map((line, i) => (
           <span key={i}>
-            {i > 0 && <br />}
+            {i > 0 && <>{" "}<br /></>}
             {line.map((seg, j) =>
               typeof seg === "string" ? (
                 seg
@@ -24,7 +25,7 @@ export default function Statement({ dict }: { dict: Dictionary }) {
       <div className="statement-foot">
         <div className="statement-copy reveal-up">{statement.copy}</div>
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
-          <div className="spinmark mono">{statement.spinmark}</div>
+          <SpinMark label={statement.spinmark} />
         </div>
       </div>
     </section>
