@@ -48,7 +48,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "4. Données personnelles (RGPD)",
         paragraphs: [
-          "Les données collectées via le formulaire de contact (nom, email, message) sont utilisées uniquement pour répondre à vos demandes. Elles ne sont jamais revendues, partagées ou exploitées à des fins commerciales.",
+          "Les données collectées via le formulaire de contact (nom, email, entreprise, nature du projet, budget et échéance envisagés, message) sont utilisées uniquement pour répondre à vos demandes. Elles ne sont jamais revendues, partagées ou exploitées à des fins commerciales.",
           `Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit, contactez-nous à ${EMAIL}.`,
         ],
       },
@@ -109,7 +109,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "4. Datos personales (RGPD)",
         paragraphs: [
-          "Los datos recogidos a través del formulario de contacto (nombre, email, mensaje) se utilizan únicamente para responder a vuestras solicitudes. Nunca se venden, comparten ni se explotan con fines comerciales.",
+          "Los datos recogidos a través del formulario de contacto (nombre, email, empresa, tipo de proyecto, presupuesto y plazo previstos, mensaje) se utilizan únicamente para responder a vuestras solicitudes. Nunca se venden, comparten ni se explotan con fines comerciales.",
           `Conforme al RGPD, tenéis derecho de acceso, rectificación y supresión de vuestros datos. Para ejercerlo, escribidnos a ${EMAIL}.`,
         ],
       },
@@ -170,7 +170,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "4. Datos personales (RGPD)",
         paragraphs: [
-          "Los datos que se recogen mediante el formulario de contacto (nombre, email, mensaje) se usan únicamente para responder a tus consultas. Nunca se venden, comparten ni se explotan con fines comerciales.",
+          "Los datos que se recogen mediante el formulario de contacto (nombre, email, empresa, tipo de proyecto, presupuesto y plazo previstos, mensaje) se usan únicamente para responder a tus consultas. Nunca se venden, comparten ni se explotan con fines comerciales.",
           `Conforme al RGPD, tenés derecho de acceso, rectificación y supresión de tus datos. Para ejercerlo, escribinos a ${EMAIL}.`,
         ],
       },
@@ -231,7 +231,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "4. Personal data (GDPR)",
         paragraphs: [
-          "Data collected through the contact form (name, email, message) is used solely to respond to your enquiries. It is never sold, shared or used for commercial purposes.",
+          "Data collected through the contact form (name, email, company, project type, intended budget and timeline, message) is used solely to respond to your enquiries. It is never sold, shared or used for commercial purposes.",
           `Under the GDPR, you have the right to access, correct and delete your data. To exercise that right, contact us at ${EMAIL}.`,
         ],
       },

@@ -25,6 +25,15 @@ export type ProjectContent = {
     symbolLetters?: string[];
     logo?: string;
     abstractCover?: boolean;
+    /**
+     * Renders the cover as a short banner instead of a full-height panel, and
+     * drops the wordmark from inside it.
+     *
+     * Separate from `variant` on purpose: `variant` carries a project's own
+     * palette, so reusing "oxploria" here to get its banner would have dragged
+     * the yellow gradient onto every project that wanted the same proportion.
+     */
+    coverBanner?: boolean;
     variant?: "oxploria";
     coverCaption: string;
     conceptEyebrow: string;

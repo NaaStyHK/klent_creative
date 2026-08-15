@@ -48,7 +48,7 @@ export default async function ContactRoutePage({
         name={dict.contact.h1}
         description={dict.contact.metaDescription}
       />
-      <ContactPage dict={dict} />
+      <ContactPage dict={dict} locale={locale} />
     </>
   );
 }

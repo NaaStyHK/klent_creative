@@ -105,7 +105,9 @@ export default function ProjectDetailPage({
         </header>
 
         <figure
-          className={`case-study-cover${study.abstractCover ? " case-study-cover--abstract" : ""}`}
+          className={`case-study-cover${study.abstractCover ? " case-study-cover--abstract" : ""}${
+            study.coverBanner ? " case-study-cover--banner" : ""
+          }`}
           aria-label={study.abstractCover ? content.alt : undefined}
         >
           {study.abstractCover ? (
@@ -117,7 +119,9 @@ export default function ProjectDetailPage({
           ) : (
             <Image src={content.image} alt={content.alt} fill sizes="100vw" priority />
           )}
-          {study.variant !== "oxploria" && (
+          {/* The page already carries the project name as its h1 directly
+              above, so repeating it inside the cover reads as a duplicate. */}
+          {study.variant !== "oxploria" && !study.coverBanner && (
             <div className="case-study-cover-mark" aria-hidden="true">
               {study.logoLines.map((line) => <span key={line}>{line}</span>)}
             </div>

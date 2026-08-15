@@ -1,6 +1,8 @@
+import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionary";
+import ContactForm from "@/components/contact/ContactForm";
 
-export default function ContactPage({ dict }: { dict: Dictionary }) {
+export default function ContactPage({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const { contact } = dict;
   return (
     <>
@@ -8,6 +10,10 @@ export default function ContactPage({ dict }: { dict: Dictionary }) {
         <div className="eyebrow mono">{contact.eyebrow}</div>
         <h1 className="headline">{contact.h1}</h1>
         <p className="service-page-intro reveal-up">{contact.intro}</p>
+      </section>
+
+      <section className="contact-form-block reveal-up" aria-label={contact.form.legend}>
+        <ContactForm locale={locale} t={contact.form} />
       </section>
 
       <div className="contact-details reveal-up">

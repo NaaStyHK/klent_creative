@@ -12,6 +12,7 @@ const spanishCaseStudy: NonNullable<ProjectContent["caseStudy"]> = {
   logoLines: ["MANNÀ"],
   logo: "/projects/manna/logo-manna.svg",
   abstractCover: true,
+  coverBanner: true,
   coverCaption: "Restaurante de barrio / Experiencia digital",
   conceptEyebrow: "01 / EL PROYECTO",
   conceptTitle: "Un sitio de barrio para un restaurante de barrio.",

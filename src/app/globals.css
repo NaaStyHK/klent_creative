@@ -841,7 +841,10 @@
     letter-spacing:-.07em;text-transform:uppercase;margin:0;
   }
   .case-desc{
-    max-width:410px;font-size:15px;line-height:1.55;color:#5f5c55;
+    /* 16px for every card. The lead card used to override this to 16 while the
+       others stayed at 15, which read as an inconsistency rather than as
+       hierarchy — the headline already carries that. */
+    max-width:410px;font-size:16px;line-height:1.55;color:#5f5c55;
   }
   .case-tags{
     display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;
@@ -863,18 +866,24 @@
   .case-card:nth-child(2) .case-name{font-size:clamp(38px,4vw,68px)}
   .case-card:nth-child(2) .case-index{margin-bottom:8px}
   .case-card:nth-child(1) .case-name{font-size:clamp(58px,7vw,112px)}
-  .case-card:nth-child(1) .case-desc{max-width:560px;font-size:16px}
-  .case-card:nth-child(2) .case-info,.case-card:nth-child(3) .case-info{grid-template-columns:78px 1fr;gap:14px}
+  .case-card:nth-child(1) .case-desc{max-width:560px}
+  /* The secondary cards used to shrink every piece of text — description to
+     13px, tags to 7px, the link to 9px — which made the same interface element
+     read as two different components depending on which card it sat in. Only
+     the headline still steps down, because that is what carries the hierarchy;
+     everything else now matches the lead card at any width.
+
+     The index also sat in a fixed 78px column to the left of the headline,
+     while the lead card placed it above. Single column here too, so "02 /
+     HOSPITALITY" reads the same way as "01 / CULTURE" — and one less fixed
+     width to overflow on a narrow screen. */
+  .case-card:nth-child(2) .case-info,.case-card:nth-child(3) .case-info{grid-template-columns:1fr;gap:8px}
   .case-card:nth-child(2) .case-name,.case-card:nth-child(3) .case-name{font-size:clamp(34px,3.3vw,58px)}
-  .case-card:nth-child(2) .case-desc,.case-card:nth-child(3) .case-desc{font-size:13px;line-height:1.45}
   .case-card:nth-child(2) .case-tags,.case-card:nth-child(3) .case-tags{margin-top:14px}
-  .case-card:nth-child(2) .case-tags span,.case-card:nth-child(3) .case-tags span{font-size:7px;padding:6px 8px}
-  .case-card:nth-child(2) .case-link,.case-card:nth-child(3) .case-link{margin-top:18px;font-size:9px}
+  .case-card:nth-child(2) .case-link,.case-card:nth-child(3) .case-link{margin-top:18px}
 
   @media (min-width:851px) and (max-width:1120px){
     .showcase-grid{grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr)}
-    .case-card:nth-child(2) .case-info,.case-card:nth-child(3) .case-info{grid-template-columns:1fr}
-    .case-card:nth-child(2) .case-index,.case-card:nth-child(3) .case-index{margin-bottom:2px}
   }
 
   /* Kinetic manifesto band */
@@ -1271,13 +1280,33 @@
    one-page mockup), so this is the only way to reach the inner pages on a
    phone. Hidden above 850px. */
 .menu-wrap{display:none;position:relative}
-@media (max-width:850px){
+
+/* Threshold raised from 850px to 1200px.
+   Measured free space between the bar's three blocks, per locale:
+     960px  ->  18px (fr/es)   67px (en)
+    1000px  ->  37px           86px
+    1100px  ->  85px          133px
+    1200px  -> 131px          180px
+   Below roughly 1100 the French and Spanish bars run out of room: the wordmark
+   broke onto two lines and "ESTUDIO" collided with the language switcher.
+   English survives longer only because its labels are shorter — but one
+   breakpoint has to serve every locale, so it is set by the tightest.
+
+   1200 rather than 1400: it clears the actual failure with a 100px margin
+   while leaving the full bar on 1280 and 1366 laptops, which are among the
+   most common desktop widths and where three visible links beat a toggle. */
+@media (max-width:1200px){
+  .navlinks{display:none}
   .menu-wrap{display:block}
   /* The panel already carries the language switcher and the CTA, so drop the
-     duplicates from the bar itself — the mobile nav becomes logo + toggle. */
+     duplicates from the bar itself — the bar becomes logo + toggle. */
   .nav-right .locale-switcher,
   .nav-right .nav-cta{display:none}
 }
+
+/* The wordmark broke onto two lines before the toggle took over; keeping it on
+   one line means the bar degrades predictably at any width. */
+.brand-text{white-space:nowrap}
 
 .menu-toggle{
   width:38px;height:38px;padding:0;cursor:pointer;
@@ -2022,4 +2051,177 @@
 @media (max-width:850px){
   .key-takeaways{padding:20px}
   .key-takeaways li{font-size:14px}
+}
+
+/* NEW: contact form. Reuses the mockup's vocabulary — mono uppercase labels,
+   hairline rules, acid accent — rather than introducing a second form style. */
+.contact-form-block{padding:0 var(--pad) 10px;max-width:820px}
+.contact-form{display:flex;flex-direction:column;gap:26px}
+
+.contact-field{display:flex;flex-direction:column;gap:9px;border:0;padding:0;margin:0;min-width:0}
+.contact-row{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+
+.contact-label{
+  font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);padding:0
+}
+.contact-optional{text-transform:none;letter-spacing:0;opacity:.7;font-size:10px}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea{
+  width:100%;background:transparent;color:var(--ink);
+  border:0;border-bottom:1px solid var(--line);
+  padding:9px 0;font:400 16px var(--font-manrope),sans-serif;
+  border-radius:0;transition:border-color .3s var(--ease)
+}
+.contact-form textarea{resize:vertical;line-height:1.6;min-height:130px}
+.contact-form select{appearance:none;cursor:pointer;padding-right:22px;
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
+  background-position:calc(100% - 9px) 18px,calc(100% - 4px) 18px;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.contact-form input:focus-visible,
+.contact-form select:focus-visible,
+.contact-form textarea:focus-visible{outline:0;border-bottom-color:var(--ink)}
+.contact-form ::placeholder{color:var(--muted);opacity:.75}
+
+.contact-radios,.contact-checks{display:flex;flex-wrap:wrap;gap:9px}
+.contact-radio,.contact-check{
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  border:1px solid var(--line);border-radius:999px;padding:9px 15px;
+  font-size:13px;transition:border-color .3s var(--ease),background .3s var(--ease)
+}
+.contact-radio:hover,.contact-check:hover{border-color:var(--ink)}
+.contact-radio input,.contact-check input{accent-color:#111;margin:0;width:14px;height:14px}
+.contact-radio:has(input:checked),.contact-check:has(input:checked){
+  border-color:var(--ink);background:var(--acid)
+}
+.contact-radio:has(input:focus-visible),.contact-check:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
+
+.contact-error{margin:0;font-size:13px;color:#a3261c}
+.contact-error--form{padding:13px 15px;border:1px solid #a3261c;border-left-width:3px}
+
+.contact-submit-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:4px}
+.contact-submit{
+  border:1px solid var(--ink);background:var(--ink);color:var(--paper);
+  padding:15px 32px;border-radius:999px;cursor:pointer;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  transition:background .3s var(--ease),color .3s var(--ease)
+}
+.contact-submit:hover:not(:disabled){background:var(--acid);color:#111}
+.contact-submit:disabled{opacity:.55;cursor:progress}
+.contact-privacy{margin:0;flex:1;min-width:230px;font-size:12px;line-height:1.55;color:var(--muted)}
+
+.contact-form-done{padding:30px 32px;border:1px solid var(--line);border-left:3px solid var(--acid)}
+.contact-form-done-title{margin:0 0 7px;font-size:22px;letter-spacing:-.02em}
+.contact-form-done-title:focus{outline:0}
+.contact-form-done-body{margin:0;color:var(--muted);font-size:15px}
+
+/* Off-screen rather than display:none — a bot that skips hidden inputs would
+   otherwise sail past the trap. */
+.contact-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+@media (max-width:850px){
+  .contact-form-block{padding:0 18px 6px}
+  .contact-row{grid-template-columns:1fr;gap:26px}
+  .contact-form{gap:24px}
+  .contact-form-done{padding:24px 20px}
+}
+
+/* NEW: centred content column, full-bleed backgrounds.
+   ---------------------------------------------------------------------------
+   The mockup was drawn edge-to-edge, which reads well up to about 1500px and
+   then falls apart: at 1900px the contact form sat 820px wide against the left
+   edge with 1080px of empty space on its right. The imbalance is what the eye
+   catches, not the width.
+
+   Rather than wrap the page in a container — which would box the dark ticker,
+   statement and process bands and leave visible strips down each side — the
+   side padding itself absorbs the surplus. Sections keep spanning the viewport;
+   only what sits inside them stops at --content-max and centres.
+
+   `100%` here is the section's own width, so this resolves against the real
+   available space rather than 100vw, which would include the scrollbar and
+   produce a sliver of horizontal overflow. */
+:root{
+  --content-max:1440px;
+  --gutter:max(var(--pad), calc((100% - var(--content-max)) / 2));
+}
+
+/* Only full-bleed blocks belong here. Percentage padding resolves against the
+   CONTAINING BLOCK, not the element, so a block that already caps its own
+   width — the blog column, a narrow hero — would receive the full gutter
+   *inside* its narrow box and crush its content. Those blocks were already
+   centred by their own max-width plus auto margins, which is the layout we
+   want anyway, so they are deliberately excluded below. */
+nav,
+footer,
+.hero,
+section,
+.agency-intro,
+.showcase-grid,
+.metrics,
+.studio-editorial-hero,
+.studio-editorial-team,
+.studio-editorial-reach,
+.studio-editorial-approach,
+.service-page-hero:not(.service-page-hero--narrow),
+.service-features,
+.contact-details,
+.contact-form-block,
+.work-list,
+.case-study-hero,
+.case-study-editorial,
+.case-study-identity,
+.case-study-voice,
+.case-study-applications,
+.case-study-digital,
+.case-study-result{
+  padding-inline:var(--gutter);
+}
+
+/* The loader is deliberately left out: it is a full-screen brand moment with
+   the wordmark pinned left and the counter right, and centring it would pull
+   both toward the middle of the screen. */
+
+/* The form block was the one section with no top padding at all, so it sat
+   flush against the rule below the hero. */
+.contact-form-block{padding-top:64px;max-width:none}
+/* The column is 1440px at full width, which is fine for a headline and useless
+   for a text field: a 1440px-wide textarea is unusable. The form keeps a
+   reading measure and stays left-aligned on the gutter, so it lines up with
+   the h1 and the intro above it. */
+.contact-form{max-width:820px}
+@media (max-width:850px){
+  .contact-form-block{padding-top:44px}
+}
+
+/* NEW: white strip down the right edge between roughly 860px and 1140px.
+   ---------------------------------------------------------------------------
+   `overflow-x:hidden` sat on `body` alone, which makes the body its own scroll
+   container: the vertical scrollbar is then taken out of the body's own box,
+   leaving it ~15px narrower than the viewport. `html` had no background of its
+   own, so those 15px fell through to the browser's default white.
+
+   Two independent fixes, on purpose. Moving the clip to `html` restores the
+   viewport as the scroll owner so body spans the full width again; painting
+   the background on `html` as well means that even if a gutter is exposed by
+   some other route, it is the page colour rather than white. */
+html{
+  overflow-x:hidden;
+  background:var(--bg);
+}
+
+/* NEW: banner-proportioned case-study cover.
+   Same height as the Oxploria treatment, but without its palette — the project
+   keeps whatever gradient its own theme defines. The orbs are scaled down
+   because they were sized for an 850px panel and, left alone, only a blurred
+   fragment of one would land inside a 180px band. */
+.case-study-cover--banner{height:min(12.5vw,180px)}
+.case-study-cover--banner .case-study-cover-orb{transform:scale(.34)}
+/* Mirrors the Oxploria mobile rule exactly (24vw with a 105px floor) rather
+   than approximating it, so the two case studies read as one format. */
+@media (max-width:850px){
+  .case-study-cover--banner{height:24vw;min-height:105px}
 }

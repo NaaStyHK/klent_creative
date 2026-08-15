@@ -133,5 +133,47 @@ export type Dictionary = {
     locationLabel: string;
     location: string;
     socialLabel: string;
+    form: ContactForm;
+  };
+};
+
+/**
+ * Every string the contact form renders, including the option values that end
+ * up in the notification email. Options are `{ value, label }` pairs: `value`
+ * is a stable identifier that never varies by locale, so a form filled in
+ * Spanish still produces an email you can read and filter in French.
+ */
+export type ContactForm = {
+  legend: string;
+  intentLabel: string;
+  intentProject: string;
+  intentQuestion: string;
+  serviceLabel: string;
+  serviceHint: string;
+  services: { value: string; label: string }[];
+  budgetLabel: string;
+  budgets: { value: string; label: string }[];
+  timelineLabel: string;
+  timelines: { value: string; label: string }[];
+  nameLabel: string;
+  emailLabel: string;
+  companyLabel: string;
+  optional: string;
+  messageLabel: string;
+  messagePlaceholderProject: string;
+  messagePlaceholderQuestion: string;
+  submit: string;
+  submitting: string;
+  successTitle: string;
+  successBody: string;
+  errorTitle: string;
+  errorBody: string;
+  privacy: string;
+  required: {
+    name: string;
+    email: string;
+    emailInvalid: string;
+    message: string;
+    messageShort: string;
   };
 };
