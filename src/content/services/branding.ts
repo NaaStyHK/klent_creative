@@ -9,7 +9,7 @@ export const branding: Record<Locale, ServiceContent> = {
     eyebrow: "Branding",
     h1: "Une identité de marque qui se remarque.",
     intro:
-      "Votre logo n'est pas votre marque. Nous construisons un système complet — positionnement, naming, identité verbale, identité visuelle — pour que chaque point de contact raconte la même histoire, avec le même impact.",
+      "Votre logo n'est pas votre marque. Nous construisons un système complet : positionnement, naming, identité verbale, identité visuelle. Chaque point de contact raconte alors la même histoire, avec le même impact.",
     features: [
       {
         title: "Stratégie & positionnement",
@@ -121,7 +121,7 @@ export const branding: Record<Locale, ServiceContent> = {
     eyebrow: "Branding",
     h1: "Una identidad de marca que se hace notar.",
     intro:
-      "Vuestro logo no es vuestra marca. Construimos un sistema completo — posicionamiento, naming, identidad verbal, identidad visual — para que cada punto de contacto cuente la misma historia, con el mismo impacto.",
+      "Vuestro logo no es vuestra marca. Construimos un sistema completo: posicionamiento, naming, identidad verbal, identidad visual. Así cada punto de contacto cuenta la misma historia, con el mismo impacto.",
     features: [
       {
         title: "Estrategia y posicionamiento",
@@ -183,7 +183,7 @@ export const branding: Record<Locale, ServiceContent> = {
     eyebrow: "Branding",
     h1: "Una identidad de marca que se hace notar.",
     intro:
-      "Tu logo no es tu marca. Construimos un sistema completo — posicionamiento, naming, identidad verbal, identidad visual — para que cada punto de contacto cuente la misma historia, con el mismo impacto.",
+      "Tu logo no es tu marca. Construimos un sistema completo: posicionamiento, naming, identidad verbal, identidad visual. Así cada punto de contacto cuenta la misma historia, con el mismo impacto.",
     features: [
       {
         title: "Estrategia y posicionamiento",
@@ -245,7 +245,7 @@ export const branding: Record<Locale, ServiceContent> = {
     eyebrow: "Branding",
     h1: "A brand identity that gets noticed.",
     intro:
-      "Your logo isn't your brand. We build a complete system — positioning, naming, verbal identity, visual identity — so every touchpoint tells the same story, with the same impact.",
+      "Your logo isn't your brand. We build a complete system: positioning, naming, verbal identity, visual identity. Every touchpoint then tells the same story, with the same impact.",
     features: [
       {
         title: "Strategy & positioning",

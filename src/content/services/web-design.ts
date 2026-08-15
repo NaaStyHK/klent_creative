@@ -9,7 +9,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     eyebrow: "Création de site internet",
     h1: "Un site internet qui convertit, pas juste qui existe.",
     intro:
-      "Nous concevons et développons des sites vitrines et des plateformes sur mesure — rythme éditorial, interactions soignées, performance et référencement pensés dès la première maquette.",
+      "Nous concevons et développons des sites vitrines et des plateformes sur mesure : rythme éditorial, interactions soignées, performance et référencement pensés dès la première maquette.",
     features: [
       {
         title: "Design sur mesure",
@@ -121,7 +121,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     eyebrow: "Creación de sitio web",
     h1: "Un sitio web que convierte, no que solo existe.",
     intro:
-      "Diseñamos y desarrollamos sitios web y plataformas a medida — ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
+      "Diseñamos y desarrollamos sitios web y plataformas a medida: ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
     features: [
       {
         title: "Diseño a medida",
@@ -183,7 +183,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     eyebrow: "Creación de sitio web",
     h1: "Un sitio web que convierte, no que solo existe.",
     intro:
-      "Diseñamos y desarrollamos sitios web y plataformas a medida — ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
+      "Diseñamos y desarrollamos sitios web y plataformas a medida: ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
     features: [
       {
         title: "Diseño a medida",
@@ -245,7 +245,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     eyebrow: "Web Design & Development",
     h1: "A website that converts, not just exists.",
     intro:
-      "We design and build custom websites and platforms — editorial rhythm, considered interactions, performance and SEO baked in from the first wireframe.",
+      "We design and build custom websites and platforms: editorial rhythm, considered interactions, performance and SEO baked in from the first wireframe.",
     features: [
       {
         title: "Custom design",

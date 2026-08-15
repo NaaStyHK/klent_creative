@@ -9,7 +9,7 @@ export const growth: Record<Locale, ServiceContent> = {
     eyebrow: "Croissance & Contenu",
     h1: "Du trafic, oui. Mais surtout des clients.",
     intro:
-      "Un beau site sans stratégie derrière ne sert à rien. Nous construisons le référencement, le contenu et les campagnes qui amènent les bonnes personnes vers votre site — et les convertissent une fois sur place.",
+      "Un beau site sans stratégie derrière ne sert à rien. Nous construisons le référencement, le contenu et les campagnes qui amènent les bonnes personnes vers votre site, et qui les convertissent une fois sur place.",
     features: [
       {
         title: "SEO technique & sémantique",
@@ -121,7 +121,7 @@ export const growth: Record<Locale, ServiceContent> = {
     eyebrow: "Crecimiento y Contenido",
     h1: "Tráfico, sí. Pero sobre todo, clientes.",
     intro:
-      "Un sitio bonito sin estrategia detrás no sirve de mucho. Construimos el SEO, el contenido y las campañas que llevan a las personas adecuadas a vuestro sitio — y las convierten una vez allí.",
+      "Un sitio bonito sin estrategia detrás no sirve de mucho. Construimos el SEO, el contenido y las campañas que llevan a las personas adecuadas a vuestro sitio, y que las convierten una vez allí.",
     features: [
       {
         title: "SEO técnico y semántico",
@@ -183,7 +183,7 @@ export const growth: Record<Locale, ServiceContent> = {
     eyebrow: "Crecimiento y Contenido",
     h1: "Tráfico, sí. Pero sobre todo, clientes.",
     intro:
-      "Un sitio lindo sin estrategia detrás no sirve de mucho. Construimos el SEO, el contenido y las campañas que llevan a las personas correctas a tu sitio — y las convierten una vez ahí.",
+      "Un sitio lindo sin estrategia detrás no sirve de mucho. Construimos el SEO, el contenido y las campañas que llevan a las personas correctas a tu sitio, y que las convierten una vez ahí.",
     features: [
       {
         title: "SEO técnico y semántico",
@@ -245,7 +245,7 @@ export const growth: Record<Locale, ServiceContent> = {
     eyebrow: "Growth & Content",
     h1: "Traffic, sure. But mostly, customers.",
     intro:
-      "A great-looking site without a strategy behind it doesn't do much. We build the SEO, content and campaigns that bring the right people to your site — and convert them once they're there.",
+      "A great-looking site without a strategy behind it doesn't do much. We build the SEO, content and campaigns that bring the right people to your site, and convert them once they're there.",
     features: [
       {
         title: "Technical & semantic SEO",

@@ -186,7 +186,7 @@ export const fr: Dictionary = {
     eyebrow: "Contact",
     h1: "Parlons de votre projet.",
     intro:
-      "Que vous ayez déjà un brief précis ou juste une idée à creuser, expliquez-nous ce que vous voulez construire — nous vous répondons sous 24 heures.",
+      "Que vous ayez déjà un brief précis ou juste une idée à creuser, expliquez-nous ce que vous voulez construire. Nous vous répondons sous 24 heures.",
     emailLabel: "Écrivez-nous",
     phoneLabel: "Téléphone",
     phoneFrance: "France",

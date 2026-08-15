@@ -41,7 +41,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "3. Propriété intellectuelle",
         paragraphs: [
-          "L'ensemble du contenu de ce site — textes, visuels, logo, code source, animations et structure — est la propriété exclusive de Kevin Hafsi / Klent Creative, sauf mention contraire.",
+          "L'ensemble du contenu de ce site (textes, visuels, logo, code source, animations et structure) est la propriété exclusive de Kevin Hafsi / Klent Creative, sauf mention contraire.",
           "Toute reproduction, distribution, modification ou exploitation, même partielle, sans autorisation écrite préalable est strictement interdite et constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.",
         ],
       },
@@ -102,7 +102,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "3. Propiedad intelectual",
         paragraphs: [
-          "Todo el contenido de este sitio — textos, imágenes, logotipo, código fuente, animaciones y estructura — es propiedad exclusiva de Kevin Hafsi / Klent Creative, salvo indicación en contrario.",
+          "Todo el contenido de este sitio (textos, imágenes, logotipo, código fuente, animaciones y estructura) es propiedad exclusiva de Kevin Hafsi / Klent Creative, salvo indicación en contrario.",
           "Queda estrictamente prohibida cualquier reproducción, distribución, modificación o explotación, incluso parcial, sin autorización previa por escrito. Dicha conducta constituye una infracción sancionada por la legislación de propiedad intelectual.",
         ],
       },
@@ -163,7 +163,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "3. Propiedad intelectual",
         paragraphs: [
-          "Todo el contenido de este sitio — textos, imágenes, logotipo, código fuente, animaciones y estructura — es propiedad exclusiva de Kevin Hafsi / Klent Creative, salvo indicación en contrario.",
+          "Todo el contenido de este sitio (textos, imágenes, logotipo, código fuente, animaciones y estructura) es propiedad exclusiva de Kevin Hafsi / Klent Creative, salvo indicación en contrario.",
           "Queda estrictamente prohibida cualquier reproducción, distribución, modificación o explotación, incluso parcial, sin autorización previa por escrito. Dicha conducta constituye una infracción sancionada por la legislación de propiedad intelectual.",
         ],
       },
@@ -224,7 +224,7 @@ export const legal: Record<Locale, LegalContent> = {
       {
         title: "3. Intellectual property",
         paragraphs: [
-          "All content on this site — text, visuals, logo, source code, animations and structure — is the exclusive property of Kevin Hafsi / Klent Creative, unless stated otherwise.",
+          "All content on this site (text, visuals, logo, source code, animations and structure) is the exclusive property of Kevin Hafsi / Klent Creative, unless stated otherwise.",
           "Any reproduction, distribution, modification or exploitation, even partial, without prior written permission is strictly prohibited and constitutes an infringement punishable under intellectual property law.",
         ],
       },

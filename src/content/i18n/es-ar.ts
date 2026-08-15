@@ -184,7 +184,7 @@ export const esAr: Dictionary = {
     eyebrow: "Contacto",
     h1: "Hablemos de tu proyecto.",
     intro:
-      "Ya tengas un brief claro o solo una idea por explorar, contanos qué querés construir — te respondemos en menos de 24 horas.",
+      "Ya tengas un brief claro o solo una idea por explorar, contanos qué querés construir. Te respondemos en menos de 24 horas.",
     emailLabel: "Escribinos",
     phoneLabel: "Teléfono",
     phoneFrance: "Francia",

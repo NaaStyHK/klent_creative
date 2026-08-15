@@ -54,7 +54,7 @@ const baseStudy: NonNullable<ProjectContent["caseStudy"]> = {
   liveUrl: "https://www.oxploria.com/en",
   resultEyebrow: "06 / RÉSULTAT",
   resultHeadline: "Une application et un site réunis dans une même expérience.",
-  resultBody: "Un produit digital complet, développé pour rendre l’exploration culturelle plus directe, plus calme et plus utile — de la première découverte sur le web jusqu’à la visite dans la ville.",
+  resultBody: "Un produit digital complet, développé pour rendre l’exploration culturelle plus directe, plus calme et plus utile : de la première découverte sur le web jusqu’à la visite dans la ville.",
 };
 
 const esStudy: NonNullable<ProjectContent["caseStudy"]> = {
@@ -144,7 +144,7 @@ const enStudy: NonNullable<ProjectContent["caseStudy"]> = {
   digitalMockup: { url: "oxploria.com", nav: "EXPLORE   CITIES   DOWNLOAD", kicker: "BARCELONA / LA ROCHELLE", headline: "DISCOVER THE HISTORY AROUND YOU.", cta: "VISIT THE WEBSITE ↗" },
   resultEyebrow: "06 / OUTCOME",
   resultHeadline: "One application and website, built as a single experience.",
-  resultBody: "A complete digital product developed to make cultural exploration more direct, calm and useful — from first discovery on the web to the visit in the city.",
+  resultBody: "A complete digital product developed to make cultural exploration more direct, calm and useful: from first discovery on the web to the visit in the city.",
 };
 
 const shared = {
