@@ -11,7 +11,7 @@ export default function Nav({ locale, dict }: { locale: Locale; dict: Dictionary
     <nav>
       <Link className="brand hoverable" href={`/${locale}`} aria-label={dict.loader.brand}>
         {/* eslint-disable-next-line @next/next/no-img-element -- local SVG icon, next/image adds no optimization for vectors here */}
-        <img className="brand-mark" src="/brand/logo-mark-light-bg.svg" alt="" />
+        <img className="brand-mark" src="/brand/logo-mark-light-bg.svg" alt="" width={1000} height={375} />
         <span className="brand-text">{dict.loader.brand}</span>
       </Link>
       <div className="navlinks mono">

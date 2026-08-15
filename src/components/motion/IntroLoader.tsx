@@ -101,7 +101,7 @@ export default function IntroLoader({ brand }: { brand: string }) {
       <div className="intro-loader__inner">
         <div className="intro-loader__brand-block">
           {/* eslint-disable-next-line @next/next/no-img-element -- local SVG icon, next/image adds no optimization for vectors here */}
-          <img className="intro-loader__mark" src="/brand/logo-mark-dark-bg.svg" alt="" />
+          <img className="intro-loader__mark" src="/brand/logo-mark-dark-bg.svg" alt="" width={1000} height={375} />
           <div className="intro-loader__brand">{brand}</div>
         </div>
         <div className="intro-loader__counter" ref={counterRef}>

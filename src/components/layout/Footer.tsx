@@ -10,7 +10,7 @@ export default function Footer({ dict, locale }: { dict: Dictionary; locale: Loc
     <footer className="mono">
       <div className="footer-brand">
         {/* eslint-disable-next-line @next/next/no-img-element -- local SVG icon, next/image adds no optimization for vectors here */}
-        <img className="brand-mark" src="/brand/logo-mark-light-bg.svg" alt="" />
+        <img className="brand-mark" src="/brand/logo-mark-light-bg.svg" alt="" width={1000} height={375} />
         <div>
           {line1}
           {" "}<br />
