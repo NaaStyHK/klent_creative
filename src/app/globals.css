@@ -1197,7 +1197,7 @@
 .studio-section-body{margin:24px 0 0;font-size:clamp(17px,1.7vw,23px);line-height:1.5;color:#3c3a35;max-width:720px}
 .studio-people-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .studio-person{min-width:0}
-.studio-person-visual{position:relative;aspect-ratio:5/4;overflow:hidden;display:grid;place-items:center;background:var(--fg);color:var(--paper)}
+.studio-person-visual{position:relative;aspect-ratio:4/3;overflow:hidden;display:grid;place-items:center;background:var(--fg);color:var(--paper)}
 .studio-person:nth-child(even) .studio-person-visual{background:var(--acid);color:var(--fg)}
 .studio-person-visual::after{content:"";position:absolute;inset:18px;border:1px solid currentColor;opacity:.2}
 .studio-person-visual img{object-fit:cover;filter:grayscale(1);transition:filter .5s,transform .8s var(--ease)}
@@ -1245,7 +1245,10 @@
   .studio-editorial-team,.studio-editorial-reach{padding:72px 18px}
   .studio-section-heading{grid-template-columns:1fr;gap:24px;margin-bottom:42px}
   .studio-people-grid{grid-template-columns:1fr;gap:56px}
-  .studio-person-visual{aspect-ratio:1/1}
+  /* 34px of surround is proportionally huge on a phone, where the plate is
+     square and barely wider than the border it carries. */
+  .studio-person-visual{aspect-ratio:1/1;border-width:16px}
+  .studio-person-visual::after{inset:-8px}
   .studio-person-initial{font-size:62vw}
   .studio-person-info{grid-template-columns:1fr;min-height:0}.studio-person-languages{text-align:left}
   .studio-market-row{grid-template-columns:40px 1fr 26px;gap:12px;padding:24px 0;align-items:start}
@@ -2236,17 +2239,24 @@ html{
 }
 
 /* Studio portraits.
-   The visual is a coloured plate (black / acid) with a hairline frame drawn by
-   ::after at inset 18px. `fill` would stretch the photo edge to edge and bury
-   both. Insetting it just inside that hairline keeps the plate visible as a
-   mat and turns the frame into the photo's own outline, which is the design
-   the placeholder letters were sitting in. */
-.studio-person-visual img{
-  inset:19px;
-  width:auto;
-  height:auto;
-}
-.studio-person-visual::after{z-index:1}
+   The visual is a coloured plate — black for the first member, acid for the
+   second — with a hairline drawn by ::after at inset 18px. The photo sits
+   inside all of that, so the plate reads as a mat and each portrait keeps its
+   own coloured surround, which is the frame the placeholder letters sat in.
+
+   The surround is a real border rather than an inset on the image, and that is
+   deliberate. next/image `fill` writes inset/width/height as an INLINE style,
+   so a stylesheet rule cannot move the photo; overriding it with `auto` sizes
+   collapsed the image to 0x0, because `width:auto` on a positioned replaced
+   element takes its intrinsic size instead of stretching. A border sidesteps
+   the fight: it shrinks the padding box, and an absolutely positioned child
+   resolves `inset:0` against that box, so the photo is pushed in whatever the
+   inline style says. */
+.studio-person-visual{border:34px solid var(--fg)}
+.studio-person:nth-child(even) .studio-person-visual{border-color:var(--acid)}
+/* Negative inset floats the hairline inside the coloured band, where it sat
+   when the plate held a letter, instead of landing on the photo itself. */
+.studio-person-visual::after{inset:-16px;z-index:1}
 
 .studio-person-link{
   display:inline-flex;
