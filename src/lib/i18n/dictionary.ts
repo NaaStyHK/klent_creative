@@ -89,6 +89,15 @@ export type Dictionary = {
     headlineLines: string[];
     button: string;
   };
+  /** Corner prompt shown once the reader is halfway down a page. */
+  nudge: {
+    title: string;
+    body: string;
+    button: string;
+    tags: string[];
+    /** Accessible name for the dismiss control. */
+    close: string;
+  };
   footer: {
     tagline: string;
     legal: string;

@@ -149,6 +149,13 @@ export const fr: Dictionary = {
     headlineLines: ["FAISONS", "DE CETTE IDÉE", "UNE RÉALITÉ."],
     button: "Démarrer un projet ↗︎",
   },
+  nudge: {
+      title: "Un projet en tête ?",
+      body: "Parlons-en. Nous répondons sous 24 heures.",
+      button: "Démarrer un projet",
+      tags: ["Identité", "Site internet", "Application"],
+      close: "Fermer",
+  },
   footer: {
     tagline: "KLENT CREATIVE — LA ROCHELLE / BARCELONE / INTERNATIONAL\nSTUDIO DE DESIGN POUR LES MARQUES QUI ONT QUELQUE CHOSE À DIRE.",
     legal: "Mentions légales",

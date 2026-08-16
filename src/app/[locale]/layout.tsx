@@ -14,6 +14,7 @@ import {
 import { buildSocial } from "@/lib/seo";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import Nav from "@/components/layout/Nav";
+import ProjectNudge from "@/components/layout/ProjectNudge";
 import Footer from "@/components/layout/Footer";
 import IntroLoader from "@/components/motion/IntroLoader";
 import MotionFX from "@/components/motion/MotionFX";
@@ -123,6 +124,7 @@ export default async function LocaleLayout({
         <Nav locale={locale} dict={dict} />
         <main>{children}</main>
         <Footer dict={dict} locale={locale} />
+        <ProjectNudge dict={dict} locale={locale} />
         {/* Vercel Analytics (traffic) and Speed Insights (real-user Core Web
             Vitals). Speed Insights is the one that matters most here: it
             reports the field LCP of visitors on real devices, which is the

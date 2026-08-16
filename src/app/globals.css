@@ -2276,3 +2276,117 @@ html{
   color:var(--fg);
   border-bottom-color:currentColor;
 }
+
+/* Corner prompt (ProjectNudge).
+   Fixed, so it never shifts layout no matter when it appears. Deliberately a
+   small card in the corner rather than an overlay: intrusive interstitials on
+   mobile are a ranking liability, and nothing here is worth that. */
+.nudge{
+  position:fixed;
+  right:var(--pad);
+  bottom:22px;
+  z-index:120;
+  width:min(330px,calc(100vw - 32px));
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:10px;
+  animation:nudge-in .45s var(--ease) both;
+}
+@keyframes nudge-in{
+  from{opacity:0;transform:translateY(14px)}
+  to{opacity:1;transform:none}
+}
+
+.nudge-close{
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  padding:0;
+  border:0;
+  background:var(--fg);
+  color:var(--paper);
+  font-size:16px;
+  line-height:1;
+  cursor:pointer;
+  transition:background .25s;
+}
+.nudge-close:hover,
+.nudge-close:focus-visible{background:#000}
+
+.nudge-card{
+  width:100%;
+  padding:22px 22px 0;
+  background:var(--fg);
+  color:var(--paper);
+}
+/* Both lines are statements, not a heading over fine print, so they share a
+   weight and the second is simply larger. */
+.nudge-title{
+  margin:0 0 12px;
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+.nudge-body{
+  margin:0 0 20px;
+  font-size:19px;
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.025em;
+  color:var(--paper);
+}
+.nudge-button{
+  display:block;
+  margin:0 -22px;
+  padding:15px 22px;
+  background:var(--acid);
+  color:var(--fg);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  text-align:center;
+  text-decoration:none;
+  transition:filter .25s;
+}
+.nudge-button:hover,
+.nudge-button:focus-visible{filter:brightness(1.08)}
+
+.nudge-tags{
+  width:100%;
+  overflow:hidden;
+  background:var(--fg);
+  color:var(--paper);
+}
+.nudge-tags-track{
+  display:flex;
+  width:max-content;
+  animation:nudge-marquee 14s linear infinite;
+}
+.nudge-tags-run{display:flex;flex-shrink:0}
+.nudge-tag{
+  padding:10px 0;
+  margin-right:14px;
+  font-size:9px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.nudge-plus{color:var(--acid)}
+/* Half the track is one full copy of the list, so this loops seamlessly. */
+@keyframes nudge-marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+@media (max-width:850px){
+  .nudge{left:16px;right:16px;bottom:16px;width:auto}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .nudge{animation:none}
+  /* A permanently sliding strip is exactly what this preference is about. */
+  .nudge-tags-track{animation:none}
+}

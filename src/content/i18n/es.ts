@@ -147,6 +147,13 @@ export const es: Dictionary = {
     headlineLines: ["HAGAMOS QUE", "LA IDEA", "SUCEDA."],
     button: "Empezar un proyecto ↗︎",
   },
+  nudge: {
+      title: "¿Tienes un proyecto?",
+      body: "Cuéntanoslo. Respondemos en menos de 24 horas.",
+      button: "Empezar un proyecto",
+      tags: ["Identidad", "Sitio web", "Aplicación"],
+      close: "Cerrar",
+  },
   footer: {
     tagline: "KLENT CREATIVE — LA ROCHELLE / BARCELONA / INTERNACIONAL\nESTUDIO DE DISEÑO PARA MARCAS CON ALGO QUE DECIR.",
     legal: "Aviso legal",
