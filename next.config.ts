@@ -8,10 +8,20 @@ const nextConfig: NextConfig = {
   // that removes it never ran). Dev-only setting, has no effect on
   // `next build` / production.
   allowedDevOrigins: ["192.168.1.230"],
-  // No redirects: every URL indexed on the previous site (/fr, /es,
-  // /fr/contact, /fr/blog, /es/blog, and all 10 FR blog slugs) is
-  // reproduced at an identical path in this app. Add a `redirects()`
-  // entry here (301) only if an existing slug ever needs to change.
+  // "/" is the only redirect: every URL indexed on the previous site (/fr,
+  // /es, /fr/contact, /fr/blog, /es/blog, and all 10 FR blog slugs) is
+  // reproduced at an identical path in this app.
+  //
+  // It lives here rather than in an app/page.tsx so that app/[locale]/layout
+  // can be the single root layout and render <html lang> on the server. A page
+  // at "/" would have forced a second root layout just to redirect.
+  //
+  // French on purpose: the live site has sent "/" to /fr for months and every
+  // indexed URL is French. Fixed target, never browser-language based —
+  // Googlebot crawls from the US in English and would always land on /en.
+  async redirects() {
+    return [{ source: "/", destination: "/fr", permanent: true }];
+  },
   images: {
     remotePatterns: [
       {
