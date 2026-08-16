@@ -28,7 +28,7 @@ export default function JsonLd({ locale }: { locale: Locale }) {
   const data = graph([
     organizationNode(locale, dict.meta.home.description, services),
     ...locationNodes(locale, dict.meta.home.description),
-    websiteNode(locale),
+    websiteNode(),
   ]);
 
   return (

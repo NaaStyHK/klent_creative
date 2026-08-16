@@ -28,11 +28,11 @@ const ANSWER_ENGINES = [
  * Crawlers whose stated purpose is collecting text to train models, with no
  * citation or referral in return.
  *
- * These are allowed too, and that is a judgement call worth understanding: for
- * a studio that wants to be a known entity, being present in training data is
- * how a model comes to "know" the brand at all, which is what surfaces it in
- * answers where no live retrieval happens. The trade is real content for
- * long-term recognition. Move any of these to `disallow` to opt out.
+ * These are allowed, which is a choice rather than a default — and one worth
+ * revisiting periodically, because it is an intellectual-property decision
+ * more than an SEO one. Nobody can demonstrate that being in a training corpus
+ * produces later brand recognition, so it is not claimed here. Move any of
+ * these to `disallow` to opt out; the answer engines above are unaffected.
  */
 const TRAINING_CRAWLERS = [
   "GPTBot", // OpenAI model training

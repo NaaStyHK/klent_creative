@@ -1,4 +1,4 @@
-import { hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
+import { hreflangByLocale, locales, siteUrl, type Locale } from "@/lib/i18n/config";
 
 /**
  * Stable identifiers for the two entities that exist once for the whole site.
@@ -273,14 +273,22 @@ export function organizationNode(
   };
 }
 
-export function websiteNode(locale: Locale): SchemaNode {
+/**
+ * The site itself. Its properties must not vary from page to page: it carries
+ * a single stable @id, so emitting `inLanguage: "fr"` on French pages and
+ * `"es-ES"` on Spanish ones described one entity as being in a different
+ * language depending on where you read it. The site is in four languages —
+ * that is what it now says, once, everywhere. Per-page language lives on the
+ * WebPage nodes, which is where it belongs.
+ */
+export function websiteNode(): SchemaNode {
   return {
     "@type": "WebSite",
     "@id": WEBSITE_ID,
     url: siteUrl,
     name: "Klent Creative",
     publisher: { "@id": ORG_ID },
-    inLanguage: hreflangByLocale[locale],
+    inLanguage: locales.map((locale) => hreflangByLocale[locale]),
   };
 }
 
