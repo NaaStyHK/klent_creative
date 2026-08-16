@@ -3,7 +3,7 @@ import type { Dictionary } from "@/lib/i18n/dictionary";
 export const fr: Dictionary = {
   meta: {
     home: {
-      title: "Klent Creative — Studio créatif, branding & développement",
+      title: "Klent Creative — Création de site internet à La Rochelle",
       description:
         "Studio créatif indépendant. Marques, sites internet et applications mobiles pour entreprises ambitieuses en France, Espagne et Argentine.",
     },

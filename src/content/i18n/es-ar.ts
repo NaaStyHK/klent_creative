@@ -3,7 +3,7 @@ import type { Dictionary } from "@/lib/i18n/dictionary";
 export const esAr: Dictionary = {
   meta: {
     home: {
-      title: "Klent Creative — Estudio creativo, branding y desarrollo web",
+      title: "Klent Creative — Diseño web y desarrollo de apps",
       description:
         "Estudio creativo independiente. Creamos marcas, sitios web y aplicaciones móviles para empresas ambiciosas en Argentina, España y Francia.",
     },
