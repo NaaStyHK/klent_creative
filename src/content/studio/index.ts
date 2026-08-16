@@ -8,7 +8,7 @@ import type { StudioContent } from "@/lib/i18n/studio-content";
  */
 export const studio: Record<Locale, StudioContent> = {
   fr: {
-    metaTitle: "Le studio | Qui sommes-nous ? | KLENT Creative",
+    metaTitle: "Le studio | Qui sommes-nous ? | Klent Creative",
     metaDescription:
       "KLENT est un studio créatif indépendant à deux : design et développement, relation client. Français et espagnol, entre La Rochelle, Barcelone et l'Argentine.",
     eyebrow: "Le studio",
@@ -75,7 +75,7 @@ export const studio: Record<Locale, StudioContent> = {
   },
 
   es: {
-    metaTitle: "El estudio | ¿Quiénes somos? | KLENT Creative",
+    metaTitle: "El estudio | ¿Quiénes somos? | Klent Creative",
     metaDescription:
       "Estudio creativo independiente de dos personas: diseño, desarrollo y relación con clientes. Entre Barcelona, La Rochelle y Argentina.",
     eyebrow: "El estudio",
@@ -142,7 +142,7 @@ export const studio: Record<Locale, StudioContent> = {
   },
 
   "es-ar": {
-    metaTitle: "El estudio | ¿Quiénes somos? | KLENT Creative",
+    metaTitle: "El estudio | ¿Quiénes somos? | Klent Creative",
     metaDescription:
       "Estudio creativo independiente de dos personas: diseño, desarrollo y relación con clientes. Entre Argentina, Barcelona y La Rochelle.",
     eyebrow: "El estudio",
@@ -209,7 +209,7 @@ export const studio: Record<Locale, StudioContent> = {
   },
 
   en: {
-    metaTitle: "The studio | Who we are | KLENT Creative",
+    metaTitle: "The studio | Who we are | Klent Creative",
     metaDescription:
       "KLENT is a two-person independent creative studio: design and development, client relations. French and Spanish, across La Rochelle, Barcelona and Argentina.",
     eyebrow: "The studio",

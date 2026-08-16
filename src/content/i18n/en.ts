@@ -3,7 +3,7 @@ import type { Dictionary } from "@/lib/i18n/dictionary";
 export const en: Dictionary = {
   meta: {
     home: {
-      title: "KLENT — Creative Studio | Branding, Web Design & Development",
+      title: "Klent Creative — Creative studio, branding & web development",
       description:
         "Independent creative studio. We build brands, websites and mobile apps for ambitious companies in France, Spain and Argentina.",
     },
@@ -156,7 +156,7 @@ export const en: Dictionary = {
   },
   loader: { brand: "KLENT CREATIVE" },
   workPage: {
-    metaTitle: "Work — KLENT Creative Studio",
+    metaTitle: "Work — Klent Creative",
     metaDescription: "A selection of creative concepts by KLENT: branding, websites and brand identity.",
     eyebrow: "WORK",
     h1: "IDEAS THAT TOOK SHAPE.",
@@ -166,7 +166,7 @@ export const en: Dictionary = {
     viewProject: "View project",
   },
   blog: {
-    metaTitle: "Blog — KLENT Creative Studio",
+    metaTitle: "Blog — Klent Creative",
     metaDescription: "Costs, timelines and decision criteria for websites, mobile apps and branding, explained without jargon by the Klent studio.",
     eyebrow: "Blog",
     h1: "Notes from the studio.",
@@ -181,7 +181,7 @@ export const en: Dictionary = {
     categoryMetaSuffix: "Articles and advice",
   },
   contact: {
-    metaTitle: "Contact — KLENT Creative Studio",
+    metaTitle: "Contact — Klent Creative",
     metaDescription: "Get in touch with KLENT. Tell us about your branding, website or mobile app project.",
     eyebrow: "Contact",
     h1: "Let's talk about your project.",

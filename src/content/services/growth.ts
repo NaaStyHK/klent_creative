@@ -3,7 +3,7 @@ import type { ServiceContent } from "@/lib/i18n/service-content";
 
 export const growth: Record<Locale, ServiceContent> = {
   fr: {
-    metaTitle: "SEO & croissance de contenu — Agence marketing | KLENT",
+    metaTitle: "SEO & contenu — Agence marketing | Klent Creative",
     metaDescription:
       "Référencement, stratégie de contenu et campagnes pour transformer votre trafic en clients. KLENT accompagne la croissance de marques ambitieuses.",
     eyebrow: "Croissance & Contenu",
@@ -115,7 +115,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
-    metaTitle: "Agencia de SEO y marketing de contenidos | KLENT",
+    metaTitle: "Agencia de SEO y marketing de contenidos | Klent Creative",
     metaDescription:
       "Posicionamiento, estrategia de contenido y campañas para convertir vuestro tráfico en clientes. KLENT acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",
@@ -177,7 +177,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
-    metaTitle: "Agencia de SEO y marketing de contenidos | KLENT",
+    metaTitle: "Agencia de SEO y marketing de contenidos | Klent Creative",
     metaDescription:
       "Posicionamiento, estrategia de contenido y campañas para convertir tu tráfico en clientes. KLENT acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",
@@ -239,7 +239,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   en: {
-    metaTitle: "SEO & Content Growth — Marketing Agency | KLENT",
+    metaTitle: "SEO & Content Growth — Marketing Agency | Klent Creative",
     metaDescription:
       "SEO, content strategy and campaigns that turn your traffic into customers. KLENT supports the growth of ambitious brands.",
     eyebrow: "Growth & Content",

@@ -138,7 +138,7 @@ function project(locale: Locale, study: NonNullable<ProjectContent["caseStudy"]>
     en: { category: "Hospitality", tags: ["UX/UI", "Development", "SEO"], intro: "Website, direct booking and an interactive menu for Mannà. Identity, photography and aesthetic direction supplied by the client.", badge: "Real project" },
   }[locale];
   return {
-    metaTitle: `Mannà — ${localized.category} | KLENT Creative`, metaDescription: localized.intro, badge: localized.badge,
+    metaTitle: `Mannà — ${localized.category} | Klent Creative`, metaDescription: localized.intro, badge: localized.badge,
     category: localized.category, name: ["Mannà", ""], tags: localized.tags, image, alt: `Mannà — ${localized.category}`,
     conceptNote: localized.badge, intro: localized.intro, briefTitle: "Brief", brief: study.conceptBody,
     approachTitle: "Approach", approach: study.identityBody, resultTitle: "Result", result: study.resultBody, caseStudy: study,

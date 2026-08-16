@@ -3,7 +3,7 @@ import type { Dictionary } from "@/lib/i18n/dictionary";
 export const fr: Dictionary = {
   meta: {
     home: {
-      title: "KLENT — Studio créatif | Branding, web & développement",
+      title: "Klent Creative — Studio créatif, branding & développement",
       description:
         "Studio créatif indépendant. Marques, sites internet et applications mobiles pour entreprises ambitieuses en France, Espagne et Argentine.",
     },
@@ -156,7 +156,7 @@ export const fr: Dictionary = {
   },
   loader: { brand: "KLENT CREATIVE" },
   workPage: {
-    metaTitle: "Réalisations — KLENT Studio créatif",
+    metaTitle: "Réalisations — Klent Creative",
     metaDescription: "Une sélection de concepts créatifs par KLENT : branding, sites internet et identités de marque.",
     eyebrow: "RÉALISATIONS",
     h1: "DES IDÉES QUI ONT PRIS FORME.",
@@ -166,7 +166,7 @@ export const fr: Dictionary = {
     viewProject: "Voir le projet",
   },
   blog: {
-    metaTitle: "Blog — KLENT Studio créatif",
+    metaTitle: "Blog — Klent Creative",
     metaDescription: "Nos réflexions sur le branding, la création de site internet et les applications mobiles.",
     eyebrow: "Blog",
     h1: "Les carnets du studio.",
@@ -181,7 +181,7 @@ export const fr: Dictionary = {
     categoryMetaSuffix: "Articles et conseils",
   },
   contact: {
-    metaTitle: "Contact — KLENT Studio créatif",
+    metaTitle: "Contact — Klent Creative",
     metaDescription: "Contactez KLENT pour parler de votre projet de branding, de site internet ou d'application mobile.",
     eyebrow: "Contact",
     h1: "Parlons de votre projet.",

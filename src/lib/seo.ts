@@ -61,7 +61,7 @@ export function buildSocial({
       title,
       description,
       url,
-      siteName: "KLENT Creative",
+      siteName: "Klent Creative",
       locale: ogLocale[locale],
       alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocale[l]),
       images,

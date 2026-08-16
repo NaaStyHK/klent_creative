@@ -3,7 +3,7 @@ import type { Dictionary } from "@/lib/i18n/dictionary";
 export const esAr: Dictionary = {
   meta: {
     home: {
-      title: "KLENT — Estudio creativo | Branding, diseño web y desarrollo",
+      title: "Klent Creative — Estudio creativo, branding y desarrollo web",
       description:
         "Estudio creativo independiente. Creamos marcas, sitios web y aplicaciones móviles para empresas ambiciosas en Argentina, España y Francia.",
     },
@@ -154,7 +154,7 @@ export const esAr: Dictionary = {
   },
   loader: { brand: "KLENT CREATIVE" },
   workPage: {
-    metaTitle: "Proyectos — KLENT Estudio creativo",
+    metaTitle: "Proyectos — Klent Creative",
     metaDescription: "Una selección de conceptos creativos de KLENT: branding, sitios web e identidades de marca.",
     eyebrow: "PROYECTOS",
     h1: "IDEAS QUE TOMARON FORMA.",
@@ -164,7 +164,7 @@ export const esAr: Dictionary = {
     viewProject: "Ver proyecto",
   },
   blog: {
-    metaTitle: "Blog — KLENT Estudio creativo",
+    metaTitle: "Blog — Klent Creative",
     metaDescription: "Precios, plazos y criterios de decisión sobre creación web, aplicaciones móviles y branding, explicados sin vueltas por el estudio Klent.",
     eyebrow: "Blog",
     h1: "Notas del estudio.",
@@ -179,7 +179,7 @@ export const esAr: Dictionary = {
     categoryMetaSuffix: "Artículos y consejos",
   },
   contact: {
-    metaTitle: "Contacto — KLENT Estudio creativo",
+    metaTitle: "Contacto — Klent Creative",
     metaDescription: "Contactate con KLENT para hablar de tu proyecto de branding, sitio web o app móvil.",
     eyebrow: "Contacto",
     h1: "Hablemos de tu proyecto.",

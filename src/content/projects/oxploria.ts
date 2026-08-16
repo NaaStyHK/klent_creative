@@ -156,7 +156,7 @@ const shared = {
 export const oxploria: Record<Locale, ProjectContent> = {
   fr: {
     ...shared,
-    metaTitle: "Oxploria — Application mobile et site culturel | KLENT",
+    metaTitle: "Oxploria — Application mobile culturelle | Klent Creative",
     metaDescription: "Conception et développement de l’application mobile et du site Oxploria, une expérience culturelle pour découvrir l’histoire autour de soi.",
     badge: "Projet réel",
     category: "Culture / Application mobile",
@@ -170,7 +170,7 @@ export const oxploria: Record<Locale, ProjectContent> = {
   },
   es: {
     ...shared,
-    metaTitle: "Oxploria — Aplicación móvil y sitio cultural | KLENT",
+    metaTitle: "Oxploria — Aplicación móvil cultural | Klent Creative",
     metaDescription: "Diseño y desarrollo de la aplicación móvil y el sitio de Oxploria, una experiencia cultural para descubrir la historia cercana.",
     badge: "Proyecto real", category: "Cultura / Aplicación móvil", tags: ["Flutter", "Next.js", "UX/UI", "Desarrollo de la A a la Z"],
     conceptNote: "Proyecto real: diseño UX/UI, desarrollo de la aplicación móvil y creación del sitio web.",
@@ -182,7 +182,7 @@ export const oxploria: Record<Locale, ProjectContent> = {
   },
   "es-ar": {
     ...shared,
-    metaTitle: "Oxploria — Aplicación móvil y sitio cultural | KLENT",
+    metaTitle: "Oxploria — Aplicación móvil cultural | Klent Creative",
     metaDescription: "Diseño y desarrollo de la aplicación móvil y el sitio de Oxploria, una experiencia cultural para descubrir la historia cercana.",
     badge: "Proyecto real", category: "Cultura / Aplicación móvil", tags: ["Flutter", "Next.js", "UX/UI", "Desarrollo de la A a la Z"],
     conceptNote: "Proyecto real: diseño UX/UI, desarrollo de la aplicación móvil y creación del sitio web.",
@@ -194,7 +194,7 @@ export const oxploria: Record<Locale, ProjectContent> = {
   },
   en: {
     ...shared,
-    metaTitle: "Oxploria — Cultural Mobile App and Website | KLENT",
+    metaTitle: "Oxploria — Cultural mobile app | Klent Creative",
     metaDescription: "Design and development of the Oxploria mobile app and website, a cultural experience for discovering the history around you.",
     badge: "Real project", category: "Culture / Mobile application", tags: ["Flutter", "Next.js", "UX/UI", "Built end-to-end"],
     conceptNote: "Real project: UX/UI design, mobile application development and website creation.",

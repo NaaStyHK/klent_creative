@@ -50,7 +50,7 @@ export async function generateMetadata({
     const dict = getDictionary(locale);
     const label = blogCategoryLabels[categoryKey][locale];
     return {
-      title: `${label} — ${dict.blog.categoryMetaSuffix} | KLENT`,
+      title: `${label} — ${dict.blog.categoryMetaSuffix} | Klent Creative`,
       description: blogCategoryIntros[categoryKey][locale],
       alternates: {
         canonical: `${siteUrl}/${locale}/blog/${slug}`,

@@ -3,7 +3,7 @@ import type { ServiceContent } from "@/lib/i18n/service-content";
 
 export const webDesign: Record<Locale, ServiceContent> = {
   fr: {
-    metaTitle: "Création de site — Next.js, WordPress & Shopify | KLENT",
+    metaTitle: "Création de site internet sur mesure | Klent Creative",
     metaDescription:
       "Création de sites vitrines et e-commerce avec Next.js, WordPress ou Shopify. Design sur mesure, performance, SEO et autonomie.",
     eyebrow: "Création de site internet",
@@ -115,7 +115,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
-    metaTitle: "Creación web — Next.js, WordPress y Shopify | KLENT",
+    metaTitle: "Creación web — Next.js, WordPress y Shopify | Klent Creative",
     metaDescription:
       "Creación de sitios corporativos y e-commerce con Next.js, WordPress o Shopify. Diseño a medida, rendimiento, SEO y autonomía.",
     eyebrow: "Creación de sitio web",
@@ -177,7 +177,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
-    metaTitle: "Creación web — Next.js, WordPress y Shopify | KLENT",
+    metaTitle: "Creación web — Next.js, WordPress y Shopify | Klent Creative",
     metaDescription:
       "Creación de sitios institucionales y e-commerce con Next.js, WordPress o Shopify. Diseño a medida, rendimiento, SEO y autonomía.",
     eyebrow: "Creación de sitio web",
@@ -239,7 +239,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   en: {
-    metaTitle: "Web Design — Next.js, WordPress & Shopify | KLENT",
+    metaTitle: "Web Design — Next.js, WordPress & Shopify | Klent Creative",
     metaDescription:
       "Custom business and e-commerce websites built with Next.js, WordPress or Shopify. Bespoke design, performance, SEO and independence.",
     eyebrow: "Web Design & Development",

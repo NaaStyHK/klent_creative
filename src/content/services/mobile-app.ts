@@ -3,7 +3,7 @@ import type { ServiceContent } from "@/lib/i18n/service-content";
 
 export const mobileApp: Record<Locale, ServiceContent> = {
   fr: {
-    metaTitle: "Développement d'application mobile Flutter | KLENT",
+    metaTitle: "Développement d'application mobile Flutter | Klent Creative",
     metaDescription:
       "Agence de développement d'applications mobiles avec Flutter. De la stratégie produit au lancement sur l'App Store et Google Play.",
     eyebrow: "Application mobile",
@@ -115,7 +115,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
-    metaTitle: "Desarrollo de aplicaciones móviles con Flutter | KLENT",
+    metaTitle: "Desarrollo de apps móviles con Flutter | Klent Creative",
     metaDescription:
       "Agencia de desarrollo de apps móviles con Flutter. De la estrategia de producto al lanzamiento en App Store y Google Play.",
     eyebrow: "Aplicación móvil",
@@ -177,7 +177,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
-    metaTitle: "Desarrollo de aplicaciones móviles con Flutter | KLENT",
+    metaTitle: "Desarrollo de apps móviles con Flutter | Klent Creative",
     metaDescription:
       "Agencia de desarrollo de apps móviles con Flutter. De la estrategia de producto al lanzamiento en App Store y Google Play.",
     eyebrow: "Aplicación móvil",
@@ -239,7 +239,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   en: {
-    metaTitle: "Custom Flutter Mobile App Development | KLENT",
+    metaTitle: "Custom Flutter Mobile App Development | Klent Creative",
     metaDescription:
       "Flutter mobile app development agency. From product strategy to launch on the App Store and Google Play.",
     eyebrow: "Mobile App Development",
