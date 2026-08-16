@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
 import { buildSocial } from "@/lib/seo";
-import { ORG_ID, breadcrumbNode, graph, webPageNode } from "@/lib/schema";
+import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode } from "@/lib/schema";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getPostBySlug, getPostSlugs, buildPostAlternates, getPostsInCategory } from "@/lib/blog";
 import { getPostCategory } from "@/lib/blog-categories";
@@ -157,7 +157,7 @@ export default async function BlogArticlePage({
       author: { "@id": ORG_ID },
       publisher: { "@id": ORG_ID },
       mainEntityOfPage: { "@id": `${articleUrl}#webpage` },
-      ...(post.image ? { image: post.image } : {}),
+      ...(post.image ? { image: absoluteUrl(post.image) } : {}),
       // `about` names the subject as an entity instead of leaving a retrieval
       // system to infer it from prose; `articleSection` and `wordCount` help
       // it judge scope and depth before deciding whether to quote the page.

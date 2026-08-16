@@ -1,6 +1,9 @@
 import type { Locale } from "@/lib/i18n/config";
 import { resolveProjectSlug, workListingSlug } from "@/lib/projects";
 import { resolveService, serviceSlugs } from "@/lib/services";
+import { isLegalSlug, legalSlug } from "@/lib/legal";
+import { isStudioSlug, studioSlug } from "@/lib/studio";
+import { blogCategorySlugs, resolveCategorySlug } from "@/lib/blog-categories";
 
 /**
  * Equivalent articles available in several languages. Articles missing from
@@ -64,20 +67,30 @@ export function getLocalizedPath(
 
   if (first === "contact") return "/" + targetLocale + "/contact";
 
+  if (isStudioSlug(currentLocale, first)) {
+    return "/" + targetLocale + "/" + studioSlug[targetLocale];
+  }
+
+  // The legal notice exists in all four locales under its own slug
+  // (mentions-legales / aviso-legal / legal-notice). This used to send every
+  // non-French visitor to the home page, from a page that has a translation.
+  if (isLegalSlug(currentLocale, first)) {
+    return "/" + targetLocale + "/" + legalSlug[targetLocale];
+  }
+
   if (first === "blog") {
     if (!second) return "/" + targetLocale + "/blog";
+
+    // Category listings live at the same depth as articles, so they have to be
+    // resolved before falling through to the article table.
+    const category = resolveCategorySlug(currentLocale, second);
+    if (category) return "/" + targetLocale + "/blog/" + blogCategorySlugs[category][targetLocale];
+
     const article = localizedBlogArticles.find((group) => group[currentLocale] === second);
     const targetSlug = article?.[targetLocale];
     return targetSlug
       ? "/" + targetLocale + "/blog/" + targetSlug
       : "/" + targetLocale + "/blog";
-  }
-
-  // The legal notice currently exists in French only. Switching language from
-  // that page goes to the selected locale's home rather than a non-existent
-  // translated legal route.
-  if (first === "mentions-legales") {
-    return targetLocale === "fr" ? "/fr/mentions-legales" : "/" + targetLocale;
   }
 
   // Unknown or future locale-specific routes fail safely to the target home.

@@ -6,14 +6,8 @@ import { usePathname } from "next/navigation";
 import { locales, localeLabels, type Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionary";
 import { workListingSlug } from "@/lib/projects";
+import { getLocalizedPath } from "@/lib/i18n/localized-path";
 import { studioSlug } from "@/lib/studio";
-
-function pathWithoutLocale(pathname: string, currentLocale: Locale): string {
-  const prefix = `/${currentLocale}`;
-  if (pathname === prefix) return "";
-  if (pathname.startsWith(`${prefix}/`)) return pathname.slice(prefix.length);
-  return "";
-}
 
 /**
  * Phone navigation: a small dropdown panel, not a full-screen takeover. The
@@ -51,8 +45,6 @@ export default function MobileMenu({ locale, dict }: { locale: Locale; dict: Dic
       document.removeEventListener("pointerdown", onPointerDown);
     };
   }, [open]);
-
-  const rest = pathWithoutLocale(pathname, locale);
 
   const links = [
     { href: `/${locale}/${workListingSlug[locale]}`, label: dict.nav.work },
@@ -93,7 +85,11 @@ export default function MobileMenu({ locale, dict }: { locale: Locale; dict: Dic
           {locales.map((l) => (
             <Link
               className={`menu-pill menu-pill--locale mono${l === locale ? " is-active" : ""}`}
-              href={`/${l}${rest}`}
+              // Same resolver as the desktop switcher. Swapping only the
+              // locale prefix produced /es/creation-site-internet, whose real
+              // Spanish slug is /es/creacion-sitio-web: 26 of 27 sampled
+              // language switches led to a 404.
+              href={getLocalizedPath(pathname, locale, l)}
               key={l}
               aria-current={l === locale ? "true" : undefined}
             >

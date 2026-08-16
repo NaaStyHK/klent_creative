@@ -1,7 +1,7 @@
 import { hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { workListingSlug } from "@/lib/projects";
-import { ORG_ID, breadcrumbNode, graph, webPageNode } from "@/lib/schema";
+import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode } from "@/lib/schema";
 
 export default function ProjectJsonLd({
   locale,
@@ -31,7 +31,7 @@ export default function ProjectJsonLd({
       name,
       description,
       url,
-      image,
+      image: absoluteUrl(image),
       creator: { "@id": ORG_ID },
       inLanguage: hreflangByLocale[locale],
     },

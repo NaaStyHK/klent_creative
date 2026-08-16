@@ -129,6 +129,15 @@ const LOCATIONS: Branch[] = [
 
 export type SchemaNode = Record<string, unknown>;
 
+/**
+ * Schema.org URL properties must be absolute. Project and article images are
+ * stored as site-root paths ("/projects/…"), which a consumer fetching the
+ * JSON-LD on its own has no way to resolve.
+ */
+export function absoluteUrl(path: string): string {
+  return path.startsWith("http") ? path : `${siteUrl}${path.startsWith("/") ? "" : "/"}${path}`;
+}
+
 function branchNode(branch: Branch, locale: Locale, description: string): SchemaNode {
   const area = AREA[locale];
 
