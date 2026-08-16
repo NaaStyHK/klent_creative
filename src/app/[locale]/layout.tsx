@@ -98,21 +98,25 @@ export default async function LocaleLayout({
       data-scroll-behavior="smooth"
       className={`${manrope.variable} ${dmMono.variable}`}
     >
-      {/*
-        Scroll reveals and the intro loader are driven by JS: .reveal-up starts
-        at opacity 0 and the loader hides the body until it finishes. If JS
-        never runs, both stay in their initial state and the page reads as
-        blank. The text is still in the HTML — extraction and indexing are
-        unaffected — but a human would see nothing, so undo both here.
-      */}
-      <noscript>
-        <style>{`
-          body.is-loading{opacity:1 !important;visibility:visible !important}
-          .intro-loader{display:none !important}
-          .reveal-up{opacity:1 !important;transform:none !important}
-        `}</style>
-      </noscript>
       <body className="is-loading">
+        {/*
+          Scroll reveals and the intro loader are driven by JS: .reveal-up
+          starts at opacity 0 and the loader hides the body until it finishes.
+          If JS never runs, both stay in their initial state and the page reads
+          as blank. The text is still in the HTML — extraction and indexing are
+          unaffected — but a human would see nothing, so undo both here.
+
+          This lives inside <body> on purpose. As a direct child of <html> the
+          server rendered it happily but the client refused to reconcile it,
+          which is only visible as a dev-time console error.
+        */}
+        <noscript>
+          <style>{`
+            body.is-loading{opacity:1 !important;visibility:visible !important}
+            .intro-loader{display:none !important}
+            .reveal-up{opacity:1 !important;transform:none !important}
+          `}</style>
+        </noscript>
         <IntroLoader brand="KLENT CREATIVE" />
         <MotionFX />
         <JsonLd locale={locale} />
