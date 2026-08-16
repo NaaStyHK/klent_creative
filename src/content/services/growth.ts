@@ -5,7 +5,7 @@ export const growth: Record<Locale, ServiceContent> = {
   fr: {
     metaTitle: "SEO & contenu — Agence marketing | Klent Creative",
     metaDescription:
-      "Référencement, stratégie de contenu et campagnes pour transformer votre trafic en clients. KLENT accompagne la croissance de marques ambitieuses.",
+      "Référencement, stratégie de contenu et campagnes pour transformer votre trafic en clients. KLENT CREATIVE accompagne la croissance de marques ambitieuses.",
     eyebrow: "Croissance & Contenu",
     h1: "Du trafic, oui. Mais surtout des clients.",
     intro:
@@ -117,7 +117,7 @@ export const growth: Record<Locale, ServiceContent> = {
   es: {
     metaTitle: "Agencia de SEO y marketing de contenidos | Klent Creative",
     metaDescription:
-      "Posicionamiento, estrategia de contenido y campañas para convertir vuestro tráfico en clientes. KLENT acompaña el crecimiento de marcas ambiciosas.",
+      "Posicionamiento, estrategia de contenido y campañas para convertir vuestro tráfico en clientes. KLENT CREATIVE acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",
     h1: "Tráfico, sí. Pero sobre todo, clientes.",
     intro:
@@ -179,7 +179,7 @@ export const growth: Record<Locale, ServiceContent> = {
   "es-ar": {
     metaTitle: "Agencia de SEO y marketing de contenidos | Klent Creative",
     metaDescription:
-      "Posicionamiento, estrategia de contenido y campañas para convertir tu tráfico en clientes. KLENT acompaña el crecimiento de marcas ambiciosas.",
+      "Posicionamiento, estrategia de contenido y campañas para convertir tu tráfico en clientes. KLENT CREATIVE acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",
     h1: "Tráfico, sí. Pero sobre todo, clientes.",
     intro:
@@ -241,7 +241,7 @@ export const growth: Record<Locale, ServiceContent> = {
   en: {
     metaTitle: "SEO & Content Growth — Marketing Agency | Klent Creative",
     metaDescription:
-      "SEO, content strategy and campaigns that turn your traffic into customers. KLENT supports the growth of ambitious brands.",
+      "SEO, content strategy and campaigns that turn your traffic into customers. KLENT CREATIVE supports the growth of ambitious brands.",
     eyebrow: "Growth & Content",
     h1: "Traffic, sure. But mostly, customers.",
     intro:

@@ -1232,7 +1232,7 @@
 .studio-belief h3{max-width:340px;margin:auto 0 18px;font-size:clamp(27px,3vw,48px);line-height:.95;letter-spacing:-.05em}
 .studio-belief p{margin:0;font-size:14px;line-height:1.6;color:rgba(242,240,232,.62)}
 .studio-belief:hover p{color:rgba(17,17,17,.7)}
-.studio-giant-word{position:relative;margin:55px 0 0;padding-bottom:.1em;font-size:clamp(120px,24vw,380px);line-height:.8;letter-spacing:-.09em;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(242,240,232,.22);user-select:none}
+.studio-giant-word{position:relative;display:flex;flex-direction:column;margin:55px 0 0;padding-bottom:.1em;font-size:clamp(74px,15vw,236px);line-height:.8;letter-spacing:-.09em;font-weight:700;color:transparent;-webkit-text-stroke:1px rgba(242,240,232,.22);user-select:none}
 
 @media (max-width:850px){
   .studio-editorial-hero{padding:106px 18px 44px;min-height:auto}
@@ -1257,7 +1257,7 @@
   .studio-editorial-approach{padding:72px 18px 0}
   .studio-beliefs{grid-template-columns:1fr}
   .studio-belief{min-height:260px}
-  .studio-giant-word{margin-top:42px;font-size:34vw}
+  .studio-giant-word{margin-top:42px;font-size:21vw}
 }
 
 /* NEW: mobile hero type. The mockup's fixed vw sizes were tuned for very short
@@ -2401,3 +2401,8 @@ html{
   /* A permanently sliding strip is exactly what this preference is about. */
   .nudge-tags-track{animation:none}
 }
+
+/* The giant wordmark carries the full name, so it is set on two lines: at the
+   old single-line size "CREATIVE" is three letters longer than "KLENT" and ran
+   straight off the viewport. Sized by the longer word instead. */
+.studio-giant-word span{display:block}

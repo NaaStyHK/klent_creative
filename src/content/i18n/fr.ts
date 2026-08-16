@@ -65,7 +65,7 @@ export const fr: Dictionary = {
     kicker: "Pas une agence digitale comme les autres.",
     lines: [["On ne fait pas"], ["comme ", { outline: "d'habitude." }], ["Et ça se voit."]],
     copy: "Avant de concevoir, nous réfléchissons. Avant de construire, nous cherchons l'idée. Parce qu'une marque ne se définit pas en suivant ce qui est à la mode, mais en ayant une identité propre. Nous créons des systèmes visuels, des sites internet et des expériences digitales où chaque décision a un but et où chaque détail nourrit une même histoire.",
-    spinmark: "KLENT • STUDIO • CRÉATIF •",
+    spinmark: "KLENT CREATIVE • STUDIO • CRÉATIF •",
   },
   kineticBand: {
     text: "La stratégie avant la décoration",
@@ -164,10 +164,10 @@ export const fr: Dictionary = {
   loader: { brand: "KLENT CREATIVE" },
   workPage: {
     metaTitle: "Réalisations — Klent Creative",
-    metaDescription: "Une sélection de concepts créatifs par KLENT : branding, sites internet et identités de marque.",
+    metaDescription: "Une sélection de concepts créatifs par KLENT CREATIVE : branding, sites internet et identités de marque.",
     eyebrow: "RÉALISATIONS",
     h1: "DES IDÉES QUI ONT PRIS FORME.",
-    intro: "Une sélection de projets, d'identités et d'expériences digitales créés par Klent.",
+    intro: "Une sélection de projets, d'identités et d'expériences digitales créés par Klent Creative.",
     conceptTag: "Concept",
     backToWork: "← Retour aux réalisations",
     viewProject: "Voir le projet",
@@ -189,7 +189,7 @@ export const fr: Dictionary = {
   },
   contact: {
     metaTitle: "Contact — Klent Creative",
-    metaDescription: "Contactez KLENT pour parler de votre projet de branding, de site internet ou d'application mobile.",
+    metaDescription: "Contactez KLENT CREATIVE pour parler de votre projet de branding, de site internet ou d'application mobile.",
     eyebrow: "Contact",
     h1: "Parlons de votre projet.",
     intro:

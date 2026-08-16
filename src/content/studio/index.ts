@@ -25,11 +25,11 @@ export const studio: Record<Locale, StudioContent> = {
   fr: {
     metaTitle: "Le studio | Qui sommes-nous ? | Klent Creative",
     metaDescription:
-      "KLENT est un studio créatif indépendant à deux : design et développement, relation client. Français et espagnol, entre La Rochelle, Barcelone et l'Argentine.",
+      "KLENT CREATIVE est un studio créatif indépendant à deux : design et développement, relation client. Français et espagnol, entre La Rochelle, Barcelone et l'Argentine.",
     eyebrow: "Le studio",
     h1: "Deux personnes. Aucun intermédiaire.",
     intro:
-      "KLENT est un studio créatif indépendant. Pas une agence avec des couches de chefs de projet : deux personnes qui travaillent directement avec vous, du premier échange à la mise en ligne.",
+      "KLENT CREATIVE est un studio créatif indépendant. Pas une agence avec des couches de chefs de projet : deux personnes qui travaillent directement avec vous, du premier échange à la mise en ligne.",
     teamEyebrow: "(01) L'équipe",
     teamTitle: "Qui vous aurez en face.",
     members: [
@@ -39,7 +39,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Design & Développement",
         languages: "Français · Espagnol",
         bio: "Il conçoit et construit. Direction visuelle, interfaces, développement web et mobile, performance et référencement technique : c'est lui qui transforme le projet en produit qui fonctionne. Basé à La Rochelle.",
-        photoAlt: "Portrait de Kevin, design et développement chez KLENT",
+        photoAlt: "Portrait de Kevin, design et développement chez KLENT CREATIVE",
       },
       {
         firstName: "Céleste",
@@ -47,7 +47,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Relation client & Développement commercial",
         languages: "Espagnol · Français · Anglais",
         bio: "Elle est votre interlocutrice sur tout le volet commercial : premiers échanges, cadrage du besoin, devis et suivi. Espagnole et argentine, elle porte le studio sur les marchés hispanophones. Basée à Barcelone.",
-        photoAlt: "Portrait de Céleste, relation client chez KLENT",
+        photoAlt: "Portrait de Céleste, relation client chez KLENT CREATIVE",
       },
     ],
     reachEyebrow: "(02) Nos marchés",
@@ -98,7 +98,7 @@ export const studio: Record<Locale, StudioContent> = {
     eyebrow: "El estudio",
     h1: "Dos personas. Ningún intermediario.",
     intro:
-      "KLENT es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vosotros, desde la primera conversación hasta la puesta en marcha.",
+      "KLENT CREATIVE es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vosotros, desde la primera conversación hasta la puesta en marcha.",
     teamEyebrow: "(01) El equipo",
     teamTitle: "Quién estará al otro lado.",
     members: [
@@ -108,7 +108,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Diseño y Desarrollo",
         languages: "Francés · Español",
         bio: "Diseña y construye. Dirección visual, interfaces, desarrollo web y móvil, rendimiento y SEO técnico: es quien convierte el proyecto en un producto que funciona. Con base en La Rochelle.",
-        photoAlt: "Retrato de Kevin, diseño y desarrollo en KLENT",
+        photoAlt: "Retrato de Kevin, diseño y desarrollo en KLENT CREATIVE",
       },
       {
         firstName: "Céleste",
@@ -116,7 +116,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Relación con clientes y Desarrollo comercial",
         languages: "Español · Francés · Inglés",
         bio: "Es vuestra interlocutora en todo lo comercial: primeras conversaciones, definición de la necesidad, presupuestos y seguimiento. Española y argentina, lleva el estudio en los mercados hispanohablantes. Con base en Barcelona.",
-        photoAlt: "Retrato de Céleste, relación con clientes en KLENT",
+        photoAlt: "Retrato de Céleste, relación con clientes en KLENT CREATIVE",
       },
     ],
     reachEyebrow: "(02) Nuestros mercados",
@@ -167,7 +167,7 @@ export const studio: Record<Locale, StudioContent> = {
     eyebrow: "El estudio",
     h1: "Dos personas. Ningún intermediario.",
     intro:
-      "KLENT es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vos, desde la primera charla hasta la puesta en marcha.",
+      "KLENT CREATIVE es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vos, desde la primera charla hasta la puesta en marcha.",
     teamEyebrow: "(01) El equipo",
     teamTitle: "Quién va a estar del otro lado.",
     members: [
@@ -177,7 +177,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Diseño y Desarrollo",
         languages: "Francés · Español",
         bio: "Diseña y construye. Dirección visual, interfaces, desarrollo web y mobile, rendimiento y SEO técnico: es quien convierte el proyecto en un producto que funciona. Con base en La Rochelle.",
-        photoAlt: "Retrato de Kevin, diseño y desarrollo en KLENT",
+        photoAlt: "Retrato de Kevin, diseño y desarrollo en KLENT CREATIVE",
       },
       {
         firstName: "Céleste",
@@ -185,7 +185,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Relación con clientes y Desarrollo comercial",
         languages: "Español · Francés · Inglés",
         bio: "Es tu interlocutora en todo lo comercial: primeras charlas, definición de la necesidad, presupuestos y seguimiento. Española y argentina, lleva el estudio en los mercados hispanohablantes. Con base en Barcelona.",
-        photoAlt: "Retrato de Céleste, relación con clientes en KLENT",
+        photoAlt: "Retrato de Céleste, relación con clientes en KLENT CREATIVE",
       },
     ],
     reachEyebrow: "(02) Nuestros mercados",
@@ -232,11 +232,11 @@ export const studio: Record<Locale, StudioContent> = {
   en: {
     metaTitle: "The studio | Who we are | Klent Creative",
     metaDescription:
-      "KLENT is a two-person independent creative studio: design and development, client relations. French and Spanish, across La Rochelle, Barcelona and Argentina.",
+      "KLENT CREATIVE is a two-person independent creative studio: design and development, client relations. French and Spanish, across La Rochelle, Barcelona and Argentina.",
     eyebrow: "The studio",
     h1: "Two people. No middlemen.",
     intro:
-      "KLENT is an independent creative studio. Not an agency with layers of project managers: two people working directly with you, from the first conversation through to launch.",
+      "KLENT CREATIVE is an independent creative studio. Not an agency with layers of project managers: two people working directly with you, from the first conversation through to launch.",
     teamEyebrow: "(01) The team",
     teamTitle: "Who you'll actually be dealing with.",
     members: [
@@ -246,7 +246,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Design & Development",
         languages: "French · Spanish",
         bio: "He designs and builds. Through visual direction, interfaces, web and mobile development, performance and technical SEO, he turns the project into a product that works. Based in La Rochelle.",
-        photoAlt: "Portrait of Kevin, design and development at KLENT",
+        photoAlt: "Portrait of Kevin, design and development at KLENT CREATIVE",
       },
       {
         firstName: "Céleste",
@@ -254,7 +254,7 @@ export const studio: Record<Locale, StudioContent> = {
         role: "Client Relations & Business Development",
         languages: "Spanish · French · English",
         bio: "She's your point of contact on everything commercial: first conversations, scoping, quotes and follow-up. Spanish and Argentine, she leads the studio across Spanish-speaking markets. Based in Barcelona.",
-        photoAlt: "Portrait of Céleste, client relations at KLENT",
+        photoAlt: "Portrait of Céleste, client relations at KLENT CREATIVE",
       },
     ],
     reachEyebrow: "(02) Our markets",

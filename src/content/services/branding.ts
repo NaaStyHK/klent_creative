@@ -5,7 +5,7 @@ export const branding: Record<Locale, ServiceContent> = {
   fr: {
     metaTitle: "Agence de branding & identité de marque | Klent Creative",
     metaDescription:
-      "Positionnement, naming, identité visuelle et charte graphique. KLENT est un studio de branding pour marques ambitieuses en France, Espagne et Argentine.",
+      "Positionnement, naming, identité visuelle et charte graphique. KLENT CREATIVE est un studio de branding pour marques ambitieuses en France, Espagne et Argentine.",
     eyebrow: "Branding",
     h1: "Une identité de marque qui se remarque.",
     intro:
@@ -117,7 +117,7 @@ export const branding: Record<Locale, ServiceContent> = {
   es: {
     metaTitle: "Agencia de branding e identidad de marca | Klent Creative",
     metaDescription:
-      "Posicionamiento, naming, identidad visual y manual de marca. KLENT es un estudio de branding para marcas ambiciosas en España, Francia y Argentina.",
+      "Posicionamiento, naming, identidad visual y manual de marca. KLENT CREATIVE es un estudio de branding para marcas ambiciosas en España, Francia y Argentina.",
     eyebrow: "Branding",
     h1: "Una identidad de marca que se hace notar.",
     intro:
@@ -179,7 +179,7 @@ export const branding: Record<Locale, ServiceContent> = {
   "es-ar": {
     metaTitle: "Agencia de branding e identidad de marca | Klent Creative",
     metaDescription:
-      "Posicionamiento, naming, identidad visual y manual de marca. KLENT es un estudio de branding para marcas ambiciosas en Argentina, España y Francia.",
+      "Posicionamiento, naming, identidad visual y manual de marca. KLENT CREATIVE es un estudio de branding para marcas ambiciosas en Argentina, España y Francia.",
     eyebrow: "Branding",
     h1: "Una identidad de marca que se hace notar.",
     intro:
@@ -241,7 +241,7 @@ export const branding: Record<Locale, ServiceContent> = {
   en: {
     metaTitle: "Branding & Brand Identity Agency | Klent Creative",
     metaDescription:
-      "Positioning, naming, visual identity and brand guidelines. KLENT is a branding studio for ambitious companies in France, Spain and Argentina.",
+      "Positioning, naming, visual identity and brand guidelines. KLENT CREATIVE is a branding studio for ambitious companies in France, Spain and Argentina.",
     eyebrow: "Branding",
     h1: "A brand identity that gets noticed.",
     intro:

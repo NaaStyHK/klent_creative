@@ -21,9 +21,9 @@ const spanishCaseStudy: NonNullable<ProjectContent["caseStudy"]> = {
   identityEyebrow: "02 / IDENTIDAD PROPORCIONADA",
   identityTitle: "Una identidad existente, llevada al entorno digital.",
   identityBody:
-    "El logotipo, la identidad visual y sus elementos de marca fueron proporcionados por el cliente. La estética y el aspecto general del sitio responden también a la dirección solicitada por el cliente. Klent se encargó de traducir esta visión al entorno digital mediante el diseño UX/UI y el desarrollo web.",
+    "El logotipo, la identidad visual y sus elementos de marca fueron proporcionados por el cliente. La estética y el aspecto general del sitio responden también a la dirección solicitada por el cliente. Klent Creative se encargó de traducir esta visión al entorno digital mediante el diseño UX/UI y el desarrollo web.",
   logoNote:
-    "Logotipo e identidad visual proporcionados por el cliente. Klent no participó en su creación.",
+    "Logotipo e identidad visual proporcionados por el cliente. Klent Creative no participó en su creación.",
   colors: [
     { name: "Negro", hex: "#000000" }, { name: "Blanco", hex: "#FFFFFF" },
     { name: "Verde oliva", hex: "#6B7C3C" },
@@ -43,7 +43,7 @@ const spanishCaseStudy: NonNullable<ProjectContent["caseStudy"]> = {
   applicationsEyebrow: "04 / PRODUCTO Y LUGAR",
   applicationsTitle: "El restaurante llevado a la pantalla.",
   applicationsBody:
-    "Todas las fotografías del local, los platos y el restaurante fueron proporcionadas por el cliente. Klent las integró en la interfaz y construyó el sitio de acuerdo con la estética y la experiencia visual solicitadas.",
+    "Todas las fotografías del local, los platos y el restaurante fueron proporcionadas por el cliente. Klent Creative las integró en la interfaz y construyó el sitio de acuerdo con la estética y la experiencia visual solicitadas.",
   applicationOne: { caption: "Carta / Sistema editorial", titleLines: ["MANNÀ"], rows: [] },
   applicationTwo: { caption: "Lugar / Experiencia", titleLines: ["MANNÀ"], small: "POBLENOU / BARCELONA", sticker: ["M", "74"] },
   applicationPhoto: { caption: "Producto / Fotografía", lines: ["CADA DÍA.", "CON CARIÑO."] },
@@ -81,8 +81,8 @@ const frenchCaseStudy: NonNullable<ProjectContent["caseStudy"]> = {
   identityEyebrow: "02 / IDENTITÉ FOURNIE",
   identityTitle: "Une identité existante, adaptée au digital.",
   identityBody:
-    "Le logo, l’identité visuelle et les éléments de marque ont été fournis par le client. L’esthétique et l’apparence générale du site correspondent également à la direction souhaitée par le client. Klent a traduit cette vision en une expérience digitale grâce au design UX/UI et au développement web.",
-  logoNote: "Logo et identité visuelle fournis par le client. Klent n’a pas participé à leur création.",
+    "Le logo, l’identité visuelle et les éléments de marque ont été fournis par le client. L’esthétique et l’apparence générale du site correspondent également à la direction souhaitée par le client. Klent Creative a traduit cette vision en une expérience digitale grâce au design UX/UI et au développement web.",
+  logoNote: "Logo et identité visuelle fournis par le client. Klent Creative n’a pas participé à leur création.",
   colors: [{ name: "Noir", hex: "#000000" }, { name: "Blanc", hex: "#FFFFFF" }, { name: "Vert olive", hex: "#6B7C3C" }],
   typographyTitle: "Du caractère éditorial. Une lecture sans friction.",
   typographyBody: "Fraunces porte les grands messages et l’émotion. Inter organise la navigation, la carte, les horaires et les réservations sur tous les écrans.",
@@ -92,7 +92,7 @@ const frenchCaseStudy: NonNullable<ProjectContent["caseStudy"]> = {
   voiceBody: "Le langage parle comme une adresse de confiance : des phrases courtes, chaleureuses et directes. Le quartier, le quotidien, la simplicité et l’attention portent le positionnement.",
   voiceLines: ["PAS UN RESTAURANT DE CARTE POSTALE.", "VOTRE RESTAURANT DE QUARTIER.", "TOUJOURS UNE PLACE POUR UNE PERSONNE DE PLUS."],
   applicationsEyebrow: "04 / PRODUIT ET LIEU", applicationsTitle: "Le restaurant porté à l’écran.",
-  applicationsBody: "Toutes les photographies du lieu, des plats et du restaurant ont été fournies par le client. Klent les a intégrées dans l’interface et a construit le site conformément à l’esthétique et à l’expérience visuelle demandées.",
+  applicationsBody: "Toutes les photographies du lieu, des plats et du restaurant ont été fournies par le client. Klent Creative les a intégrées dans l’interface et a construit le site conformément à l’esthétique et à l’expérience visuelle demandées.",
   galleryImages: [
     { src: "/projects/manna/interior.jpeg", alt: "Intérieur du restaurant Mannà à Poblenou", caption: "Le lieu / Poblenou" },
     { src: "/projects/manna/dish-paella.jpg", alt: "Paella servie chez Mannà", caption: "Produit / Carte" },
@@ -112,14 +112,14 @@ const englishCaseStudy: NonNullable<ProjectContent["caseStudy"]> = {
   conceptTitle: "A neighbourhood website for a neighbourhood restaurant.",
   conceptBody: "Mannà is a Poblenou restaurant serving honest Mediterranean food from breakfast through dinner. The project turns its welcoming character into a clear and warm digital experience designed to convert visits into direct bookings.",
   identityEyebrow: "02 / CLIENT-SUPPLIED IDENTITY", identityTitle: "An existing identity, adapted for digital.",
-  identityBody: "The logo, visual identity and brand assets were supplied by the client. The website’s overall look and aesthetic direction also reflect the client’s request. Klent translated that vision into a digital experience through UX/UI design and web development.",
-  logoNote: "Logo and visual identity supplied by the client. Klent was not involved in their creation.",
+  identityBody: "The logo, visual identity and brand assets were supplied by the client. The website’s overall look and aesthetic direction also reflect the client’s request. Klent Creative translated that vision into a digital experience through UX/UI design and web development.",
+  logoNote: "Logo and visual identity supplied by the client. Klent Creative was not involved in their creation.",
   colors: [{ name: "Black", hex: "#000000" }, { name: "White", hex: "#FFFFFF" }, { name: "Olive green", hex: "#6B7C3C" }],
   typographyTitle: "Editorial character. Frictionless reading.", typographyBody: "Fraunces carries the emotional headlines. Inter organises navigation, menus, opening times and bookings clearly on every device.",
   typePrimaryLabel: "Display typeface / Fraunces", typeDisplayLines: ["From the mountains", "to the sea."], typeSecondaryLabel: "Functional typeface / Inter", typeSample: "A–Z / 0–9 / MENU / ALLERGENS / BOOKINGS / HOURS",
   voiceEyebrow: "03 / BRAND LANGUAGE", voiceTitle: "Warm, honest and unpretentious.", voiceBody: "The language sounds like a trusted local restaurant: brief, warm and direct. Neighbourhood, every day, no rush and care anchor the positioning.",
   voiceLines: ["NOT A POSTCARD RESTAURANT.", "YOUR NEIGHBOURHOOD RESTAURANT.", "ALWAYS ROOM FOR ONE MORE."],
-  applicationsEyebrow: "04 / FOOD AND PLACE", applicationsTitle: "Bringing the restaurant to the screen.", applicationsBody: "All photography of the venue, food and restaurant was supplied by the client. Klent integrated these assets into the interface and built the website according to the requested aesthetic and visual experience.",
+  applicationsEyebrow: "04 / FOOD AND PLACE", applicationsTitle: "Bringing the restaurant to the screen.", applicationsBody: "All photography of the venue, food and restaurant was supplied by the client. Klent Creative integrated these assets into the interface and built the website according to the requested aesthetic and visual experience.",
   galleryImages: [
     { src: "/projects/manna/interior.jpeg", alt: "Mannà restaurant interior in Poblenou", caption: "The venue / Poblenou" },
     { src: "/projects/manna/dish-paella.jpg", alt: "Paella served at Mannà", caption: "Food / Menu" },

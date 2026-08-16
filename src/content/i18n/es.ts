@@ -63,7 +63,7 @@ export const es: Dictionary = {
     kicker: "No somos una agencia digital más.",
     lines: [["No hacemos"], ["lo de ", { outline: "siempre." }], ["Y se nota."]],
     copy: "Antes de diseñar, pensamos. Antes de construir, encontramos la idea. Porque una marca no se define por seguir lo que está de moda, sino por tener una identidad propia. Creamos sistemas visuales, sitios web y experiencias digitales donde cada decisión tiene un propósito y cada detalle suma a una misma historia.",
-    spinmark: "KLENT • ESTUDIO • CREATIVO •",
+    spinmark: "KLENT CREATIVE • ESTUDIO • CREATIVO •",
   },
   kineticBand: {
     text: "Estrategia antes que decoración",
@@ -165,14 +165,14 @@ export const es: Dictionary = {
     metaDescription: "Una selección de conceptos creativos de KLENT: branding, sitios web e identidades de marca.",
     eyebrow: "PROYECTOS",
     h1: "IDEAS QUE TOMARON FORMA.",
-    intro: "Una selección de proyectos, identidades y experiencias digitales creadas por Klent.",
+    intro: "Una selección de proyectos, identidades y experiencias digitales creadas por Klent Creative.",
     conceptTag: "Concepto",
     backToWork: "← Volver a proyectos",
     viewProject: "Ver proyecto",
   },
   blog: {
     metaTitle: "Blog — Klent Creative",
-    metaDescription: "Precios, plazos y criterios de decisión sobre creación web, aplicaciones móviles y branding, explicados sin jerga por el estudio Klent.",
+    metaDescription: "Precios, plazos y criterios de decisión sobre creación web, aplicaciones móviles y branding, explicados sin jerga por el estudio Klent Creative.",
     eyebrow: "Blog",
     h1: "Notas del estudio.",
     intro: "Reflexiones sobre branding, diseño web, aplicaciones móviles y cómo hacer crecer un negocio ambicioso.",
@@ -187,7 +187,7 @@ export const es: Dictionary = {
   },
   contact: {
     metaTitle: "Contacto — Klent Creative",
-    metaDescription: "Contactad con KLENT para hablar de vuestro proyecto de branding, sitio web o app móvil.",
+    metaDescription: "Contactad con KLENT CREATIVE para hablar de vuestro proyecto de branding, sitio web o app móvil.",
     eyebrow: "Contacto",
     h1: "Hablemos de vuestro proyecto.",
     intro:

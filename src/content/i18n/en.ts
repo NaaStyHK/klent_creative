@@ -65,7 +65,7 @@ export const en: Dictionary = {
     kicker: "Not another digital agency.",
     lines: [["We don't do"], ["the ", { outline: "usual." }], ["And it shows."]],
     copy: "Before designing, we think. Before building, we find the idea. Because a brand isn't defined by following what's trending, but by having an identity of its own. We create visual systems, websites and digital experiences where every decision has a purpose and every detail adds to the same story.",
-    spinmark: "KLENT • CREATIVE • STUDIO •",
+    spinmark: "KLENT CREATIVE • CREATIVE • STUDIO •",
   },
   kineticBand: {
     text: "Strategy before decoration",
@@ -167,14 +167,14 @@ export const en: Dictionary = {
     metaDescription: "A selection of creative concepts by KLENT: branding, websites and brand identity.",
     eyebrow: "WORK",
     h1: "IDEAS THAT TOOK SHAPE.",
-    intro: "A selection of projects, identities and digital experiences created by Klent.",
+    intro: "A selection of projects, identities and digital experiences created by Klent Creative.",
     conceptTag: "Concept",
     backToWork: "← Back to work",
     viewProject: "View project",
   },
   blog: {
     metaTitle: "Blog — Klent Creative",
-    metaDescription: "Costs, timelines and decision criteria for websites, mobile apps and branding, explained without jargon by the Klent studio.",
+    metaDescription: "Costs, timelines and decision criteria for websites, mobile apps and branding, explained without jargon by the Klent Creative studio.",
     eyebrow: "Blog",
     h1: "Notes from the studio.",
     intro: "Thoughts on branding, web design, mobile apps and growing an ambitious business.",
@@ -189,7 +189,7 @@ export const en: Dictionary = {
   },
   contact: {
     metaTitle: "Contact — Klent Creative",
-    metaDescription: "Get in touch with KLENT. Tell us about your branding, website or mobile app project.",
+    metaDescription: "Get in touch with KLENT CREATIVE. Tell us about your branding, website or mobile app project.",
     eyebrow: "Contact",
     h1: "Let's talk about your project.",
     intro:

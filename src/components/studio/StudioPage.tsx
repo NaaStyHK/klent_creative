@@ -59,7 +59,7 @@ export default function StudioPage({ content, locale }: { content: StudioContent
                     {member.firstName.charAt(0)}
                   </span>
                 )}
-                <span className="studio-person-stamp mono">KLENT / CREATIVE STUDIO</span>
+                <span className="studio-person-stamp mono">KLENT CREATIVE / STUDIO</span>
               </div>
               <div className="studio-person-info">
                 <div>
@@ -127,7 +127,10 @@ export default function StudioPage({ content, locale }: { content: StudioContent
           ))}
         </div>
 
-        <div className="studio-giant-word" aria-hidden="true">KLENT</div>
+        <div className="studio-giant-word" aria-hidden="true">
+          <span>KLENT</span>
+          <span>CREATIVE</span>
+        </div>
       </section>
 
       <section className="cta">
