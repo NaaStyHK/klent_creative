@@ -69,6 +69,19 @@ export default function StudioPage({ content, locale }: { content: StudioContent
                 <p className="studio-person-languages mono">{member.languages}</p>
               </div>
               <p className="studio-person-bio">{member.bio}</p>
+              {member.linkedin && (
+                <a
+                  className="studio-person-link mono"
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  /* "LinkedIn" alone repeats twice on the page and tells a
+                     screen-reader user nothing about whose profile it is. */
+                  aria-label={`LinkedIn — ${member.firstName}`}
+                >
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              )}
             </article>
           ))}
         </div>

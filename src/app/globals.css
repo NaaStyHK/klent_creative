@@ -2234,3 +2234,35 @@ html{
   margin:0 0 2px;font-size:10px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--muted);opacity:.85;
 }
+
+/* Studio portraits.
+   The visual is a coloured plate (black / acid) with a hairline frame drawn by
+   ::after at inset 18px. `fill` would stretch the photo edge to edge and bury
+   both. Insetting it just inside that hairline keeps the plate visible as a
+   mat and turns the frame into the photo's own outline, which is the design
+   the placeholder letters were sitting in. */
+.studio-person-visual img{
+  inset:19px;
+  width:auto;
+  height:auto;
+}
+.studio-person-visual::after{z-index:1}
+
+.studio-person-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:14px;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:color .25s,border-color .25s;
+}
+.studio-person-link:hover,
+.studio-person-link:focus-visible{
+  color:var(--fg);
+  border-bottom-color:currentColor;
+}

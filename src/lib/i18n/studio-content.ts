@@ -5,12 +5,14 @@ export type StudioMember = {
   languages: string;
   bio: string;
   /**
-   * Path under /public once real portraits exist (e.g. "/team/kevin.jpg").
-   * Left undefined on purpose for now — the component renders a typographic
-   * placeholder rather than pointing at a file that does not exist yet.
+   * Path under /public. Optional: when absent the component falls back to the
+   * typographic initial, so a member can be added before their portrait is
+   * shot without pointing at a file that does not exist.
    */
   photo?: string;
   photoAlt: string;
+  /** Public profile. Optional for the same reason as `photo`. */
+  linkedin?: string;
 };
 
 export type StudioPoint = {

@@ -6,6 +6,21 @@ import type { StudioContent } from "@/lib/i18n/studio-content";
  * which languages and markets we cover). No invented client counts, awards or
  * years of experience — this page is about trust, and it has to hold up.
  */
+/**
+ * Portrait and profile are the same person whatever the language, so they live
+ * here once and are spread into each locale. Repeating a URL four times is how
+ * three of the copies quietly go stale.
+ */
+const KEVIN = {
+  photo: "/photo-kevin-klentcreative.jpg",
+  linkedin: "https://www.linkedin.com/in/kevin-hafsi",
+} as const;
+
+const CELESTE = {
+  photo: "/photo-celeste-klentcreative.jpg",
+  linkedin: "https://www.linkedin.com/in/celeste-juarez-84104a283/",
+} as const;
+
 export const studio: Record<Locale, StudioContent> = {
   fr: {
     metaTitle: "Le studio | Qui sommes-nous ? | Klent Creative",
@@ -20,6 +35,7 @@ export const studio: Record<Locale, StudioContent> = {
     members: [
       {
         firstName: "Kevin",
+        ...KEVIN,
         role: "Design & Développement",
         languages: "Français · Espagnol",
         bio: "Il conçoit et construit. Direction visuelle, interfaces, développement web et mobile, performance et référencement technique : c'est lui qui transforme le projet en produit qui fonctionne. Basé à La Rochelle.",
@@ -27,6 +43,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
       {
         firstName: "Céleste",
+        ...CELESTE,
         role: "Relation client & Développement commercial",
         languages: "Espagnol · Français · Anglais",
         bio: "Elle est votre interlocutrice sur tout le volet commercial : premiers échanges, cadrage du besoin, devis et suivi. Espagnole et argentine, elle porte le studio sur les marchés hispanophones. Basée à Barcelone.",
@@ -87,6 +104,7 @@ export const studio: Record<Locale, StudioContent> = {
     members: [
       {
         firstName: "Kevin",
+        ...KEVIN,
         role: "Diseño y Desarrollo",
         languages: "Francés · Español",
         bio: "Diseña y construye. Dirección visual, interfaces, desarrollo web y móvil, rendimiento y SEO técnico: es quien convierte el proyecto en un producto que funciona. Con base en La Rochelle.",
@@ -94,6 +112,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
       {
         firstName: "Céleste",
+        ...CELESTE,
         role: "Relación con clientes y Desarrollo comercial",
         languages: "Español · Francés · Inglés",
         bio: "Es vuestra interlocutora en todo lo comercial: primeras conversaciones, definición de la necesidad, presupuestos y seguimiento. Española y argentina, lleva el estudio en los mercados hispanohablantes. Con base en Barcelona.",
@@ -154,6 +173,7 @@ export const studio: Record<Locale, StudioContent> = {
     members: [
       {
         firstName: "Kevin",
+        ...KEVIN,
         role: "Diseño y Desarrollo",
         languages: "Francés · Español",
         bio: "Diseña y construye. Dirección visual, interfaces, desarrollo web y mobile, rendimiento y SEO técnico: es quien convierte el proyecto en un producto que funciona. Con base en La Rochelle.",
@@ -161,6 +181,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
       {
         firstName: "Céleste",
+        ...CELESTE,
         role: "Relación con clientes y Desarrollo comercial",
         languages: "Español · Francés · Inglés",
         bio: "Es tu interlocutora en todo lo comercial: primeras charlas, definición de la necesidad, presupuestos y seguimiento. Española y argentina, lleva el estudio en los mercados hispanohablantes. Con base en Barcelona.",
@@ -221,6 +242,7 @@ export const studio: Record<Locale, StudioContent> = {
     members: [
       {
         firstName: "Kevin",
+        ...KEVIN,
         role: "Design & Development",
         languages: "French · Spanish",
         bio: "He designs and builds. Through visual direction, interfaces, web and mobile development, performance and technical SEO, he turns the project into a product that works. Based in La Rochelle.",
@@ -228,6 +250,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
       {
         firstName: "Céleste",
+        ...CELESTE,
         role: "Client Relations & Business Development",
         languages: "Spanish · French · English",
         bio: "She's your point of contact on everything commercial: first conversations, scoping, quotes and follow-up. Spanish and Argentine, she leads the studio across Spanish-speaking markets. Based in Barcelona.",
