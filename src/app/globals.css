@@ -2382,7 +2382,18 @@ html{
 }
 
 @media (max-width:850px){
+  /* At full width the card reached 31% of a phone screen, which is the point
+     where a corner prompt starts behaving like the intrusive interstitial it
+     was designed not to be. Tightened to roughly a fifth. */
   .nudge{left:16px;right:16px;bottom:16px;width:auto}
+  .nudge-card{padding:16px 16px 0}
+  .nudge-title{margin-bottom:8px;font-size:14px}
+  .nudge-body{margin-bottom:14px;font-size:16px}
+  .nudge-button{margin:0 -16px;padding:13px 16px}
+  .nudge-tag{padding:8px 0}
+  /* 30px is comfortable with a mouse and too small for a thumb; 44 is the
+     accessible minimum for a touch target. */
+  .nudge-close{width:44px;height:44px;font-size:19px}
 }
 
 @media (prefers-reduced-motion:reduce){
