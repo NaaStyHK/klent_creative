@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { locales, hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
 import type { ServiceKey } from "@/lib/services";
 import { blogCategoryKeys, getPostCategory, type BlogCategoryKey } from "@/lib/blog-categories";
+import { findTranslationGroup } from "@/lib/blog-translations";
 
 export type PostFrontmatter = {
   /** Editorial headline. Renders as the page H1 and in listings. */
@@ -138,14 +139,27 @@ function postExists(locale: Locale, slug: string): boolean {
 }
 
 /**
- * Most articles only exist in one locale (the France-specific La Rochelle
- * pieces are FR-only by design — translating them wouldn't serve the ES/AR
- * audience). Only build hreflang alternates for locales where this exact
- * slug actually has a file, so we never point search engines at a 404.
+ * hreflang alternates for an article.
+ *
+ * Two cases. Most articles exist in a single locale — the La Rochelle pieces
+ * are French-only by design, since translating them would not serve a Spanish
+ * or Argentine reader — and those declare only themselves.
+ *
+ * The rest are genuine translations whose slugs differ per language
+ * ("site-vitrine-moderne-2026" and "modern-website-standards-2026" are one
+ * article). Matching on the slug alone left each of them isolated, so Google
+ * saw unrelated pages instead of one article in several languages. The
+ * translation table supplies the mapping; the file check stays, so a stale
+ * entry can never produce a hreflang pointing at a 404.
  */
 export function buildPostAlternates(slug: string): Record<string, string> {
-  const available = locales.filter((locale) => postExists(locale, slug));
+  const group = findTranslationGroup(slug);
+
+  const entries = locales
+    .map((locale) => [locale, group?.[locale] ?? slug] as const)
+    .filter(([locale, target]) => postExists(locale, target));
+
   return Object.fromEntries(
-    available.map((locale) => [hreflangByLocale[locale], `${siteUrl}/${locale}/blog/${slug}`]),
+    entries.map(([locale, target]) => [hreflangByLocale[locale], `${siteUrl}/${locale}/blog/${target}`]),
   );
 }

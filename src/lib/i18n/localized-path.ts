@@ -4,38 +4,8 @@ import { resolveService, serviceSlugs } from "@/lib/services";
 import { isLegalSlug, legalSlug } from "@/lib/legal";
 import { isStudioSlug, studioSlug } from "@/lib/studio";
 import { blogCategorySlugs, resolveCategorySlug } from "@/lib/blog-categories";
+import { articleSwitcherGroups } from "@/lib/blog-translations";
 
-/**
- * Equivalent articles available in several languages. Articles missing from
- * the target locale intentionally fall back to that locale's blog listing
- * instead of sending visitors to a 404.
- */
-const localizedBlogArticles: Array<Partial<Record<Locale, string>>> = [
-  {
-    fr: "application_oxploria",
-    es: "application_oxploria",
-    "es-ar": "application_oxploria",
-    en: "application_oxploria",
-  },
-  {
-    fr: "site-vitrine-moderne-2026",
-    es: "sitio-web-moderno-2026",
-    "es-ar": "sitio-web-moderno-2026",
-    en: "modern-website-standards-2026",
-  },
-  {
-    fr: "freelance-developpeur-web-la-rochelle",
-    es: "freelance-desarrollador-web-barcelona",
-    "es-ar": "freelance-desarrollador-web-buenos-aires",
-    en: "freelance-web-developer-vs-agency",
-  },
-  {
-    fr: "combien-coute-site-vitrine-la-rochelle",
-    es: "cuanto-cuesta-sitio-web-barcelona",
-    "es-ar": "cuanto-cuesta-sitio-web-buenos-aires",
-    en: "how-much-does-a-website-cost",
-  },
-];
 
 function pathSegments(pathname: string, currentLocale: Locale): string[] {
   const prefix = "/" + currentLocale;
@@ -86,7 +56,7 @@ export function getLocalizedPath(
     const category = resolveCategorySlug(currentLocale, second);
     if (category) return "/" + targetLocale + "/blog/" + blogCategorySlugs[category][targetLocale];
 
-    const article = localizedBlogArticles.find((group) => group[currentLocale] === second);
+    const article = articleSwitcherGroups.find((group) => group[currentLocale] === second);
     const targetSlug = article?.[targetLocale];
     return targetSlug
       ? "/" + targetLocale + "/blog/" + targetSlug
