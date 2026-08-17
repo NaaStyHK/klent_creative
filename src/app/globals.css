@@ -2479,3 +2479,14 @@ html{
   color:transparent;
   -webkit-text-stroke:.011em #111;
 }
+
+/* Outlined line in the closing call to action.
+   This block is the one dark ground of the three, so the stroke is paper, not
+   ink — and it needs no optical compensation: light on dark already reads
+   slightly heavier than it measures, which is why .009em here matches what
+   .011em does on the cream manifesto. In em so it tracks type that runs from
+   58px to 190px. */
+.cta h2 .outline{
+  color:transparent;
+  -webkit-text-stroke:.009em var(--paper);
+}

@@ -14,9 +14,9 @@ export default function CTA({ dict, locale }: { dict: Dictionary; locale: Locale
           all locales and the last one was being silently dropped. */}
       <h2 className="reveal-up">
         {cta.headlineLines.map((line, i) => (
-          <span key={i}>
+          <span key={i} className={typeof line === "string" ? undefined : "outline"}>
             {i > 0 && <>{" "}<br /></>}
-            {line}
+            {typeof line === "string" ? line : line.outline}
           </span>
         ))}
       </h2>

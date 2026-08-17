@@ -144,7 +144,7 @@ export const es: Dictionary = {
   },
   cta: {
     kicker: "¿TIENE UN PROYECTO EN MENTE?",
-    headlineLines: ["HAGAMOS QUE", "LA IDEA", "SUCEDA."],
+    headlineLines: ["HAGAMOS QUE", "LA IDEA", { outline: "SUCEDA." }],
     button: "Empezar un proyecto ↗︎",
   },
   nudge: {

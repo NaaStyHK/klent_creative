@@ -91,7 +91,8 @@ export type Dictionary = {
   };
   cta: {
     kicker: string;
-    headlineLines: string[];
+    /** One entry per line; an object draws that line as an outline. */
+    headlineLines: Array<string | { outline: string }>;
     button: string;
   };
   /** Corner prompt shown once the reader is halfway down a page. */
