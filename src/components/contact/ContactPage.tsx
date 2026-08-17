@@ -1,3 +1,4 @@
+import renderHeading from "@/components/ui/RichHeading";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionary";
 import ContactForm from "@/components/contact/ContactForm";
@@ -8,7 +9,7 @@ export default function ContactPage({ dict, locale }: { dict: Dictionary; locale
     <>
       <section className="service-page-hero">
         <div className="eyebrow mono">{contact.eyebrow}</div>
-        <h1 className="headline">{contact.h1}</h1>
+        <h1 className="headline headline--display">{renderHeading(contact.h1)}</h1>
         <p className="service-page-intro reveal-up">{contact.intro}</p>
       </section>
 

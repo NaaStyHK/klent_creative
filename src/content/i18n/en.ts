@@ -191,7 +191,7 @@ export const en: Dictionary = {
     metaTitle: "Contact — Klent Creative",
     metaDescription: "Get in touch with KLENT CREATIVE. Tell us about your branding, website or mobile app project.",
     eyebrow: "Contact",
-    h1: "Let's talk about your project.",
+    h1: ["Let's talk ", { outline: "about your project." }],
     intro:
       "Whether you already have a clear brief or just a rough idea, tell us what you're trying to build. We'll get back to you within 24 hours.",
     emailLabel: "Email us",

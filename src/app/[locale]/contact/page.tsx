@@ -1,3 +1,4 @@
+import { headingText } from "@/components/ui/RichHeading";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, buildAlternates, siteUrl } from "@/lib/i18n/config";
@@ -45,7 +46,7 @@ export default async function ContactRoutePage({
       <PageJsonLd
         locale={locale}
         url={`${siteUrl}/${locale}/contact`}
-        name={dict.contact.h1}
+        name={headingText(dict.contact.h1)}
         description={dict.contact.metaDescription}
       />
       <ContactPage dict={dict} locale={locale} />
