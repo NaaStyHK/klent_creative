@@ -1,3 +1,4 @@
+import { headingText } from "@/components/ui/RichHeading";
 import { hreflangByLocale, type Locale } from "@/lib/i18n/config";
 import type { StudioContent } from "@/lib/i18n/studio-content";
 import { ORG_ID, graph } from "@/lib/schema";
@@ -23,7 +24,10 @@ export default function StudioJsonLd({
     {
       "@type": "AboutPage",
       "@id": `${url}#aboutpage`,
-      name: content.h1,
+      // Flattened: the schema node takes unknown values, so TypeScript will
+      // not object to a segment array here — it would simply serialise into
+      // the JSON-LD as a list of objects where a string is expected.
+      name: headingText(content.h1),
       description: content.metaDescription,
       url,
       mainEntity: { "@id": ORG_ID },

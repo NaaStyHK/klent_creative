@@ -27,11 +27,11 @@ export const studio: Record<Locale, StudioContent> = {
     metaDescription:
       "KLENT CREATIVE est un studio créatif indépendant à deux : design et développement, relation client. Français et espagnol, entre La Rochelle, Barcelone et l'Argentine.",
     eyebrow: "Le studio",
-    h1: "Deux personnes. Aucun intermédiaire.",
+    h1: ["Deux personnes. Aucun ", { outline: "intermédiaire." }],
     intro:
       "KLENT CREATIVE est un studio créatif indépendant. Pas une agence avec des couches de chefs de projet : deux personnes qui travaillent directement avec vous, du premier échange à la mise en ligne.",
     teamEyebrow: "(01) L'équipe",
-    teamTitle: "Qui vous aurez en face.",
+    teamTitle: ["Qui vous aurez ", { outline: "en face." }],
     members: [
       {
         firstName: "Kevin",
@@ -51,7 +51,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     reachEyebrow: "(02) Nos marchés",
-    reachTitle: "Trois marchés, deux langues natives.",
+    reachTitle: ["Trois marchés, deux ", { outline: "langues natives." }],
     reachBody:
       "Beaucoup d'agences traduisent leur site et se disent internationales. Chez nous, la couverture de la France, de l'Espagne et de l'Argentine n'est pas une traduction : c'est notre équipe.",
     reachPoints: [
@@ -69,7 +69,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     approachEyebrow: "(03) Notre façon de travailler",
-    approachTitle: "Peu de projets. Beaucoup d'attention.",
+    approachTitle: ["Peu de projets. Beaucoup d'", { outline: "attention." }],
     approachBody:
       "Être deux nous impose une discipline : nous ne prenons pas tout. Ce que nous prenons, nous le suivons de bout en bout.",
     approachPoints: [
@@ -87,7 +87,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     ctaKicker: "Envie de travailler ensemble ?",
-    ctaHeadline: ["Parlons", "de votre projet."],
+    ctaHeadline: ["Parlons", [{ outline: "de votre projet." }]],
     ctaButton: "Démarrer un projet ↗︎",
   },
 
@@ -96,11 +96,11 @@ export const studio: Record<Locale, StudioContent> = {
     metaDescription:
       "Estudio creativo independiente de dos personas: diseño, desarrollo y relación con clientes. Entre Barcelona, La Rochelle y Argentina.",
     eyebrow: "El estudio",
-    h1: "Dos personas. Ningún intermediario.",
+    h1: ["Dos personas. Ningún ", { outline: "intermediario." }],
     intro:
       "KLENT CREATIVE es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vosotros, desde la primera conversación hasta la puesta en marcha.",
     teamEyebrow: "(01) El equipo",
-    teamTitle: "Quién estará al otro lado.",
+    teamTitle: ["Quién estará ", { outline: "al otro lado." }],
     members: [
       {
         firstName: "Kevin",
@@ -120,7 +120,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     reachEyebrow: "(02) Nuestros mercados",
-    reachTitle: "Tres mercados, dos lenguas nativas.",
+    reachTitle: ["Tres mercados, dos ", { outline: "lenguas nativas." }],
     reachBody:
       "Muchas agencias traducen su web y se llaman internacionales. Aquí, cubrir España, Francia y Argentina no es una traducción: es nuestro equipo.",
     reachPoints: [
@@ -138,7 +138,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     approachEyebrow: "(03) Nuestra forma de trabajar",
-    approachTitle: "Pocos proyectos. Mucha atención.",
+    approachTitle: ["Pocos proyectos. Mucha ", { outline: "atención." }],
     approachBody:
       "Ser dos nos obliga a una disciplina: no aceptamos todo. Lo que aceptamos, lo acompañamos de principio a fin.",
     approachPoints: [
@@ -156,7 +156,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     ctaKicker: "¿Trabajamos juntos?",
-    ctaHeadline: ["Hablemos", "de vuestro proyecto."],
+    ctaHeadline: ["Hablemos", [{ outline: "de vuestro proyecto." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
 
@@ -165,11 +165,11 @@ export const studio: Record<Locale, StudioContent> = {
     metaDescription:
       "Estudio creativo independiente de dos personas: diseño, desarrollo y relación con clientes. Entre Argentina, Barcelona y La Rochelle.",
     eyebrow: "El estudio",
-    h1: "Dos personas. Ningún intermediario.",
+    h1: ["Dos personas. Ningún ", { outline: "intermediario." }],
     intro:
       "KLENT CREATIVE es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vos, desde la primera charla hasta la puesta en marcha.",
     teamEyebrow: "(01) El equipo",
-    teamTitle: "Quién va a estar del otro lado.",
+    teamTitle: ["Quién va a estar ", { outline: "del otro lado." }],
     members: [
       {
         firstName: "Kevin",
@@ -189,7 +189,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     reachEyebrow: "(02) Nuestros mercados",
-    reachTitle: "Tres mercados, dos lenguas nativas.",
+    reachTitle: ["Tres mercados, dos ", { outline: "lenguas nativas." }],
     reachBody:
       "Muchas agencias traducen su sitio y se llaman internacionales. Acá, cubrir Argentina, España y Francia no es una traducción: es nuestro equipo.",
     reachPoints: [
@@ -207,7 +207,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     approachEyebrow: "(03) Nuestra forma de trabajar",
-    approachTitle: "Pocos proyectos. Mucha atención.",
+    approachTitle: ["Pocos proyectos. Mucha ", { outline: "atención." }],
     approachBody:
       "Ser dos nos obliga a una disciplina: no aceptamos todo. Lo que aceptamos, lo acompañamos de punta a punta.",
     approachPoints: [
@@ -225,7 +225,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     ctaKicker: "¿Trabajamos juntos?",
-    ctaHeadline: ["Hablemos", "de tu proyecto."],
+    ctaHeadline: ["Hablemos", [{ outline: "de tu proyecto." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
 
@@ -234,11 +234,11 @@ export const studio: Record<Locale, StudioContent> = {
     metaDescription:
       "KLENT CREATIVE is a two-person independent creative studio: design and development, client relations. French and Spanish, across La Rochelle, Barcelona and Argentina.",
     eyebrow: "The studio",
-    h1: "Two people. No middlemen.",
+    h1: ["Two people. No ", { outline: "middlemen." }],
     intro:
       "KLENT CREATIVE is an independent creative studio. Not an agency with layers of project managers: two people working directly with you, from the first conversation through to launch.",
     teamEyebrow: "(01) The team",
-    teamTitle: "Who you'll actually be dealing with.",
+    teamTitle: ["Who you'll actually be ", { outline: "dealing with." }],
     members: [
       {
         firstName: "Kevin",
@@ -258,7 +258,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     reachEyebrow: "(02) Our markets",
-    reachTitle: "Three markets, two native languages.",
+    reachTitle: ["Three markets, two ", { outline: "native languages." }],
     reachBody:
       "Plenty of agencies translate their website and call themselves international. Here, covering France, Spain and Argentina comes directly from the team.",
     reachPoints: [
@@ -276,7 +276,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     approachEyebrow: "(03) How we work",
-    approachTitle: "Few projects. A lot of attention.",
+    approachTitle: ["Few projects. A lot of ", { outline: "attention." }],
     approachBody:
       "Being two forces a discipline on us: we don't take everything on. What we do take on, we see through end to end.",
     approachPoints: [
@@ -294,7 +294,7 @@ export const studio: Record<Locale, StudioContent> = {
       },
     ],
     ctaKicker: "Want to work together?",
-    ctaHeadline: ["Let's talk", "about your project."],
+    ctaHeadline: ["Let's talk", [{ outline: "about your project." }]],
     ctaButton: "Start a project ↗︎",
   },
 };

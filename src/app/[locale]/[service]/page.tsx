@@ -169,7 +169,7 @@ export default async function ServiceRoutePage({
         <PageJsonLd
           locale={localeTyped}
           url={`${siteUrl}/${locale}/${service}`}
-          name={content.h1}
+          name={headingText(content.h1)}
           description={content.metaDescription}
         />
         <StudioPage content={content} locale={localeTyped} />

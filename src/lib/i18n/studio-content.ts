@@ -1,3 +1,4 @@
+import type { RichHeading } from "@/components/ui/RichHeading";
 export type StudioMember = {
   firstName: string;
   role: string;
@@ -24,20 +25,20 @@ export type StudioContent = {
   metaTitle: string;
   metaDescription: string;
   eyebrow: string;
-  h1: string;
+  h1: RichHeading;
   intro: string;
   teamEyebrow: string;
-  teamTitle: string;
+  teamTitle: RichHeading;
   members: StudioMember[];
   reachEyebrow: string;
-  reachTitle: string;
+  reachTitle: RichHeading;
   reachBody: string;
   reachPoints: StudioPoint[];
   approachEyebrow: string;
-  approachTitle: string;
+  approachTitle: RichHeading;
   approachBody: string;
   approachPoints: StudioPoint[];
   ctaKicker: string;
-  ctaHeadline: [string, string];
+  ctaHeadline: [RichHeading, RichHeading];
   ctaButton: string;
 };

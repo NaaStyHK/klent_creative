@@ -1,3 +1,4 @@
+import renderHeading from "@/components/ui/RichHeading";
 import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
@@ -12,7 +13,7 @@ export default function StudioPage({ content, locale }: { content: StudioContent
           <span>La Rochelle / Barcelona / International</span>
         </div>
 
-        <h1 className="studio-display reveal-up">{content.h1}</h1>
+        <h1 className="studio-display reveal-up">{renderHeading(content.h1)}</h1>
 
         <div className="studio-hero-grid">
           <div className="studio-focus-panel reveal-up">
@@ -39,7 +40,7 @@ export default function StudioPage({ content, locale }: { content: StudioContent
       <section className="studio-editorial-team">
         <div className="studio-section-heading reveal-up">
           <div className="eyebrow mono">{content.teamEyebrow}</div>
-          <h2 className="headline">{content.teamTitle}</h2>
+          <h2 className="headline headline--display">{renderHeading(content.teamTitle)}</h2>
         </div>
 
         <div className="studio-people-grid">
@@ -91,7 +92,7 @@ export default function StudioPage({ content, locale }: { content: StudioContent
         <div className="studio-section-heading reveal-up">
           <div className="eyebrow mono">{content.reachEyebrow}</div>
           <div>
-            <h2 className="headline">{content.reachTitle}</h2>
+            <h2 className="headline headline--display">{renderHeading(content.reachTitle)}</h2>
             <p className="studio-section-body">{content.reachBody}</p>
           </div>
         </div>
@@ -112,7 +113,7 @@ export default function StudioPage({ content, locale }: { content: StudioContent
         <div className="studio-section-heading is-dark reveal-up">
           <div className="eyebrow mono">{content.approachEyebrow}</div>
           <div>
-            <h2 className="headline">{content.approachTitle}</h2>
+            <h2 className="headline headline--display">{renderHeading(content.approachTitle)}</h2>
             <p className="studio-section-body">{content.approachBody}</p>
           </div>
         </div>
@@ -139,9 +140,9 @@ export default function StudioPage({ content, locale }: { content: StudioContent
           {content.ctaKicker}
         </div>
         <h2 className="reveal-up">
-          {content.ctaHeadline[0]}
+          {renderHeading(content.ctaHeadline[0])}
           {" "}<br />
-          {content.ctaHeadline[1]}
+          {renderHeading(content.ctaHeadline[1])}
         </h2>
         <Link className="mono hoverable magnetic" href={`/${locale}/contact`}>
           {content.ctaButton}
