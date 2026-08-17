@@ -118,7 +118,7 @@ export type Dictionary = {
     metaTitle: string;
     metaDescription: string;
     eyebrow: string;
-    h1: string;
+    h1: RichHeading;
     intro: string;
     conceptTag: string;
     backToWork: string;

@@ -164,7 +164,7 @@ export const esAr: Dictionary = {
     metaTitle: "Proyectos — Klent Creative",
     metaDescription: "Una selección de conceptos creativos de KLENT: branding, sitios web e identidades de marca.",
     eyebrow: "PROYECTOS",
-    h1: "IDEAS QUE TOMARON FORMA.",
+    h1: ["Ideas que ", { outline: "tomaron forma." }],
     intro: "Una selección de proyectos, identidades y experiencias digitales creadas por Klent Creative.",
     conceptTag: "Concepto",
     backToWork: "← Volver a proyectos",

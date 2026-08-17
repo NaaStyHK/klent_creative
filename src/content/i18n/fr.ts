@@ -166,7 +166,7 @@ export const fr: Dictionary = {
     metaTitle: "Réalisations — Klent Creative",
     metaDescription: "Une sélection de concepts créatifs par KLENT CREATIVE : branding, sites internet et identités de marque.",
     eyebrow: "RÉALISATIONS",
-    h1: "DES IDÉES QUI ONT PRIS FORME.",
+    h1: ["Des idées qui ont ", { outline: "pris forme." }],
     intro: "Une sélection de projets, d'identités et d'expériences digitales créés par Klent Creative.",
     conceptTag: "Concept",
     backToWork: "← Retour aux réalisations",

@@ -1,3 +1,4 @@
+import renderHeading from "@/components/ui/RichHeading";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionary";
@@ -13,7 +14,7 @@ export default function WorkListPage({ locale, dict }: { locale: Locale; dict: D
     <>
       <section className="service-page-hero">
         <div className="eyebrow mono">{dict.workPage.eyebrow}</div>
-        <h1 className="headline">{dict.workPage.h1}</h1>
+        <h1 className="headline headline--display">{renderHeading(dict.workPage.h1)}</h1>
         <p className="service-page-intro reveal-up">{dict.workPage.intro}</p>
       </section>
 

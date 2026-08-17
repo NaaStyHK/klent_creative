@@ -137,7 +137,7 @@ export default async function ServiceRoutePage({
         <PageJsonLd
           locale={locale as Locale}
           url={`${siteUrl}/${locale}/${service}`}
-          name={dict.workPage.h1}
+          name={headingText(dict.workPage.h1)}
           description={dict.workPage.metaDescription}
         />
         <WorkListPage locale={locale as Locale} dict={dict} />

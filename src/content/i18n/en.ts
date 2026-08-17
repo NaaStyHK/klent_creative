@@ -166,7 +166,7 @@ export const en: Dictionary = {
     metaTitle: "Work — Klent Creative",
     metaDescription: "A selection of creative concepts by KLENT: branding, websites and brand identity.",
     eyebrow: "WORK",
-    h1: "IDEAS THAT TOOK SHAPE.",
+    h1: ["Ideas that ", { outline: "took shape." }],
     intro: "A selection of projects, identities and digital experiences created by Klent Creative.",
     conceptTag: "Concept",
     backToWork: "← Back to work",
