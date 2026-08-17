@@ -21,7 +21,7 @@ export const fr: Dictionary = {
     kickerRight: ["Stratégie / Identité / Digital", "Développement / Croissance"],
     // Keep each line short: the hero type is huge, and a line that wraps
     // silently turns 4 lines into 6 and overflows the viewport.
-    titleLines: ["Des idées", "qui marquent.", "Des marques", "qui durent."],
+    titleLines: ["Des idées", "qui marquent.", "Des marques", ["qui ", { outline: "durent." }]],
     copy: "Identité, design et développement pour les marques qui veulent faire les choses autrement.",
     status: "DISPONIBLES POUR DES PROJETS SÉLECTIONNÉS",
   },
@@ -34,7 +34,7 @@ export const fr: Dictionary = {
   },
   work: {
     eyebrow: "(01) DES PROJETS AVEC UNE IDENTITÉ.",
-    headline: ["Ça se voit.", "Parce que c'est bien pensé."],
+    headline: ["Ça se voit.", ["Parce que c'est bien ", { outline: "pensé." }]],
     description: "Une sélection de projets, de marques et d'expériences digitales que nous menons de l'idée à l'écran.",
     cases: [
       {
@@ -74,7 +74,7 @@ export const fr: Dictionary = {
   },
   services: {
     eyebrow: "(02) Expertises",
-    headline: "Des idées qui prennent forme.",
+    headline: [{ outline: "Des idées" }, " qui prennent forme."],
     items: [
       {
         num: "01",
@@ -108,7 +108,7 @@ export const fr: Dictionary = {
   },
   manifesto: {
     kicker: "Notre règle",
-    word: ["Aucune", "idée", "sûre."],
+    word: ["Aucune", "idée", { outline: "sûre." }],
     tagline: "Le mémorable bat l'acceptable.",
     note: "Pour les marques qui ne cherchent pas à rentrer dans le moule, mais à trouver leur propre manière d'exister.",
   },
@@ -120,7 +120,7 @@ export const fr: Dictionary = {
   ],
   process: {
     eyebrow: "(03) Méthode",
-    headline: "De l'idée\nà quelque chose de réel",
+    headline: ["De l'idée\nà quelque chose de ", { outline: "réel" }],
     steps: [
       {
         num: "01 / DÉCOUVRIR",
@@ -146,7 +146,7 @@ export const fr: Dictionary = {
   },
   cta: {
     kicker: "UN PROJET EN TÊTE ?",
-    headlineLines: ["FAISONS", "DE CETTE IDÉE", "UNE RÉALITÉ."],
+    headlineLines: ["FAISONS", "DE CETTE IDÉE", { outline: "UNE RÉALITÉ." }],
     button: "Démarrer un projet ↗︎",
   },
   nudge: {

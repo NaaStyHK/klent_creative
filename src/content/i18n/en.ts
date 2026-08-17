@@ -21,7 +21,7 @@ export const en: Dictionary = {
     kickerRight: ["Strategy / Identity / Digital", "Development / Growth"],
     // Keep each line short: the hero type is huge, and a line that wraps
     // silently turns 4 lines into 6 and overflows the viewport.
-    titleLines: ["Ideas", "that stick.", "Brands", "that last."],
+    titleLines: ["Ideas", "that stick.", "Brands", ["that ", { outline: "last." }]],
     copy: "Identity, design and development for brands that want to do things differently.",
     status: "AVAILABLE FOR SELECTED PROJECTS",
   },
@@ -34,7 +34,7 @@ export const en: Dictionary = {
   },
   work: {
     eyebrow: "(01) PROJECTS WITH AN IDENTITY.",
-    headline: ["It looks good.", "Because it's well thought out."],
+    headline: ["It looks good.", ["Because it's well ", { outline: "thought out." }]],
     description: "A selection of projects, brands and digital experiences we take from idea to screen.",
     cases: [
       {
@@ -74,7 +74,7 @@ export const en: Dictionary = {
   },
   services: {
     eyebrow: "(02) Capabilities",
-    headline: "Ideas that take shape.",
+    headline: [{ outline: "Ideas" }, " that take shape."],
     items: [
       {
         num: "01",
@@ -108,7 +108,7 @@ export const en: Dictionary = {
   },
   manifesto: {
     kicker: "Our rule",
-    word: ["No", "safe", "ideas."],
+    word: ["No", "safe", { outline: "ideas." }],
     tagline: "Memorable beats acceptable.",
     note: "For brands that aren't looking to fit in, but to find their own way of existing.",
   },
@@ -120,7 +120,7 @@ export const en: Dictionary = {
   ],
   process: {
     eyebrow: "(03) Process",
-    headline: "From idea\nto something real",
+    headline: ["From idea\nto something ", { outline: "real" }],
     steps: [
       {
         num: "01 / DISCOVER",
@@ -146,7 +146,7 @@ export const en: Dictionary = {
   },
   cta: {
     kicker: "HAVE A PROJECT IN MIND?",
-    headlineLines: ["LET'S MAKE", "THAT IDEA", "HAPPEN."],
+    headlineLines: ["LET'S MAKE", "THAT IDEA", { outline: "HAPPEN." }],
     button: "Start a project ↗︎",
   },
   nudge: {
