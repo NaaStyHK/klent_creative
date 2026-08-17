@@ -26,7 +26,7 @@ const SIRET = "10181386300012";
  * so that is the number attached to the Organization itself.
  */
 const PHONE_FR = "+33758747002";
-const PHONE_ES = "+34615810330";
+const PHONE_ES = "+34612246814";
 
 /**
  * Cities served, and the countries served remotely.

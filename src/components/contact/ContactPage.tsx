@@ -35,8 +35,8 @@ export default function ContactPage({ dict, locale }: { dict: Dictionary; locale
           </a>
           <span className="contact-phone-note mono">{contact.phoneFrance}</span>
           <br />
-          <a className="hoverable" href="tel:+34615810330">
-            +34 615 81 03 30
+          <a className="hoverable" href="tel:+34612246814">
+            +34 612 24 68 14
           </a>
           <span className="contact-phone-note mono">{contact.phoneSpain}</span>
         </div>
