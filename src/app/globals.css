@@ -2437,11 +2437,13 @@ html{
    93px against the statement's 147px, so the stroke is lighter here.
 
    Expressed in em so it tracks the type, which runs from 58px to 120px and
-   reaches 17vw on phones; a fixed width would thicken as the title shrinks. */
+   reaches 17vw on phones; a fixed width would thicken as the title shrinks.
+   .011em is the shared weight for every outline on the cream ground, so the
+   four of them read as one device rather than four near-misses. */
 .hero-title .outline{
   display:inline;
   color:transparent;
-  -webkit-text-stroke:.014em #111;
+  -webkit-text-stroke:.011em #111;
 }
 
 /* Display treatment for the two section headings that carry the page, taken
@@ -2489,4 +2491,12 @@ html{
 .cta h2 .outline{
   color:transparent;
   -webkit-text-stroke:.009em var(--paper);
+}
+
+/* Outlined word inside a display heading. Ink on the cream ground, and the
+   same .011em as the manifesto so the two cream-ground outlines carry equal
+   weight. */
+.headline--display .outline{
+  color:transparent;
+  -webkit-text-stroke:.011em #111;
 }

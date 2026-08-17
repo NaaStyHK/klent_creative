@@ -32,7 +32,7 @@ export const esAr: Dictionary = {
   },
   work: {
     eyebrow: "(01) PROYECTOS CON IDENTIDAD.",
-    headline: ["Se ve bien.", "Porque está bien pensado."],
+    headline: ["Se ve bien.", ["Porque está bien ", { outline: "pensado." }]],
     description: "Una selección de proyectos, marcas y experiencias digitales que llevamos de la idea a la pantalla.",
     cases: [
       {
@@ -72,7 +72,7 @@ export const esAr: Dictionary = {
   },
   services: {
     eyebrow: "(02) Especialidades",
-    headline: "Ideas que toman forma.",
+    headline: [{ outline: "Ideas" }, " que toman forma."],
     items: [
       {
         num: "01",
@@ -118,7 +118,7 @@ export const esAr: Dictionary = {
   ],
   process: {
     eyebrow: "(03) Proceso",
-    headline: "De la idea\na algo real",
+    headline: ["De la idea\na algo ", { outline: "real" }],
     steps: [
       {
         num: "01 / DESCUBRIR",

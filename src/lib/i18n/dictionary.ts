@@ -57,7 +57,8 @@ export type Dictionary = {
   agencyIntro: { left: string; leftStrong: string; right: string; rightStrong: string };
   work: {
     eyebrow: string;
-    headline: string[];
+    /** One entry per line; a line may be split into segments to outline a word. */
+    headline: Array<string | Array<string | { outline: string }>>;
     description: string;
     cases: CaseCard[];
   };
@@ -73,7 +74,8 @@ export type Dictionary = {
   kineticBand: { text: string; emphasis: string; tail: string };
   services: {
     eyebrow: string;
-    headline: string;
+    /** Plain text, or segments when one word is drawn as an outline. */
+    headline: string | Array<string | { outline: string }>;
     items: ServiceItem[];
   };
   manifesto: {
@@ -86,7 +88,8 @@ export type Dictionary = {
   metrics: Metric[];
   process: {
     eyebrow: string;
-    headline: string;
+    /** Plain text, or segments when one word is drawn as an outline. */
+    headline: string | Array<string | { outline: string }>;
     steps: ProcessStep[];
   };
   cta: {

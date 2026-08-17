@@ -8,7 +8,19 @@ export default function Services({ dict, locale }: { dict: Dictionary; locale: L
     <section className="services" id="services">
       <div className="section-head reveal-up">
         <div className="eyebrow mono">{services.eyebrow}</div>
-        <h2 className="headline headline--display">{services.headline}</h2>
+        <h2 className="headline headline--display">
+          {typeof services.headline === "string"
+            ? services.headline
+            : services.headline.map((seg, i) =>
+                typeof seg === "string" ? (
+                  seg
+                ) : (
+                  <span className="outline" key={i}>
+                    {seg.outline}
+                  </span>
+                ),
+              )}
+        </h2>
       </div>
 
       {services.items.map((item) => {

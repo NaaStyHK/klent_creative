@@ -14,9 +14,22 @@ export default function Showcase({ dict, locale }: { dict: Dictionary; locale: L
         <div className="eyebrow mono">{work.eyebrow}</div>
         <div>
           <h2 className="headline headline--display">
-            {work.headline[0]}
-            {" "}<br />
-            {work.headline[1]}
+            {work.headline.map((line, i) => (
+              <span key={i}>
+                {i > 0 && <>{" "}<br /></>}
+                {typeof line === "string"
+                  ? line
+                  : line.map((seg, j) =>
+                      typeof seg === "string" ? (
+                        seg
+                      ) : (
+                        <span className="outline" key={j}>
+                          {seg.outline}
+                        </span>
+                      ),
+                    )}
+              </span>
+            ))}
           </h2>
           <p className="work-intro">{work.description}</p>
         </div>
