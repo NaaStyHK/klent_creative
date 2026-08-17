@@ -49,3 +49,4 @@ next-env.d.ts
 tmp/
 .codex-dev.*.log
 _reference/
+.claude/
