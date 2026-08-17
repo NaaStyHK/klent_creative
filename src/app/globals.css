@@ -2501,3 +2501,33 @@ body{--outline-ink:#111}
 .cta h2 .outline,
 .studio-editorial-approach .outline{-webkit-text-stroke-width:.009em}
 
+
+/* Ticker on narrow phones.
+   A block at max-width:520px already asked for two columns, but a later block
+   at max-width:850px sets three; both match at 375px, they carry the same
+   specificity, and the one further down the file wins. The narrow rule had
+   therefore never applied.
+
+   Two columns is not cosmetic here. At three, each cell offers 97px of usable
+   width while "Developpement" measures 139px — and it is a single word, so it
+   cannot wrap. It was simply cut off, in French only: the Spanish and English
+   labels are short enough to fit. */
+@media (max-width:520px){
+  .ticker-track{grid-template-columns:repeat(2,1fr)}
+  /* Borders follow the new column count: no right border on the second of each
+     pair, no bottom border on the final row. */
+  .ticker-item:nth-child(3n){border-right:1px solid rgba(242,240,232,.18)}
+  .ticker-item:nth-child(2n){border-right:0}
+  .ticker-item:nth-last-child(-n+3){border-bottom:1px solid rgba(242,240,232,.18)}
+  .ticker-item:nth-last-child(-n+2){border-bottom:0}
+}
+
+/* Very small phones (iPhone SE and the like).
+   Even in two columns, "Developpement" needs 139px against 132px available,
+   because the label's clamp floors at 20px and stops shrinking. Lowering the
+   floor only here keeps the type at full size on the 360-412px screens that
+   make up almost all phones, and rescues the one word that does not fit on the
+   narrowest. */
+@media (max-width:360px){
+  .ticker-label{font-size:17px}
+}
