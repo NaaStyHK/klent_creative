@@ -115,7 +115,11 @@
          ~16% taller — the old cap let it overflow short viewports again. */
       font-size:clamp(64px,min(12.3vw,13vh),190px);font-weight:700;line-height:.78;letter-spacing:-.075em;text-transform:uppercase
     }
-    .hero-title span{display:block;overflow:hidden}
+    /* Direct children only. Each line is a block so the reveal can slide it
+       up behind an overflow clip; when a line gained an inner span for the
+       outlined word, that descendant matched too, turned into a block and
+       pushed the word onto its own line. */
+    .hero-title > span{display:block;overflow:hidden}
     .hero-title i{display:block;font-style:normal;transform:translateY(120%);animation:reveal 1.2s var(--ease) forwards}
     .hero-title span:nth-child(2) i{animation-delay:.12s}
     .hero-title span:nth-child(3) i{animation-delay:.24s}
@@ -1989,8 +1993,10 @@
 .cta h2{line-height:.95}
 
 /* The reveal mask clips anything outside the line box, so give it head room
-   without shifting the title's position. */
-.hero-title span{padding-top:.12em;margin-top:-.12em}
+   without shifting the title's position. Direct children only: the head room
+   belongs to the line, and applying it again to an inner span — the outlined
+   word — would shift that word off the baseline of its own line. */
+.hero-title > span{padding-top:.12em;margin-top:-.12em}
 
 
 /* NEW: the studio seal.
@@ -2432,6 +2438,7 @@ html{
    two thirds the size, so it is scaled down — nudged back up slightly because
    a dark stroke on a light ground reads thinner than the reverse. */
 .hero-title .outline{
+  display:inline;
   color:transparent;
   -webkit-text-stroke:1.3px #111;
 }
