@@ -2113,7 +2113,15 @@
 .contact-form textarea:focus-visible{outline:0;border-bottom-color:var(--ink)}
 .contact-form ::placeholder{color:var(--muted);opacity:.75}
 
-.contact-radios,.contact-checks{display:flex;flex-wrap:wrap;gap:9px}
+/* A <legend> does not take part in its fieldset's flex layout — browsers lay
+   it out separately — so the 9px gap on .contact-field never applied beneath
+   the group labels and the options sat flush against them.
+
+   16px rather than the 9px the other labels use: those sit above a single
+   underlined field, while these sit above a row of pills that reads as a
+   block of its own and needs more room to separate from its title. */
+    .contact-field > legend.contact-label{margin-bottom:16px}
+    .contact-radios,.contact-checks{display:flex;flex-wrap:wrap;gap:9px}
 .contact-radio,.contact-check{
   display:inline-flex;align-items:center;gap:8px;cursor:pointer;
   border:1px solid var(--line);border-radius:999px;padding:9px 15px;
