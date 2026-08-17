@@ -106,7 +106,7 @@ export const esAr: Dictionary = {
   },
   manifesto: {
     kicker: "Nuestra regla",
-    word: ["Sin", "ideas", "seguras."],
+    word: ["Sin", "ideas", { outline: "seguras." }],
     tagline: "Lo memorable le gana a lo aceptable.",
     note: "Para marcas que no buscan encajar, sino encontrar su propia forma de existir.",
   },

@@ -2434,13 +2434,14 @@ html{
 /* Outlined word in the hero title, same device as the statement section.
    Two things differ there. The hero sits on the cream background, so the
    stroke is the ink colour rather than the paper one. And the hero type is
-   93px against the statement's 147px: 1.5px would read as a heavier frame at
-   two thirds the size, so it is scaled down — nudged back up slightly because
-   a dark stroke on a light ground reads thinner than the reverse. */
+   93px against the statement's 147px, so the stroke is lighter here.
+
+   Expressed in em so it tracks the type, which runs from 58px to 120px and
+   reaches 17vw on phones; a fixed width would thicken as the title shrinks. */
 .hero-title .outline{
   display:inline;
   color:transparent;
-  -webkit-text-stroke:1.3px #111;
+  -webkit-text-stroke:.014em #111;
 }
 
 /* Display treatment for the two section headings that carry the page, taken
@@ -2462,4 +2463,19 @@ html{
   line-height:.95;
   font-size:clamp(46px,7.2vw,124px);
   max-width:1180px;
+}
+
+/* Outlined line in the manifesto, same device as the statement's "siempre."
+   The manifesto sits on the cream ground rather than the dark one, so the
+   stroke is ink. It is also the largest type on the page at 166px against the
+   statement's 147px.
+
+   The width is in em, not px, on purpose: this type ranges from 72px to 190px
+   across viewports, so a fixed stroke would look heavy on a phone and like a
+   hairline on a wide screen. .011em keeps the same weight throughout, and is
+   set slightly strong because a dark stroke on a light ground reads thinner
+   than the light-on-dark original. */
+.manifesto-word .outline{
+  color:transparent;
+  -webkit-text-stroke:.011em #111;
 }

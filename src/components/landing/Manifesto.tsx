@@ -9,9 +9,9 @@ export default function Manifesto({ dict }: { dict: Dictionary }) {
           <div className="mono">{manifesto.kicker}</div>
           <div className="manifesto-word">
             {manifesto.word.map((w, i) => (
-              <span key={i}>
+              <span key={i} className={typeof w === "string" ? undefined : "outline"}>
                 {i > 0 && <>{" "}<br /></>}
-                {w}
+                {typeof w === "string" ? w : w.outline}
               </span>
             ))}
           </div>

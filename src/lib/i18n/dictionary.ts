@@ -78,7 +78,8 @@ export type Dictionary = {
   };
   manifesto: {
     kicker: string;
-    word: string[];
+    /** One entry per line; an object draws that line as an outline. */
+    word: Array<string | { outline: string }>;
     tagline: string;
     note: string;
   };
