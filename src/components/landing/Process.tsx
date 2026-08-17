@@ -11,11 +11,11 @@ export default function Process({ dict }: { dict: Dictionary }) {
       <div className="steps">
         {process.steps.map((step) => (
           <div className="step reveal-up" key={step.num}>
+            {/* Flat, not wrapped: each part occupies a row of the shared
+                subgrid, which is what keeps the four cards aligned. */}
             <div className="step-num mono">{step.num}</div>
-            <div>
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
-            </div>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
           </div>
         ))}
       </div>

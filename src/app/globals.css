@@ -218,8 +218,19 @@
 
     .process{background:#e9e6de}
     .process .headline{white-space:pre-line}
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-    .step{min-height:340px;padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:background .35s,color .35s}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);
+      /* Four shared rows: number, flexible gap, title, description. The cards
+         subscribe to them via subgrid, so a one-line title or a five-line
+         paragraph no longer shifts its neighbours. grid-auto-rows repeats the
+         same pattern for the rows that appear once the grid wraps to two or
+         one column. */
+      grid-template-rows:auto 1fr auto auto;grid-auto-rows:auto 1fr auto auto}
+    .step{min-height:340px;padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-rows:subgrid;grid-row:span 4;transition:background .35s,color .35s}
+    .step-num{grid-row:1}
+    /* Row 2 is left empty on purpose: it is the flexible gap that keeps the
+       text block low in the card, as the previous space-between did. */
+    .step h3{grid-row:3}
+    .step p{grid-row:4}
     .step:hover{background:var(--acid);color:#ffffff}
     .step-num{font-size:11px}
     .step h3{font-size:clamp(28px,3vw,48px);letter-spacing:-.05em;margin:0}
