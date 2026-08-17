@@ -172,7 +172,7 @@ export const growth: Record<Locale, ServiceContent> = {
         { title: "¿Proyecto puntual o acompañamiento continuo?", body: "Una auditoría o estrategia puede realizarse de forma puntual. La producción, el SEO y las campañas suelen beneficiarse de un seguimiento continuo para aprender, ajustar y capitalizar resultados." },
       ],
     },
-    closingKicker: "¿Tenéis un proyecto de crecimiento en mente?",
+    closingKicker: "¿Tiene un proyecto de crecimiento en mente?",
     closingHeadline: ["Construyamos", "vuestro tráfico."],
     ctaButton: "Empezar un proyecto ↗︎",
   },

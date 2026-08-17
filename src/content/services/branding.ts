@@ -172,7 +172,7 @@ export const branding: Record<Locale, ServiceContent> = {
         { title: "¿Seremos autónomos después de la entrega?", body: "Ese es el objetivo. Organizamos la guía, las plantillas y los archivos para vuestros equipos y colaboradores. También podemos acompañar los primeros despliegues." },
       ],
     },
-    closingKicker: "¿Tenéis un proyecto de branding en mente?",
+    closingKicker: "¿Tiene un proyecto de branding en mente?",
     closingHeadline: ["Construyamos", "vuestra marca."],
     ctaButton: "Empezar un proyecto ↗︎",
   },

@@ -143,7 +143,7 @@ export const es: Dictionary = {
     ],
   },
   cta: {
-    kicker: "¿TENÉIS UN PROYECTO EN MENTE?",
+    kicker: "¿TIENE UN PROYECTO EN MENTE?",
     headlineLines: ["HAGAMOS QUE", "LA IDEA", "SUCEDA."],
     button: "Empezar un proyecto ↗︎",
   },

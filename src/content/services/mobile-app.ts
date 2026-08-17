@@ -172,7 +172,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
         { title: "¿Qué ocurre después de la publicación?", body: "Seguimos errores, rendimiento y primeros usos para corregir y priorizar mejoras. El mantenimiento, las actualizaciones de los sistemas y las nuevas versiones pueden continuar con soporte recurrente." },
       ],
     },
-    closingKicker: "¿Tenéis un proyecto de app móvil en mente?",
+    closingKicker: "¿Tiene un proyecto de app móvil en mente?",
     closingHeadline: ["Construyamos", "vuestra app."],
     ctaButton: "Empezar un proyecto ↗︎",
   },

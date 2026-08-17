@@ -172,7 +172,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
         { title: "¿Qué ocurre después del lanzamiento?", body: "Recibís los accesos, la documentación y formación para usar el CMS. También podemos cubrir mantenimiento, hosting, seguimiento del rendimiento y futuras mejoras." },
       ],
     },
-    closingKicker: "¿Tenéis un proyecto de sitio web en mente?",
+    closingKicker: "¿Tiene un proyecto de sitio web en mente?",
     closingHeadline: ["Construyamos", "vuestro sitio."],
     ctaButton: "Empezar un proyecto ↗︎",
   },
