@@ -19,7 +19,7 @@ export const esAr: Dictionary = {
   hero: {
     kickerLeft: ["Estudio creativo independiente", "La Rochelle / Barcelona / Global"],
     kickerRight: ["Estrategia / Identidad / Digital", "Desarrollo / Crecimiento"],
-    titleLines: ["Ideas", "con forma.", "Marcas", "con identidad."],
+    titleLines: ["Ideas", "con forma.", "Marcas", ["con ", { outline: "identidad." }]],
     copy: "Identidad, diseño y desarrollo para marcas que quieren hacer las cosas distinto.",
     status: "DISPONIBLES PARA PROYECTOS SELECCIONADOS",
   },

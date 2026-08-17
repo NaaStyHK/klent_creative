@@ -2424,3 +2424,14 @@ html{
    old single-line size "CREATIVE" is three letters longer than "KLENT" and ran
    straight off the viewport. Sized by the longer word instead. */
 .studio-giant-word span{display:block}
+
+/* Outlined word in the hero title, same device as the statement section.
+   Two things differ there. The hero sits on the cream background, so the
+   stroke is the ink colour rather than the paper one. And the hero type is
+   93px against the statement's 147px: 1.5px would read as a heavier frame at
+   two thirds the size, so it is scaled down — nudged back up slightly because
+   a dark stroke on a light ground reads thinner than the reverse. */
+.hero-title .outline{
+  color:transparent;
+  -webkit-text-stroke:1.3px #111;
+}

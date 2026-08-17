@@ -26,7 +26,19 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             end of a block, so the rendering is untouched. */}
         {hero.titleLines.map((line, i) => (
           <span key={i}>
-            <i>{line}</i>{" "}
+            <i>
+              {typeof line === "string"
+                ? line
+                : line.map((seg, j) =>
+                    typeof seg === "string" ? (
+                      seg
+                    ) : (
+                      <span className="outline" key={j}>
+                        {seg.outline}
+                      </span>
+                    ),
+                  )}
+            </i>{" "}
           </span>
         ))}
       </h1>

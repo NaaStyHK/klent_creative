@@ -45,7 +45,11 @@ export type Dictionary = {
   hero: {
     kickerLeft: string[];
     kickerRight: string[];
-    titleLines: string[];
+    /**
+     * A line is plain text, or a list of segments when one word is drawn as an
+     * outline. Same shape as `statement.lines`, so both use one convention.
+     */
+    titleLines: Array<string | Array<string | { outline: string }>>;
     copy: string;
     status: string;
   };
