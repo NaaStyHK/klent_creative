@@ -902,6 +902,13 @@
   /* Services: premium accordion */
   .service{
     position:relative;overflow:hidden;
+    /* The acid fill below sits at z-index:-1. Without a stacking context here
+       it escapes upward and is painted over by the body background, because a
+       block descendant's background paints after negative-z children. It only
+       ever showed while .reveal-up still held a translate — a transform makes
+       a stacking context — so the hover worked before the row was revealed and
+       silently stopped afterwards. `isolate` gives it one unconditionally. */
+    isolation:isolate;
   }
   .service::before{
     content:"";position:absolute;inset:0;background:var(--acid);
