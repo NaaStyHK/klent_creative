@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { locales, localeLabels, type Locale } from "@/lib/i18n/config";
+import { type Locale } from "@/lib/i18n/config";
+import { navigationLocales, navigationLocaleLabel } from "@/lib/i18n/navigation-locales";
 import type { Dictionary } from "@/lib/i18n/dictionary";
 import { workListingSlug } from "@/lib/projects";
 import { getLocalizedPath } from "@/lib/i18n/localized-path";
@@ -84,7 +85,7 @@ export default function MobileMenu({ locale, dict }: { locale: Locale; dict: Dic
         </div>
 
         <div className="menu-pop-locales">
-          {locales.map((l) => (
+          {navigationLocales(locale).map((l) => (
             <Link
               className={`menu-pill menu-pill--locale mono${l === locale ? " is-active" : ""}`}
               // Same resolver as the desktop switcher. Swapping only the
@@ -95,7 +96,7 @@ export default function MobileMenu({ locale, dict }: { locale: Locale; dict: Dic
               key={l}
               aria-current={l === locale ? "true" : undefined}
             >
-              {localeLabels[l]}
+              {navigationLocaleLabel(l)}
             </Link>
           ))}
         </div>
