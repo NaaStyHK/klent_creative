@@ -43,3 +43,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Materiaux de travail : sources client, PDF, exports intermediaires.
+# Rien ici ne sert au build, et le depot est destine a devenir public.
+tmp/
+.codex-dev.*.log
