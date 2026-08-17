@@ -48,3 +48,4 @@ next-env.d.ts
 # Rien ici ne sert au build, et le depot est destine a devenir public.
 tmp/
 .codex-dev.*.log
+_reference/
