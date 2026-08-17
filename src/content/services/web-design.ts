@@ -7,7 +7,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     metaDescription:
       "Création de sites vitrines et e-commerce avec Next.js, WordPress ou Shopify. Design sur mesure, performance, SEO et autonomie.",
     eyebrow: "Création de site internet",
-    h1: "Un site internet qui convertit, pas juste qui existe.",
+    h1: ["Un site internet qui ", { outline: "convertit" }, ", pas juste qui existe."],
     intro:
       "Nous concevons et développons des sites vitrines et des plateformes sur mesure : rythme éditorial, interactions soignées, performance et référencement pensés dès la première maquette.",
     features: [
@@ -30,7 +30,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Ce que le site change",
-      headline: "Un outil commercial au service de votre activité.",
+      headline: ["Un outil commercial au service de votre ", { outline: "activité." }],
       items: [
         {
           num: "01",
@@ -56,7 +56,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Notre méthode",
-      headline: "De vos objectifs à un site prêt à performer.",
+      headline: ["De vos objectifs à un site prêt à ", { outline: "performer." }],
       steps: [
         {
           num: "01 — CADRAGE",
@@ -82,7 +82,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Questions fréquentes",
-      headline: "Ce qu'il faut savoir avant de lancer votre site.",
+      headline: ["Ce qu'il faut savoir avant de ", { outline: "lancer" }, " votre site."],
       items: [
         {
           title: "Quelle solution choisir pour un e-commerce ?",
@@ -111,7 +111,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Un projet de site internet en tête ?",
-    closingHeadline: ["Construisons", "votre site."],
+    closingHeadline: ["Construisons", [{ outline: "votre site." }]],
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
@@ -119,7 +119,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     metaDescription:
       "Creación de sitios corporativos y e-commerce con Next.js, WordPress o Shopify. Diseño a medida, rendimiento, SEO y autonomía.",
     eyebrow: "Creación de sitio web",
-    h1: "Un sitio web que convierte, no que solo existe.",
+    h1: ["Un sitio web que ", { outline: "convierte" }, ", no que solo existe."],
     intro:
       "Diseñamos y desarrollamos sitios web y plataformas a medida: ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
     features: [
@@ -142,7 +142,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia el sitio",
-      headline: "Una herramienta comercial al servicio de vuestro negocio.",
+      headline: ["Una herramienta comercial al servicio de vuestro ", { outline: "negocio." }],
       items: [
         { num: "01", title: "Convencer", body: "Una propuesta de valor clara y recorridos bien diseñados convierten el interés en contactos, reuniones o ventas." },
         { num: "02", title: "Poner en valor", body: "Un diseño coherente con vuestro posicionamiento mejora la percepción de la empresa y genera confianza antes del primer contacto." },
@@ -152,7 +152,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De vuestros objetivos a un sitio preparado para rendir.",
+      headline: ["De vuestros objetivos a un sitio preparado para ", { outline: "rendir." }],
       steps: [
         { num: "01 — DEFINICIÓN", title: "Definir", body: "Objetivos, audiencias, contenidos, funcionalidades e indicadores de éxito: fijamos el alcance antes de diseñar." },
         { num: "02 — CONCEPCIÓN", title: "Estructurar", body: "Construimos la arquitectura, los recorridos y los wireframes para aclarar la información y guiar cada acción importante." },
@@ -162,7 +162,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de lanzar vuestro sitio.",
+      headline: ["Lo que conviene saber antes de ", { outline: "lanzar" }, " vuestro sitio."],
       items: [
         { title: "¿Qué solución elegir para un e-commerce?", body: "Shopify suele ofrecer la administración diaria más sencilla. WordPress con WooCommerce aporta más flexibilidad, pero la autogestión puede resultar menos intuitiva según vuestro equipo y necesidades. Un e-commerce con Next.js ofrece el máximo nivel de personalización y rendimiento, pero requiere un presupuesto de diseño, desarrollo y mantenimiento considerablemente mayor. Recomendamos la solución según el catálogo, los procesos, el presupuesto y vuestra capacidad de gestión." },
         { title: "¿Cuánto cuesta un sitio web a medida?", body: "El presupuesto depende del número de páginas, las funcionalidades, el volumen de contenido y las integraciones. Tras una reunión de definición, recibís una propuesta detallada con alcance, calendario y presupuesto claros." },
@@ -173,7 +173,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tiene un proyecto de sitio web en mente?",
-    closingHeadline: ["Construyamos", "vuestro sitio."],
+    closingHeadline: ["Construyamos", [{ outline: "vuestro sitio." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
@@ -181,7 +181,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     metaDescription:
       "Creación de sitios institucionales y e-commerce con Next.js, WordPress o Shopify. Diseño a medida, rendimiento, SEO y autonomía.",
     eyebrow: "Creación de sitio web",
-    h1: "Un sitio web que convierte, no que solo existe.",
+    h1: ["Un sitio web que ", { outline: "convierte" }, ", no que solo existe."],
     intro:
       "Diseñamos y desarrollamos sitios web y plataformas a medida: ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
     features: [
@@ -204,7 +204,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia el sitio",
-      headline: "Una herramienta comercial al servicio de tu negocio.",
+      headline: ["Una herramienta comercial al servicio de tu ", { outline: "negocio." }],
       items: [
         { num: "01", title: "Convencer", body: "Una propuesta de valor clara y recorridos bien diseñados convierten el interés en consultas, reuniones o ventas." },
         { num: "02", title: "Poner en valor", body: "Un diseño coherente con tu posicionamiento mejora la percepción de tu empresa y genera confianza antes del primer contacto." },
@@ -214,7 +214,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De tus objetivos a un sitio preparado para rendir.",
+      headline: ["De tus objetivos a un sitio preparado para ", { outline: "rendir." }],
       steps: [
         { num: "01 — DEFINICIÓN", title: "Definir", body: "Objetivos, audiencias, contenidos, funcionalidades e indicadores de éxito: fijamos el alcance antes de diseñar." },
         { num: "02 — CONCEPCIÓN", title: "Estructurar", body: "Construimos la arquitectura, los recorridos y los wireframes para aclarar la información y guiar cada acción importante." },
@@ -224,7 +224,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de lanzar tu sitio.",
+      headline: ["Lo que conviene saber antes de ", { outline: "lanzar" }, " tu sitio."],
       items: [
         { title: "¿Qué solución elegir para un e-commerce?", body: "Shopify suele ofrecer la administración diaria más simple. WordPress con WooCommerce aporta más flexibilidad, pero la autogestión puede resultar menos intuitiva según tu equipo y necesidades. Un e-commerce con Next.js ofrece el máximo nivel de personalización y rendimiento, pero requiere un presupuesto de diseño, desarrollo y mantenimiento considerablemente mayor. Recomendamos la solución según el catálogo, los procesos, el presupuesto y tu capacidad de gestión." },
         { title: "¿Cuánto cuesta un sitio web a medida?", body: "El presupuesto depende del número de páginas, las funcionalidades, el volumen de contenido y las integraciones. Después de una reunión inicial, recibís una propuesta detallada con alcance, calendario y presupuesto claros." },
@@ -235,7 +235,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tenés un proyecto de sitio web en mente?",
-    closingHeadline: ["Construyamos", "tu sitio."],
+    closingHeadline: ["Construyamos", [{ outline: "tu sitio." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   en: {
@@ -243,7 +243,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     metaDescription:
       "Custom business and e-commerce websites built with Next.js, WordPress or Shopify. Bespoke design, performance, SEO and independence.",
     eyebrow: "Web Design & Development",
-    h1: "A website that converts, not just exists.",
+    h1: ["A website that ", { outline: "converts" }, ", not just exists."],
     intro:
       "We design and build custom websites and platforms: editorial rhythm, considered interactions, performance and SEO baked in from the first wireframe.",
     features: [
@@ -266,7 +266,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "What the website changes",
-      headline: "A commercial tool built around your business.",
+      headline: ["A commercial tool built around your ", { outline: "business." }],
       items: [
         { num: "01", title: "Convince", body: "A clear value proposition and deliberate user journeys turn interest into enquiries, meetings or sales." },
         { num: "02", title: "Build value", body: "Design aligned with your positioning improves how people perceive your company and builds trust before the first conversation." },
@@ -276,7 +276,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Our approach",
-      headline: "From your objectives to a website ready to perform.",
+      headline: ["From your objectives to a website ready to ", { outline: "perform." }],
       steps: [
         { num: "01 — DISCOVERY", title: "Define", body: "Objectives, audiences, content, functionality and success metrics: we define the scope before design begins." },
         { num: "02 — UX", title: "Structure", body: "We build the sitemap, user journeys and wireframes to make information clear and guide every important action." },
@@ -286,7 +286,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Frequently asked questions",
-      headline: "What to know before launching your website.",
+      headline: ["What to know before ", { outline: "launching" }, " your website."],
       items: [
         { title: "Which platform should we choose for e-commerce?", body: "Shopify generally provides the simplest day-to-day administration. WordPress with WooCommerce offers more flexibility, but self-management can be less intuitive depending on your team and requirements. A Next.js commerce build offers the highest level of customization and performance, but requires a substantially larger design, development and maintenance budget. We recommend the platform based on your catalogue, processes, budget and ability to manage the store." },
         { title: "How much does a custom website cost?", body: "Budget depends on page count, functionality, content volume and integrations. After a discovery call, you receive a detailed proposal with a clearly defined scope, schedule and budget." },
@@ -297,7 +297,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Have a website project in mind?",
-    closingHeadline: ["Let's build", "your site."],
+    closingHeadline: ["Let's build", [{ outline: "your site." }]],
     ctaButton: "Start a project ↗︎",
   },
 };

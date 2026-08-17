@@ -7,7 +7,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     metaDescription:
       "Agence de développement d'applications mobiles avec Flutter. De la stratégie produit au lancement sur l'App Store et Google Play.",
     eyebrow: "Application mobile",
-    h1: "Une application mobile pensée pour vos utilisateurs.",
+    h1: ["Une application mobile pensée pour vos ", { outline: "utilisateurs." }],
     intro:
       "De la stratégie produit au lancement en store, nous concevons et développons des applications mobiles rapides, fiables et pensées pour l'usage réel de vos utilisateurs.",
     features: [
@@ -30,7 +30,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Ce que l'application change",
-      headline: "Un produit utile, adopté et capable d'évoluer.",
+      headline: ["Un produit utile, adopté et capable d'", { outline: "évoluer." }],
       items: [
         {
           num: "01",
@@ -56,7 +56,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Notre méthode",
-      headline: "De l'idée à une application prête pour ses utilisateurs.",
+      headline: ["De l'idée à une application prête pour ses ", { outline: "utilisateurs." }],
       steps: [
         {
           num: "01 — PRODUIT",
@@ -82,7 +82,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Questions fréquentes",
-      headline: "Ce qu'il faut savoir avant de développer votre application.",
+      headline: ["Ce qu'il faut savoir avant de ", { outline: "développer" }, " votre application."],
       items: [
         {
           title: "Avons-nous vraiment besoin d'une application mobile ?",
@@ -111,7 +111,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Un projet d'application mobile en tête ?",
-    closingHeadline: ["Construisons", "votre application."],
+    closingHeadline: ["Construisons", [{ outline: "votre application." }]],
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
@@ -119,7 +119,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     metaDescription:
       "Agencia de desarrollo de apps móviles con Flutter. De la estrategia de producto al lanzamiento en App Store y Google Play.",
     eyebrow: "Aplicación móvil",
-    h1: "Una aplicación móvil pensada para vuestros usuarios.",
+    h1: ["Una aplicación móvil pensada para vuestros ", { outline: "usuarios." }],
     intro:
       "De la estrategia de producto al lanzamiento en las tiendas, diseñamos y desarrollamos aplicaciones móviles rápidas, fiables y pensadas para el uso real de vuestros usuarios.",
     features: [
@@ -142,7 +142,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia la aplicación",
-      headline: "Un producto útil, adoptado y preparado para evolucionar.",
+      headline: ["Un producto útil, adoptado y preparado para ", { outline: "evolucionar." }],
       items: [
         { num: "01", title: "Validar lo esencial", body: "La priorización concentra el presupuesto en los usos que realmente crean valor para vuestros usuarios y vuestro negocio." },
         { num: "02", title: "Simplificar el uso", body: "Recorridos cortos, interacciones familiares y una interfaz accesible reducen la fricción y favorecen la adopción." },
@@ -152,7 +152,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De la idea a una aplicación lista para sus usuarios.",
+      headline: ["De la idea a una aplicación lista para sus ", { outline: "usuarios." }],
       steps: [
         { num: "01 — PRODUCTO", title: "Definir", body: "Aclaramos el problema, los usuarios, el modelo de negocio, las restricciones y las funciones imprescindibles de la primera versión." },
         { num: "02 — PROTOTIPO", title: "Probar", body: "Recorridos, wireframes y un prototipo interactivo permiten validar la experiencia antes de abordar todo el desarrollo." },
@@ -162,7 +162,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de desarrollar vuestra aplicación.",
+      headline: ["Lo que conviene saber antes de ", { outline: "desarrollar" }, " vuestra aplicación."],
       items: [
         { title: "¿Realmente necesitamos una aplicación móvil?", body: "Una app tiene sentido para un uso recurrente, funciones vinculadas al teléfono, notificaciones o una experiencia sin conexión. Si un sitio móvil es suficiente, os lo diremos durante la definición para elegir la inversión adecuada." },
         { title: "¿Aplicación nativa o multiplataforma?", body: "Desarrollamos principalmente con Flutter, que permite compartir una base de código entre iOS y Android manteniendo una experiencia fluida y cuidada. Recomendamos un desarrollo nativo únicamente cuando existen requisitos técnicos concretos que lo justifican." },
@@ -173,7 +173,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tiene un proyecto de app móvil en mente?",
-    closingHeadline: ["Construyamos", "vuestra app."],
+    closingHeadline: ["Construyamos", [{ outline: "vuestra app." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
@@ -181,7 +181,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     metaDescription:
       "Agencia de desarrollo de apps móviles con Flutter. De la estrategia de producto al lanzamiento en App Store y Google Play.",
     eyebrow: "Aplicación móvil",
-    h1: "Una aplicación móvil pensada para tus usuarios.",
+    h1: ["Una aplicación móvil pensada para tus ", { outline: "usuarios." }],
     intro:
       "De la estrategia de producto al lanzamiento en las tiendas, diseñamos y desarrollamos apps móviles rápidas, confiables y pensadas para el uso real de tus usuarios.",
     features: [
@@ -204,7 +204,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia la aplicación",
-      headline: "Un producto útil, adoptado y preparado para evolucionar.",
+      headline: ["Un producto útil, adoptado y preparado para ", { outline: "evolucionar." }],
       items: [
         { num: "01", title: "Validar lo esencial", body: "La priorización concentra el presupuesto en los usos que realmente crean valor para tus usuarios y tu negocio." },
         { num: "02", title: "Simplificar el uso", body: "Recorridos cortos, interacciones familiares y una interfaz accesible reducen la fricción y favorecen la adopción." },
@@ -214,7 +214,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De la idea a una aplicación lista para tus usuarios.",
+      headline: ["De la idea a una aplicación lista para tus ", { outline: "usuarios." }],
       steps: [
         { num: "01 — PRODUCTO", title: "Definir", body: "Aclaramos el problema, los usuarios, el modelo de negocio, las restricciones y las funciones imprescindibles de la primera versión." },
         { num: "02 — PROTOTIPO", title: "Probar", body: "Recorridos, wireframes y un prototipo interactivo permiten validar la experiencia antes de encarar todo el desarrollo." },
@@ -224,7 +224,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de desarrollar tu aplicación.",
+      headline: ["Lo que conviene saber antes de ", { outline: "desarrollar" }, " tu aplicación."],
       items: [
         { title: "¿Realmente necesitás una aplicación móvil?", body: "Una app tiene sentido para un uso recurrente, funciones vinculadas al teléfono, notificaciones o una experiencia sin conexión. Si un sitio móvil es suficiente, te lo vamos a decir durante la definición para elegir la inversión adecuada." },
         { title: "¿Aplicación nativa o multiplataforma?", body: "Desarrollamos principalmente con Flutter, que permite compartir una base de código entre iOS y Android manteniendo una experiencia fluida y cuidada. Recomendamos un desarrollo nativo únicamente cuando existen requisitos técnicos concretos que lo justifican." },
@@ -235,7 +235,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tenés un proyecto de app móvil en mente?",
-    closingHeadline: ["Construyamos", "tu app."],
+    closingHeadline: ["Construyamos", [{ outline: "tu app." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   en: {
@@ -243,7 +243,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     metaDescription:
       "Flutter mobile app development agency. From product strategy to launch on the App Store and Google Play.",
     eyebrow: "Mobile App Development",
-    h1: "A mobile app built for your users.",
+    h1: ["A mobile app built for your ", { outline: "users." }],
     intro:
       "From product strategy to store launch, we design and build fast, reliable mobile apps built around how your users actually behave.",
     features: [
@@ -266,7 +266,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "What the app changes",
-      headline: "A useful product people adopt and you can evolve.",
+      headline: ["A useful product people adopt and you can ", { outline: "evolve." }],
       items: [
         { num: "01", title: "Validate the essentials", body: "Product prioritization focuses budget on the uses that create real value for your users and your business." },
         { num: "02", title: "Make it effortless", body: "Short journeys, familiar interactions and an accessible interface reduce friction and encourage adoption." },
@@ -276,7 +276,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Our approach",
-      headline: "From idea to an app ready for its users.",
+      headline: ["From idea to an app ready for its ", { outline: "users." }],
       steps: [
         { num: "01 — PRODUCT", title: "Define", body: "We clarify the problem, users, business model, constraints and essential features for the first release." },
         { num: "02 — PROTOTYPE", title: "Test", body: "User journeys, wireframes and an interactive prototype validate the experience before full development begins." },
@@ -286,7 +286,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Frequently asked questions",
-      headline: "What to know before building your mobile app.",
+      headline: ["What to know before ", { outline: "building" }, " your mobile app."],
       items: [
         { title: "Do we really need a mobile app?", body: "An app makes sense for recurring use, phone-specific features, notifications or an offline experience. If a mobile website is enough, we will say so during discovery so you can make the right investment." },
         { title: "Native or cross-platform?", body: "We primarily build with Flutter, sharing one codebase across iOS and Android while delivering a smooth, polished experience. We recommend fully native development only when specific technical requirements justify it." },
@@ -297,7 +297,7 @@ export const mobileApp: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Have a mobile app project in mind?",
-    closingHeadline: ["Let's build", "your app."],
+    closingHeadline: ["Let's build", [{ outline: "your app." }]],
     ctaButton: "Start a project ↗︎",
   },
 };

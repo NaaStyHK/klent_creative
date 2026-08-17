@@ -7,7 +7,7 @@ export const branding: Record<Locale, ServiceContent> = {
     metaDescription:
       "Positionnement, naming, identité visuelle et charte graphique. KLENT CREATIVE est un studio de branding pour marques ambitieuses en France, Espagne et Argentine.",
     eyebrow: "Branding",
-    h1: "Une identité de marque qui se remarque.",
+    h1: ["Une identité de marque qui se ", { outline: "remarque." }],
     intro:
       "Votre logo n'est pas votre marque. Nous construisons un système complet : positionnement, naming, identité verbale, identité visuelle. Chaque point de contact raconte alors la même histoire, avec le même impact.",
     features: [
@@ -30,7 +30,7 @@ export const branding: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Ce que la marque change",
-      headline: "Une identité conçue pour soutenir votre croissance.",
+      headline: ["Une identité conçue pour soutenir votre ", { outline: "croissance." }],
       items: [
         {
           num: "01",
@@ -56,7 +56,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Notre méthode",
-      headline: "De l'intuition à un système de marque utilisable.",
+      headline: ["De l'intuition à un système de marque ", { outline: "utilisable." }],
       steps: [
         {
           num: "01 — IMMERSION",
@@ -82,7 +82,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Questions fréquentes",
-      headline: "Ce qu'il faut savoir avant de commencer.",
+      headline: ["Ce qu'il faut savoir avant de ", { outline: "commencer." }],
       items: [
         {
           title: "Branding ou simple création de logo ?",
@@ -111,7 +111,7 @@ export const branding: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Un projet de branding en tête ?",
-    closingHeadline: ["Construisons", "votre marque."],
+    closingHeadline: ["Construisons", [{ outline: "votre marque." }]],
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
@@ -119,7 +119,7 @@ export const branding: Record<Locale, ServiceContent> = {
     metaDescription:
       "Posicionamiento, naming, identidad visual y manual de marca. KLENT CREATIVE es un estudio de branding para marcas ambiciosas en España, Francia y Argentina.",
     eyebrow: "Branding",
-    h1: "Una identidad de marca que se hace notar.",
+    h1: ["Una identidad de marca que se hace ", { outline: "notar." }],
     intro:
       "Vuestro logo no es vuestra marca. Construimos un sistema completo: posicionamiento, naming, identidad verbal, identidad visual. Así cada punto de contacto cuenta la misma historia, con el mismo impacto.",
     features: [
@@ -142,7 +142,7 @@ export const branding: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia la marca",
-      headline: "Una identidad diseñada para impulsar vuestro crecimiento.",
+      headline: ["Una identidad diseñada para impulsar vuestro ", { outline: "crecimiento." }],
       items: [
         { num: "01", title: "Ser entendidos", body: "Un posicionamiento claro permite entender rápidamente qué hacéis, para quién y qué os diferencia." },
         { num: "02", title: "Ser elegidos", body: "Una marca coherente refuerza vuestra credibilidad y da a la oferta el valor percibido que merece." },
@@ -152,7 +152,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De la intuición a un sistema de marca utilizable.",
+      headline: ["De la intuición a un sistema de marca ", { outline: "utilizable." }],
       steps: [
         { num: "01 — INMERSIÓN", title: "Entender", body: "Entrevistas, auditoría, análisis del mercado, la competencia y los públicos para establecer el diagnóstico correcto." },
         { num: "02 — ESTRATEGIA", title: "Posicionar", body: "Definimos la promesa, los valores, la personalidad, los mensajes y el territorio diferencial de la marca." },
@@ -162,7 +162,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de empezar.",
+      headline: ["Lo que conviene saber antes de ", { outline: "empezar." }],
       items: [
         { title: "¿Branding o solo un logotipo?", body: "Un logotipo es un signo. El branding construye el significado y el sistema que lo rodea: posicionamiento, discurso, universo visual y reglas de uso. Podemos adaptar el alcance, pero nunca diseñamos un logo sin entender la marca que debe representar." },
         { title: "¿Podéis evolucionar una identidad existente?", body: "Sí. Un rebranding no siempre implica empezar de cero. Evaluamos qué conviene conservar, aclarar o transformar para proteger los activos útiles de vuestra marca." },
@@ -173,7 +173,7 @@ export const branding: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tiene un proyecto de branding en mente?",
-    closingHeadline: ["Construyamos", "vuestra marca."],
+    closingHeadline: ["Construyamos", [{ outline: "vuestra marca." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
@@ -181,7 +181,7 @@ export const branding: Record<Locale, ServiceContent> = {
     metaDescription:
       "Posicionamiento, naming, identidad visual y manual de marca. KLENT CREATIVE es un estudio de branding para marcas ambiciosas en Argentina, España y Francia.",
     eyebrow: "Branding",
-    h1: "Una identidad de marca que se hace notar.",
+    h1: ["Una identidad de marca que se hace ", { outline: "notar." }],
     intro:
       "Tu logo no es tu marca. Construimos un sistema completo: posicionamiento, naming, identidad verbal, identidad visual. Así cada punto de contacto cuenta la misma historia, con el mismo impacto.",
     features: [
@@ -204,7 +204,7 @@ export const branding: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia la marca",
-      headline: "Una identidad diseñada para acompañar tu crecimiento.",
+      headline: ["Una identidad diseñada para acompañar tu ", { outline: "crecimiento." }],
       items: [
         { num: "01", title: "Que te entiendan", body: "Un posicionamiento claro permite entender rápido qué hacés, para quién y qué te diferencia." },
         { num: "02", title: "Que te elijan", body: "Una marca coherente refuerza tu credibilidad y le da a tu propuesta el valor percibido que merece." },
@@ -214,7 +214,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De la intuición a un sistema de marca que podés usar.",
+      headline: ["De la intuición a un sistema de marca que podés ", { outline: "usar." }],
       steps: [
         { num: "01 — INMERSIÓN", title: "Entender", body: "Entrevistas, auditoría, análisis del mercado, la competencia y los públicos para llegar al diagnóstico correcto." },
         { num: "02 — ESTRATEGIA", title: "Posicionar", body: "Definimos la promesa, los valores, la personalidad, los mensajes y el territorio diferencial de la marca." },
@@ -224,7 +224,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de empezar.",
+      headline: ["Lo que conviene saber antes de ", { outline: "empezar." }],
       items: [
         { title: "¿Branding o solo un logo?", body: "Un logo es un signo. El branding construye el significado y el sistema que lo rodea: posicionamiento, discurso, universo visual y reglas de uso. Podemos adaptar el alcance, pero nunca diseñamos un logo sin entender la marca que debe representar." },
         { title: "¿Pueden evolucionar una identidad existente?", body: "Sí. Un rebranding no siempre implica empezar de cero. Evaluamos qué conviene conservar, aclarar o transformar para proteger los activos útiles de tu marca." },
@@ -235,7 +235,7 @@ export const branding: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tenés un proyecto de branding en mente?",
-    closingHeadline: ["Construyamos", "tu marca."],
+    closingHeadline: ["Construyamos", [{ outline: "tu marca." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   en: {
@@ -243,7 +243,7 @@ export const branding: Record<Locale, ServiceContent> = {
     metaDescription:
       "Positioning, naming, visual identity and brand guidelines. KLENT CREATIVE is a branding studio for ambitious companies in France, Spain and Argentina.",
     eyebrow: "Branding",
-    h1: "A brand identity that gets noticed.",
+    h1: ["A brand identity that gets ", { outline: "noticed." }],
     intro:
       "Your logo isn't your brand. We build a complete system: positioning, naming, verbal identity, visual identity. Every touchpoint then tells the same story, with the same impact.",
     features: [
@@ -266,7 +266,7 @@ export const branding: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "What the brand changes",
-      headline: "An identity designed to support your growth.",
+      headline: ["An identity designed to support your ", { outline: "growth." }],
       items: [
         { num: "01", title: "Be understood", body: "Clear positioning helps people quickly understand what you do, who it is for and what makes you different." },
         { num: "02", title: "Be chosen", body: "A consistent brand builds credibility and gives your offer the perceived value it deserves." },
@@ -276,7 +276,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Our approach",
-      headline: "From intuition to a brand system you can use.",
+      headline: ["From intuition to a brand system you can ", { outline: "use." }],
       steps: [
         { num: "01 — IMMERSION", title: "Understand", body: "Interviews, an audit and analysis of your market, competitors and audiences give us the right diagnosis." },
         { num: "02 — STRATEGY", title: "Position", body: "We define the promise, values, personality, messaging and distinctive territory of the brand." },
@@ -286,7 +286,7 @@ export const branding: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Frequently asked questions",
-      headline: "What to know before we start.",
+      headline: ["What to know before we ", { outline: "start." }],
       items: [
         { title: "Branding or just a logo?", body: "A logo is a symbol. Branding builds the meaning and system around it: positioning, messaging, visual world and usage rules. We can adapt the scope, but we never design a logo without understanding the brand it needs to represent." },
         { title: "Can you evolve an existing identity?", body: "Yes. A rebrand does not always mean starting over. We assess what should be kept, clarified or transformed so the useful equity in your brand is protected." },
@@ -297,7 +297,7 @@ export const branding: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Have a branding project in mind?",
-    closingHeadline: ["Let's build", "your brand."],
+    closingHeadline: ["Let's build", [{ outline: "your brand." }]],
     ctaButton: "Start a project ↗︎",
   },
 };

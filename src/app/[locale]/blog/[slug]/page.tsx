@@ -1,3 +1,4 @@
+import { headingText } from "@/components/ui/RichHeading";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -200,7 +201,7 @@ export default async function BlogArticlePage({
         <div className="blog-related">
           <div className="mono">{dict.blog.relatedServiceIntro}</div>
           <Link className="hoverable" href={relatedHref}>
-            {related.h1} ↗︎
+            {headingText(related.h1)} ↗︎
           </Link>
         </div>
       )}

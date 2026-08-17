@@ -1,3 +1,4 @@
+import { headingText } from "@/components/ui/RichHeading";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locales, isLocale, siteUrl, type Locale } from "@/lib/i18n/config";
@@ -183,7 +184,7 @@ export default async function ServiceRoutePage({
     <>
       <ServiceJsonLd
         locale={resolved.locale}
-        name={resolved.content.h1}
+        name={headingText(resolved.content.h1)}
         description={resolved.content.metaDescription}
         url={`${siteUrl}/${resolved.locale}/${service}`}
         content={resolved.content}

@@ -1,3 +1,4 @@
+import renderHeading from "@/components/ui/RichHeading";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/config";
 import type { ServiceContent } from "@/lib/i18n/service-content";
@@ -7,7 +8,7 @@ export default function ServicePage({ content, locale }: { content: ServiceConte
     <>
       <section className="service-page-hero">
         <div className="eyebrow mono">{content.eyebrow}</div>
-        <h1 className="headline">{content.h1}</h1>
+        <h1 className="headline headline--display">{renderHeading(content.h1)}</h1>
         <p className="service-page-intro reveal-up">{content.intro}</p>
       </section>
 
@@ -28,7 +29,7 @@ export default function ServicePage({ content, locale }: { content: ServiceConte
         <section className="services">
           <div className="section-head reveal-up">
             <div className="eyebrow mono">{content.benefits.eyebrow}</div>
-            <h2 className="headline">{content.benefits.headline}</h2>
+            <h2 className="headline headline--display">{renderHeading(content.benefits.headline)}</h2>
           </div>
           {content.benefits.items.map((item) => (
             <div className="service reveal-up" key={item.num}>
@@ -45,7 +46,7 @@ export default function ServicePage({ content, locale }: { content: ServiceConte
         <section className="process">
           <div className="section-head reveal-up">
             <div className="eyebrow mono">{content.process.eyebrow}</div>
-            <h2 className="headline">{content.process.headline}</h2>
+            <h2 className="headline headline--display">{renderHeading(content.process.headline)}</h2>
           </div>
           <div className="steps">
             {content.process.steps.map((step) => (
@@ -65,7 +66,9 @@ export default function ServicePage({ content, locale }: { content: ServiceConte
         <section aria-labelledby="service-faq-title">
           <div className="section-head reveal-up">
             <div className="eyebrow mono">{content.faq.eyebrow}</div>
-            <h2 className="headline" id="service-faq-title">{content.faq.headline}</h2>
+            <h2 className="headline headline--display" id="service-faq-title">
+              {renderHeading(content.faq.headline)}
+            </h2>
           </div>
           <div className="service-features">
             {content.faq.items.map((item) => (
@@ -84,9 +87,9 @@ export default function ServicePage({ content, locale }: { content: ServiceConte
           {content.closingKicker}
         </div>
         <h2 className="reveal-up">
-          {content.closingHeadline[0]}
+          {renderHeading(content.closingHeadline[0])}
           {" "}<br />
-          {content.closingHeadline[1]}
+          {renderHeading(content.closingHeadline[1])}
         </h2>
         <Link className="mono hoverable magnetic" href={`/${locale}/contact`}>
           {content.ctaButton}

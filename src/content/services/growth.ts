@@ -7,7 +7,7 @@ export const growth: Record<Locale, ServiceContent> = {
     metaDescription:
       "Référencement, stratégie de contenu et campagnes pour transformer votre trafic en clients. KLENT CREATIVE accompagne la croissance de marques ambitieuses.",
     eyebrow: "Croissance & Contenu",
-    h1: "Du trafic, oui. Mais surtout des clients.",
+    h1: ["Du trafic, oui. Mais surtout des ", { outline: "clients." }],
     intro:
       "Un beau site sans stratégie derrière ne sert à rien. Nous construisons le référencement, le contenu et les campagnes qui amènent les bonnes personnes vers votre site, et qui les convertissent une fois sur place.",
     features: [
@@ -30,7 +30,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Ce que la stratégie change",
-      headline: "Une croissance construite sur la demande réelle.",
+      headline: ["Une croissance construite sur la ", { outline: "demande réelle." }],
       items: [
         {
           num: "01",
@@ -56,7 +56,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Notre méthode",
-      headline: "De l'audit à un moteur de croissance mesurable.",
+      headline: ["De l'audit à un moteur de croissance ", { outline: "mesurable." }],
       steps: [
         {
           num: "01 — AUDIT",
@@ -82,7 +82,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Questions fréquentes",
-      headline: "Ce qu'il faut savoir avant d'investir dans votre croissance.",
+      headline: ["Ce qu'il faut savoir avant d'", { outline: "investir" }, " dans votre croissance."],
       items: [
         {
           title: "SEO, contenu ou campagnes payantes : par où commencer ?",
@@ -111,7 +111,7 @@ export const growth: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Un projet de croissance en tête ?",
-    closingHeadline: ["Construisons", "votre trafic."],
+    closingHeadline: ["Construisons", [{ outline: "votre trafic." }]],
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
@@ -119,7 +119,7 @@ export const growth: Record<Locale, ServiceContent> = {
     metaDescription:
       "Posicionamiento, estrategia de contenido y campañas para convertir vuestro tráfico en clientes. KLENT CREATIVE acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",
-    h1: "Tráfico, sí. Pero sobre todo, clientes.",
+    h1: ["Tráfico, sí. Pero sobre todo, ", { outline: "clientes." }],
     intro:
       "Un sitio bonito sin estrategia detrás no sirve de mucho. Construimos el SEO, el contenido y las campañas que llevan a las personas adecuadas a vuestro sitio, y que las convierten una vez allí.",
     features: [
@@ -142,7 +142,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia la estrategia",
-      headline: "Un crecimiento construido sobre la demanda real.",
+      headline: ["Un crecimiento construido sobre la ", { outline: "demanda real." }],
       items: [
         { num: "01", title: "Atraer a los clientes adecuados", body: "Trabajamos las búsquedas, necesidades y audiencias que realmente encajan con vuestra oferta, en lugar de perseguir tráfico sin intención." },
         { num: "02", title: "Convertirse en referente", body: "Contenidos útiles y coherentes demuestran vuestra experiencia, responden objeciones y generan confianza antes del primer contacto." },
@@ -152,7 +152,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De la auditoría a un motor de crecimiento medible.",
+      headline: ["De la auditoría a un motor de crecimiento ", { outline: "medible." }],
       steps: [
         { num: "01 — AUDITORÍA", title: "Entender", body: "Analizamos el mercado, las audiencias, los contenidos, la visibilidad, las conversiones y la calidad de la medición existente." },
         { num: "02 — ESTRATEGIA", title: "Priorizar", body: "Objetivos, recorridos, temas, palabras clave, canales e indicadores se organizan en una hoja de ruta realista." },
@@ -162,7 +162,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de invertir en crecimiento.",
+      headline: ["Lo que conviene saber antes de ", { outline: "invertir" }, " en crecimiento."],
       items: [
         { title: "¿SEO, contenido o campañas de pago?", body: "Depende de vuestra madurez, la demanda, el presupuesto y la velocidad esperada. El SEO y el contenido construyen un activo duradero; las campañas aceleran la adquisición y el aprendizaje. Podemos combinar los canales o empezar por la prioridad." },
         { title: "¿Cuándo podemos esperar resultados SEO?", body: "El posicionamiento orgánico necesita tiempo. Las primeras señales pueden aparecer progresivamente, pero el ritmo depende de la competencia, la autoridad del dominio, el estado técnico del sitio y la regularidad editorial. No se puede garantizar una posición concreta." },
@@ -173,7 +173,7 @@ export const growth: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tiene un proyecto de crecimiento en mente?",
-    closingHeadline: ["Construyamos", "vuestro tráfico."],
+    closingHeadline: ["Construyamos", [{ outline: "vuestro tráfico." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
@@ -181,7 +181,7 @@ export const growth: Record<Locale, ServiceContent> = {
     metaDescription:
       "Posicionamiento, estrategia de contenido y campañas para convertir tu tráfico en clientes. KLENT CREATIVE acompaña el crecimiento de marcas ambiciosas.",
     eyebrow: "Crecimiento y Contenido",
-    h1: "Tráfico, sí. Pero sobre todo, clientes.",
+    h1: ["Tráfico, sí. Pero sobre todo, ", { outline: "clientes." }],
     intro:
       "Un sitio lindo sin estrategia detrás no sirve de mucho. Construimos el SEO, el contenido y las campañas que llevan a las personas correctas a tu sitio, y que las convierten una vez ahí.",
     features: [
@@ -204,7 +204,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "Lo que cambia la estrategia",
-      headline: "Un crecimiento construido sobre la demanda real.",
+      headline: ["Un crecimiento construido sobre la ", { outline: "demanda real." }],
       items: [
         { num: "01", title: "Atraer a los clientes correctos", body: "Trabajamos las búsquedas, necesidades y audiencias que realmente encajan con tu propuesta, en lugar de perseguir tráfico sin intención." },
         { num: "02", title: "Convertirte en referente", body: "Contenidos útiles y coherentes demuestran tu experiencia, responden objeciones y generan confianza antes del primer contacto." },
@@ -214,7 +214,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Nuestro método",
-      headline: "De la auditoría a un motor de crecimiento medible.",
+      headline: ["De la auditoría a un motor de crecimiento ", { outline: "medible." }],
       steps: [
         { num: "01 — AUDITORÍA", title: "Entender", body: "Analizamos el mercado, las audiencias, los contenidos, la visibilidad, las conversiones y la calidad de la medición existente." },
         { num: "02 — ESTRATEGIA", title: "Priorizar", body: "Objetivos, recorridos, temas, palabras clave, canales e indicadores se organizan en una hoja de ruta realista." },
@@ -224,7 +224,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Preguntas frecuentes",
-      headline: "Lo que conviene saber antes de invertir en crecimiento.",
+      headline: ["Lo que conviene saber antes de ", { outline: "invertir" }, " en crecimiento."],
       items: [
         { title: "¿SEO, contenido o campañas pagas?", body: "Depende de tu madurez, la demanda, el presupuesto y la velocidad esperada. El SEO y el contenido construyen un activo duradero; las campañas aceleran la adquisición y el aprendizaje. Podemos combinar los canales o empezar por la prioridad." },
         { title: "¿Cuándo podés esperar resultados SEO?", body: "El posicionamiento orgánico necesita tiempo. Las primeras señales pueden aparecer progresivamente, pero el ritmo depende de la competencia, la autoridad del dominio, el estado técnico del sitio y la regularidad editorial. No se puede garantizar una posición concreta." },
@@ -235,7 +235,7 @@ export const growth: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "¿Tenés un proyecto de crecimiento en mente?",
-    closingHeadline: ["Construyamos", "tu tráfico."],
+    closingHeadline: ["Construyamos", [{ outline: "tu tráfico." }]],
     ctaButton: "Empezar un proyecto ↗︎",
   },
   en: {
@@ -243,7 +243,7 @@ export const growth: Record<Locale, ServiceContent> = {
     metaDescription:
       "SEO, content strategy and campaigns that turn your traffic into customers. KLENT CREATIVE supports the growth of ambitious brands.",
     eyebrow: "Growth & Content",
-    h1: "Traffic, sure. But mostly, customers.",
+    h1: ["Traffic, sure. But mostly, ", { outline: "customers." }],
     intro:
       "A great-looking site without a strategy behind it doesn't do much. We build the SEO, content and campaigns that bring the right people to your site, and convert them once they're there.",
     features: [
@@ -266,7 +266,7 @@ export const growth: Record<Locale, ServiceContent> = {
     ],
     benefits: {
       eyebrow: "What the strategy changes",
-      headline: "Growth built around real demand.",
+      headline: ["Growth built around ", { outline: "real demand." }],
       items: [
         { num: "01", title: "Attract the right prospects", body: "We target the searches, needs and audiences that genuinely match your offer instead of chasing traffic with no intent." },
         { num: "02", title: "Become a trusted authority", body: "Useful, consistent content demonstrates your expertise, answers objections and builds trust before the first conversation." },
@@ -276,7 +276,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     process: {
       eyebrow: "Our approach",
-      headline: "From audit to a measurable growth engine.",
+      headline: ["From audit to a ", { outline: "measurable" }, " growth engine."],
       steps: [
         { num: "01 — AUDIT", title: "Understand", body: "We analyze your market, audiences, content, visibility, conversions and the quality of your existing measurement." },
         { num: "02 — STRATEGY", title: "Prioritize", body: "Objectives, journeys, topics, keywords, channels and metrics are organized into a realistic roadmap." },
@@ -286,7 +286,7 @@ export const growth: Record<Locale, ServiceContent> = {
     },
     faq: {
       eyebrow: "Frequently asked questions",
-      headline: "What to know before investing in growth.",
+      headline: ["What to know before ", { outline: "investing" }, " in growth."],
       items: [
         { title: "SEO, content or paid campaigns?", body: "It depends on your maturity, existing demand, budget and required speed. SEO and content build a durable asset; campaigns accelerate acquisition and learning. We can combine channels or start with the highest priority." },
         { title: "When can we expect SEO results?", body: "Organic search takes time. Early signals may appear gradually, but timing depends on competition, domain authority, the technical state of the website and publishing consistency. No specific ranking can be guaranteed." },
@@ -297,7 +297,7 @@ export const growth: Record<Locale, ServiceContent> = {
       ],
     },
     closingKicker: "Have a growth project in mind?",
-    closingHeadline: ["Let's build", "your traffic."],
+    closingHeadline: ["Let's build", [{ outline: "your traffic." }]],
     ctaButton: "Start a project ↗︎",
   },
 };
