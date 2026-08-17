@@ -2442,3 +2442,24 @@ html{
   color:transparent;
   -webkit-text-stroke:1.3px #111;
 }
+
+/* Display treatment for the two section headings that carry the page, taken
+   from the manifesto word: uppercase, heavier, tighter tracking.
+
+   Two deliberate departures from `.manifesto-word`. Its .78 leading is tuned
+   for three short unaccented words; these are full sentences with accents
+   ("Porque está bien pensado."), and an accent lands .99em above the baseline
+   in Manrope, so .95 is what keeps É and Á clear of the line above. And it
+   stops well short of the manifesto's 190px, because a sentence set that
+   large would wrap into a wall rather than read as a statement.
+
+   `text-transform` only: the underlying text keeps its normal casing, so
+   extraction and reading order are untouched. */
+.headline--display{
+  text-transform:uppercase;
+  font-weight:700;
+  letter-spacing:-.075em;
+  line-height:.95;
+  font-size:clamp(46px,7.2vw,124px);
+  max-width:1180px;
+}

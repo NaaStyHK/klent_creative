@@ -13,7 +13,7 @@ export default function Showcase({ dict, locale }: { dict: Dictionary; locale: L
       <div className="section-head reveal-up">
         <div className="eyebrow mono">{work.eyebrow}</div>
         <div>
-          <h2 className="headline">
+          <h2 className="headline headline--display">
             {work.headline[0]}
             {" "}<br />
             {work.headline[1]}

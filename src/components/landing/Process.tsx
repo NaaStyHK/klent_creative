@@ -6,7 +6,7 @@ export default function Process({ dict }: { dict: Dictionary }) {
     <section className="process">
       <div className="section-head reveal-up">
         <div className="eyebrow mono">{process.eyebrow}</div>
-        <h2 className="headline">{process.headline}</h2>
+        <h2 className="headline headline--display">{process.headline}</h2>
       </div>
       <div className="steps">
         {process.steps.map((step) => (
