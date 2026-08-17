@@ -12,7 +12,7 @@ import { studioSlug } from "@/lib/studio";
 /**
  * Phone navigation: a small dropdown panel, not a full-screen takeover. The
  * top nav links are hidden below 850px (inherited from the one-page mockup),
- * so without this the work, studio, blog and contact pages are unreachable on
+ * so without this the work, studio and contact pages are unreachable on
  * a phone. Rendered at every width but CSS-hidden above 850px.
  */
 export default function MobileMenu({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -46,11 +46,13 @@ export default function MobileMenu({ locale, dict }: { locale: Locale; dict: Dic
     };
   }, [open]);
 
+  // Mirrors the desktop nav exactly. The blog is absent from both on purpose:
+  // the footer is its single site-wide entry point, and having it here made the
+  // phone menu say something the wide screen did not.
   const links = [
     { href: `/${locale}/${workListingSlug[locale]}`, label: dict.nav.work },
     { href: `/${locale}#services`, label: dict.nav.services },
     { href: `/${locale}/${studioSlug[locale]}`, label: dict.nav.studio },
-    { href: `/${locale}/blog`, label: dict.blog.eyebrow },
     { href: `/${locale}/contact`, label: dict.contact.eyebrow },
   ];
 

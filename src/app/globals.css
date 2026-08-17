@@ -1567,9 +1567,15 @@
 .blog-back{display:inline-block;margin:0 var(--pad) 40px}
 @media (max-width:850px){
   .blog-list,.blog-article{padding:50px 18px 80px}
-  .reading-progress{left:5px;top:78px;bottom:calc(54px + var(--reading-footer-overlap,0px));width:36px}
+  /* Narrow enough for the track and its dot, nothing more: at 36px the column
+     reserved room for a label that no longer exists. */
+  .reading-progress{left:5px;top:78px;bottom:calc(54px + var(--reading-footer-overlap,0px));width:12px}
   .reading-progress-track{width:1px}
-  .reading-progress-value{left:8px;font-size:8px;padding:2px 3px}
+  /* The percentage is dropped on phones: there is no margin to put it in, so
+     it sat on top of the article text. The bar alone still shows progress, and
+     the figure itself is not lost — it stays on aria-valuenow, which is what a
+     screen reader reads. */
+  .reading-progress-value{display:none}
 }
 
 /* NEW: work listing + project detail pages */
