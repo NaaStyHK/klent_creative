@@ -5,7 +5,7 @@ export const branding: Record<Locale, ServiceContent> = {
   fr: {
     metaTitle: "Agence de branding & identité de marque | Klent Creative",
     metaDescription:
-      "Positionnement, naming, identité visuelle et charte graphique. KLENT CREATIVE est un studio de branding pour marques ambitieuses en France, Espagne et Argentine.",
+      "Positionnement, naming, identité visuelle et charte graphique. Studio de branding pour marques ambitieuses en France, Espagne et Argentine.",
     eyebrow: "Branding",
     h1: ["Une identité de marque qui se ", { outline: "remarque." }],
     intro:

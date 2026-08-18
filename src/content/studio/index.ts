@@ -25,7 +25,7 @@ export const studio: Record<Locale, StudioContent> = {
   fr: {
     metaTitle: "Le studio | Qui sommes-nous ? | Klent Creative",
     metaDescription:
-      "KLENT CREATIVE est un studio créatif indépendant à deux : design et développement, relation client. Français et espagnol, entre La Rochelle, Barcelone et l'Argentine.",
+      "Studio créatif indépendant à deux : design et développement, relation client. Français et espagnol, entre La Rochelle, Barcelone et l'Argentine.",
     eyebrow: "Le studio",
     h1: ["Deux personnes. Aucun ", { outline: "intermédiaire." }],
     intro:
@@ -232,7 +232,7 @@ export const studio: Record<Locale, StudioContent> = {
   en: {
     metaTitle: "The studio | Who we are | Klent Creative",
     metaDescription:
-      "KLENT CREATIVE is a two-person independent creative studio: design and development, client relations. French and Spanish, across La Rochelle, Barcelona and Argentina.",
+      "A two-person independent creative studio: design and development, client relations. French and Spanish, across La Rochelle, Barcelona and Argentina.",
     eyebrow: "The studio",
     h1: ["Two people. No ", { outline: "middlemen." }],
     intro:
