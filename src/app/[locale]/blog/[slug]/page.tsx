@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import remarkUnwrapImages from "remark-unwrap-images";
 import BlogImage from "@/components/blog/BlogImage";
 import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
 import { buildSocial } from "@/lib/seo";
@@ -218,10 +219,16 @@ export default async function BlogArticlePage({
       <div className="blog-body" id="article-reading-content">
         {/* remark-gfm : sans lui, un tableau Markdown ne devient pas un
             <table> mais un paragraphe rempli de barres verticales. Il apporte
-            aussi les listes de taches et les liens automatiques. */}
+            aussi les listes de taches et les liens automatiques.
+
+            remark-unwrap-images : Markdown enveloppe une image isolee dans un
+            paragraphe, ce qui placait la <figure> a l'interieur d'un <p>. Le
+            HTML l'interdit, et React le signalait en erreur d'hydratation. Le
+            greffon retire ce paragraphe superflu, ce qui laisse la figure au
+            premier niveau avec sa legende. */}
         <MDXRemote
           source={post.content}
-          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm, remarkUnwrapImages] } }}
           components={{ img: BlogImage }}
         />
       </div>
