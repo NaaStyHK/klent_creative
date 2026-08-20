@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import BlogImage from "@/components/blog/BlogImage";
 import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
 import { buildSocial } from "@/lib/seo";
 import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode, BRAND } from "@/lib/schema";
@@ -221,6 +222,7 @@ export default async function BlogArticlePage({
         <MDXRemote
           source={post.content}
           options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+          components={{ img: BlogImage }}
         />
       </div>
       {/* Closing invitation. What stood here was a "Related service" label

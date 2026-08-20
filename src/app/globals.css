@@ -2686,3 +2686,26 @@ body{--outline-ink:#111}
   .blog-article h1.headline{font-size:clamp(28px,7.4vw,40px)}
   .blog-author{margin-bottom:24px}
 }
+
+/* Images inside an article body.
+   Nothing styled them before, because no article had used one: a Markdown
+   image would have rendered at its natural size with no spacing and no bound.
+   They are full column width, with the caption doing the work a decorative
+   photo cannot. */
+.blog-figure{
+  margin:0 0 28px;
+}
+.blog-figure img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid var(--line);
+}
+.blog-figure figcaption{
+  margin-top:10px;
+  font-family:var(--font-dm-mono), monospace;
+  font-size:10px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
