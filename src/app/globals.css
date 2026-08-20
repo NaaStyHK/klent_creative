@@ -1260,7 +1260,13 @@
   .studio-editorial-hero{padding:106px 18px 44px;min-height:auto}
   .studio-editorial-hero::before{width:80vw;right:-42vw;top:70px}
   .studio-hero-meta{font-size:8px}.studio-hero-meta span:last-child{text-align:right}
-  .studio-display{margin:80px 0 50px;font-size:clamp(54px,17vw,98px);line-height:.86}
+  /* 17vw was sized on the English "middlemen." and overflowed everywhere else:
+     at 375px the box offers 339px while "intermediario." measured 433 and
+     "intermédiaire." 426. Even the English word overran by a hair. These are
+     single words, so nothing can wrap and the excess was simply clipped by the
+     page's overflow-x. 12.5vw fits the longest of the four down to 320px, and
+     the floor drops with it so the clamp cannot push it back over. */
+  .studio-display{margin:80px 0 50px;font-size:clamp(38px,12.5vw,98px);line-height:.86}
   .studio-hero-grid{grid-template-columns:1fr}
   .studio-focus-panel,.studio-definition{min-height:280px;padding:22px}
   .studio-definition p{margin-right:24px;font-size:clamp(24px,8vw,38px)}
