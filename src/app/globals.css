@@ -2666,3 +2666,23 @@ body{--outline-ink:#111}
   border-left:2px solid var(--acid);
   color:var(--fg);
 }
+
+/* An article title is editorial, not display type.
+   It shared `.headline` with the section headings, which top out at 92px: on a
+   wide screen this one ran to five lines and 432px tall before the reader had
+   seen a single word of the piece. Sized for a 724px column instead, where it
+   settles at three lines. */
+.blog-article h1.headline{
+  font-size:clamp(30px,3.4vw,52px);
+  line-height:1.04;
+  letter-spacing:-.035em;
+}
+
+/* The byline sat flush against the hero image, zero pixels between them. */
+.blog-author{margin-bottom:30px}
+.blog-hero-image{margin-top:0}
+
+@media (max-width:850px){
+  .blog-article h1.headline{font-size:clamp(28px,7.4vw,40px)}
+  .blog-author{margin-bottom:24px}
+}
