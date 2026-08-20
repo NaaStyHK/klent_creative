@@ -19,13 +19,17 @@ import { blogCategoryKeys, blogCategorySlugs, buildCategoryAlternates } from "@/
  * Bump the relevant line when you actually edit that content.
  */
 const REVISED = {
-  home: "2026-08-15",
-  contact: "2026-08-15",
-  studio: "2026-08-15",
-  legal: "2026-08-01",
-  services: "2026-08-15",
-  work: "2026-08-15",
+  // 18 aout : titres des sections en capitales et mots evides, formulations
+  // espagnoles, prenom Celeste, taille du titre studio sur telephone.
+  home: "2026-08-18",
+  contact: "2026-08-18",
+  studio: "2026-08-18",
+  services: "2026-08-18",
+  work: "2026-08-18",
+  // Le nom des projets a change dans les donnees structurees, pas le contenu
+  // lu par un visiteur : rien a redater ici.
   projects: "2026-08-15",
+  legal: "2026-08-01",
 } as const;
 
 /**
