@@ -1,4 +1,3 @@
-import { headingText } from "@/components/ui/RichHeading";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +18,6 @@ import {
   buildCategoryAlternates,
 } from "@/lib/blog-categories";
 import { serviceKeys, serviceSlugs } from "@/lib/services";
-import { getServiceContent } from "@/content/services";
 import BlogCategoryPage from "@/components/blog/BlogCategoryPage";
 import PageJsonLd from "@/components/seo/PageJsonLd";
 import ReadingProgress from "@/components/blog/ReadingProgress";
@@ -126,7 +124,6 @@ export default async function BlogArticlePage({
   const post = getPostBySlug(locale, slug);
   if (!post) notFound();
   const dict = getDictionary(locale);
-  const related = post.relatedService ? getServiceContent(post.relatedService, locale) : null;
   const relatedHref = post.relatedService ? `/${locale}/${serviceSlugs[post.relatedService][locale]}` : null;
   // dict.services.items suit l'ordre de serviceKeys : on y prend le nom court
   // ("Création de site internet") au lieu du H1 de la page, qui est une
