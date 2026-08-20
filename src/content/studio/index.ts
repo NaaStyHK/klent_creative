@@ -98,7 +98,7 @@ export const studio: Record<Locale, StudioContent> = {
     eyebrow: "El estudio",
     h1: ["Dos personas. Ningún ", { outline: "intermediario." }],
     intro:
-      "KLENT CREATIVE es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vosotros, desde la primera conversación hasta la puesta en marcha.",
+      "KLENT CREATIVE es un estudio creativo independiente. Aquí no hay mandos intermedios: dos personas que trabajan directamente con vosotros, desde la primera conversación hasta la puesta en marcha.",
     teamEyebrow: "(01) El equipo",
     teamTitle: ["Quién estará ", { outline: "al otro lado." }],
     members: [
@@ -167,7 +167,7 @@ export const studio: Record<Locale, StudioContent> = {
     eyebrow: "El estudio",
     h1: ["Dos personas. Ningún ", { outline: "intermediario." }],
     intro:
-      "KLENT CREATIVE es un estudio creativo independiente. No una agencia con capas de jefes de proyecto: dos personas que trabajan directamente con vos, desde la primera charla hasta la puesta en marcha.",
+      "KLENT CREATIVE es un estudio creativo independiente. Acá no hay mandos intermedios: dos personas que trabajan directamente con vos, desde la primera charla hasta la puesta en marcha.",
     teamEyebrow: "(01) El equipo",
     teamTitle: ["Quién va a estar ", { outline: "del otro lado." }],
     members: [

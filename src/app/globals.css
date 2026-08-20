@@ -1269,7 +1269,13 @@
   .studio-display{margin:80px 0 50px;font-size:clamp(38px,12.5vw,98px);line-height:.86}
   .studio-hero-grid{grid-template-columns:1fr}
   .studio-focus-panel,.studio-definition{min-height:280px;padding:22px}
-  .studio-definition p{margin-right:24px;font-size:clamp(24px,8vw,38px)}
+  /* Le + est cale en absolu dans l'angle, et la marge droite du paragraphe
+     lui reservait la place. Sur telephone cette marge ne suffit plus et la
+     premiere ligne venait buter dedans. Il redevient un element de flux,
+     pose au-dessus du texte, ce qui supprime le chevauchement au lieu de le
+     contourner. */
+  .studio-definition-mark{position:static;display:block;margin-bottom:6px;line-height:1}
+  .studio-definition p{margin-right:0;font-size:clamp(24px,8vw,38px)}
   .studio-editorial-team,.studio-editorial-reach{padding:72px 18px}
   .studio-section-heading{grid-template-columns:1fr;gap:24px;margin-bottom:42px}
   .studio-people-grid{grid-template-columns:1fr;gap:56px}
