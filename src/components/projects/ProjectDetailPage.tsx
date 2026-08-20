@@ -83,7 +83,7 @@ export default function ProjectDetailPage({
               <p className="case-study-category mono">{content.category}</p>
               <h1 className="case-study-title">
                 <span>{content.name[0]}</span>
-                <span>{content.name[1]}</span>
+                {content.name[1] && <span>{content.name[1]}</span>}
               </h1>
             </div>
             <div className="case-study-intro">
@@ -152,24 +152,24 @@ export default function ProjectDetailPage({
                 <div className="brand-logo-asset">
                   <Image
                     src={study.variant === "oxploria" ? "/projects/oxploria/logo-oxploria-white-yellow-v3.svg" : study.logo}
-                    alt={`Logo ${content.name.join(" ")}`}
+                    alt={`Logo ${content.name.filter(Boolean).join(" ")}`}
                     fill
                     sizes="(max-width: 850px) 80vw, 50vw"
                   />
                 </div>
               ) : (
-                <div className="brand-logo-lockup" aria-label={content.name.join(" ")}>
+                <div className="brand-logo-lockup" aria-label={content.name.filter(Boolean).join(" ")}>
                   {study.logoLines.map((line) => <span key={line}>{line}</span>)}
                 </div>
               )}
               <p className="mono">{study.variant === "oxploria" ? oxploriaLogoLabels.primary : study.logoNote}</p>
             </div>
-            <div className={`brand-symbol-board${study.logo && !study.symbolLetters ? " brand-symbol-board--logo" : ""}`} aria-label={study.symbolLetters ? `Símbolo ${study.symbolLetters.join("")}` : `Versión negra del logo ${content.name.join(" ")}`}>
+            <div className={`brand-symbol-board${study.logo && !study.symbolLetters ? " brand-symbol-board--logo" : ""}`} aria-label={study.symbolLetters ? `Símbolo ${study.symbolLetters.join("")}` : `Versión negra del logo ${content.name.filter(Boolean).join(" ")}`}>
               {study.logo && !study.symbolLetters ? (
                 <div className="brand-logo-asset brand-logo-asset--black">
                   <Image
                     src={study.variant === "oxploria" ? "/projects/oxploria/logo-oxploria-dark-yellow.svg" : study.logo}
-                    alt={`Logo negro ${content.name.join(" ")}`}
+                    alt={`Logo negro ${content.name.filter(Boolean).join(" ")}`}
                     fill
                     sizes="(max-width: 850px) 80vw, 30vw"
                   />
@@ -425,7 +425,7 @@ export default function ProjectDetailPage({
       </Link>
       <span className="concept-tag">{dict.workPage.conceptTag}</span>
       <h1 className="headline">
-        {content.name[0]} {content.name[1]}
+        {content.name.filter(Boolean).join(" ")}
       </h1>
       <p className="service-page-intro">{content.conceptNote}</p>
       <div className="project-tags">

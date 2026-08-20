@@ -1,7 +1,7 @@
 import { hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { workListingSlug } from "@/lib/projects";
-import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode } from "@/lib/schema";
+import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode, BRAND } from "@/lib/schema";
 
 export default function ProjectJsonLd({
   locale,
@@ -21,7 +21,7 @@ export default function ProjectJsonLd({
   const data = graph([
     webPageNode({ locale, url, name, description }),
     breadcrumbNode(url, [
-      { name: dict.loader.brand, url: `${siteUrl}/${locale}` },
+      { name: BRAND, url: `${siteUrl}/${locale}` },
       { name: dict.nav.work, url: `${siteUrl}/${locale}/${workListingSlug[locale]}` },
       { name, url },
     ]),

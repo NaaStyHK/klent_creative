@@ -1,7 +1,6 @@
 import { hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/get-dictionary";
 import type { ServiceContent } from "@/lib/i18n/service-content";
-import { ORG_ID, breadcrumbNode, graph, webPageNode, type SchemaNode } from "@/lib/schema";
+import { ORG_ID, breadcrumbNode, graph, webPageNode, type SchemaNode, BRAND } from "@/lib/schema";
 
 /**
  * Service page entities. `provider` is a reference to the site-wide
@@ -26,12 +25,11 @@ export default function ServiceJsonLd({
   url: string;
   content?: ServiceContent;
 }) {
-  const dict = getDictionary(locale);
 
   const nodes: SchemaNode[] = [
     webPageNode({ locale, url, name, description }),
     breadcrumbNode(url, [
-      { name: dict.loader.brand, url: `${siteUrl}/${locale}` },
+      { name: BRAND, url: `${siteUrl}/${locale}` },
       { name, url },
     ]),
     {

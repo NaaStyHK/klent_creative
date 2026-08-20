@@ -62,9 +62,13 @@ export default async function ProjectRoutePage({
 
   return (
     <>
+      {/* Le nom du projet est un tableau de lignes d'affichage. Il etait
+          reconstitue avec name[0] + name[1] : celui d'Oxploria n'a qu'une
+          ligne, et le second index se serialisait en "Oxploria undefined"
+          dans le fil d'Ariane comme dans le nom du CreativeWork. */}
       <ProjectJsonLd
         locale={resolved.locale}
-        name={`${resolved.content.name[0]} ${resolved.content.name[1]}`}
+        name={resolved.content.name.filter(Boolean).join(" ")}
         description={resolved.content.metaDescription}
         url={`${siteUrl}/${resolved.locale}/${service}/${project}`}
         image={resolved.content.image}

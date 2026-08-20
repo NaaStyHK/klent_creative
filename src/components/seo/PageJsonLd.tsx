@@ -1,6 +1,5 @@
 import { siteUrl, type Locale } from "@/lib/i18n/config";
-import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { breadcrumbNode, graph, webPageNode } from "@/lib/schema";
+import { breadcrumbNode, graph, webPageNode, BRAND } from "@/lib/schema";
 
 /**
  * WebPage + BreadcrumbList for the pages that carry no richer type of their
@@ -24,12 +23,11 @@ export default function PageJsonLd({
   /** Ancestors between the home page and this one, in order. */
   trail?: { name: string; url: string }[];
 }) {
-  const dict = getDictionary(locale);
 
   const data = graph([
     webPageNode({ locale, url, name, description }),
     breadcrumbNode(url, [
-      { name: dict.loader.brand, url: `${siteUrl}/${locale}` },
+      { name: BRAND, url: `${siteUrl}/${locale}` },
       ...trail,
       { name, url },
     ]),

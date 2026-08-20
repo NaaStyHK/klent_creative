@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
 import { buildSocial } from "@/lib/seo";
-import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode } from "@/lib/schema";
+import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode, BRAND } from "@/lib/schema";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { getPostBySlug, getPostSlugs, buildPostAlternates, getPostsInCategory } from "@/lib/blog";
 import { getPostCategory } from "@/lib/blog-categories";
@@ -139,7 +139,7 @@ export default async function BlogArticlePage({
       description: post.description,
     }),
     breadcrumbNode(articleUrl, [
-      { name: dict.loader.brand, url: `${siteUrl}/${locale}` },
+      { name: BRAND, url: `${siteUrl}/${locale}` },
       { name: dict.blog.eyebrow, url: `${siteUrl}/${locale}/blog` },
       { name: post.title, url: articleUrl },
     ]),

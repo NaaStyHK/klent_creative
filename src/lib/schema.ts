@@ -10,6 +10,17 @@ import { hreflangByLocale, locales, siteUrl, type Locale } from "@/lib/i18n/conf
  * authority the brand accumulates across all of them.
  */
 export const ORG_ID = `${siteUrl}/#organization`;
+
+/**
+ * The company name as structured data should state it.
+ *
+ * Kept apart from `loader.brand`, which is the all-caps wordmark the intro
+ * animation draws. That string was feeding the breadcrumbs, so search results
+ * showed "KLENT CREATIVE" while every other mention of the company reads
+ * "Klent Creative" — and renaming the animation would silently have renamed
+ * the company in Google's eyes.
+ */
+export const BRAND = "Klent Creative";
 export const WEBSITE_ID = `${siteUrl}/#website`;
 const LOGO_ID = `${siteUrl}/#logo`;
 
@@ -196,7 +207,7 @@ export function organizationNode(
   return {
     "@type": "Organization",
     "@id": ORG_ID,
-    name: "Klent Creative",
+    name: BRAND,
     alternateName: "KLENT",
     url: siteUrl,
     description,
@@ -286,7 +297,7 @@ export function websiteNode(): SchemaNode {
     "@type": "WebSite",
     "@id": WEBSITE_ID,
     url: siteUrl,
-    name: "Klent Creative",
+    name: BRAND,
     publisher: { "@id": ORG_ID },
     inLanguage: locales.map((locale) => hreflangByLocale[locale]),
   };
