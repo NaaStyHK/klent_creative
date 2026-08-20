@@ -210,7 +210,13 @@ export default async function BlogArticlePage({
       )}
       {post.image && (
         <div className="blog-hero-image">
-          <Image src={post.image} alt="" fill sizes="(max-width: 850px) 100vw, 820px" priority />
+          <Image
+            src={post.image}
+            alt={post.imageAlt ?? ""}
+            fill
+            sizes="(max-width: 850px) 100vw, 820px"
+            priority
+          />
         </div>
       )}
       {post.takeaways?.length ? (

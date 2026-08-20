@@ -2709,3 +2709,22 @@ body{--outline-ink:#111}
   text-transform:uppercase;
   color:var(--muted);
 }
+
+/* A figure that links somewhere. Nothing in a bordered image says "clickable",
+   so the caption carries the cue and the whole plate reacts on hover. */
+.blog-body a:has(> .blog-figure){
+  display:block;
+  text-decoration:none;
+}
+.blog-body a:has(> .blog-figure) .blog-figure img{
+  transition:filter .35s var(--ease);
+}
+.blog-body a:has(> .blog-figure):hover .blog-figure img,
+.blog-body a:has(> .blog-figure):focus-visible .blog-figure img{
+  filter:brightness(1.06);
+}
+.blog-body a:has(> .blog-figure) figcaption::after{
+  content:" ↗";
+  color:var(--fg);
+}
+.blog-body a:has(> .blog-figure):hover figcaption{color:var(--fg)}

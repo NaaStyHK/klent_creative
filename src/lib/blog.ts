@@ -46,6 +46,15 @@ export type PostFrontmatter = {
   authorImage?: string;
   readTime?: number;
   image?: string;
+  /**
+   * Texte alternatif de l'image de tete.
+   *
+   * Optionnel a dessein : une photo purement decorative, dont le titre juste
+   * au-dessus dit deja tout, se decrit mieux par un alt vide que par une
+   * paraphrase du titre. Le renseigner des que l'image montre quelque chose
+   * qu'un lecteur d'ecran ne peut pas deviner autrement.
+   */
+  imageAlt?: string;
   relatedService?: ServiceKey;
 };
 
@@ -171,7 +180,21 @@ export function buildPostAlternates(slug: string): Record<string, string> {
     .map((locale) => [locale, group?.[locale] ?? slug] as const)
     .filter(([locale, target]) => postExists(locale, target));
 
-  return Object.fromEntries(
+  const alternates = Object.fromEntries(
     entries.map(([locale, target]) => [hreflangByLocale[locale], `${siteUrl}/${locale}/blog/${target}`]),
   );
+
+  // x-default repond a la question "et pour tous les autres ?". Les pages
+  // principales du site le declarent deja, les articles l'oubliaient. Il pointe
+  // vers l'anglais quand il existe, qui est la version la plus susceptible
+  // d'etre comprise par un lecteur dont aucune de nos langues n'est la sienne,
+  // et sinon vers la premiere version disponible.
+  const premier = entries[0];
+  if (premier) {
+    const anglais = entries.find(([locale]) => locale === "en");
+    const [locale, target] = anglais ?? premier;
+    alternates["x-default"] = `${siteUrl}/${locale}/blog/${target}`;
+  }
+
+  return alternates;
 }
