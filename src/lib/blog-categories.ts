@@ -97,6 +97,7 @@ const CATEGORY_BY_SLUG: Record<string, BlogCategoryKey> = {
   "conseguir-clientes-online-barcelona": "growth",
   "conseguir-clientes-online-buenos-aires": "growth",
   // --- EN ---
+  "how-to-choose-a-web-design-studio-in-barcelona": "web",
   "no-code-vs-custom-development": "mobile",
   "mobile-app-cost-and-timeline": "mobile",
   "how-much-does-a-website-cost": "web",

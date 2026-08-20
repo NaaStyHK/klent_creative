@@ -19,6 +19,13 @@ import type { Locale } from "@/lib/i18n/config";
  */
 export const articleTranslations: Array<Partial<Record<Locale, string>>> = [
   {
+    // Barcelone dans les deux cas : le lecteur anglophone vise est installe
+    // dans la meme ville, seule la langue change. Pas d'equivalent argentin,
+    // Buenos Aires serait un autre marche et un autre article.
+    es: "como-elegir-estudio-diseno-web-barcelona",
+    en: "how-to-choose-a-web-design-studio-in-barcelona",
+  },
+  {
     fr: "application_oxploria",
     es: "application_oxploria",
     "es-ar": "application_oxploria",
