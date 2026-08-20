@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib/i18n/config";
 import { buildSocial } from "@/lib/seo";
 import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode, BRAND } from "@/lib/schema";
@@ -188,6 +189,23 @@ export default async function BlogArticlePage({
         {post.readTime ? ` · ${post.readTime} ${dict.blog.minRead}` : ""}
       </span>
       <h1 className="headline">{post.title}</h1>
+      {post.author && (
+        <div className="blog-author">
+          {post.authorImage && (
+            <Image
+              className="blog-author-photo"
+              src={post.authorImage}
+              alt={post.author}
+              width={88}
+              height={88}
+            />
+          )}
+          <div className="blog-author-text mono">
+            <span className="blog-author-name">{post.author}</span>
+            {post.authorRole && <span className="blog-author-role">{post.authorRole}</span>}
+          </div>
+        </div>
+      )}
       {post.image && (
         <div className="blog-hero-image">
           <Image src={post.image} alt="" fill sizes="(max-width: 850px) 100vw, 820px" priority />
@@ -197,7 +215,13 @@ export default async function BlogArticlePage({
         <KeyTakeaways items={post.takeaways} locale={locale} />
       ) : null}
       <div className="blog-body" id="article-reading-content">
-        <MDXRemote source={post.content} />
+        {/* remark-gfm : sans lui, un tableau Markdown ne devient pas un
+            <table> mais un paragraphe rempli de barres verticales. Il apporte
+            aussi les listes de taches et les liens automatiques. */}
+        <MDXRemote
+          source={post.content}
+          options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        />
       </div>
       {/* Closing invitation. What stood here was a "Related service" label
           pointing at the service page's H1: navigation dressed as a

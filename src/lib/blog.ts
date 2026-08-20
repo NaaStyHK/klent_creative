@@ -32,6 +32,18 @@ export type PostFrontmatter = {
    * make sense quoted on its own — see components/blog/KeyTakeaways.
    */
   takeaways?: string[];
+  /**
+   * Visible byline. Optional: the older articles carry none, and an absent
+   * author is better than a fabricated one.
+   *
+   * It stays a display string. The Article schema keeps the Organization as
+   * author on purpose, so the company remains the entity Google knows and no
+   * personal name enters the structured data.
+   */
+  author?: string;
+  authorRole?: string;
+  /** Portrait sous /public. Absent, le bloc auteur reste en texte seul. */
+  authorImage?: string;
   readTime?: number;
   image?: string;
   relatedService?: ServiceKey;

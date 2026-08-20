@@ -85,6 +85,7 @@ const CATEGORY_BY_SLUG: Record<string, BlogCategoryKey> = {
   "no-code-vs-desarrollo-a-medida": "mobile",
   "crear-app-movil-barcelona": "mobile",
   "crear-app-movil-buenos-aires": "mobile",
+  "como-elegir-estudio-diseno-web-barcelona": "web",
   "cuanto-cuesta-sitio-web-barcelona": "web",
   "cuanto-cuesta-sitio-web-buenos-aires": "web",
   "freelance-desarrollador-web-barcelona": "web",

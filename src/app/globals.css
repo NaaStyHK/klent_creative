@@ -2609,3 +2609,60 @@ body{--outline-ink:#111}
   .blog-cta-actions{margin:0 -20px;padding:0 20px}
   .blog-cta-button{width:100%;text-align:center}
 }
+
+/* Byline under an article title. A face and a name answer the question a
+   reader asks before trusting a figure: who is telling me this. It is also the
+   signal search engines look for on advice content. */
+.blog-author{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin:22px 0 0;
+}
+.blog-author-photo{
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  filter:grayscale(1);
+  flex-shrink:0;
+}
+.blog-author-text{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  font-size:10px;
+  letter-spacing:.08em;
+}
+.blog-author-name{color:var(--fg)}
+.blog-author-role{color:var(--muted)}
+
+/* Elements the article body never used until now. A markdown table rendered
+   unstyled reads as raw data; horizontal scrolling keeps a wide one from
+   pushing the whole page sideways on a phone. */
+.blog-body table{
+  display:block;
+  width:100%;
+  overflow-x:auto;
+  border-collapse:collapse;
+  margin:0 0 26px;
+  font-size:14px;
+}
+.blog-body thead{background:var(--panel)}
+.blog-body th,
+.blog-body td{
+  padding:11px 14px;
+  border:1px solid var(--line);
+  text-align:left;
+  vertical-align:top;
+  white-space:nowrap;
+}
+.blog-body td:first-child{white-space:normal}
+.blog-body th{font-weight:600;letter-spacing:-.01em}
+.blog-body strong{font-weight:600;color:var(--fg)}
+.blog-body hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+.blog-body blockquote{
+  margin:0 0 22px;
+  padding:2px 0 2px 20px;
+  border-left:2px solid var(--acid);
+  color:var(--fg);
+}
