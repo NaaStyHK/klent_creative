@@ -182,6 +182,12 @@ export const en: Dictionary = {
     readArticle: "Read article",
     backToBlog: "← Back to blog",
     relatedServiceIntro: "Related service",
+    cta: {
+      eyebrow: "What now?",
+      title: "Does this match a project you have in mind? Let's talk. We reply within 24 hours.",
+      button: "Start a project",
+      serviceIntro: "See also:",
+    },
     minRead: "min read",
     allArticles: "All articles +",
     backToBlogIndex: "← All articles",

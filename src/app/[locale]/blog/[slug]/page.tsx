@@ -18,7 +18,7 @@ import {
   resolveCategorySlug,
   buildCategoryAlternates,
 } from "@/lib/blog-categories";
-import { serviceSlugs } from "@/lib/services";
+import { serviceKeys, serviceSlugs } from "@/lib/services";
 import { getServiceContent } from "@/content/services";
 import BlogCategoryPage from "@/components/blog/BlogCategoryPage";
 import PageJsonLd from "@/components/seo/PageJsonLd";
@@ -128,6 +128,11 @@ export default async function BlogArticlePage({
   const dict = getDictionary(locale);
   const related = post.relatedService ? getServiceContent(post.relatedService, locale) : null;
   const relatedHref = post.relatedService ? `/${locale}/${serviceSlugs[post.relatedService][locale]}` : null;
+  // dict.services.items suit l'ordre de serviceKeys : on y prend le nom court
+  // ("Création de site internet") au lieu du H1 de la page, qui est une
+  // accroche et se lit mal comme libelle de lien.
+  const serviceIndex = post.relatedService ? serviceKeys.indexOf(post.relatedService) : -1;
+  const serviceLabel = serviceIndex >= 0 ? dict.services.items[serviceIndex].title : null;
 
   const articleCategory = getPostCategory(post.slug);
   const articleUrl = `${siteUrl}/${locale}/blog/${slug}`;
@@ -197,14 +202,26 @@ export default async function BlogArticlePage({
       <div className="blog-body" id="article-reading-content">
         <MDXRemote source={post.content} />
       </div>
-      {related && relatedHref && (
-        <div className="blog-related">
-          <div className="mono">{dict.blog.relatedServiceIntro}</div>
-          <Link className="hoverable" href={relatedHref}>
-            {headingText(related.h1)} ↗︎
+      {/* Closing invitation. What stood here was a "Related service" label
+          pointing at the service page's H1: navigation dressed as a
+          conclusion, with no way to reach the contact form. The reader has
+          just finished the article, which is the moment they are most likely
+          to act, so the primary action is now getting in touch and the service
+          page becomes the secondary path. */}
+      <aside className="blog-cta">
+        <div className="blog-cta-eyebrow mono">{dict.blog.cta.eyebrow}</div>
+        <p className="blog-cta-title">{dict.blog.cta.title}</p>
+        <div className="blog-cta-actions">
+          <Link className="blog-cta-button" href={`/${locale}/contact`}>
+            {dict.blog.cta.button}
           </Link>
+          {serviceLabel && relatedHref && (
+            <Link className="blog-cta-secondary mono hoverable" href={relatedHref}>
+              {dict.blog.cta.serviceIntro} {serviceLabel} ↗︎
+            </Link>
+          )}
         </div>
-      )}
+      </aside>
     </article>
   );
 }

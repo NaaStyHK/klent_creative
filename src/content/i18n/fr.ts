@@ -182,6 +182,12 @@ export const fr: Dictionary = {
     readArticle: "Lire l'article",
     backToBlog: "← Retour au blog",
     relatedServiceIntro: "Service associé",
+    cta: {
+      eyebrow: "Et maintenant ?",
+      title: "Ce sujet correspond à un projet que vous avez ? Parlons-en. Nous répondons sous 24 heures.",
+      button: "Démarrer un projet",
+      serviceIntro: "Voir aussi :",
+    },
     minRead: "min de lecture",
     allArticles: "Tous les articles +",
     backToBlogIndex: "← Tous les articles",

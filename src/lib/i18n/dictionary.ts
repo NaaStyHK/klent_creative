@@ -134,6 +134,13 @@ export type Dictionary = {
     readArticle: string;
     backToBlog: string;
     relatedServiceIntro: string;
+    /** Closing invitation at the end of every article. */
+    cta: {
+      eyebrow: string;
+      title: string;
+      button: string;
+      serviceIntro: string;
+    };
     minRead: string;
     allArticles: string;
     backToBlogIndex: string;

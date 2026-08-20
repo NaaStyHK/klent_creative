@@ -180,6 +180,12 @@ export const es: Dictionary = {
     readArticle: "Leer artículo",
     backToBlog: "← Volver al blog",
     relatedServiceIntro: "Servicio relacionado",
+    cta: {
+      eyebrow: "¿Y ahora?",
+      title: "¿Este tema encaja con un proyecto en marcha? Hablemos. Respondemos en menos de 24 horas.",
+      button: "Empezar un proyecto",
+      serviceIntro: "Ver también:",
+    },
     minRead: "min de lectura",
     allArticles: "Todos los artículos +",
     backToBlogIndex: "← Todos los artículos",

@@ -2543,3 +2543,69 @@ body{--outline-ink:#111}
 @media (max-width:360px){
   .ticker-label{font-size:17px}
 }
+
+/* Closing invitation at the end of an article.
+   Deliberately louder than the old "related service" strip: the reader has
+   just finished, which is the moment they act or leave. The dark plate and the
+   acid button echo the corner prompt, so the two read as one voice rather than
+   two different asks. */
+.blog-cta{
+  max-width:820px;
+  margin:60px auto 0;
+  padding:30px 30px 0;
+  background:var(--fg);
+  color:var(--paper);
+}
+.blog-cta-eyebrow{
+  font-size:10px;
+  letter-spacing:.1em;
+  color:#b9b6ae;
+}
+.blog-cta-title{
+  margin:12px 0 24px;
+  font-size:clamp(20px,2.4vw,27px);
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.02em;
+  max-width:34ch;
+}
+.blog-cta-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:18px 26px;
+  margin:0 -30px;
+  padding:0 30px;
+}
+.blog-cta-button{
+  display:inline-block;
+  margin-bottom:22px;
+  padding:14px 24px;
+  background:var(--acid);
+  color:var(--fg);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:filter .25s;
+}
+.blog-cta-button:hover,
+.blog-cta-button:focus-visible{filter:brightness(1.08)}
+.blog-cta-secondary{
+  margin-bottom:22px;
+  font-size:10px;
+  letter-spacing:.06em;
+  color:#b9b6ae;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:color .25s,border-color .25s;
+}
+.blog-cta-secondary:hover,
+.blog-cta-secondary:focus-visible{color:var(--paper);border-bottom-color:currentColor}
+
+@media (max-width:850px){
+  .blog-cta{margin-top:44px;padding:24px 20px 0}
+  .blog-cta-actions{margin:0 -20px;padding:0 20px}
+  .blog-cta-button{width:100%;text-align:center}
+}
