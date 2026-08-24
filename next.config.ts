@@ -8,19 +8,22 @@ const nextConfig: NextConfig = {
   // that removes it never ran). Dev-only setting, has no effect on
   // `next build` / production.
   allowedDevOrigins: ["192.168.1.230"],
-  // "/" is the only redirect: every URL indexed on the previous site (/fr,
-  // /es, /fr/contact, /fr/blog, /es/blog, and all 10 FR blog slugs) is
-  // reproduced at an identical path in this app.
+  // "/" is the only redirect. Every localised URL is served directly, in all
+  // four locales, and none has ever been redirected or removed — including the
+  // French ones, which keep the search signals they have accumulated.
   //
   // It lives here rather than in an app/page.tsx so that app/[locale]/layout
   // can be the single root layout and render <html lang> on the server. A page
   // at "/" would have forced a second root layout just to redirect.
   //
-  // French on purpose: the live site has sent "/" to /fr for months and every
-  // indexed URL is French. Fixed target, never browser-language based —
-  // Googlebot crawls from the US in English and would always land on /en.
+  // English on purpose: "/" is the language-neutral entry point, so it must
+  // land on the locale that x-default declares (defaultLocale in
+  // src/lib/i18n/config.ts, currently "en"). The two are a pair — changing one
+  // without the other tells Google a default the site does not actually serve.
+  // Fixed target, never browser-language based, so a crawler and a visitor
+  // always see the same thing.
   async redirects() {
-    return [{ source: "/", destination: "/fr", permanent: true }];
+    return [{ source: "/", destination: "/en", permanent: true }];
   },
   images: {
     remotePatterns: [

@@ -2,6 +2,13 @@ export const locales = ["fr", "es", "es-ar", "en"] as const;
 
 export type Locale = (typeof locales)[number];
 
+/**
+ * Sert uniquement a construire x-default, qui doit designer la page servie a
+ * un visiteur dont aucune de nos langues ne correspond. C'est l'anglais, en
+ * coherence avec le positionnement international du studio, et next.config.ts
+ * redirige "/" vers /en pour que le comportement reel corresponde a ce que
+ * x-default declare. Les deux doivent bouger ensemble.
+ */
 export const defaultLocale: Locale = "en";
 
 /**

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { locales, hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
+import { locales, defaultLocale, hreflangByLocale, siteUrl, type Locale } from "@/lib/i18n/config";
 import type { ServiceKey } from "@/lib/services";
 import { blogCategoryKeys, getPostCategory, type BlogCategoryKey } from "@/lib/blog-categories";
 import { findTranslationGroup } from "@/lib/blog-translations";
@@ -184,15 +184,16 @@ export function buildPostAlternates(slug: string): Record<string, string> {
     entries.map(([locale, target]) => [hreflangByLocale[locale], `${siteUrl}/${locale}/blog/${target}`]),
   );
 
-  // x-default repond a la question "et pour tous les autres ?". Les pages
-  // principales du site le declarent deja, les articles l'oubliaient. Il pointe
-  // vers l'anglais quand il existe, qui est la version la plus susceptible
-  // d'etre comprise par un lecteur dont aucune de nos langues n'est la sienne,
-  // et sinon vers la premiere version disponible.
+  // x-default repond a la question "et pour tous les autres ?". Il pointe vers
+  // defaultLocale, donc vers l'anglais, comme le x-default des pages
+  // principales et comme la redirection de "/" dans next.config.ts. Les
+  // entrees sont deja filtrees par postExists(), donc le repli sur la premiere
+  // version disponible ne peut designer qu'un article reellement publie : un
+  // article sans version anglaise garde un x-default valide dans sa langue.
   const premier = entries[0];
   if (premier) {
-    const anglais = entries.find(([locale]) => locale === "en");
-    const [locale, target] = anglais ?? premier;
+    const parDefaut = entries.find(([locale]) => locale === defaultLocale);
+    const [locale, target] = parDefaut ?? premier;
     alternates["x-default"] = `${siteUrl}/${locale}/blog/${target}`;
   }
 

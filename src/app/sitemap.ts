@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { locales, siteUrl, buildAlternates } from "@/lib/i18n/config";
+import { locales, defaultLocale, siteUrl, buildAlternates } from "@/lib/i18n/config";
 import { serviceKeys, serviceSlugs, buildServiceAlternates } from "@/lib/services";
 import { workListingSlug, projectSlugs, buildWorkListingAlternates, buildProjectAlternates } from "@/lib/projects";
 import { legalSlug, buildLegalAlternates } from "@/lib/legal";
@@ -51,7 +51,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/${locale}`,
       lastModified: REVISED.home,
       changeFrequency: "weekly",
-      priority: locale === "fr" ? 1 : 0.8,
+      // Derived from defaultLocale rather than hardcoded, so the sitemap can
+      // never keep pointing at a primary locale the rest of the site has
+      // stopped treating as primary.
+      priority: locale === defaultLocale ? 1 : 0.8,
       alternates: { languages: buildAlternates("/") },
     });
   }
