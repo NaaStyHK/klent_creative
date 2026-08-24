@@ -98,8 +98,24 @@ export default async function LocaleLayout({
       lang={hreflangByLocale[locale]}
       data-scroll-behavior="smooth"
       className={`${manrope.variable} ${dmMono.variable}`}
+      // The inline script below adds .intro-seen to <html> before hydration,
+      // which React would otherwise report as a className mismatch.
+      suppressHydrationWarning
     >
       <body className="is-loading">
+        {/*
+          Runs during body parse, before .intro-loader is reached, so a repeat
+          visit in the same session never paints the loader at all. Doing this
+          in IntroLoader's effect instead would hide it only after hydration,
+          i.e. after the full-screen intro had already flashed. The key is
+          shared with SESSION_KEY in IntroLoader.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{if(sessionStorage.getItem("klent:intro-seen")==="1")document.documentElement.classList.add("intro-seen")}catch(e){}',
+          }}
+        />
         {/*
           Scroll reveals and the intro loader are driven by JS: .reveal-up
           starts at opacity 0 and the loader hides the body until it finishes.

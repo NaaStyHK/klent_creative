@@ -597,7 +597,12 @@
     height:1px;background:rgba(255,255,255,.18);overflow:hidden
   }
   .intro-loader__bar span{
-    display:block;height:100%;width:0;background:#d8ff3e
+    /* Driven by transform:scaleX() from IntroLoader rather than width: the
+       progress bar repaints every frame, and animating width forced a layout
+       recalculation on each one. */
+    display:block;height:100%;width:100%;background:#d8ff3e;
+    transform:scaleX(0);transform-origin:left;
+    will-change:transform
   }
 
   .hero-title i{
@@ -688,6 +693,13 @@
       transition:none !important;
     }
   }
+
+  /* Set before first paint by the inline script in [locale]/layout.tsx when
+     the intro has already played in this session, so the loader never flashes
+     on a subsequent full page load. Needs !important to beat the
+     prefers-reduced-motion rule above, which force-shows the loader. */
+  html.intro-seen .intro-loader{display:none !important}
+  html.intro-seen body.is-loading{overflow:visible}
 
   @media (max-width:850px){
     .intro-loader{padding:18px}
