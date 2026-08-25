@@ -7,9 +7,17 @@ import { serviceKeys, serviceSlugs, resolveService, buildServiceAlternates } fro
 import { workListingSlug, isWorkListingSlug, buildWorkListingAlternates } from "@/lib/projects";
 import { legalSlug, isLegalSlug, buildLegalAlternates } from "@/lib/legal";
 import { studioSlug, isStudioSlug, buildStudioAlternates } from "@/lib/studio";
+import {
+  LOCAL_LANDING_LOCALE,
+  localLandingKeys,
+  localLandingSlugs,
+  resolveLocalLanding,
+  buildLocalLandingAlternates,
+} from "@/lib/local-landings";
 import { getServiceContent } from "@/content/services";
 import { getLegalContent } from "@/content/legal";
 import { getStudioContent } from "@/content/studio";
+import { getLocalLandingContent } from "@/content/local";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import ServicePage from "@/components/services/ServicePage";
 import ServiceJsonLd from "@/components/seo/ServiceJsonLd";
@@ -17,6 +25,7 @@ import WorkListPage from "@/components/projects/WorkListPage";
 import LegalPage from "@/components/legal/LegalPage";
 import StudioPage from "@/components/studio/StudioPage";
 import StudioJsonLd from "@/components/seo/StudioJsonLd";
+import LocalLandingPage from "@/components/local/LocalLandingPage";
 import PageJsonLd from "@/components/seo/PageJsonLd";
 
 export function generateStaticParams() {
@@ -26,7 +35,13 @@ export function generateStaticParams() {
   const workParams = locales.map((locale) => ({ locale, service: workListingSlug[locale] }));
   const legalParams = locales.map((locale) => ({ locale, service: legalSlug[locale] }));
   const studioParams = locales.map((locale) => ({ locale, service: studioSlug[locale] }));
-  return [...serviceParams, ...workParams, ...legalParams, ...studioParams];
+  // FR-only: these exist in one locale by design, so they are not mapped over
+  // `locales` like the rest.
+  const localParams = localLandingKeys.map((key) => ({
+    locale: LOCAL_LANDING_LOCALE,
+    service: localLandingSlugs[key],
+  }));
+  return [...serviceParams, ...workParams, ...legalParams, ...studioParams, ...localParams];
 }
 
 function getContent(localeParam: string, serviceParam: string) {
@@ -97,6 +112,26 @@ export async function generateMetadata({
         title: studioContent.metaTitle,
         description: studioContent.metaDescription,
         url: `${siteUrl}/${locale}${path}`,
+      }),
+    };
+  }
+
+  const localKey = resolveLocalLanding(locale, service);
+  if (localKey) {
+    const landing = getLocalLandingContent(localKey);
+    const url = `${siteUrl}/${locale}/${service}`;
+    return {
+      title: landing.metaTitle,
+      description: landing.metaDescription,
+      alternates: {
+        canonical: url,
+        languages: buildLocalLandingAlternates(localKey),
+      },
+      ...buildSocial({
+        locale,
+        title: landing.metaTitle,
+        description: landing.metaDescription,
+        url,
       }),
     };
   }
@@ -173,6 +208,24 @@ export default async function ServiceRoutePage({
           description={content.metaDescription}
         />
         <StudioPage content={content} locale={localeTyped} />
+      </>
+    );
+  }
+
+  const localKey = resolveLocalLanding(locale, service);
+  if (localKey) {
+    const landing = getLocalLandingContent(localKey);
+    const url = `${siteUrl}/${locale}/${service}`;
+    return (
+      <>
+        <ServiceJsonLd
+          locale={locale as Locale}
+          name={headingText(landing.h1)}
+          description={landing.metaDescription}
+          url={url}
+          content={landing}
+        />
+        <LocalLandingPage content={landing} locale={locale as Locale} />
       </>
     );
   }

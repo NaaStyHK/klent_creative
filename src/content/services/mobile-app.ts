@@ -110,6 +110,12 @@ export const mobileApp: Record<Locale, ServiceContent> = {
         },
       ],
     },
+    related: {
+      label: "Aller plus loin",
+      links: [
+        { href: "/fr/developpement-web-charente-maritime", text: "Développement web en Charente-Maritime" },
+      ],
+    },
     closingKicker: "Un projet d'application mobile en tête ?",
     closingHeadline: ["Construisons", [{ outline: "votre application." }]],
     ctaButton: "Démarrer un projet ↗︎",

@@ -81,6 +81,23 @@ export default function ServicePage({ content, locale }: { content: ServiceConte
         </section>
       )}
 
+      {content.related && (
+        <section className="service-page-hero service-page-hero--inline">
+          <div className="eyebrow mono">{content.related.label}</div>
+          {/* A div with the landmark role, not a <nav>: globals.css styles the
+              bare `nav` selector as the site header — position:fixed, z-index
+              100, its own padding — and that would have applied here too. */}
+          <div className="related-nav reveal-up" role="navigation" aria-label={content.related.label}>
+            {content.related.links.map((link) => (
+              <Link className="related-link hoverable" href={link.href} key={link.href}>
+                <span>{link.text}</span>
+                <span className="related-arrow" aria-hidden="true">↗︎</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="cta">
         <div className="ring" />
         <div className="mono" style={{ marginBottom: 26, zIndex: 2 }}>

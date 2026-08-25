@@ -110,6 +110,13 @@ export const webDesign: Record<Locale, ServiceContent> = {
         },
       ],
     },
+    related: {
+      label: "Aller plus loin",
+      links: [
+        { href: "/fr/refonte-site-internet-la-rochelle", text: "Refonte de site internet à La Rochelle" },
+        { href: "/fr/developpement-web-charente-maritime", text: "Développement web en Charente-Maritime" },
+      ],
+    },
     closingKicker: "Un projet de site internet en tête ?",
     closingHeadline: ["Construisons", [{ outline: "votre site." }]],
     ctaButton: "Démarrer un projet ↗︎",

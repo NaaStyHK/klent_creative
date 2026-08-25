@@ -6,6 +6,11 @@ import { legalSlug, buildLegalAlternates } from "@/lib/legal";
 import { studioSlug, buildStudioAlternates } from "@/lib/studio";
 import { getAllPosts, buildPostAlternates, getPostsInCategory } from "@/lib/blog";
 import { blogCategoryKeys, blogCategorySlugs, buildCategoryAlternates } from "@/lib/blog-categories";
+import {
+  localLandingKeys,
+  localLandingUrl,
+  buildLocalLandingAlternates,
+} from "@/lib/local-landings";
 
 /**
  * Explicit revision dates for pages whose content lives in TypeScript files.
@@ -30,6 +35,8 @@ const REVISED = {
   // lu par un visiteur : rien a redater ici.
   projects: "2026-08-15",
   legal: "2026-08-01",
+  // 25 aout : creation des deux landings locales FR.
+  localLandings: "2026-08-25",
 } as const;
 
 /**
@@ -183,6 +190,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...(Object.keys(alternates).length > 1 ? { alternates: { languages: alternates } } : {}),
       });
     }
+  }
+
+  // FR-only commercial landings tied to a French territory. Priority sits just
+  // under the home pages: these answer a transactional query, unlike the
+  // articles on the same subject.
+  for (const key of localLandingKeys) {
+    entries.push({
+      url: localLandingUrl(key),
+      lastModified: REVISED.localLandings,
+      changeFrequency: "monthly",
+      priority: 0.9,
+      alternates: { languages: buildLocalLandingAlternates(key) },
+    });
   }
 
   return entries;

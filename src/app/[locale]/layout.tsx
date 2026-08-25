@@ -109,11 +109,25 @@ export default async function LocaleLayout({
           in IntroLoader's effect instead would hide it only after hydration,
           i.e. after the full-screen intro had already flashed. The key is
           shared with SESSION_KEY in IntroLoader.
+
+          The script markup is handed over as a string rather than written as a
+          <script> element, for two reasons that pull the same way. A bare
+          script tag inside the React tree gets re-rendered on client-side
+          navigation — switching locale remounts this layout — where React
+          never executes it and logs "Encountered a script tag while rendering
+          React component" every time. And next/script's beforeInteractive is
+          not an alternative here: it queues the code on self.__next_s for the
+          Next runtime to run once the framework bundle loads, which is far too
+          late to beat the first paint. Written this way the server emits a
+          real inline script that the parser executes on the spot, and the
+          client-side re-render is inert, which is exactly what we want since
+          the class it sets is already on <html> by then.
         */}
-        <script
+        <div
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html:
-              'try{if(sessionStorage.getItem("klent:intro-seen")==="1")document.documentElement.classList.add("intro-seen")}catch(e){}',
+              "<script>try{if(sessionStorage.getItem('klent:intro-seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}</script>",
           }}
         />
         {/*

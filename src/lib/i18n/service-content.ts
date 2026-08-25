@@ -21,6 +21,15 @@ export type ServiceContent = {
     headline: RichHeading;
     items: { title: string; body: string }[];
   };
+  /**
+   * Contextual outbound links, rendered as one compact row above the closing
+   * CTA. Optional and per-locale, so a French page can point at a French-only
+   * landing without inventing an equivalent for the other three locales.
+   */
+  related?: {
+    label: string;
+    links: { href: string; text: string }[];
+  };
   closingKicker: string;
   closingHeadline: [RichHeading, RichHeading];
   ctaButton: string;
