@@ -379,7 +379,7 @@ export default function ProjectDetailPage({
               >
                 <Image
                   src={study.digitalScreenshot}
-                  alt={`${content.alt} — website hero`}
+                  alt={content.alt}
                   fill
                   sizes="(max-width: 850px) 100vw, 94vw"
                 />
