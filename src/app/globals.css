@@ -2673,12 +2673,18 @@ body{--outline-ink:#111}
 /* Byline under an article title. A face and a name answer the question a
    reader asks before trusting a figure: who is telling me this. It is also the
    signal search engines look for on advice content. */
+/* Signature de fin d'article. Le filet haut est celui qui separe deja les
+   lignes de la liste du blog et le bloc "Aller plus loin" : aucune nouvelle
+   couleur, aucune carte, aucune ombre — la meme hairline que partout. */
 .blog-author{
   display:flex;
   align-items:center;
   gap:14px;
-  margin:22px 0 0;
+  margin:48px 0 0;
+  padding-top:26px;
+  border-top:1px solid var(--line);
 }
+.blog-author-eyebrow{color:var(--muted)}
 .blog-author-photo{
   width:44px;
   height:44px;
@@ -2739,12 +2745,10 @@ body{--outline-ink:#111}
 }
 
 /* The byline sat flush against the hero image, zero pixels between them. */
-.blog-author{margin-bottom:30px}
 .blog-hero-image{margin-top:0}
 
 @media (max-width:850px){
   .blog-article h1.headline{font-size:clamp(28px,7.4vw,40px)}
-  .blog-author{margin-bottom:24px}
 }
 
 /* Images inside an article body.

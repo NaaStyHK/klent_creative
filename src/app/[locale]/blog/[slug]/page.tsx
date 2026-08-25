@@ -10,6 +10,7 @@ import { locales, isLocale, siteUrl, hreflangByLocale, type Locale } from "@/lib
 import { buildSocial } from "@/lib/seo";
 import { ORG_ID, absoluteUrl, breadcrumbNode, graph, webPageNode, BRAND } from "@/lib/schema";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
+import { AUTHOR_ID, AUTHOR_PHOTO, authorLabels, authorNode } from "@/lib/author";
 import { getPostBySlug, getPostSlugs, buildPostAlternates, getPostsInCategory } from "@/lib/blog";
 import { getPostCategory } from "@/lib/blog-categories";
 import {
@@ -136,7 +137,14 @@ export default async function BlogArticlePage({
 
   const articleCategory = getPostCategory(post.slug);
   const articleUrl = `${siteUrl}/${locale}/blog/${slug}`;
+  const author = {
+    name: post.author ?? authorLabels[locale].name,
+    role: post.authorRole ?? authorLabels[locale].role,
+    photo: post.authorImage ?? AUTHOR_PHOTO,
+  };
+
   const jsonLd = graph([
+    authorNode(),
     webPageNode({
       locale: locale as Locale,
       url: articleUrl,
@@ -156,11 +164,12 @@ export default async function BlogArticlePage({
       description: post.description,
       datePublished: post.date,
       dateModified: post.updated || post.date,
-      // Signed by the studio, not by an individual: the founder's name is
-      // deliberately confined to the legal notice. Google accepts an
-      // Organization as author, and the expertise signal lives on that node
-      // via knowsAbout rather than on a personal one.
-      author: { "@id": ORG_ID },
+      // Signed by the person who writes them, which is what an author is.
+      // The Person node carries only a first name and a role: the full legal
+      // name stays in the legal notice. `worksFor` on that node is what ties
+      // the expertise back to the studio, so the Organization keeps its role
+      // as publisher without also pretending to be the writer.
+      author: { "@id": AUTHOR_ID },
       publisher: { "@id": ORG_ID },
       mainEntityOfPage: { "@id": `${articleUrl}#webpage` },
       ...(post.image ? { image: absoluteUrl(post.image) } : {}),
@@ -191,23 +200,6 @@ export default async function BlogArticlePage({
         {post.readTime ? ` · ${post.readTime} ${dict.blog.minRead}` : ""}
       </span>
       <h1 className="headline">{post.title}</h1>
-      {post.author && (
-        <div className="blog-author">
-          {post.authorImage && (
-            <Image
-              className="blog-author-photo"
-              src={post.authorImage}
-              alt={post.author}
-              width={88}
-              height={88}
-            />
-          )}
-          <div className="blog-author-text mono">
-            <span className="blog-author-name">{post.author}</span>
-            {post.authorRole && <span className="blog-author-role">{post.authorRole}</span>}
-          </div>
-        </div>
-      )}
       {post.image && (
         <div className="blog-hero-image">
           <Image
@@ -238,6 +230,25 @@ export default async function BlogArticlePage({
           components={{ img: BlogImage }}
         />
       </div>
+      {/* Signature rather than header. The byline used to sit between the h1
+          and the hero, pushing the article's own subject down the page; at the
+          foot it reads as what it is — who wrote what you have just read.
+          Same markup and same classes as before, only the position changed. */}
+      <div className="blog-author">
+        <Image
+          className="blog-author-photo"
+          src={author.photo}
+          alt={authorLabels[locale].photoAlt}
+          width={88}
+          height={88}
+        />
+        <div className="blog-author-text mono">
+          <span className="blog-author-eyebrow">{authorLabels[locale].eyebrow}</span>
+          <span className="blog-author-name">{author.name}</span>
+          <span className="blog-author-role">{author.role}</span>
+        </div>
+      </div>
+
       {/* Closing invitation. What stood here was a "Related service" label
           pointing at the service page's H1: navigation dressed as a
           conclusion, with no way to reach the contact form. The reader has
