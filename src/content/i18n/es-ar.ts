@@ -3,9 +3,9 @@ import type { Dictionary } from "@/lib/i18n/dictionary";
 export const esAr: Dictionary = {
   meta: {
     home: {
-      title: "Klent Creative — Diseño web y desarrollo de apps",
+      title: "Klent Creative — Diseño web y apps para Argentina",
       description:
-        "Estudio creativo independiente. Creamos marcas, sitios web y aplicaciones móviles para empresas ambiciosas en Argentina, España y Francia.",
+        "Estudio creativo independiente. Diseñamos marcas, sitios web y apps para pymes, emprendimientos y marcas argentinas. Trabajamos en remoto desde Europa.",
     },
   },
   nav: {
@@ -20,7 +20,7 @@ export const esAr: Dictionary = {
     kickerLeft: ["Estudio creativo independiente", "La Rochelle / Barcelona / Global"],
     kickerRight: ["Estrategia / Identidad / Digital", "Desarrollo / Crecimiento"],
     titleLines: ["Ideas", "con forma.", "Marcas", ["con ", { outline: "identidad." }]],
-    copy: "Identidad, diseño y desarrollo para marcas que quieren hacer las cosas distinto.",
+    copy: "Identidad, diseño y desarrollo para marcas argentinas que quieren hacer las cosas distinto.",
     status: "DISPONIBLES PARA PROYECTOS SELECCIONADOS",
   },
   ticker: "Identidad ✦ Digital ✦ Desarrollo ✦ Estrategia ✦ Contenido ✦ Crecimiento ✦",
@@ -62,7 +62,7 @@ export const esAr: Dictionary = {
   statement: {
     kicker: "No somos una agencia digital más.",
     lines: [["No hacemos"], ["lo de ", { outline: "siempre." }], ["Y se nota."]],
-    copy: "Antes de diseñar, pensamos. Antes de construir, encontramos la idea. Porque una marca no se define por seguir lo que está de moda, sino por tener una identidad propia. Creamos sistemas visuales, sitios web y experiencias digitales donde cada decisión tiene un propósito y cada detalle suma a una misma historia.",
+    copy: "Antes de diseñar, pensamos. Antes de construir, encontramos la idea. Porque una marca no se define por seguir lo que está de moda, sino por tener una identidad propia. Creamos sistemas visuales, sitios web y experiencias digitales donde cada decisión tiene un propósito y cada detalle suma a una misma historia. Trabajamos así estés en la misma ciudad o a diez mil kilómetros: la distancia cambia la logística, no el método.",
     spinmark: "KLENT CREATIVE • ESTUDIO • CREATIVO •",
   },
   kineticBand: {
@@ -84,7 +84,7 @@ export const esAr: Dictionary = {
       {
         num: "02",
         title: "Creación de sitio web",
-        desc: "Diseñamos sitios donde la identidad cobra vida: estructura, narrativa, interacción y experiencia pensadas desde el primer scroll.",
+        desc: "Diseñamos sitios para marcas, pymes y emprendimientos: estructura, narrativa, interacción y experiencia pensadas desde el primer scroll.",
         href: "/creacion-sitio-web",
         cta: "Ver especialidad",
       },
@@ -149,7 +149,7 @@ export const esAr: Dictionary = {
   },
   nudge: {
       title: "¿Tenés un proyecto?",
-      body: "Contanos. Respondemos en menos de 24 horas.",
+      body: "Contanos. Respondemos en menos de 24 horas, sin importar el huso horario.",
       button: "Empezar un proyecto",
       tags: ["Identidad", "Sitio web", "Aplicación"],
       close: "Cerrar",

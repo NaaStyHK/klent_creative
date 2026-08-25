@@ -122,17 +122,17 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ctaButton: "Démarrer un projet ↗︎",
   },
   es: {
-    metaTitle: "Creación web — Next.js, WordPress y Shopify | Klent Creative",
+    metaTitle: "Diseño y desarrollo web en Barcelona | Klent Creative",
     metaDescription:
-      "Creación de sitios corporativos y e-commerce con Next.js, WordPress o Shopify. Diseño a medida, rendimiento, SEO y autonomía.",
-    eyebrow: "Creación de sitio web",
+      "Diseño y desarrollo web a medida en Barcelona. Creamos páginas web rápidas y pensadas para convertir, con SEO técnico incluido y presupuesto claro.",
+    eyebrow: "Diseño y desarrollo web — Barcelona",
     h1: ["Un sitio web que ", { outline: "convierte" }, ", no que solo existe."],
     intro:
-      "Diseñamos y desarrollamos sitios web y plataformas a medida: ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
+      "Diseño y desarrollo web a medida en Barcelona: páginas web y plataformas con ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
     features: [
       {
-        title: "Diseño a medida",
-        body: "Nada de plantillas genéricas: cada sitio se diseña para vuestra marca, vuestra audiencia y vuestros objetivos de conversión.",
+        title: "Diseño web a medida",
+        body: "Nada de plantillas genéricas: cada página web se diseña para vuestra marca, vuestra audiencia y vuestros objetivos de conversión.",
       },
       {
         title: "Next.js, WordPress y Shopify",
@@ -172,7 +172,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
       headline: ["Lo que conviene saber antes de ", { outline: "lanzar" }, " vuestro sitio."],
       items: [
         { title: "¿Qué solución elegir para un e-commerce?", body: "Shopify suele ofrecer la administración diaria más sencilla. WordPress con WooCommerce aporta más flexibilidad, pero la autogestión puede resultar menos intuitiva según vuestro equipo y necesidades. Un e-commerce con Next.js ofrece el máximo nivel de personalización y rendimiento, pero requiere un presupuesto de diseño, desarrollo y mantenimiento considerablemente mayor. Recomendamos la solución según el catálogo, los procesos, el presupuesto y vuestra capacidad de gestión." },
-        { title: "¿Cuánto cuesta un sitio web a medida?", body: "El presupuesto depende del número de páginas, las funcionalidades, el volumen de contenido y las integraciones. Tras una reunión de definición, recibís una propuesta detallada con alcance, calendario y presupuesto claros." },
+        { title: "¿Cuánto cuesta una página web en Barcelona?", body: "Trabajamos con precios de partida: una landing page desde 400 €, una web profesional desde 800 € y una web avanzada desde 2.000 €. Son puntos de partida, no tarifas cerradas: el presupuesto final depende del diseño, las funcionalidades, el contenido y el alcance del proyecto. Tras una reunión de definición, recibís una propuesta detallada con alcance, calendario y presupuesto claros." },
         { title: "¿Cuánto tiempo debemos prever?", body: "El plazo varía según el alcance y la disponibilidad de contenidos y decisores. El calendario se fija antes de empezar, con validaciones precisas para asegurar la fecha de lanzamiento." },
         { title: "¿Quién se ocupa de los textos y las imágenes?", body: "Podemos trabajar con vuestro contenido, ayudaros con una estructura editorial o incluir la creación de textos y recursos visuales. Lo definimos desde el inicio para evitar bloqueos durante la producción." },
         { title: "¿El posicionamiento SEO está incluido?", body: "Incluimos la base técnica: estructura semántica, metadatos, sitemap, rendimiento e indexabilidad. Una estrategia de contenidos o un acompañamiento SEO continuo puede completar esa base." },
@@ -184,13 +184,13 @@ export const webDesign: Record<Locale, ServiceContent> = {
     ctaButton: "Empezar un proyecto ↗︎",
   },
   "es-ar": {
-    metaTitle: "Creación web — Next.js, WordPress y Shopify | Klent Creative",
+    metaTitle: "Diseño y desarrollo web para Argentina | Klent Creative",
     metaDescription:
-      "Creación de sitios institucionales y e-commerce con Next.js, WordPress o Shopify. Diseño a medida, rendimiento, SEO y autonomía.",
-    eyebrow: "Creación de sitio web",
+      "Diseño y desarrollo web a medida para marcas, pymes y emprendimientos en Argentina. Trabajamos en remoto, con presupuesto personalizado según tu proyecto.",
+    eyebrow: "Diseño y desarrollo web — Argentina",
     h1: ["Un sitio web que ", { outline: "convierte" }, ", no que solo existe."],
     intro:
-      "Diseñamos y desarrollamos sitios web y plataformas a medida: ritmo editorial, interacciones cuidadas, rendimiento y SEO pensados desde el primer boceto.",
+      "Diseño y desarrollo web a medida para marcas, pymes y emprendimientos argentinos: estructura, narrativa, rendimiento y SEO pensados desde el primer boceto. Trabajamos en remoto, como con el resto de nuestros proyectos.",
     features: [
       {
         title: "Diseño a medida",
@@ -206,7 +206,7 @@ export const webDesign: Record<Locale, ServiceContent> = {
       },
       {
         title: "CMS y autonomía",
-        body: "Integración de CMS para gestionar tus contenidos (blog, páginas, productos) sin depender de un desarrollador todos los días.",
+        body: "Integración de CMS para gestionar tus contenidos (blog, páginas, productos) sin depender de un desarrollador todos los días, ni de la diferencia horaria con Europa.",
       },
     ],
     benefits: {
@@ -234,8 +234,8 @@ export const webDesign: Record<Locale, ServiceContent> = {
       headline: ["Lo que conviene saber antes de ", { outline: "lanzar" }, " tu sitio."],
       items: [
         { title: "¿Qué solución elegir para un e-commerce?", body: "Shopify suele ofrecer la administración diaria más simple. WordPress con WooCommerce aporta más flexibilidad, pero la autogestión puede resultar menos intuitiva según tu equipo y necesidades. Un e-commerce con Next.js ofrece el máximo nivel de personalización y rendimiento, pero requiere un presupuesto de diseño, desarrollo y mantenimiento considerablemente mayor. Recomendamos la solución según el catálogo, los procesos, el presupuesto y tu capacidad de gestión." },
-        { title: "¿Cuánto cuesta un sitio web a medida?", body: "El presupuesto depende del número de páginas, las funcionalidades, el volumen de contenido y las integraciones. Después de una reunión inicial, recibís una propuesta detallada con alcance, calendario y presupuesto claros." },
-        { title: "¿Cuánto tiempo hay que prever?", body: "El plazo varía según el alcance y la disponibilidad de contenidos y decisores. El calendario se fija antes de empezar, con validaciones precisas para asegurar la fecha de lanzamiento." },
+        { title: "¿Cuánto cuesta una página web?", body: "Trabajamos con presupuesto personalizado, no con una grilla cerrada: el monto depende del alcance, las funcionalidades, el diseño y los contenidos de cada proyecto. Después de una reunión inicial, recibís una propuesta detallada con alcance, calendario y presupuesto claros." },
+        { title: "¿Cuánto tiempo hay que prever, trabajando en remoto?", body: "El plazo varía según el alcance y la disponibilidad de contenidos y decisores, no según la distancia: el estudio tiene su base en Europa y acompaña proyectos argentinos en remoto como cualquier otro, con videollamadas en horarios acordados y entregas por etapas. El calendario se fija antes de empezar, con validaciones precisas para asegurar la fecha de lanzamiento." },
         { title: "¿Quién se ocupa de los textos y las imágenes?", body: "Podemos trabajar con tu contenido, ayudarte con una estructura editorial o incluir la creación de textos y recursos visuales. Lo definimos desde el inicio para evitar bloqueos durante la producción." },
         { title: "¿El posicionamiento SEO está incluido?", body: "Incluimos la base técnica: estructura semántica, metadatos, sitemap, rendimiento e indexabilidad. Una estrategia de contenidos o un acompañamiento SEO continuo puede completar esa base." },
         { title: "¿Qué pasa después del lanzamiento?", body: "Recibís los accesos, la documentación y capacitación para usar el CMS. También podemos cubrir mantenimiento, hosting, seguimiento del rendimiento y futuras mejoras." },
