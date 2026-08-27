@@ -120,6 +120,10 @@ const LOCATIONS: Branch[] = [
     locality: "La Rochelle",
     address: { region: "Nouvelle-Aquitaine", country: "FR" },
     telephone: PHONE_FR,
+    // Verified Business Profile for this branch only. It is what ties the
+    // entity to something Google already holds and has checked, instead of a
+    // graph that only cites itself.
+    sameAs: ["https://share.google/WS4zqAX7FMAT5mc3c"],
     serves: [0],
   },
   {
@@ -128,12 +132,14 @@ const LOCATIONS: Branch[] = [
     // Business Profile publishes it anyway — and stating it ties the entity to
     // Barcelona instead of leaving the branch address-less.
     // `addressRegion` is the province, per Spanish postal convention
-    // (Barcelona, Barcelona). Add the Business Profile URL to `sameAs` once
-    // the listing is verified.
+    // (Barcelona, Barcelona).
     id: "barcelona",
     locality: "Barcelona",
     address: { region: "Barcelona", country: "ES" },
     telephone: PHONE_ES,
+    // The Barcelona listing, and only that one: pointing both branches at both
+    // profiles would tell Google the two places are the same entity.
+    sameAs: ["https://share.google/DNgWVjc5lyK1gsOKW"],
     serves: [1],
   },
 ];
